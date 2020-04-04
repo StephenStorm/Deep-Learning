@@ -1,0 +1,161 @@
+\hypertarget{classcaffe_1_1LossLayer}{}\section{caffe\+:\+:Loss\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1LossLayer}\index{caffe\+::\+Loss\+Layer$<$ Dtype $>$@{caffe\+::\+Loss\+Layer$<$ Dtype $>$}}
+
+
+An interface for \hyperlink{classcaffe_1_1Layer}{Layer}s that take two \hyperlink{classcaffe_1_1Blob}{Blob}s as input -- usually (1) predictions and (2) ground-\/truth labels -- and output a singleton \hyperlink{classcaffe_1_1Blob}{Blob} representing the loss.  
+
+
+
+
+{\ttfamily \#include $<$loss\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Loss\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.821918cm]{classcaffe_1_1LossLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Loss\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1LossLayer_a16e133050e2d97c6f024ea74e3ba4ead}{}\label{classcaffe_1_1LossLayer_a16e133050e2d97c6f024ea74e3ba4ead}
+
+\item 
+virtual void \hyperlink{classcaffe_1_1LossLayer_a98084e06f7ca0e44c11aee5544379609}{Layer\+Set\+Up} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1LossLayer_ab15b7120ebc172274481f3732db78c9e}{Reshape} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1LossLayer_a8a2e16d4691640c34e589aac4ec42e28}{Exact\+Num\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classcaffe_1_1LossLayer_ad272e6792a781ce4f66a65057cc829d1}{Auto\+Top\+Blobs} () const \hypertarget{classcaffe_1_1LossLayer_ad272e6792a781ce4f66a65057cc829d1}{}\label{classcaffe_1_1LossLayer_ad272e6792a781ce4f66a65057cc829d1}
+
+\begin{DoxyCompactList}\small\item\em For convenience and backwards compatibility, instruct the \hyperlink{classcaffe_1_1Net}{Net} to automatically allocate a single top \hyperlink{classcaffe_1_1Blob}{Blob} for Loss\+Layers, into which they output their singleton loss, (even if the user didn\textquotesingle{}t specify one in the prototxt, etc.). \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1LossLayer_af8dca16967e8e979ebead4e80664dc10}{Exact\+Num\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classcaffe_1_1LossLayer_ad02fe695b06451ac8e6f21db0cba1dad}{Allow\+Force\+Backward} (const int bottom\+\_\+index) const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Loss\+Layer$<$ Dtype $>$}
+
+An interface for \hyperlink{classcaffe_1_1Layer}{Layer}s that take two \hyperlink{classcaffe_1_1Blob}{Blob}s as input -- usually (1) predictions and (2) ground-\/truth labels -- and output a singleton \hyperlink{classcaffe_1_1Blob}{Blob} representing the loss. 
+
+Loss\+Layers are typically only capable of backpropagating to their first input -- the predictions. 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Loss\+Layer@{caffe\+::\+Loss\+Layer}!Allow\+Force\+Backward@{Allow\+Force\+Backward}}
+\index{Allow\+Force\+Backward@{Allow\+Force\+Backward}!caffe\+::\+Loss\+Layer@{caffe\+::\+Loss\+Layer}}
+\subsubsection[{\texorpdfstring{Allow\+Force\+Backward(const int bottom\+\_\+index) const }{AllowForceBackward(const int bottom_index) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual bool {\bf caffe\+::\+Loss\+Layer}$<$ Dtype $>$\+::Allow\+Force\+Backward (
+\begin{DoxyParamCaption}
+\item[{const int}]{bottom\+\_\+index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1LossLayer_ad02fe695b06451ac8e6f21db0cba1dad}{}\label{classcaffe_1_1LossLayer_ad02fe695b06451ac8e6f21db0cba1dad}
+We usually cannot backpropagate to the labels; ignore force\+\_\+backward for these inputs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a4a2e4ca94eaa1cbc054b512c6657743e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+Reimplemented in \hyperlink{classcaffe_1_1EuclideanLossLayer_a3c954fd7c15596fd2f59e0f79601905c}{caffe\+::\+Euclidean\+Loss\+Layer$<$ Dtype $>$}, and \hyperlink{classcaffe_1_1ContrastiveLossLayer_afbfe9d1707c9e76e31fe381af3d708ef}{caffe\+::\+Contrastive\+Loss\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Loss\+Layer@{caffe\+::\+Loss\+Layer}!Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}}
+\index{Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}!caffe\+::\+Loss\+Layer@{caffe\+::\+Loss\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Bottom\+Blobs() const }{ExactNumBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Loss\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1LossLayer_a8a2e16d4691640c34e589aac4ec42e28}{}\label{classcaffe_1_1LossLayer_a8a2e16d4691640c34e589aac4ec42e28}
+
+
+Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a45c7a7943a8a6735ac433c9be11e0240}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+Reimplemented in \hyperlink{classcaffe_1_1InfogainLossLayer_aef9aa9200a3129d7bddf56f717017cbb}{caffe\+::\+Infogain\+Loss\+Layer$<$ Dtype $>$}, and \hyperlink{classcaffe_1_1ContrastiveLossLayer_af1b8bcaf8ddacd3e98e26c558c7f49a0}{caffe\+::\+Contrastive\+Loss\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Loss\+Layer@{caffe\+::\+Loss\+Layer}!Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}}
+\index{Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}!caffe\+::\+Loss\+Layer@{caffe\+::\+Loss\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Top\+Blobs() const }{ExactNumTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Loss\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1LossLayer_af8dca16967e8e979ebead4e80664dc10}{}\label{classcaffe_1_1LossLayer_af8dca16967e8e979ebead4e80664dc10}
+
+
+Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_aa3c99ed707e8db683a3043412e151af8}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+Reimplemented in \hyperlink{classcaffe_1_1InfogainLossLayer_aa25f7b12805d10dccc217669f589fc95}{caffe\+::\+Infogain\+Loss\+Layer$<$ Dtype $>$}, and \hyperlink{classcaffe_1_1SoftmaxWithLossLayer_a8222589f986db56372bf00935bae6180}{caffe\+::\+Softmax\+With\+Loss\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Loss\+Layer@{caffe\+::\+Loss\+Layer}!Layer\+Set\+Up@{Layer\+Set\+Up}}
+\index{Layer\+Set\+Up@{Layer\+Set\+Up}!caffe\+::\+Loss\+Layer@{caffe\+::\+Loss\+Layer}}
+\subsubsection[{\texorpdfstring{Layer\+Set\+Up(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{LayerSetUp(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Loss\+Layer}$<$ Dtype $>$\+::Layer\+Set\+Up (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1LossLayer_a98084e06f7ca0e44c11aee5544379609}{}\label{classcaffe_1_1LossLayer_a98084e06f7ca0e44c11aee5544379609}
+
+
+Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the preshaped input blobs, whose data fields store the input data for this layer \\
+\hline
+{\em top} & the allocated but unshaped output blobs\\
+\hline
+\end{DoxyParams}
+This method should do one-\/time layer specific setup. This includes reading and processing relevent parameters from the {\ttfamily layer\+\_\+param\+\_\+}. Setting up the shapes of top blobs and internal buffers should be done in {\ttfamily Reshape}, which will be called before the forward pass to adjust the top blob sizes. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a38dc2488bf319b8de5a7ac84e0045393}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+Reimplemented in \hyperlink{classcaffe_1_1SoftmaxWithLossLayer_a063c4e9786bc09f4773cb082c2960eb5}{caffe\+::\+Softmax\+With\+Loss\+Layer$<$ Dtype $>$}, \hyperlink{classcaffe_1_1InfogainLossLayer_a55a1d7ae2db81750c33ef9286764cd29}{caffe\+::\+Infogain\+Loss\+Layer$<$ Dtype $>$}, \hyperlink{classcaffe_1_1SigmoidCrossEntropyLossLayer_a87a48fa111fae84f238259d77263459e}{caffe\+::\+Sigmoid\+Cross\+Entropy\+Loss\+Layer$<$ Dtype $>$}, and \hyperlink{classcaffe_1_1ContrastiveLossLayer_a34a16b3e6598ec6c23e63c01ef0c0a99}{caffe\+::\+Contrastive\+Loss\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Loss\+Layer@{caffe\+::\+Loss\+Layer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!caffe\+::\+Loss\+Layer@{caffe\+::\+Loss\+Layer}}
+\subsubsection[{\texorpdfstring{Reshape(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Reshape(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Loss\+Layer}$<$ Dtype $>$\+::Reshape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1LossLayer_ab15b7120ebc172274481f3732db78c9e}{}\label{classcaffe_1_1LossLayer_ab15b7120ebc172274481f3732db78c9e}
+
+
+Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the input blobs, with the requested input shapes \\
+\hline
+{\em top} & the top blobs, which should be reshaped as needed\\
+\hline
+\end{DoxyParams}
+This method should reshape top blobs as needed according to the shapes of the bottom (input) blobs, as well as reshaping any internal buffers and making any other necessary adjustments so that the layer can accommodate the bottom blobs. 
+
+Implements \hyperlink{classcaffe_1_1Layer_ad9d391b972c769c0ebee34ca6d1c973e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+Reimplemented in \hyperlink{classcaffe_1_1SoftmaxWithLossLayer_a9571f4e391a85f1b8b03aecbc47c298a}{caffe\+::\+Softmax\+With\+Loss\+Layer$<$ Dtype $>$}, \hyperlink{classcaffe_1_1InfogainLossLayer_aa1c32ab8252309cb51ed44cacf88f119}{caffe\+::\+Infogain\+Loss\+Layer$<$ Dtype $>$}, \hyperlink{classcaffe_1_1SigmoidCrossEntropyLossLayer_a81e7895b53040e8d56d03b5f52a9453f}{caffe\+::\+Sigmoid\+Cross\+Entropy\+Loss\+Layer$<$ Dtype $>$}, \hyperlink{classcaffe_1_1MultinomialLogisticLossLayer_a906947b9029c3ba8127591c49855ccb6}{caffe\+::\+Multinomial\+Logistic\+Loss\+Layer$<$ Dtype $>$}, and \hyperlink{classcaffe_1_1EuclideanLossLayer_a4d2df2fad6e3d04ed24df9fe6460c683}{caffe\+::\+Euclidean\+Loss\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/loss\+\_\+layer.\+hpp\item 
+src/caffe/layers/loss\+\_\+layer.\+cpp\end{DoxyCompactItemize}

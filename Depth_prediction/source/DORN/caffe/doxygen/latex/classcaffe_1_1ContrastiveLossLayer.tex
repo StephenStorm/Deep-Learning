@@ -1,0 +1,207 @@
+\hypertarget{classcaffe_1_1ContrastiveLossLayer}{}\section{caffe\+:\+:Contrastive\+Loss\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1ContrastiveLossLayer}\index{caffe\+::\+Contrastive\+Loss\+Layer$<$ Dtype $>$@{caffe\+::\+Contrastive\+Loss\+Layer$<$ Dtype $>$}}
+
+
+Computes the contrastive loss $ E = \frac{1}{2N} \sum\limits_{n=1}^N \left(y\right) d^2 + \left(1-y\right) \max \left(margin-d, 0\right)^2 $ where $ d = \left| \left| a_n - b_n \right| \right|_2 $. This can be used to train siamese networks.  
+
+
+
+
+{\ttfamily \#include $<$contrastive\+\_\+loss\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Contrastive\+Loss\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcaffe_1_1ContrastiveLossLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Contrastive\+Loss\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1ContrastiveLossLayer_aab41120fe462451196d14321264aef60}{}\label{classcaffe_1_1ContrastiveLossLayer_aab41120fe462451196d14321264aef60}
+
+\item 
+virtual void \hyperlink{classcaffe_1_1ContrastiveLossLayer_a34a16b3e6598ec6c23e63c01ef0c0a99}{Layer\+Set\+Up} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1ContrastiveLossLayer_af1b8bcaf8ddacd3e98e26c558c7f49a0}{Exact\+Num\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1ContrastiveLossLayer_a34b18bace2b4419132d1364516da19f6}{type} () const \hypertarget{classcaffe_1_1ContrastiveLossLayer_a34b18bace2b4419132d1364516da19f6}{}\label{classcaffe_1_1ContrastiveLossLayer_a34b18bace2b4419132d1364516da19f6}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classcaffe_1_1ContrastiveLossLayer_afbfe9d1707c9e76e31fe381af3d708ef}{Allow\+Force\+Backward} (const int bottom\+\_\+index) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1ContrastiveLossLayer_a0719301088807da84f30ef2f028d0fde}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Computes the contrastive loss $ E = \frac{1}{2N} \sum\limits_{n=1}^N \left(y\right) d^2 + \left(1-y\right) \max \left(margin-d, 0\right)^2 $ where $ d = \left| \left| a_n - b_n \right| \right|_2 $. This can be used to train siamese networks. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1ContrastiveLossLayer_acc9c79ec2883380d41308c8212d0f845}{Forward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1ContrastiveLossLayer_acc9c79ec2883380d41308c8212d0f845}{}\label{classcaffe_1_1ContrastiveLossLayer_acc9c79ec2883380d41308c8212d0f845}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the layer output. Fall back to \hyperlink{classcaffe_1_1ContrastiveLossLayer_a0719301088807da84f30ef2f028d0fde}{Forward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1ContrastiveLossLayer_ac29d021f30dbab75ca14cb79446926e5}{Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)
+\begin{DoxyCompactList}\small\item\em Computes the Contrastive error gradient w.\+r.\+t. the inputs. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1ContrastiveLossLayer_abdafac096cf9ba58eff8fe0621f0275a}{Backward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1ContrastiveLossLayer_abdafac096cf9ba58eff8fe0621f0275a}{}\label{classcaffe_1_1ContrastiveLossLayer_abdafac096cf9ba58eff8fe0621f0275a}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. Fall back to \hyperlink{classcaffe_1_1ContrastiveLossLayer_ac29d021f30dbab75ca14cb79446926e5}{Backward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries diff\+\_\+}\hypertarget{classcaffe_1_1ContrastiveLossLayer_a885617ad377571b4010d8a39f0a53d5e}{}\label{classcaffe_1_1ContrastiveLossLayer_a885617ad377571b4010d8a39f0a53d5e}
+
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries dist\+\_\+sq\+\_\+}\hypertarget{classcaffe_1_1ContrastiveLossLayer_ab852b524ed8daee905f2f0eeddfb9807}{}\label{classcaffe_1_1ContrastiveLossLayer_ab852b524ed8daee905f2f0eeddfb9807}
+
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries diff\+\_\+sq\+\_\+}\hypertarget{classcaffe_1_1ContrastiveLossLayer_a2e73f7304a21d8e265b6389c9e7095e6}{}\label{classcaffe_1_1ContrastiveLossLayer_a2e73f7304a21d8e265b6389c9e7095e6}
+
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries summer\+\_\+vec\+\_\+}\hypertarget{classcaffe_1_1ContrastiveLossLayer_a7b67d18ffc05ea6acce6b8c1c2de82a4}{}\label{classcaffe_1_1ContrastiveLossLayer_a7b67d18ffc05ea6acce6b8c1c2de82a4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Contrastive\+Loss\+Layer$<$ Dtype $>$}
+
+Computes the contrastive loss $ E = \frac{1}{2N} \sum\limits_{n=1}^N \left(y\right) d^2 + \left(1-y\right) \max \left(margin-d, 0\right)^2 $ where $ d = \left| \left| a_n - b_n \right| \right|_2 $. This can be used to train siamese networks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 3)
+\begin{DoxyEnumerate}
+\item $ (N \times C \times 1 \times 1) $ the features $ a \in [-\infty, +\infty]$
+\item $ (N \times C \times 1 \times 1) $ the features $ b \in [-\infty, +\infty]$
+\item $ (N \times 1 \times 1 \times 1) $ the binary similarity $ s \in [0, 1]$ 
+\end{DoxyEnumerate}\\
+\hline
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1)
+\begin{DoxyEnumerate}
+\item $ (1 \times 1 \times 1 \times 1) $ the computed contrastive loss\+: $ E = \frac{1}{2N} \sum\limits_{n=1}^N \left(y\right) d^2 + \left(1-y\right) \max \left(margin-d, 0\right)^2 $ where $ d = \left| \left| a_n - b_n \right| \right|_2 $. This can be used to train siamese networks. 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Contrastive\+Loss\+Layer@{caffe\+::\+Contrastive\+Loss\+Layer}!Allow\+Force\+Backward@{Allow\+Force\+Backward}}
+\index{Allow\+Force\+Backward@{Allow\+Force\+Backward}!caffe\+::\+Contrastive\+Loss\+Layer@{caffe\+::\+Contrastive\+Loss\+Layer}}
+\subsubsection[{\texorpdfstring{Allow\+Force\+Backward(const int bottom\+\_\+index) const }{AllowForceBackward(const int bottom_index) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual bool {\bf caffe\+::\+Contrastive\+Loss\+Layer}$<$ Dtype $>$\+::Allow\+Force\+Backward (
+\begin{DoxyParamCaption}
+\item[{const int}]{bottom\+\_\+index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1ContrastiveLossLayer_afbfe9d1707c9e76e31fe381af3d708ef}{}\label{classcaffe_1_1ContrastiveLossLayer_afbfe9d1707c9e76e31fe381af3d708ef}
+Unlike most loss layers, in the \hyperlink{classcaffe_1_1ContrastiveLossLayer}{Contrastive\+Loss\+Layer} we can backpropagate to the first two inputs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1LossLayer_ad02fe695b06451ac8e6f21db0cba1dad}{caffe\+::\+Loss\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Contrastive\+Loss\+Layer@{caffe\+::\+Contrastive\+Loss\+Layer}!Backward\+\_\+cpu@{Backward\+\_\+cpu}}
+\index{Backward\+\_\+cpu@{Backward\+\_\+cpu}!caffe\+::\+Contrastive\+Loss\+Layer@{caffe\+::\+Contrastive\+Loss\+Layer}}
+\subsubsection[{\texorpdfstring{Backward\+\_\+cpu(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom)}{Backward_cpu(const vector< Blob< Dtype > * > &top, const vector< bool > &propagate_down, const vector< Blob< Dtype > * > &bottom)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Contrastive\+Loss\+Layer}$<$ Dtype $>$\+::Backward\+\_\+cpu (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top, }
+\item[{const vector$<$ bool $>$ \&}]{propagate\+\_\+down, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1ContrastiveLossLayer_ac29d021f30dbab75ca14cb79446926e5}{}\label{classcaffe_1_1ContrastiveLossLayer_ac29d021f30dbab75ca14cb79446926e5}
+
+
+Computes the Contrastive error gradient w.\+r.\+t. the inputs. 
+
+Computes the gradients with respect to the two input vectors (bottom\mbox{[}0\mbox{]} and bottom\mbox{[}1\mbox{]}), but not the similarity label (bottom\mbox{[}2\mbox{]}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1), providing the error gradient with respect to the outputs
+\begin{DoxyEnumerate}
+\item $ (1 \times 1 \times 1 \times 1) $ This \hyperlink{classcaffe_1_1Blob}{Blob}\textquotesingle{}s diff will simply contain the loss\+\_\+weight$\ast$ $ \lambda $, as $ \lambda $ is the coefficient of this layer\textquotesingle{}s output $\ell_i$ in the overall \hyperlink{classcaffe_1_1Net}{Net} loss $ E = \lambda_i \ell_i + \mbox{other loss terms}$; hence $ \frac{\partial E}{\partial \ell_i} = \lambda_i $. ($\ast$\+Assuming that this top \hyperlink{classcaffe_1_1Blob}{Blob} is not used as a bottom (input) by any other layer of the \hyperlink{classcaffe_1_1Net}{Net}.) 
+\end{DoxyEnumerate}\\
+\hline
+{\em propagate\+\_\+down} & see \hyperlink{classcaffe_1_1Layer_a53df1e081767e07bfb4c81657f4acd0a}{Layer\+::\+Backward}. \\
+\hline
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 2)
+\begin{DoxyEnumerate}
+\item $ (N \times C \times 1 \times 1) $ the features $a$; Backward fills their diff with gradients if propagate\+\_\+down\mbox{[}0\mbox{]}
+\item $ (N \times C \times 1 \times 1) $ the features $b$; Backward fills their diff with gradients if propagate\+\_\+down\mbox{[}1\mbox{]} 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classcaffe_1_1Layer_a64d15855f882af4b82e83fa993c4e7c6}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Contrastive\+Loss\+Layer@{caffe\+::\+Contrastive\+Loss\+Layer}!Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}}
+\index{Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}!caffe\+::\+Contrastive\+Loss\+Layer@{caffe\+::\+Contrastive\+Loss\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Bottom\+Blobs() const }{ExactNumBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Contrastive\+Loss\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1ContrastiveLossLayer_af1b8bcaf8ddacd3e98e26c558c7f49a0}{}\label{classcaffe_1_1ContrastiveLossLayer_af1b8bcaf8ddacd3e98e26c558c7f49a0}
+
+
+Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1LossLayer_a8a2e16d4691640c34e589aac4ec42e28}{caffe\+::\+Loss\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Contrastive\+Loss\+Layer@{caffe\+::\+Contrastive\+Loss\+Layer}!Forward\+\_\+cpu@{Forward\+\_\+cpu}}
+\index{Forward\+\_\+cpu@{Forward\+\_\+cpu}!caffe\+::\+Contrastive\+Loss\+Layer@{caffe\+::\+Contrastive\+Loss\+Layer}}
+\subsubsection[{\texorpdfstring{Forward\+\_\+cpu(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Forward_cpu(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Contrastive\+Loss\+Layer}$<$ Dtype $>$\+::Forward\+\_\+cpu (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1ContrastiveLossLayer_a0719301088807da84f30ef2f028d0fde}{}\label{classcaffe_1_1ContrastiveLossLayer_a0719301088807da84f30ef2f028d0fde}
+
+
+Computes the contrastive loss $ E = \frac{1}{2N} \sum\limits_{n=1}^N \left(y\right) d^2 + \left(1-y\right) \max \left(margin-d, 0\right)^2 $ where $ d = \left| \left| a_n - b_n \right| \right|_2 $. This can be used to train siamese networks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 3)
+\begin{DoxyEnumerate}
+\item $ (N \times C \times 1 \times 1) $ the features $ a \in [-\infty, +\infty]$
+\item $ (N \times C \times 1 \times 1) $ the features $ b \in [-\infty, +\infty]$
+\item $ (N \times 1 \times 1 \times 1) $ the binary similarity $ s \in [0, 1]$ 
+\end{DoxyEnumerate}\\
+\hline
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1)
+\begin{DoxyEnumerate}
+\item $ (1 \times 1 \times 1 \times 1) $ the computed contrastive loss\+: $ E = \frac{1}{2N} \sum\limits_{n=1}^N \left(y\right) d^2 + \left(1-y\right) \max \left(margin-d, 0\right)^2 $ where $ d = \left| \left| a_n - b_n \right| \right|_2 $. This can be used to train siamese networks. 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classcaffe_1_1Layer_add965883f75bbf90c7a06f960cda7a1a}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Contrastive\+Loss\+Layer@{caffe\+::\+Contrastive\+Loss\+Layer}!Layer\+Set\+Up@{Layer\+Set\+Up}}
+\index{Layer\+Set\+Up@{Layer\+Set\+Up}!caffe\+::\+Contrastive\+Loss\+Layer@{caffe\+::\+Contrastive\+Loss\+Layer}}
+\subsubsection[{\texorpdfstring{Layer\+Set\+Up(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{LayerSetUp(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Contrastive\+Loss\+Layer}$<$ Dtype $>$\+::Layer\+Set\+Up (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1ContrastiveLossLayer_a34a16b3e6598ec6c23e63c01ef0c0a99}{}\label{classcaffe_1_1ContrastiveLossLayer_a34a16b3e6598ec6c23e63c01ef0c0a99}
+
+
+Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the preshaped input blobs, whose data fields store the input data for this layer \\
+\hline
+{\em top} & the allocated but unshaped output blobs\\
+\hline
+\end{DoxyParams}
+This method should do one-\/time layer specific setup. This includes reading and processing relevent parameters from the {\ttfamily layer\+\_\+param\+\_\+}. Setting up the shapes of top blobs and internal buffers should be done in {\ttfamily Reshape}, which will be called before the forward pass to adjust the top blob sizes. 
+
+Reimplemented from \hyperlink{classcaffe_1_1LossLayer_a98084e06f7ca0e44c11aee5544379609}{caffe\+::\+Loss\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/contrastive\+\_\+loss\+\_\+layer.\+hpp\item 
+src/caffe/layers/contrastive\+\_\+loss\+\_\+layer.\+cpp\end{DoxyCompactItemize}

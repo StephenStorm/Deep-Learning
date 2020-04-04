@@ -1,0 +1,44 @@
+\hypertarget{classcaffe_1_1MSRAFiller}{}\section{caffe\+:\+:M\+S\+R\+A\+Filler$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1MSRAFiller}\index{caffe\+::\+M\+S\+R\+A\+Filler$<$ Dtype $>$@{caffe\+::\+M\+S\+R\+A\+Filler$<$ Dtype $>$}}
+
+
+Fills a \hyperlink{classcaffe_1_1Blob}{Blob} with values $ x \sim N(0, \sigma^2) $ where $ \sigma^2 $ is set inversely proportional to number of incoming nodes, outgoing nodes, or their average.  
+
+
+
+
+{\ttfamily \#include $<$filler.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:M\+S\+R\+A\+Filler$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcaffe_1_1MSRAFiller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries M\+S\+R\+A\+Filler} (const Filler\+Parameter \&param)\hypertarget{classcaffe_1_1MSRAFiller_a68b0367c462b9cfce5379074105282c9}{}\label{classcaffe_1_1MSRAFiller_a68b0367c462b9cfce5379074105282c9}
+
+\item 
+virtual void {\bfseries Fill} (\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$blob)\hypertarget{classcaffe_1_1MSRAFiller_a174e9fab9be5c0c598680bebc621ab8f}{}\label{classcaffe_1_1MSRAFiller_a174e9fab9be5c0c598680bebc621ab8f}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+M\+S\+R\+A\+Filler$<$ Dtype $>$}
+
+Fills a \hyperlink{classcaffe_1_1Blob}{Blob} with values $ x \sim N(0, \sigma^2) $ where $ \sigma^2 $ is set inversely proportional to number of incoming nodes, outgoing nodes, or their average. 
+
+A \hyperlink{classcaffe_1_1Filler}{Filler} based on the paper \mbox{[}He, Zhang, Ren and Sun 2015\mbox{]}\+: Specifically accounts for Re\+LU nonlinearities.
+
+Aside\+: for another perspective on the scaling factor, see the derivation of \mbox{[}Saxe, Mc\+Clelland, and Ganguli 2013 (v3)\mbox{]}.
+
+It fills the incoming matrix by randomly sampling Gaussian data with std = sqrt(2 / n) where n is the fan\+\_\+in, fan\+\_\+out, or their average, depending on the variance\+\_\+norm option. You should make sure the input blob has shape (num, a, b, c) where a $\ast$ b $\ast$ c = fan\+\_\+in and num $\ast$ b $\ast$ c = fan\+\_\+out. Note that this is currently not the case for inner product layers. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/filler.\+hpp\end{DoxyCompactItemize}

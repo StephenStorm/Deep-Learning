@@ -1,0 +1,1464 @@
+\hypertarget{namespacecaffe}{}\section{caffe Namespace Reference}
+\label{namespacecaffe}\index{caffe@{caffe}}
+
+
+A layer factory that allows one to register layers. During runtime, registered layers can be called by passing a Layer\+Parameter protobuffer to the Create\+Layer function\+:  
+
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacecaffe_1_1SolverAction}{Solver\+Action}
+\begin{DoxyCompactList}\small\item\em Enumeration of actions that a client of the \hyperlink{classcaffe_1_1Solver}{Solver} may request by implementing the \hyperlink{classcaffe_1_1Solver}{Solver}\textquotesingle{}s action request function, which a client may optionally provide in order to request early termination or saving a snapshot without exiting. In the executable caffe, this mechanism is used to allow the snapshot to be saved when stopping execution with a S\+I\+G\+I\+NT (Ctrl-\/C). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcaffe_1_1AbsValLayer}{Abs\+Val\+Layer}
+\begin{DoxyCompactList}\small\item\em Computes $ y = |x| $. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1AccuracyLayer}{Accuracy\+Layer}
+\begin{DoxyCompactList}\small\item\em Computes the classification accuracy for a one-\/of-\/many classification task. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1AdaDeltaSolver}{Ada\+Delta\+Solver}
+\item 
+class \hyperlink{classcaffe_1_1AdaGradSolver}{Ada\+Grad\+Solver}
+\item 
+class \hyperlink{classcaffe_1_1AdamSolver}{Adam\+Solver}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classcaffe_1_1AdamSolver}{Adam\+Solver}, an algorithm for first-\/order gradient-\/based optimization of stochastic objective functions, based on adaptive estimates of lower-\/order moments. Described in \mbox{[}1\mbox{]}. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1ArgMaxLayer}{Arg\+Max\+Layer}
+\begin{DoxyCompactList}\small\item\em Compute the index of the $ K $ max values for each datum across all dimensions $ (C \times H \times W) $. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1BaseConvolutionLayer}{Base\+Convolution\+Layer}
+\begin{DoxyCompactList}\small\item\em Abstract base class that factors out the B\+L\+AS code common to \hyperlink{classcaffe_1_1ConvolutionLayer}{Convolution\+Layer} and \hyperlink{classcaffe_1_1DeconvolutionLayer}{Deconvolution\+Layer}. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1BaseDataLayer}{Base\+Data\+Layer}
+\begin{DoxyCompactList}\small\item\em Provides base for data layers that feed blobs to the \hyperlink{classcaffe_1_1Net}{Net}. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1BasePrefetchingDataLayer}{Base\+Prefetching\+Data\+Layer}
+\item 
+class \hyperlink{classcaffe_1_1Batch}{Batch}
+\item 
+class \hyperlink{classcaffe_1_1BatchNormLayer}{Batch\+Norm\+Layer}
+\begin{DoxyCompactList}\small\item\em Normalizes the input to have 0-\/mean and/or unit (1) variance across the batch. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1BatchReindexLayer}{Batch\+Reindex\+Layer}
+\begin{DoxyCompactList}\small\item\em Index into the input blob along its first axis. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1BiasLayer}{Bias\+Layer}
+\begin{DoxyCompactList}\small\item\em Computes a sum of two input Blobs, with the shape of the latter \hyperlink{classcaffe_1_1Blob}{Blob} \char`\"{}broadcast\char`\"{} to match the shape of the former. Equivalent to tiling the latter \hyperlink{classcaffe_1_1Blob}{Blob}, then computing the elementwise sum. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1BilinearFiller}{Bilinear\+Filler}
+\begin{DoxyCompactList}\small\item\em Fills a \hyperlink{classcaffe_1_1Blob}{Blob} with coefficients for bilinear interpolation. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1Blob}{Blob}
+\begin{DoxyCompactList}\small\item\em A wrapper around \hyperlink{classcaffe_1_1SyncedMemory}{Synced\+Memory} holders serving as the basic computational unit through which \hyperlink{classcaffe_1_1Layer}{Layer}s, \hyperlink{classcaffe_1_1Net}{Net}s, and \hyperlink{classcaffe_1_1Solver}{Solver}s interact. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1BlockingQueue}{Blocking\+Queue}
+\item 
+class \hyperlink{classcaffe_1_1BNLayer}{B\+N\+Layer}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classcaffe_1_1Batch}{Batch} normalization the input blob along the channel axis while averaging over the spatial axes. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1BNLLLayer}{B\+N\+L\+L\+Layer}
+\begin{DoxyCompactList}\small\item\em Computes $ y = x + \log(1 + \exp(-x)) $ if $ x > 0 $; $ y = \log(1 + \exp(x)) $ otherwise. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1Caffe}{Caffe}
+\item 
+class \hyperlink{classcaffe_1_1ConcatLayer}{Concat\+Layer}
+\begin{DoxyCompactList}\small\item\em Takes at least two \hyperlink{classcaffe_1_1Blob}{Blob}s and concatenates them along either the num or channel dimension, outputting the result. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1ConstantFiller}{Constant\+Filler}
+\begin{DoxyCompactList}\small\item\em Fills a \hyperlink{classcaffe_1_1Blob}{Blob} with constant values $ x = 0 $. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1ContrastiveLossLayer}{Contrastive\+Loss\+Layer}
+\begin{DoxyCompactList}\small\item\em Computes the contrastive loss $ E = \frac{1}{2N} \sum\limits_{n=1}^N \left(y\right) d^2 + \left(1-y\right) \max \left(margin-d, 0\right)^2 $ where $ d = \left| \left| a_n - b_n \right| \right|_2 $. This can be used to train siamese networks. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1ConvolutionLayer}{Convolution\+Layer}
+\begin{DoxyCompactList}\small\item\em Convolves the input image with a bank of learned filters, and (optionally) adds biases. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1CPUTimer}{C\+P\+U\+Timer}
+\item 
+class \hyperlink{classcaffe_1_1CropLayer}{Crop\+Layer}
+\begin{DoxyCompactList}\small\item\em Takes a \hyperlink{classcaffe_1_1Blob}{Blob} and crop it, to the shape specified by the second input \hyperlink{classcaffe_1_1Blob}{Blob}, across all dimensions after the specified axis. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1DataLayer}{Data\+Layer}
+\item 
+class \hyperlink{classcaffe_1_1DataTransformer}{Data\+Transformer}
+\begin{DoxyCompactList}\small\item\em Applies common transformations to the input data, such as scaling, mirroring, substracting the image mean... \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1DeconvolutionLayer}{Deconvolution\+Layer}
+\begin{DoxyCompactList}\small\item\em Convolve the input with a bank of learned filters, and (optionally) add biases, treating filters and convolution parameters in the opposite sense as \hyperlink{classcaffe_1_1ConvolutionLayer}{Convolution\+Layer}. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1DropoutLayer}{Dropout\+Layer}
+\begin{DoxyCompactList}\small\item\em During training only, sets a random portion of $x$ to 0, adjusting the rest of the vector magnitude accordingly. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1DummyDataLayer}{Dummy\+Data\+Layer}
+\begin{DoxyCompactList}\small\item\em Provides data to the \hyperlink{classcaffe_1_1Net}{Net} generated by a \hyperlink{classcaffe_1_1Filler}{Filler}. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1EltwiseLayer}{Eltwise\+Layer}
+\begin{DoxyCompactList}\small\item\em Compute elementwise operations, such as product and sum, along multiple input Blobs. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1ELULayer}{E\+L\+U\+Layer}
+\begin{DoxyCompactList}\small\item\em Exponential Linear Unit non-\/linearity $ y = \left\{ \begin{array}{lr} x & \mathrm{if} \; x > 0 \\ \alpha (\exp(x)-1) & \mathrm{if} \; x \le 0 \end{array} \right. $. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1EmbedLayer}{Embed\+Layer}
+\begin{DoxyCompactList}\small\item\em A layer for learning \char`\"{}embeddings\char`\"{} of one-\/hot vector input. Equivalent to an \hyperlink{classcaffe_1_1InnerProductLayer}{Inner\+Product\+Layer} with one-\/hot vectors as input, but for efficiency the input is the \char`\"{}hot\char`\"{} index of each column itself. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1EuclideanLossLayer}{Euclidean\+Loss\+Layer}
+\begin{DoxyCompactList}\small\item\em Computes the Euclidean (L2) loss $ E = \frac{1}{2N} \sum\limits_{n=1}^N \left| \left| \hat{y}_n - y_n \right| \right|_2^2 $ for real-\/valued regression tasks. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1ExpLayer}{Exp\+Layer}
+\begin{DoxyCompactList}\small\item\em Computes $ y = \gamma ^ {\alpha x + \beta} $, as specified by the scale $ \alpha $, shift $ \beta $, and base $ \gamma $. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1Filler}{Filler}
+\begin{DoxyCompactList}\small\item\em Fills a \hyperlink{classcaffe_1_1Blob}{Blob} with constant or randomly-\/generated data. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1FilterLayer}{Filter\+Layer}
+\begin{DoxyCompactList}\small\item\em Takes two+ Blobs, interprets last \hyperlink{classcaffe_1_1Blob}{Blob} as a selector and filter remaining Blobs accordingly with selector data (0 means that the corresponding item has to be filtered, non-\/zero means that corresponding item needs to stay). \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1FlattenLayer}{Flatten\+Layer}
+\begin{DoxyCompactList}\small\item\em Reshapes the input \hyperlink{classcaffe_1_1Blob}{Blob} into flat vectors. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1GaussianFiller}{Gaussian\+Filler}
+\begin{DoxyCompactList}\small\item\em Fills a \hyperlink{classcaffe_1_1Blob}{Blob} with Gaussian-\/distributed values $ x = a $. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1HDF5DataLayer}{H\+D\+F5\+Data\+Layer}
+\begin{DoxyCompactList}\small\item\em Provides data to the \hyperlink{classcaffe_1_1Net}{Net} from H\+D\+F5 files. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1HDF5OutputLayer}{H\+D\+F5\+Output\+Layer}
+\begin{DoxyCompactList}\small\item\em Write blobs to disk as H\+D\+F5 files. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1HingeLossLayer}{Hinge\+Loss\+Layer}
+\begin{DoxyCompactList}\small\item\em Computes the hinge loss for a one-\/of-\/many classification task. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1Im2colLayer}{Im2col\+Layer}
+\begin{DoxyCompactList}\small\item\em A helper for image operations that rearranges image regions into column vectors. Used by \hyperlink{classcaffe_1_1ConvolutionLayer}{Convolution\+Layer} to perform convolution by matrix multiplication. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1ImageDataLayer}{Image\+Data\+Layer}
+\begin{DoxyCompactList}\small\item\em Provides data to the \hyperlink{classcaffe_1_1Net}{Net} from image files. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1InfogainLossLayer}{Infogain\+Loss\+Layer}
+\begin{DoxyCompactList}\small\item\em A generalization of \hyperlink{classcaffe_1_1SoftmaxWithLossLayer}{Softmax\+With\+Loss\+Layer} that takes an \char`\"{}information gain\char`\"{} (infogain) matrix specifying the \char`\"{}value\char`\"{} of all label pairs. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1InnerProductLayer}{Inner\+Product\+Layer}
+\begin{DoxyCompactList}\small\item\em Also known as a \char`\"{}fully-\/connected\char`\"{} layer, computes an inner product with a set of learned weights, and (optionally) adds biases. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1InputLayer}{Input\+Layer}
+\begin{DoxyCompactList}\small\item\em Provides data to the \hyperlink{classcaffe_1_1Net}{Net} by assigning tops directly. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1InternalThread}{Internal\+Thread}
+\item 
+class \hyperlink{classcaffe_1_1InterpLayer}{Interp\+Layer}
+\begin{DoxyCompactList}\small\item\em Changes the spatial resolution by bi-\/linear interpolation. The target size is specified in terms of pixels. The start and end pixels of the input are mapped to the start and end pixels of the output. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1Layer}{Layer}
+\begin{DoxyCompactList}\small\item\em An interface for the units of computation which can be composed into a \hyperlink{classcaffe_1_1Net}{Net}. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1LayerRegisterer}{Layer\+Registerer}
+\item 
+class \hyperlink{classcaffe_1_1LayerRegistry}{Layer\+Registry}
+\item 
+class \hyperlink{classcaffe_1_1LogLayer}{Log\+Layer}
+\begin{DoxyCompactList}\small\item\em Computes $ y = log_{\gamma}(\alpha x + \beta) $, as specified by the scale $ \alpha $, shift $ \beta $, and base $ \gamma $. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1LossLayer}{Loss\+Layer}
+\begin{DoxyCompactList}\small\item\em An interface for \hyperlink{classcaffe_1_1Layer}{Layer}s that take two \hyperlink{classcaffe_1_1Blob}{Blob}s as input -- usually (1) predictions and (2) ground-\/truth labels -- and output a singleton \hyperlink{classcaffe_1_1Blob}{Blob} representing the loss. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1LRNLayer}{L\+R\+N\+Layer}
+\begin{DoxyCompactList}\small\item\em Normalize the input in a local region across or within feature maps. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1LSTMLayer}{L\+S\+T\+M\+Layer}
+\begin{DoxyCompactList}\small\item\em Processes sequential inputs using a \char`\"{}\+Long Short-\/\+Term Memory\char`\"{} (L\+S\+TM) \mbox{[}1\mbox{]} style recurrent neural network (R\+NN). Implemented by unrolling the L\+S\+TM computation through time. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1LSTMUnitLayer}{L\+S\+T\+M\+Unit\+Layer}
+\begin{DoxyCompactList}\small\item\em A helper for \hyperlink{classcaffe_1_1LSTMLayer}{L\+S\+T\+M\+Layer}\+: computes a single timestep of the non-\/linearity of the L\+S\+TM, producing the updated cell and hidden states. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1MemoryDataLayer}{Memory\+Data\+Layer}
+\begin{DoxyCompactList}\small\item\em Provides data to the \hyperlink{classcaffe_1_1Net}{Net} from memory. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1MSRAFiller}{M\+S\+R\+A\+Filler}
+\begin{DoxyCompactList}\small\item\em Fills a \hyperlink{classcaffe_1_1Blob}{Blob} with values $ x \sim N(0, \sigma^2) $ where $ \sigma^2 $ is set inversely proportional to number of incoming nodes, outgoing nodes, or their average. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1MultinomialLogisticLossLayer}{Multinomial\+Logistic\+Loss\+Layer}
+\begin{DoxyCompactList}\small\item\em Computes the multinomial logistic loss for a one-\/of-\/many classification task, directly taking a predicted probability distribution as input. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1MVNLayer}{M\+V\+N\+Layer}
+\begin{DoxyCompactList}\small\item\em Normalizes the input to have 0-\/mean and/or unit (1) variance. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1NesterovSolver}{Nesterov\+Solver}
+\item 
+class \hyperlink{classcaffe_1_1Net}{Net}
+\begin{DoxyCompactList}\small\item\em Connects \hyperlink{classcaffe_1_1Layer}{Layer}s together into a directed acyclic graph (D\+AG) specified by a Net\+Parameter. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1NeuronLayer}{Neuron\+Layer}
+\begin{DoxyCompactList}\small\item\em An interface for layers that take one blob as input ( $ x $) and produce one equally-\/sized blob as output ( $ y $), where each element of the output depends only on the corresponding input element. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1ParameterLayer}{Parameter\+Layer}
+\item 
+class \hyperlink{classcaffe_1_1PoolingLayer}{Pooling\+Layer}
+\begin{DoxyCompactList}\small\item\em Pools the input image by taking the max, average, etc. within regions. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1PositiveUnitballFiller}{Positive\+Unitball\+Filler}
+\begin{DoxyCompactList}\small\item\em Fills a \hyperlink{classcaffe_1_1Blob}{Blob} with values $ x \in [0, 1] $ such that $ \forall i \sum_j x_{ij} = 1 $. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1PowerLayer}{Power\+Layer}
+\begin{DoxyCompactList}\small\item\em Computes $ y = (\alpha x + \beta) ^ \gamma $, as specified by the scale $ \alpha $, shift $ \beta $, and power $ \gamma $. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1PReLULayer}{P\+Re\+L\+U\+Layer}
+\begin{DoxyCompactList}\small\item\em Parameterized Rectified Linear Unit non-\/linearity $ y_i = \max(0, x_i) + a_i \min(0, x_i) $. The differences from \hyperlink{classcaffe_1_1ReLULayer}{Re\+L\+U\+Layer} are 1) negative slopes are learnable though backprop and 2) negative slopes can vary across channels. The number of axes of input blob should be greater than or equal to 2. The 1st axis (0-\/based) is seen as channels. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1PythonLayer}{Python\+Layer}
+\item 
+class \hyperlink{classcaffe_1_1RecurrentLayer}{Recurrent\+Layer}
+\begin{DoxyCompactList}\small\item\em An abstract class for implementing recurrent behavior inside of an unrolled network. This \hyperlink{classcaffe_1_1Layer}{Layer} type cannot be instantiated -- instead, you should use one of its implementations which defines the recurrent architecture, such as \hyperlink{classcaffe_1_1RNNLayer}{R\+N\+N\+Layer} or \hyperlink{classcaffe_1_1LSTMLayer}{L\+S\+T\+M\+Layer}. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1ReductionLayer}{Reduction\+Layer}
+\begin{DoxyCompactList}\small\item\em Compute \char`\"{}reductions\char`\"{} -- operations that return a scalar output \hyperlink{classcaffe_1_1Blob}{Blob} for an input \hyperlink{classcaffe_1_1Blob}{Blob} of arbitrary size, such as the sum, absolute sum, and sum of squares. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1ReLULayer}{Re\+L\+U\+Layer}
+\begin{DoxyCompactList}\small\item\em Rectified Linear Unit non-\/linearity $ y = \max(0, x) $. The simple max is fast to compute, and the function does not saturate. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1ReshapeLayer}{Reshape\+Layer}
+\item 
+class \hyperlink{classcaffe_1_1RMSPropSolver}{R\+M\+S\+Prop\+Solver}
+\item 
+class \hyperlink{classcaffe_1_1RNNLayer}{R\+N\+N\+Layer}
+\begin{DoxyCompactList}\small\item\em Processes time-\/varying inputs using a simple recurrent neural network (R\+NN). Implemented as a network unrolling the R\+NN computation in time. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1ScaleLayer}{Scale\+Layer}
+\begin{DoxyCompactList}\small\item\em Computes the elementwise product of two input Blobs, with the shape of the latter \hyperlink{classcaffe_1_1Blob}{Blob} \char`\"{}broadcast\char`\"{} to match the shape of the former. Equivalent to tiling the latter \hyperlink{classcaffe_1_1Blob}{Blob}, then computing the elementwise product. Note\+: for efficiency and convenience, this layer can additionally perform a \char`\"{}broadcast\char`\"{} sum too when {\ttfamily bias\+\_\+term\+: true} is set. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1SGDSolver}{S\+G\+D\+Solver}
+\begin{DoxyCompactList}\small\item\em Optimizes the parameters of a \hyperlink{classcaffe_1_1Net}{Net} using stochastic gradient descent (S\+GD) with momentum. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1SigmoidCrossEntropyLossLayer}{Sigmoid\+Cross\+Entropy\+Loss\+Layer}
+\begin{DoxyCompactList}\small\item\em Computes the cross-\/entropy (logistic) loss $ E = \frac{-1}{n} \sum\limits_{n=1}^N \left[ p_n \log \hat{p}_n + (1 - p_n) \log(1 - \hat{p}_n) \right] $, often used for predicting targets interpreted as probabilities. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1SigmoidLayer}{Sigmoid\+Layer}
+\begin{DoxyCompactList}\small\item\em Sigmoid function non-\/linearity $ y = (1 + \exp(-x))^{-1} $, a classic choice in neural networks. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1SignalHandler}{Signal\+Handler}
+\item 
+class \hyperlink{classcaffe_1_1SilenceLayer}{Silence\+Layer}
+\begin{DoxyCompactList}\small\item\em Ignores bottom blobs while producing no top blobs. (This is useful to suppress outputs during testing.) \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1SliceLayer}{Slice\+Layer}
+\begin{DoxyCompactList}\small\item\em Takes a \hyperlink{classcaffe_1_1Blob}{Blob} and slices it along either the num or channel dimension, outputting multiple sliced \hyperlink{classcaffe_1_1Blob}{Blob} results. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1SoftmaxLayer}{Softmax\+Layer}
+\begin{DoxyCompactList}\small\item\em Computes the softmax function. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1SoftmaxWithLossLayer}{Softmax\+With\+Loss\+Layer}
+\begin{DoxyCompactList}\small\item\em Computes the multinomial logistic loss for a one-\/of-\/many classification task, passing real-\/valued predictions through a softmax to get a probability distribution over classes. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1Solver}{Solver}
+\begin{DoxyCompactList}\small\item\em An interface for classes that perform optimization on \hyperlink{classcaffe_1_1Net}{Net}s. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1SolverRegisterer}{Solver\+Registerer}
+\item 
+class \hyperlink{classcaffe_1_1SolverRegistry}{Solver\+Registry}
+\item 
+class \hyperlink{classcaffe_1_1SplitLayer}{Split\+Layer}
+\begin{DoxyCompactList}\small\item\em Creates a \char`\"{}split\char`\"{} path in the network by copying the bottom \hyperlink{classcaffe_1_1Blob}{Blob} into multiple top \hyperlink{classcaffe_1_1Blob}{Blob}s to be used by multiple consuming layers. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1SPPLayer}{S\+P\+P\+Layer}
+\begin{DoxyCompactList}\small\item\em Does spatial pyramid pooling on the input image by taking the max, average, etc. within regions so that the result vector of different sized images are of the same size. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1SwishLayer}{Swish\+Layer}
+\begin{DoxyCompactList}\small\item\em Swish non-\/linearity $ y = x \sigma (\beta x) $. A novel activation function that tends to work better than Re\+LU \mbox{[}1\mbox{]}. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1SyncedMemory}{Synced\+Memory}
+\begin{DoxyCompactList}\small\item\em Manages memory allocation and synchronization between the host (C\+PU) and device (G\+PU). \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1TanHLayer}{Tan\+H\+Layer}
+\begin{DoxyCompactList}\small\item\em TanH hyperbolic tangent non-\/linearity $ y = \frac{\exp(2x) - 1}{\exp(2x) + 1} $, popular in auto-\/encoders. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1ThresholdLayer}{Threshold\+Layer}
+\begin{DoxyCompactList}\small\item\em Tests whether the input exceeds a threshold\+: outputs 1 for inputs above threshold; 0 otherwise. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1TileLayer}{Tile\+Layer}
+\begin{DoxyCompactList}\small\item\em Copy a \hyperlink{classcaffe_1_1Blob}{Blob} along specified dimensions. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1Timer}{Timer}
+\item 
+class \hyperlink{classcaffe_1_1UniformFiller}{Uniform\+Filler}
+\begin{DoxyCompactList}\small\item\em Fills a \hyperlink{classcaffe_1_1Blob}{Blob} with uniformly distributed values $ x\sim U(a, b) $. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1WindowDataLayer}{Window\+Data\+Layer}
+\begin{DoxyCompactList}\small\item\em Provides data to the \hyperlink{classcaffe_1_1Net}{Net} from windows of images files, specified by a window data file. This layer is {\itshape D\+E\+P\+R\+E\+C\+A\+T\+ED} and only kept for archival purposes for use by the original R-\/\+C\+NN. \end{DoxyCompactList}\item 
+class \hyperlink{classcaffe_1_1XavierFiller}{Xavier\+Filler}
+\begin{DoxyCompactList}\small\item\em Fills a \hyperlink{classcaffe_1_1Blob}{Blob} with values $ x \sim U(-a, +a) $ where $ a $ is set inversely proportional to number of incoming nodes, outgoing nodes, or their average. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::function$<$ Solver\+Action\+::\+Enum()$>$ \hyperlink{namespacecaffe_a79ce9ffbdd44b367252e0b8cf99bf430}{Action\+Callback}\hypertarget{namespacecaffe_a79ce9ffbdd44b367252e0b8cf99bf430}{}\label{namespacecaffe_a79ce9ffbdd44b367252e0b8cf99bf430}
+
+\begin{DoxyCompactList}\small\item\em Type of a function that returns a \hyperlink{classcaffe_1_1Solver}{Solver} Action enumeration. \end{DoxyCompactList}\item 
+typedef boost\+::mt19937 {\bfseries rng\+\_\+t}\hypertarget{namespacecaffe_aeff0d41eefd30caf64b0c9d03e142af3}{}\label{namespacecaffe_aeff0d41eefd30caf64b0c9d03e142af3}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Global\+Init} (int $\ast$pargc, char $\ast$$\ast$$\ast$pargv)\hypertarget{namespacecaffe_aeb24443c97c8ad71325dab3e8b6fe8fa}{}\label{namespacecaffe_aeb24443c97c8ad71325dab3e8b6fe8fa}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\\hyperlink{classcaffe_1_1Filler}{Filler}$<$ Dtype $>$ $\ast$ \hyperlink{namespacecaffe_a819e1b2fe30b54d6df0fd88e646ec126}{Get\+Filler} (const Filler\+Parameter \&param)
+\begin{DoxyCompactList}\small\item\em Get a specific filler from the specification given in Filler\+Parameter. \end{DoxyCompactList}\item 
+void {\bfseries Caffe\+Malloc\+Host} (void $\ast$$\ast$ptr, size\+\_\+t size, bool $\ast$use\+\_\+cuda)\hypertarget{namespacecaffe_a1d5bca26af8cf109866f31a6a9250673}{}\label{namespacecaffe_a1d5bca26af8cf109866f31a6a9250673}
+
+\item 
+void {\bfseries Caffe\+Free\+Host} (void $\ast$ptr, bool use\+\_\+cuda)\hypertarget{namespacecaffe_a7f7cfe1afc7fa32c3f52d12184d8c00d}{}\label{namespacecaffe_a7f7cfe1afc7fa32c3f52d12184d8c00d}
+
+\item 
+const char $\ast$ {\bfseries cublas\+Get\+Error\+String} (cublas\+Status\+\_\+t error)\hypertarget{namespacecaffe_ad035f2ba804d9d55dfe0076375a8516c}{}\label{namespacecaffe_ad035f2ba804d9d55dfe0076375a8516c}
+
+\item 
+const char $\ast$ {\bfseries curand\+Get\+Error\+String} (curand\+Status\+\_\+t error)\hypertarget{namespacecaffe_a8a736b14d6bccddf4aaf8f6b91db9fc5}{}\label{namespacecaffe_a8a736b14d6bccddf4aaf8f6b91db9fc5}
+
+\item 
+int {\bfseries C\+A\+F\+F\+E\+\_\+\+G\+E\+T\+\_\+\+B\+L\+O\+C\+KS} (const int N)\hypertarget{namespacecaffe_a8e21af5757c4326c467f2aafac590350}{}\label{namespacecaffe_a8e21af5757c4326c467f2aafac590350}
+
+\item 
+std\+::string {\bfseries format\+\_\+int} (int n, int number\+Of\+Leading\+Zeros=0)\hypertarget{namespacecaffe_a9a6e9df65e5752f2fccc3764efcb310a}{}\label{namespacecaffe_a9a6e9df65e5752f2fccc3764efcb310a}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries hdf5\+\_\+load\+\_\+nd\+\_\+dataset\+\_\+helper} (hid\+\_\+t file\+\_\+id, const char $\ast$dataset\+\_\+name\+\_\+, int min\+\_\+dim, int max\+\_\+dim, \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$blob, bool reshape)\hypertarget{namespacecaffe_ab9688e52d4b07eb170658282ab0d5e1b}{}\label{namespacecaffe_ab9688e52d4b07eb170658282ab0d5e1b}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries hdf5\+\_\+load\+\_\+nd\+\_\+dataset} (hid\+\_\+t file\+\_\+id, const char $\ast$dataset\+\_\+name\+\_\+, int min\+\_\+dim, int max\+\_\+dim, \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$blob, bool reshape=false)\hypertarget{namespacecaffe_acc6c659efb146464737ad573f6662e0b}{}\label{namespacecaffe_acc6c659efb146464737ad573f6662e0b}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries hdf5\+\_\+save\+\_\+nd\+\_\+dataset} (const hid\+\_\+t file\+\_\+id, const string \&dataset\+\_\+name, const \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ \&blob, bool write\+\_\+diff=false)\hypertarget{namespacecaffe_a54a9b96a2fd60bdd4df802248d1d241a}{}\label{namespacecaffe_a54a9b96a2fd60bdd4df802248d1d241a}
+
+\item 
+int {\bfseries hdf5\+\_\+load\+\_\+int} (hid\+\_\+t loc\+\_\+id, const string \&dataset\+\_\+name)\hypertarget{namespacecaffe_af13193217dcca8c363172e4879032903}{}\label{namespacecaffe_af13193217dcca8c363172e4879032903}
+
+\item 
+void {\bfseries hdf5\+\_\+save\+\_\+int} (hid\+\_\+t loc\+\_\+id, const string \&dataset\+\_\+name, int i)\hypertarget{namespacecaffe_a7d7369c88d93cff8a76e3abf0d675ce7}{}\label{namespacecaffe_a7d7369c88d93cff8a76e3abf0d675ce7}
+
+\item 
+string {\bfseries hdf5\+\_\+load\+\_\+string} (hid\+\_\+t loc\+\_\+id, const string \&dataset\+\_\+name)\hypertarget{namespacecaffe_a0b914c70a5b96bf41d1fcb7b5966981d}{}\label{namespacecaffe_a0b914c70a5b96bf41d1fcb7b5966981d}
+
+\item 
+void {\bfseries hdf5\+\_\+save\+\_\+string} (hid\+\_\+t loc\+\_\+id, const string \&dataset\+\_\+name, const string \&s)\hypertarget{namespacecaffe_adebcd3841c17a53e5272ca12dd56c332}{}\label{namespacecaffe_adebcd3841c17a53e5272ca12dd56c332}
+
+\item 
+int {\bfseries hdf5\+\_\+get\+\_\+num\+\_\+links} (hid\+\_\+t loc\+\_\+id)\hypertarget{namespacecaffe_af264874274a4bd45b677bfef7e3bdc1c}{}\label{namespacecaffe_af264874274a4bd45b677bfef7e3bdc1c}
+
+\item 
+string {\bfseries hdf5\+\_\+get\+\_\+name\+\_\+by\+\_\+idx} (hid\+\_\+t loc\+\_\+id, int idx)\hypertarget{namespacecaffe_ac77f870cd203946f61302327a8daa587}{}\label{namespacecaffe_ac77f870cd203946f61302327a8daa587}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries im2col\+\_\+nd\+\_\+cpu} (const Dtype $\ast$data\+\_\+im, const int num\+\_\+spatial\+\_\+axes, const int $\ast$im\+\_\+shape, const int $\ast$col\+\_\+shape, const int $\ast$kernel\+\_\+shape, const int $\ast$pad, const int $\ast$stride, const int $\ast$dilation, Dtype $\ast$data\+\_\+col)\hypertarget{namespacecaffe_a463706709984840b548f4f90f3348fd4}{}\label{namespacecaffe_a463706709984840b548f4f90f3348fd4}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries im2col\+\_\+cpu} (const Dtype $\ast$data\+\_\+im, const int channels, const int height, const int width, const int kernel\+\_\+h, const int kernel\+\_\+w, const int pad\+\_\+h, const int pad\+\_\+w, const int stride\+\_\+h, const int stride\+\_\+w, const int dilation\+\_\+h, const int dilation\+\_\+w, Dtype $\ast$data\+\_\+col)\hypertarget{namespacecaffe_a2cdc1aff8ca2c529244c102abc8c0915}{}\label{namespacecaffe_a2cdc1aff8ca2c529244c102abc8c0915}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries col2im\+\_\+nd\+\_\+cpu} (const Dtype $\ast$data\+\_\+col, const int num\+\_\+spatial\+\_\+axes, const int $\ast$im\+\_\+shape, const int $\ast$col\+\_\+shape, const int $\ast$kernel\+\_\+shape, const int $\ast$pad, const int $\ast$stride, const int $\ast$dilation, Dtype $\ast$data\+\_\+im)\hypertarget{namespacecaffe_a150b43194bdd49662ea08714dcdf9f1b}{}\label{namespacecaffe_a150b43194bdd49662ea08714dcdf9f1b}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries col2im\+\_\+cpu} (const Dtype $\ast$data\+\_\+col, const int channels, const int height, const int width, const int kernel\+\_\+h, const int kernel\+\_\+w, const int pad\+\_\+h, const int pad\+\_\+w, const int stride\+\_\+h, const int stride\+\_\+w, const int dilation\+\_\+h, const int dilation\+\_\+w, Dtype $\ast$data\+\_\+im)\hypertarget{namespacecaffe_a0bad496a30ad02eea6f8da9efe1e3882}{}\label{namespacecaffe_a0bad496a30ad02eea6f8da9efe1e3882}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries im2col\+\_\+nd\+\_\+gpu} (const Dtype $\ast$data\+\_\+im, const int num\+\_\+spatial\+\_\+axes, const int col\+\_\+size, const int $\ast$im\+\_\+shape, const int $\ast$col\+\_\+shape, const int $\ast$kernel\+\_\+shape, const int $\ast$pad, const int $\ast$stride, const int $\ast$dilation, Dtype $\ast$data\+\_\+col)\hypertarget{namespacecaffe_a0736a4a69e31bd1393784a01a46a2b09}{}\label{namespacecaffe_a0736a4a69e31bd1393784a01a46a2b09}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries im2col\+\_\+gpu} (const Dtype $\ast$data\+\_\+im, const int channels, const int height, const int width, const int kernel\+\_\+h, const int kernel\+\_\+w, const int pad\+\_\+h, const int pad\+\_\+w, const int stride\+\_\+h, const int stride\+\_\+w, const int dilation\+\_\+h, const int dilation\+\_\+w, Dtype $\ast$data\+\_\+col)\hypertarget{namespacecaffe_ad5ff36770d0a1de6cc2fcc03d6c6298a}{}\label{namespacecaffe_ad5ff36770d0a1de6cc2fcc03d6c6298a}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries col2im\+\_\+nd\+\_\+gpu} (const Dtype $\ast$data\+\_\+col, const int num\+\_\+spatial\+\_\+axes, const int im\+\_\+size, const int $\ast$im\+\_\+shape, const int $\ast$col\+\_\+shape, const int $\ast$kernel\+\_\+shape, const int $\ast$pad, const int $\ast$stride, const int $\ast$dilation, Dtype $\ast$data\+\_\+im)\hypertarget{namespacecaffe_a5ff23ac620a3d5539bace03493192ec3}{}\label{namespacecaffe_a5ff23ac620a3d5539bace03493192ec3}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries col2im\+\_\+gpu} (const Dtype $\ast$data\+\_\+col, const int channels, const int height, const int width, const int kernel\+\_\+h, const int kernel\+\_\+w, const int pad\+\_\+h, const int pad\+\_\+w, const int stride\+\_\+h, const int stride\+\_\+w, const int dilation\+\_\+h, const int dilation\+\_\+w, Dtype $\ast$data\+\_\+im)\hypertarget{namespacecaffe_ab475eb869f36cb9fc5999d48d9bc8451}{}\label{namespacecaffe_ab475eb869f36cb9fc5999d48d9bc8451}
+
+\item 
+void {\bfseries Insert\+Splits} (const Net\+Parameter \&param, Net\+Parameter $\ast$param\+\_\+split)\hypertarget{namespacecaffe_a3496a2d5b76ce0e58d9888c9ccace709}{}\label{namespacecaffe_a3496a2d5b76ce0e58d9888c9ccace709}
+
+\item 
+void {\bfseries Configure\+Split\+Layer} (const string \&layer\+\_\+name, const string \&blob\+\_\+name, const int blob\+\_\+idx, const int split\+\_\+count, const float loss\+\_\+weight, Layer\+Parameter $\ast$split\+\_\+layer\+\_\+param)\hypertarget{namespacecaffe_a5a48192f21125085d45dbcc0d047362b}{}\label{namespacecaffe_a5a48192f21125085d45dbcc0d047362b}
+
+\item 
+string {\bfseries Split\+Layer\+Name} (const string \&layer\+\_\+name, const string \&blob\+\_\+name, const int blob\+\_\+idx)\hypertarget{namespacecaffe_a474555bb59481bf56abf5982dc5f7cd5}{}\label{namespacecaffe_a474555bb59481bf56abf5982dc5f7cd5}
+
+\item 
+string {\bfseries Split\+Blob\+Name} (const string \&layer\+\_\+name, const string \&blob\+\_\+name, const int blob\+\_\+idx, const int split\+\_\+idx)\hypertarget{namespacecaffe_ab4227137f8f8a1a442cb9be8493df381}{}\label{namespacecaffe_ab4227137f8f8a1a442cb9be8493df381}
+
+\item 
+{\footnotesize template$<$typename Dtype , bool packed$>$ }\\void {\bfseries caffe\+\_\+cpu\+\_\+interp2} (const int channels, const Dtype $\ast$data1, const int x1, const int y1, const int height1, const int width1, const int Height1, const int Width1, Dtype $\ast$data2, const int x2, const int y2, const int height2, const int width2, const int Height2, const int Width2)\hypertarget{namespacecaffe_ae5a7b6a0dcb789edea441189e02ec4a1}{}\label{namespacecaffe_ae5a7b6a0dcb789edea441189e02ec4a1}
+
+\item 
+{\footnotesize template$<$typename Dtype , bool packed$>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+interp2} (const int channels, const Dtype $\ast$data1, const int x1, const int y1, const int height1, const int width1, const int Height1, const int Width1, Dtype $\ast$data2, const int x2, const int y2, const int height2, const int width2, const int Height2, const int Width2)\hypertarget{namespacecaffe_afca53d54fbe67bd85f739a8cab68962c}{}\label{namespacecaffe_afca53d54fbe67bd85f739a8cab68962c}
+
+\item 
+{\footnotesize template$<$typename Dtype , bool packed$>$ }\\void {\bfseries caffe\+\_\+cpu\+\_\+interp2\+\_\+backward} (const int channels, Dtype $\ast$data1, const int x1, const int y1, const int height1, const int width1, const int Height1, const int Width1, const Dtype $\ast$data2, const int x2, const int y2, const int height2, const int width2, const int Height2, const int Width2)\hypertarget{namespacecaffe_a191f7f9a18fcdbff216f2c5497c9e8ce}{}\label{namespacecaffe_a191f7f9a18fcdbff216f2c5497c9e8ce}
+
+\item 
+{\footnotesize template$<$typename Dtype , bool packed$>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+interp2\+\_\+backward} (const int channels, Dtype $\ast$data1, const int x1, const int y1, const int height1, const int width1, const int Height1, const int Width1, const Dtype $\ast$data2, const int x2, const int y2, const int height2, const int width2, const int Height2, const int Width2)\hypertarget{namespacecaffe_a5ee91c1c264bbba105750421a9d7240e}{}\label{namespacecaffe_a5ee91c1c264bbba105750421a9d7240e}
+
+\item 
+{\footnotesize template$<$typename Dtype , bool packed$>$ }\\void {\bfseries caffe\+\_\+cpu\+\_\+pyramid2} (const int channels, const Dtype $\ast$data, const int height, const int width, Dtype $\ast$data\+\_\+pyr, const int levels)\hypertarget{namespacecaffe_a7f105cbfa29d106902767c09524509fe}{}\label{namespacecaffe_a7f105cbfa29d106902767c09524509fe}
+
+\item 
+{\footnotesize template$<$typename Dtype , bool packed$>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+pyramid2} (const int channels, const Dtype $\ast$data, const int height, const int width, Dtype $\ast$data\+\_\+pyr, const int levels)\hypertarget{namespacecaffe_a605726f2953a929442d1122f64beea9d}{}\label{namespacecaffe_a605726f2953a929442d1122f64beea9d}
+
+\item 
+void {\bfseries Make\+Temp\+Dir} (string $\ast$temp\+\_\+dirname)\hypertarget{namespacecaffe_a5492e800dfacd1efe281b1e1a2eb771c}{}\label{namespacecaffe_a5492e800dfacd1efe281b1e1a2eb771c}
+
+\item 
+void {\bfseries Make\+Temp\+Filename} (string $\ast$temp\+\_\+filename)\hypertarget{namespacecaffe_aa75d4eed8de6fef77d7af47febca4864}{}\label{namespacecaffe_aa75d4eed8de6fef77d7af47febca4864}
+
+\item 
+bool {\bfseries Read\+Proto\+From\+Text\+File} (const char $\ast$filename, Message $\ast$proto)\hypertarget{namespacecaffe_ab384abf6f635e4c5e2a779a5ec8223b6}{}\label{namespacecaffe_ab384abf6f635e4c5e2a779a5ec8223b6}
+
+\item 
+bool {\bfseries Read\+Proto\+From\+Text\+File} (const string \&filename, Message $\ast$proto)\hypertarget{namespacecaffe_a8e9cbf61e86c52f68a7adefe8d5380e7}{}\label{namespacecaffe_a8e9cbf61e86c52f68a7adefe8d5380e7}
+
+\item 
+void {\bfseries Read\+Proto\+From\+Text\+File\+Or\+Die} (const char $\ast$filename, Message $\ast$proto)\hypertarget{namespacecaffe_ac61af043ef0a554362c306d71f5e3ec8}{}\label{namespacecaffe_ac61af043ef0a554362c306d71f5e3ec8}
+
+\item 
+void {\bfseries Read\+Proto\+From\+Text\+File\+Or\+Die} (const string \&filename, Message $\ast$proto)\hypertarget{namespacecaffe_aecbc91102c643097b7f677c18ba303c3}{}\label{namespacecaffe_aecbc91102c643097b7f677c18ba303c3}
+
+\item 
+void {\bfseries Write\+Proto\+To\+Text\+File} (const Message \&proto, const char $\ast$filename)\hypertarget{namespacecaffe_aa2f483e4300ceff4497891db10371056}{}\label{namespacecaffe_aa2f483e4300ceff4497891db10371056}
+
+\item 
+void {\bfseries Write\+Proto\+To\+Text\+File} (const Message \&proto, const string \&filename)\hypertarget{namespacecaffe_a06a4e7ad1a73458c73e45bbdd2eb207d}{}\label{namespacecaffe_a06a4e7ad1a73458c73e45bbdd2eb207d}
+
+\item 
+bool {\bfseries Read\+Proto\+From\+Binary\+File} (const char $\ast$filename, Message $\ast$proto)\hypertarget{namespacecaffe_a28f2320f8f918424c3b3de6263cf9373}{}\label{namespacecaffe_a28f2320f8f918424c3b3de6263cf9373}
+
+\item 
+bool {\bfseries Read\+Proto\+From\+Binary\+File} (const string \&filename, Message $\ast$proto)\hypertarget{namespacecaffe_a6b764e3a59e45b9a0b5e1cc28426a78c}{}\label{namespacecaffe_a6b764e3a59e45b9a0b5e1cc28426a78c}
+
+\item 
+void {\bfseries Read\+Proto\+From\+Binary\+File\+Or\+Die} (const char $\ast$filename, Message $\ast$proto)\hypertarget{namespacecaffe_a52a3e6165fee228f7976faccedc1d2b1}{}\label{namespacecaffe_a52a3e6165fee228f7976faccedc1d2b1}
+
+\item 
+void {\bfseries Read\+Proto\+From\+Binary\+File\+Or\+Die} (const string \&filename, Message $\ast$proto)\hypertarget{namespacecaffe_a9e124d475fbfbaeb7ad8b1baee9a2a9b}{}\label{namespacecaffe_a9e124d475fbfbaeb7ad8b1baee9a2a9b}
+
+\item 
+void {\bfseries Write\+Proto\+To\+Binary\+File} (const Message \&proto, const char $\ast$filename)\hypertarget{namespacecaffe_a6e669ab7a89a744359cbb041021b6332}{}\label{namespacecaffe_a6e669ab7a89a744359cbb041021b6332}
+
+\item 
+void {\bfseries Write\+Proto\+To\+Binary\+File} (const Message \&proto, const string \&filename)\hypertarget{namespacecaffe_a982f1288dee62760b6599c0948652d6d}{}\label{namespacecaffe_a982f1288dee62760b6599c0948652d6d}
+
+\item 
+bool {\bfseries Read\+File\+To\+Datum} (const string \&filename, const int label, Datum $\ast$datum)\hypertarget{namespacecaffe_aca018a80990483d13e0dfcf50a606d4e}{}\label{namespacecaffe_aca018a80990483d13e0dfcf50a606d4e}
+
+\item 
+bool {\bfseries Read\+File\+To\+Datum} (const string \&filename, Datum $\ast$datum)\hypertarget{namespacecaffe_aa61a3accf826d8c50fe3065ea7e92da3}{}\label{namespacecaffe_aa61a3accf826d8c50fe3065ea7e92da3}
+
+\item 
+bool {\bfseries Read\+Image\+To\+Datum} (const string \&filename, const int label, const int height, const int width, const bool is\+\_\+color, const std\+::string \&encoding, Datum $\ast$datum)\hypertarget{namespacecaffe_ac4005de198b4d9847b1e134c3de69101}{}\label{namespacecaffe_ac4005de198b4d9847b1e134c3de69101}
+
+\item 
+bool {\bfseries Read\+Image\+To\+Datum} (const string \&filename, const int label, const int height, const int width, const bool is\+\_\+color, Datum $\ast$datum)\hypertarget{namespacecaffe_a4aed8828c71f073b318d44e3b5add943}{}\label{namespacecaffe_a4aed8828c71f073b318d44e3b5add943}
+
+\item 
+bool {\bfseries Read\+Image\+To\+Datum} (const string \&filename, const int label, const int height, const int width, Datum $\ast$datum)\hypertarget{namespacecaffe_a8ff5217644f29055cdd8ded8d967af28}{}\label{namespacecaffe_a8ff5217644f29055cdd8ded8d967af28}
+
+\item 
+bool {\bfseries Read\+Image\+To\+Datum} (const string \&filename, const int label, const bool is\+\_\+color, Datum $\ast$datum)\hypertarget{namespacecaffe_acae2bc23e040dc50620e5215ec04d25b}{}\label{namespacecaffe_acae2bc23e040dc50620e5215ec04d25b}
+
+\item 
+bool {\bfseries Read\+Image\+To\+Datum} (const string \&filename, const int label, Datum $\ast$datum)\hypertarget{namespacecaffe_a1004c0112552987ac24bb5b0b1de2116}{}\label{namespacecaffe_a1004c0112552987ac24bb5b0b1de2116}
+
+\item 
+bool {\bfseries Read\+Image\+To\+Datum} (const string \&filename, const int label, const std\+::string \&encoding, Datum $\ast$datum)\hypertarget{namespacecaffe_afa7c4ea7b54a9778a8ee0885e094176b}{}\label{namespacecaffe_afa7c4ea7b54a9778a8ee0885e094176b}
+
+\item 
+bool {\bfseries Decode\+Datum\+Native} (Datum $\ast$datum)\hypertarget{namespacecaffe_a8c85e2fea3e8b4f7cdcb9b668747bc44}{}\label{namespacecaffe_a8c85e2fea3e8b4f7cdcb9b668747bc44}
+
+\item 
+bool {\bfseries Decode\+Datum} (Datum $\ast$datum, bool is\+\_\+color)\hypertarget{namespacecaffe_a6335d16a871bb3f679699b19f3a61faf}{}\label{namespacecaffe_a6335d16a871bb3f679699b19f3a61faf}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+cpu\+\_\+gemm} (const C\+B\+L\+A\+S\+\_\+\+T\+R\+A\+N\+S\+P\+O\+SE TransA, const C\+B\+L\+A\+S\+\_\+\+T\+R\+A\+N\+S\+P\+O\+SE TransB, const int M, const int N, const int K, const Dtype alpha, const Dtype $\ast$A, const Dtype $\ast$B, const Dtype beta, Dtype $\ast$C)\hypertarget{namespacecaffe_aa92272cd2715dcb6bf21cdcec8237434}{}\label{namespacecaffe_aa92272cd2715dcb6bf21cdcec8237434}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+cpu\+\_\+gemv} (const C\+B\+L\+A\+S\+\_\+\+T\+R\+A\+N\+S\+P\+O\+SE TransA, const int M, const int N, const Dtype alpha, const Dtype $\ast$A, const Dtype $\ast$x, const Dtype beta, Dtype $\ast$y)\hypertarget{namespacecaffe_a62891c5bf1e1f05222a6b9a2a574c146}{}\label{namespacecaffe_a62891c5bf1e1f05222a6b9a2a574c146}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+axpy} (const int N, const Dtype alpha, const Dtype $\ast$X, Dtype $\ast$Y)\hypertarget{namespacecaffe_a6f63c879651c583e5404223e29634a04}{}\label{namespacecaffe_a6f63c879651c583e5404223e29634a04}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+cpu\+\_\+axpby} (const int N, const Dtype alpha, const Dtype $\ast$X, const Dtype beta, Dtype $\ast$Y)\hypertarget{namespacecaffe_af05e0b9cc43bfe82150f6fad870b2e07}{}\label{namespacecaffe_af05e0b9cc43bfe82150f6fad870b2e07}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+copy} (const int N, const Dtype $\ast$X, Dtype $\ast$Y)\hypertarget{namespacecaffe_ac2f6a957bfbaa344f70ba068790d5aa4}{}\label{namespacecaffe_ac2f6a957bfbaa344f70ba068790d5aa4}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+set} (const int N, const Dtype alpha, Dtype $\ast$X)\hypertarget{namespacecaffe_af2160c3cde52f95329fcbb81b39b1aed}{}\label{namespacecaffe_af2160c3cde52f95329fcbb81b39b1aed}
+
+\item 
+void {\bfseries caffe\+\_\+memset} (const size\+\_\+t N, const int alpha, void $\ast$X)\hypertarget{namespacecaffe_a4f3deeb6e840ee246779c7f29779d95f}{}\label{namespacecaffe_a4f3deeb6e840ee246779c7f29779d95f}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+add\+\_\+scalar} (const int N, const Dtype alpha, Dtype $\ast$X)\hypertarget{namespacecaffe_afc858d53084f51cc3d473f6c46ab43c1}{}\label{namespacecaffe_afc858d53084f51cc3d473f6c46ab43c1}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+scal} (const int N, const Dtype alpha, Dtype $\ast$X)\hypertarget{namespacecaffe_abe671d683d8798d8d269352238320ea0}{}\label{namespacecaffe_abe671d683d8798d8d269352238320ea0}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+sqr} (const int N, const Dtype $\ast$a, Dtype $\ast$y)\hypertarget{namespacecaffe_a63c6ff86445f1d5ddfc7facde94a9a65}{}\label{namespacecaffe_a63c6ff86445f1d5ddfc7facde94a9a65}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+sqrt} (const int N, const Dtype $\ast$a, Dtype $\ast$y)\hypertarget{namespacecaffe_ab86be911127edf51854d1437bc1be9fa}{}\label{namespacecaffe_ab86be911127edf51854d1437bc1be9fa}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+add} (const int N, const Dtype $\ast$a, const Dtype $\ast$b, Dtype $\ast$y)\hypertarget{namespacecaffe_a9d20c15682437b1a5f2c8f7bc32bf6e9}{}\label{namespacecaffe_a9d20c15682437b1a5f2c8f7bc32bf6e9}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+sub} (const int N, const Dtype $\ast$a, const Dtype $\ast$b, Dtype $\ast$y)\hypertarget{namespacecaffe_a4f060e0e4e9c8124183ca9ae204b98d6}{}\label{namespacecaffe_a4f060e0e4e9c8124183ca9ae204b98d6}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+mul} (const int N, const Dtype $\ast$a, const Dtype $\ast$b, Dtype $\ast$y)\hypertarget{namespacecaffe_a4a18af2041187d06c691e7b6ad6dd4e2}{}\label{namespacecaffe_a4a18af2041187d06c691e7b6ad6dd4e2}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+div} (const int N, const Dtype $\ast$a, const Dtype $\ast$b, Dtype $\ast$y)\hypertarget{namespacecaffe_aac610bed3b50490209909127e58f5a58}{}\label{namespacecaffe_aac610bed3b50490209909127e58f5a58}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+powx} (const int n, const Dtype $\ast$a, const Dtype b, Dtype $\ast$y)\hypertarget{namespacecaffe_a557c4b097a2e180592ad179deebee38f}{}\label{namespacecaffe_a557c4b097a2e180592ad179deebee38f}
+
+\item 
+unsigned int {\bfseries caffe\+\_\+rng\+\_\+rand} ()\hypertarget{namespacecaffe_a9cf246cbdccdda0a777438c1d1202dbd}{}\label{namespacecaffe_a9cf246cbdccdda0a777438c1d1202dbd}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\Dtype {\bfseries caffe\+\_\+nextafter} (const Dtype b)\hypertarget{namespacecaffe_a105d7928b8db2c72aa13b50ffb16df87}{}\label{namespacecaffe_a105d7928b8db2c72aa13b50ffb16df87}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+rng\+\_\+uniform} (const int n, const Dtype a, const Dtype b, Dtype $\ast$r)\hypertarget{namespacecaffe_aaa5652f7a969f004b364af65a7fa12c4}{}\label{namespacecaffe_aaa5652f7a969f004b364af65a7fa12c4}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+rng\+\_\+gaussian} (const int n, const Dtype mu, const Dtype sigma, Dtype $\ast$r)\hypertarget{namespacecaffe_a935320ba9a5ca35d2c02efbb3c9fd4fa}{}\label{namespacecaffe_a935320ba9a5ca35d2c02efbb3c9fd4fa}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+rng\+\_\+bernoulli} (const int n, const Dtype p, int $\ast$r)\hypertarget{namespacecaffe_af11e588b9a477a4ba11118f17de6874d}{}\label{namespacecaffe_af11e588b9a477a4ba11118f17de6874d}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+rng\+\_\+bernoulli} (const int n, const Dtype p, unsigned int $\ast$r)\hypertarget{namespacecaffe_a3546fae02c039ca8a4dbc41b8415b84f}{}\label{namespacecaffe_a3546fae02c039ca8a4dbc41b8415b84f}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+exp} (const int n, const Dtype $\ast$a, Dtype $\ast$y)\hypertarget{namespacecaffe_ae3dacc5c5bd60f1d15cadcb25c0c0720}{}\label{namespacecaffe_ae3dacc5c5bd60f1d15cadcb25c0c0720}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+log} (const int n, const Dtype $\ast$a, Dtype $\ast$y)\hypertarget{namespacecaffe_a91f4d24e5d7a7194c3d07b9293ccf67e}{}\label{namespacecaffe_a91f4d24e5d7a7194c3d07b9293ccf67e}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+abs} (const int n, const Dtype $\ast$a, Dtype $\ast$y)\hypertarget{namespacecaffe_ae9056cc88a6cf2eb7f67e64dc7231dc5}{}\label{namespacecaffe_ae9056cc88a6cf2eb7f67e64dc7231dc5}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\Dtype {\bfseries caffe\+\_\+cpu\+\_\+dot} (const int n, const Dtype $\ast$x, const Dtype $\ast$y)\hypertarget{namespacecaffe_abc151e4d4c6f7a8c119457907bbe9138}{}\label{namespacecaffe_abc151e4d4c6f7a8c119457907bbe9138}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\Dtype {\bfseries caffe\+\_\+cpu\+\_\+strided\+\_\+dot} (const int n, const Dtype $\ast$x, const int incx, const Dtype $\ast$y, const int incy)\hypertarget{namespacecaffe_af401f4f153cf2baa894135d472d87208}{}\label{namespacecaffe_af401f4f153cf2baa894135d472d87208}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\Dtype {\bfseries caffe\+\_\+cpu\+\_\+asum} (const int n, const Dtype $\ast$x)\hypertarget{namespacecaffe_a39ef2dac3af2dd5db02b5d3fce2dcfa8}{}\label{namespacecaffe_a39ef2dac3af2dd5db02b5d3fce2dcfa8}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\int8\+\_\+t {\bfseries caffe\+\_\+sign} (Dtype val)\hypertarget{namespacecaffe_a74763da6c7165f1c0a86a796f966679a}{}\label{namespacecaffe_a74763da6c7165f1c0a86a796f966679a}
+
+\item 
+{\bfseries D\+E\+F\+I\+N\+E\+\_\+\+C\+A\+F\+F\+E\+\_\+\+C\+P\+U\+\_\+\+U\+N\+A\+R\+Y\+\_\+\+F\+U\+NC} (sgnbit, y\mbox{[}i\mbox{]}=static\+\_\+cast$<$ bool $>$((std\+::signbit)(x\mbox{[}i\mbox{]}))) template$<$ typename Dtype $>$ void caffe\+\_\+cpu\+\_\+scale(const int n\hypertarget{namespacecaffe_a02c98b32b264ec87bc2c02c94319bbc4}{}\label{namespacecaffe_a02c98b32b264ec87bc2c02c94319bbc4}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+gemm} (const C\+B\+L\+A\+S\+\_\+\+T\+R\+A\+N\+S\+P\+O\+SE TransA, const C\+B\+L\+A\+S\+\_\+\+T\+R\+A\+N\+S\+P\+O\+SE TransB, const int M, const int N, const int K, const Dtype alpha, const Dtype $\ast$A, const Dtype $\ast$B, const Dtype beta, Dtype $\ast$C)\hypertarget{namespacecaffe_acd0bf508fdb0581c6fb6dfa559e1677b}{}\label{namespacecaffe_acd0bf508fdb0581c6fb6dfa559e1677b}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+gemv} (const C\+B\+L\+A\+S\+\_\+\+T\+R\+A\+N\+S\+P\+O\+SE TransA, const int M, const int N, const Dtype alpha, const Dtype $\ast$A, const Dtype $\ast$x, const Dtype beta, Dtype $\ast$y)\hypertarget{namespacecaffe_a2b0a245011fcb3812f8b203987158798}{}\label{namespacecaffe_a2b0a245011fcb3812f8b203987158798}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+axpy} (const int N, const Dtype alpha, const Dtype $\ast$X, Dtype $\ast$Y)\hypertarget{namespacecaffe_ac79d56fd4ce846351d09eea5f81f5330}{}\label{namespacecaffe_ac79d56fd4ce846351d09eea5f81f5330}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+axpby} (const int N, const Dtype alpha, const Dtype $\ast$X, const Dtype beta, Dtype $\ast$Y)\hypertarget{namespacecaffe_a90ff37307cf4b8e665719b30860ebf8e}{}\label{namespacecaffe_a90ff37307cf4b8e665719b30860ebf8e}
+
+\item 
+void {\bfseries caffe\+\_\+gpu\+\_\+memcpy} (const size\+\_\+t N, const void $\ast$X, void $\ast$Y)\hypertarget{namespacecaffe_a625b8e199b2b898c7427af4f4606bfa8}{}\label{namespacecaffe_a625b8e199b2b898c7427af4f4606bfa8}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+set} (const int N, const Dtype alpha, Dtype $\ast$X)\hypertarget{namespacecaffe_af2b443a809594b6af0429ac4cc7a98fd}{}\label{namespacecaffe_af2b443a809594b6af0429ac4cc7a98fd}
+
+\item 
+void {\bfseries caffe\+\_\+gpu\+\_\+memset} (const size\+\_\+t N, const int alpha, void $\ast$X)\hypertarget{namespacecaffe_acb4fb4c525b5a45010dfbff016cd375b}{}\label{namespacecaffe_acb4fb4c525b5a45010dfbff016cd375b}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+add\+\_\+scalar} (const int N, const Dtype alpha, Dtype $\ast$X)\hypertarget{namespacecaffe_aece4dd95b81d7141f740692a5132010f}{}\label{namespacecaffe_aece4dd95b81d7141f740692a5132010f}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+scal} (const int N, const Dtype alpha, Dtype $\ast$X)\hypertarget{namespacecaffe_a6a43f571b229746dd69e89c6c64301d6}{}\label{namespacecaffe_a6a43f571b229746dd69e89c6c64301d6}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+scal} (const int N, const Dtype alpha, Dtype $\ast$X, cuda\+Stream\+\_\+t str)\hypertarget{namespacecaffe_ace9fb7f8188d8f2bd58735c7617325ea}{}\label{namespacecaffe_ace9fb7f8188d8f2bd58735c7617325ea}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+add} (const int N, const Dtype $\ast$a, const Dtype $\ast$b, Dtype $\ast$y)\hypertarget{namespacecaffe_a0c7219c875e46b5f11e345f34209f369}{}\label{namespacecaffe_a0c7219c875e46b5f11e345f34209f369}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+sub} (const int N, const Dtype $\ast$a, const Dtype $\ast$b, Dtype $\ast$y)\hypertarget{namespacecaffe_a3f151ddcec1be108851341de83d31a1b}{}\label{namespacecaffe_a3f151ddcec1be108851341de83d31a1b}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+mul} (const int N, const Dtype $\ast$a, const Dtype $\ast$b, Dtype $\ast$y)\hypertarget{namespacecaffe_a37d5b94a9f52d0df1307c3137ced2126}{}\label{namespacecaffe_a37d5b94a9f52d0df1307c3137ced2126}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+div} (const int N, const Dtype $\ast$a, const Dtype $\ast$b, Dtype $\ast$y)\hypertarget{namespacecaffe_ad3bccae9d3b7d559f32a9911eb5474c6}{}\label{namespacecaffe_ad3bccae9d3b7d559f32a9911eb5474c6}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+abs} (const int n, const Dtype $\ast$a, Dtype $\ast$y)\hypertarget{namespacecaffe_a378c6320560d72b58b4332364d75fcdf}{}\label{namespacecaffe_a378c6320560d72b58b4332364d75fcdf}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+exp} (const int n, const Dtype $\ast$a, Dtype $\ast$y)\hypertarget{namespacecaffe_a377ac4c841146a13666afd9ad9411583}{}\label{namespacecaffe_a377ac4c841146a13666afd9ad9411583}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+log} (const int n, const Dtype $\ast$a, Dtype $\ast$y)\hypertarget{namespacecaffe_a6adb76ec01137569f8bc453b86156106}{}\label{namespacecaffe_a6adb76ec01137569f8bc453b86156106}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+powx} (const int n, const Dtype $\ast$a, const Dtype b, Dtype $\ast$y)\hypertarget{namespacecaffe_a9ee33a72306ecb2f1b13e31e1a326d6b}{}\label{namespacecaffe_a9ee33a72306ecb2f1b13e31e1a326d6b}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+sqrt} (const int n, const Dtype $\ast$a, Dtype $\ast$y)\hypertarget{namespacecaffe_ac57c5b22f1e4ff67457c2870dc725bdc}{}\label{namespacecaffe_ac57c5b22f1e4ff67457c2870dc725bdc}
+
+\item 
+void {\bfseries caffe\+\_\+gpu\+\_\+rng\+\_\+uniform} (const int n, unsigned int $\ast$r)\hypertarget{namespacecaffe_aee22d10249c5dd157d15a79bb8891bf8}{}\label{namespacecaffe_aee22d10249c5dd157d15a79bb8891bf8}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+rng\+\_\+uniform} (const int n, const Dtype a, const Dtype b, Dtype $\ast$r)\hypertarget{namespacecaffe_ac0e8182d67a4b874c7f40296a39fb203}{}\label{namespacecaffe_ac0e8182d67a4b874c7f40296a39fb203}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+rng\+\_\+gaussian} (const int n, const Dtype mu, const Dtype sigma, Dtype $\ast$r)\hypertarget{namespacecaffe_a80f781efdcad87bea07d3d1b204e698b}{}\label{namespacecaffe_a80f781efdcad87bea07d3d1b204e698b}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+rng\+\_\+bernoulli} (const int n, const Dtype p, int $\ast$r)\hypertarget{namespacecaffe_a9764416ef2baad29883651f50c975c6c}{}\label{namespacecaffe_a9764416ef2baad29883651f50c975c6c}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+dot} (const int n, const Dtype $\ast$x, const Dtype $\ast$y, Dtype $\ast$out)\hypertarget{namespacecaffe_a27b8cdab6780c4cb54999ef704c775c7}{}\label{namespacecaffe_a27b8cdab6780c4cb54999ef704c775c7}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+asum} (const int n, const Dtype $\ast$x, Dtype $\ast$y)\hypertarget{namespacecaffe_a20c5fbba1a00759cb2952ba7d20038b2}{}\label{namespacecaffe_a20c5fbba1a00759cb2952ba7d20038b2}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+sign} (const int n, const Dtype $\ast$x, Dtype $\ast$y)\hypertarget{namespacecaffe_a76546f7548a863bc25b9e94b8ac9c29a}{}\label{namespacecaffe_a76546f7548a863bc25b9e94b8ac9c29a}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+sgnbit} (const int n, const Dtype $\ast$x, Dtype $\ast$y)\hypertarget{namespacecaffe_ad904a7b77a6c4e1965fb7916c017e82a}{}\label{namespacecaffe_ad904a7b77a6c4e1965fb7916c017e82a}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+fabs} (const int n, const Dtype $\ast$x, Dtype $\ast$y)\hypertarget{namespacecaffe_a74fccafb8af6d9d75bbbdb8ed6e2d762}{}\label{namespacecaffe_a74fccafb8af6d9d75bbbdb8ed6e2d762}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries caffe\+\_\+gpu\+\_\+scale} (const int n, const Dtype alpha, const Dtype $\ast$x, Dtype $\ast$y)\hypertarget{namespacecaffe_abee4ef6a15c5bd2e1d9900ddb69c37f4}{}\label{namespacecaffe_abee4ef6a15c5bd2e1d9900ddb69c37f4}
+
+\item 
+rng\+\_\+t $\ast$ {\bfseries caffe\+\_\+rng} ()\hypertarget{namespacecaffe_ad73507e5bac89c93ea8e5d317aafe49f}{}\label{namespacecaffe_ad73507e5bac89c93ea8e5d317aafe49f}
+
+\item 
+{\footnotesize template$<$class Random\+Access\+Iterator , class Random\+Generator $>$ }\\void {\bfseries shuffle} (Random\+Access\+Iterator begin, Random\+Access\+Iterator end, Random\+Generator $\ast$gen)\hypertarget{namespacecaffe_ac095caaa74b68027f26b778e16146256}{}\label{namespacecaffe_ac095caaa74b68027f26b778e16146256}
+
+\item 
+{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void {\bfseries shuffle} (Random\+Access\+Iterator begin, Random\+Access\+Iterator end)\hypertarget{namespacecaffe_a05b58af6ace88bd31e4ecc5a1d9b31d1}{}\label{namespacecaffe_a05b58af6ace88bd31e4ecc5a1d9b31d1}
+
+\item 
+bool {\bfseries Net\+Needs\+Upgrade} (const Net\+Parameter \&net\+\_\+param)\hypertarget{namespacecaffe_a83f79549cfd215fa6b8dc19ef3cc17f8}{}\label{namespacecaffe_a83f79549cfd215fa6b8dc19ef3cc17f8}
+
+\item 
+bool {\bfseries Upgrade\+Net\+As\+Needed} (const string \&param\+\_\+file, Net\+Parameter $\ast$param)\hypertarget{namespacecaffe_a1267415c684b414ca65f4832624d869b}{}\label{namespacecaffe_a1267415c684b414ca65f4832624d869b}
+
+\item 
+void {\bfseries Read\+Net\+Params\+From\+Text\+File\+Or\+Die} (const string \&param\+\_\+file, Net\+Parameter $\ast$param)\hypertarget{namespacecaffe_a8801bcd5125b2aec799adcc7f617be1a}{}\label{namespacecaffe_a8801bcd5125b2aec799adcc7f617be1a}
+
+\item 
+void {\bfseries Read\+Net\+Params\+From\+Binary\+File\+Or\+Die} (const string \&param\+\_\+file, Net\+Parameter $\ast$param)\hypertarget{namespacecaffe_aec4379a5d972592245df191bec9c75bd}{}\label{namespacecaffe_aec4379a5d972592245df191bec9c75bd}
+
+\item 
+bool {\bfseries Net\+Needs\+V0\+To\+V1\+Upgrade} (const Net\+Parameter \&net\+\_\+param)\hypertarget{namespacecaffe_a5ae89f37ec932cd9be668a9fe34af02b}{}\label{namespacecaffe_a5ae89f37ec932cd9be668a9fe34af02b}
+
+\item 
+bool {\bfseries Upgrade\+V0\+Net} (const Net\+Parameter \&v0\+\_\+net\+\_\+param, Net\+Parameter $\ast$net\+\_\+param)\hypertarget{namespacecaffe_ad3e2b3df000292ddccf6d2cd8b0af2a4}{}\label{namespacecaffe_ad3e2b3df000292ddccf6d2cd8b0af2a4}
+
+\item 
+void {\bfseries Upgrade\+V0\+Padding\+Layers} (const Net\+Parameter \&param, Net\+Parameter $\ast$param\+\_\+upgraded\+\_\+pad)\hypertarget{namespacecaffe_a772706c501bd181224155eeeb6cc9c04}{}\label{namespacecaffe_a772706c501bd181224155eeeb6cc9c04}
+
+\item 
+bool {\bfseries Upgrade\+V0\+Layer\+Parameter} (const V1\+Layer\+Parameter \&v0\+\_\+layer\+\_\+connection, V1\+Layer\+Parameter $\ast$layer\+\_\+param)\hypertarget{namespacecaffe_a1da77e6b99609141d5e5711592ba1771}{}\label{namespacecaffe_a1da77e6b99609141d5e5711592ba1771}
+
+\item 
+V1\+Layer\+Parameter\+\_\+\+Layer\+Type {\bfseries Upgrade\+V0\+Layer\+Type} (const string \&type)\hypertarget{namespacecaffe_ae9de23df62de2f7dc007884658bb161e}{}\label{namespacecaffe_ae9de23df62de2f7dc007884658bb161e}
+
+\item 
+bool {\bfseries Net\+Needs\+Data\+Upgrade} (const Net\+Parameter \&net\+\_\+param)\hypertarget{namespacecaffe_a69c568c8085cb6f7c852c41e16191030}{}\label{namespacecaffe_a69c568c8085cb6f7c852c41e16191030}
+
+\item 
+void {\bfseries Upgrade\+Net\+Data\+Transformation} (Net\+Parameter $\ast$net\+\_\+param)\hypertarget{namespacecaffe_af9531e2f63c4508260159a3c15ed21c2}{}\label{namespacecaffe_af9531e2f63c4508260159a3c15ed21c2}
+
+\item 
+bool {\bfseries Net\+Needs\+V1\+To\+V2\+Upgrade} (const Net\+Parameter \&net\+\_\+param)\hypertarget{namespacecaffe_a51bcf113dad8319320fdc202e8354257}{}\label{namespacecaffe_a51bcf113dad8319320fdc202e8354257}
+
+\item 
+bool {\bfseries Upgrade\+V1\+Net} (const Net\+Parameter \&v1\+\_\+net\+\_\+param, Net\+Parameter $\ast$net\+\_\+param)\hypertarget{namespacecaffe_a00b16f2666a71c575346f2d92373cfbc}{}\label{namespacecaffe_a00b16f2666a71c575346f2d92373cfbc}
+
+\item 
+bool {\bfseries Upgrade\+V1\+Layer\+Parameter} (const V1\+Layer\+Parameter \&v1\+\_\+layer\+\_\+param, Layer\+Parameter $\ast$layer\+\_\+param)\hypertarget{namespacecaffe_a6662809911b69625c70dcd6540e742d1}{}\label{namespacecaffe_a6662809911b69625c70dcd6540e742d1}
+
+\item 
+const char $\ast$ {\bfseries Upgrade\+V1\+Layer\+Type} (const V1\+Layer\+Parameter\+\_\+\+Layer\+Type type)\hypertarget{namespacecaffe_a0c08684e0bf64620ba505b112b27067b}{}\label{namespacecaffe_a0c08684e0bf64620ba505b112b27067b}
+
+\item 
+bool {\bfseries Net\+Needs\+Input\+Upgrade} (const Net\+Parameter \&net\+\_\+param)\hypertarget{namespacecaffe_a3a5f01c2593233a787c5170dbfc20e3f}{}\label{namespacecaffe_a3a5f01c2593233a787c5170dbfc20e3f}
+
+\item 
+void {\bfseries Upgrade\+Net\+Input} (Net\+Parameter $\ast$net\+\_\+param)\hypertarget{namespacecaffe_a2f8203b685d821d3502f087a01ea23e4}{}\label{namespacecaffe_a2f8203b685d821d3502f087a01ea23e4}
+
+\item 
+bool {\bfseries Net\+Needs\+Batch\+Norm\+Upgrade} (const Net\+Parameter \&net\+\_\+param)\hypertarget{namespacecaffe_ac6024e2bed1b4c0e2519150df87b1ed2}{}\label{namespacecaffe_ac6024e2bed1b4c0e2519150df87b1ed2}
+
+\item 
+void {\bfseries Upgrade\+Net\+Batch\+Norm} (Net\+Parameter $\ast$net\+\_\+param)\hypertarget{namespacecaffe_a6ba498a85604c9524fdd58f5d32d3145}{}\label{namespacecaffe_a6ba498a85604c9524fdd58f5d32d3145}
+
+\item 
+bool {\bfseries Solver\+Needs\+Type\+Upgrade} (const Solver\+Parameter \&solver\+\_\+param)\hypertarget{namespacecaffe_a94c0499a4e250e932475b98a0ed5aba6}{}\label{namespacecaffe_a94c0499a4e250e932475b98a0ed5aba6}
+
+\item 
+bool {\bfseries Upgrade\+Solver\+Type} (Solver\+Parameter $\ast$solver\+\_\+param)\hypertarget{namespacecaffe_a84566800a0ee8db1da676cbb8b831c6a}{}\label{namespacecaffe_a84566800a0ee8db1da676cbb8b831c6a}
+
+\item 
+bool {\bfseries Upgrade\+Solver\+As\+Needed} (const string \&param\+\_\+file, Solver\+Parameter $\ast$param)\hypertarget{namespacecaffe_a3777408533d54e17e1293ecb711f6ffd}{}\label{namespacecaffe_a3777408533d54e17e1293ecb711f6ffd}
+
+\item 
+void {\bfseries Read\+Solver\+Params\+From\+Text\+File\+Or\+Die} (const string \&param\+\_\+file, Solver\+Parameter $\ast$param)\hypertarget{namespacecaffe_a952ac3fd680ae9c565299b7b4bfb8a3d}{}\label{namespacecaffe_a952ac3fd680ae9c565299b7b4bfb8a3d}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1Blob}{Blob})\hypertarget{namespacecaffe_a23fdc8cf55ff6d4673e4d6a9379cd478}{}\label{namespacecaffe_a23fdc8cf55ff6d4673e4d6a9379cd478}
+
+\item 
+int64\+\_\+t {\bfseries cluster\+\_\+seedgen} (void)\hypertarget{namespacecaffe_a50ff47a60ff1b1d917edd1254d770fbb}{}\label{namespacecaffe_a50ff47a60ff1b1d917edd1254d770fbb}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1DataTransformer}{Data\+Transformer})\hypertarget{namespacecaffe_a5f53f0075544bd1a369e9bee585f0799}{}\label{namespacecaffe_a5f53f0075544bd1a369e9bee585f0799}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1Layer}{Layer})\hypertarget{namespacecaffe_a651a9d87b2b5e2d398c2cfd802b0a4eb}{}\label{namespacecaffe_a651a9d87b2b5e2d398c2cfd802b0a4eb}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Layer}{Layer}$<$ Dtype $>$ $>$ {\bfseries Get\+Convolution\+Layer} (const Layer\+Parameter \&param)\hypertarget{namespacecaffe_a259b2477b70134b1269e767ad3ddd254}{}\label{namespacecaffe_a259b2477b70134b1269e767ad3ddd254}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+R\+E\+A\+T\+OR} (Convolution, Get\+Convolution\+Layer)\hypertarget{namespacecaffe_a1f4ea6cace778c42c7c58da95ee35656}{}\label{namespacecaffe_a1f4ea6cace778c42c7c58da95ee35656}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Layer}{Layer}$<$ Dtype $>$ $>$ {\bfseries Get\+Deconvolution\+Layer} (const Layer\+Parameter \&param)\hypertarget{namespacecaffe_a21c35989b74e0ca186bc19a2538b41e8}{}\label{namespacecaffe_a21c35989b74e0ca186bc19a2538b41e8}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+R\+E\+A\+T\+OR} (Deconvolution, Get\+Deconvolution\+Layer)\hypertarget{namespacecaffe_ae7650f179c7b3cdc8abb1b12efc18449}{}\label{namespacecaffe_ae7650f179c7b3cdc8abb1b12efc18449}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Layer}{Layer}$<$ Dtype $>$ $>$ {\bfseries Get\+Pooling\+Layer} (const Layer\+Parameter \&param)\hypertarget{namespacecaffe_a16ad8636a8750c0d55e5d54550ec67cf}{}\label{namespacecaffe_a16ad8636a8750c0d55e5d54550ec67cf}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+R\+E\+A\+T\+OR} (Pooling, Get\+Pooling\+Layer)\hypertarget{namespacecaffe_ae15dbd197521d5690de784adacd4351c}{}\label{namespacecaffe_ae15dbd197521d5690de784adacd4351c}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Layer}{Layer}$<$ Dtype $>$ $>$ {\bfseries Get\+L\+R\+N\+Layer} (const Layer\+Parameter \&param)\hypertarget{namespacecaffe_a5d35f50f4dc6ff971fde340034f14f48}{}\label{namespacecaffe_a5d35f50f4dc6ff971fde340034f14f48}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+R\+E\+A\+T\+OR} (L\+RN, Get\+L\+R\+N\+Layer)\hypertarget{namespacecaffe_a8e71677619e9bda16a7db5ca8b1076b4}{}\label{namespacecaffe_a8e71677619e9bda16a7db5ca8b1076b4}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Layer}{Layer}$<$ Dtype $>$ $>$ {\bfseries Get\+Re\+L\+U\+Layer} (const Layer\+Parameter \&param)\hypertarget{namespacecaffe_a324c8bc02e74a55534c5ee88e6091870}{}\label{namespacecaffe_a324c8bc02e74a55534c5ee88e6091870}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+R\+E\+A\+T\+OR} (Re\+LU, Get\+Re\+L\+U\+Layer)\hypertarget{namespacecaffe_a74137c7c08feb4989666f9c2893eecd1}{}\label{namespacecaffe_a74137c7c08feb4989666f9c2893eecd1}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Layer}{Layer}$<$ Dtype $>$ $>$ {\bfseries Get\+Sigmoid\+Layer} (const Layer\+Parameter \&param)\hypertarget{namespacecaffe_a4f82d0f97b376edb7f08f6bcd34265fe}{}\label{namespacecaffe_a4f82d0f97b376edb7f08f6bcd34265fe}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+R\+E\+A\+T\+OR} (Sigmoid, Get\+Sigmoid\+Layer)\hypertarget{namespacecaffe_a6a0df9ece151ad9a5f57687e787f0050}{}\label{namespacecaffe_a6a0df9ece151ad9a5f57687e787f0050}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Layer}{Layer}$<$ Dtype $>$ $>$ {\bfseries Get\+Softmax\+Layer} (const Layer\+Parameter \&param)\hypertarget{namespacecaffe_ab19a971cee1f99b4fdcaade75459d999}{}\label{namespacecaffe_ab19a971cee1f99b4fdcaade75459d999}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+R\+E\+A\+T\+OR} (Softmax, Get\+Softmax\+Layer)\hypertarget{namespacecaffe_a4c3902ad7054d947a125bb85e541b821}{}\label{namespacecaffe_a4c3902ad7054d947a125bb85e541b821}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Layer}{Layer}$<$ Dtype $>$ $>$ {\bfseries Get\+Tan\+H\+Layer} (const Layer\+Parameter \&param)\hypertarget{namespacecaffe_a70147f6cc08d1048102c66a17f24dddb}{}\label{namespacecaffe_a70147f6cc08d1048102c66a17f24dddb}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+R\+E\+A\+T\+OR} (TanH, Get\+Tan\+H\+Layer)\hypertarget{namespacecaffe_a539c5ac72c92bf0b70c0af4e4815db39}{}\label{namespacecaffe_a539c5ac72c92bf0b70c0af4e4815db39}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1AbsValLayer}{Abs\+Val\+Layer})\hypertarget{namespacecaffe_a76d094142b0dff5d4dcfb194a28420f2}{}\label{namespacecaffe_a76d094142b0dff5d4dcfb194a28420f2}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Abs\+Val)\hypertarget{namespacecaffe_a63635ae48c944a9f8d0cea9a869b4f8a}{}\label{namespacecaffe_a63635ae48c944a9f8d0cea9a869b4f8a}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1AccuracyLayer}{Accuracy\+Layer})\hypertarget{namespacecaffe_ac8b27282f180a29b393ce42c9bd73998}{}\label{namespacecaffe_ac8b27282f180a29b393ce42c9bd73998}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Accuracy)\hypertarget{namespacecaffe_a4374c9848cea851faf1f249c07205359}{}\label{namespacecaffe_a4374c9848cea851faf1f249c07205359}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1ArgMaxLayer}{Arg\+Max\+Layer})\hypertarget{namespacecaffe_a0aa37e233ff0e29d43d94055982c0cf5}{}\label{namespacecaffe_a0aa37e233ff0e29d43d94055982c0cf5}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Arg\+Max)\hypertarget{namespacecaffe_a79f84e906ff54893c196d28de2767c5a}{}\label{namespacecaffe_a79f84e906ff54893c196d28de2767c5a}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1BaseConvolutionLayer}{Base\+Convolution\+Layer})\hypertarget{namespacecaffe_a0a20063c5a8b34a67394ab4237c94773}{}\label{namespacecaffe_a0a20063c5a8b34a67394ab4237c94773}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1BaseDataLayer}{Base\+Data\+Layer})\hypertarget{namespacecaffe_a17835b8aa42fe0d7351aa3069fa62a26}{}\label{namespacecaffe_a17835b8aa42fe0d7351aa3069fa62a26}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1BasePrefetchingDataLayer}{Base\+Prefetching\+Data\+Layer})\hypertarget{namespacecaffe_a06ec5bd1a6534ff0711a051d23199cf5}{}\label{namespacecaffe_a06ec5bd1a6534ff0711a051d23199cf5}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1BatchNormLayer}{Batch\+Norm\+Layer})\hypertarget{namespacecaffe_a3711ef90d1290fdd74a31b910c1b5f30}{}\label{namespacecaffe_a3711ef90d1290fdd74a31b910c1b5f30}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Batch\+Norm)\hypertarget{namespacecaffe_a134b681f007b80469a53c86c053888e1}{}\label{namespacecaffe_a134b681f007b80469a53c86c053888e1}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1BatchReindexLayer}{Batch\+Reindex\+Layer})\hypertarget{namespacecaffe_ac47c1db98ed016502b029ddb5fc400ec}{}\label{namespacecaffe_ac47c1db98ed016502b029ddb5fc400ec}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Batch\+Reindex)\hypertarget{namespacecaffe_af0e00e7d1a29ab0928d8821564beb9f4}{}\label{namespacecaffe_af0e00e7d1a29ab0928d8821564beb9f4}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1BiasLayer}{Bias\+Layer})\hypertarget{namespacecaffe_a16602990ae6ded779ba02e58f1d15faf}{}\label{namespacecaffe_a16602990ae6ded779ba02e58f1d15faf}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Bias)\hypertarget{namespacecaffe_a0e4d9cbd0bee1832083685596e3b0281}{}\label{namespacecaffe_a0e4d9cbd0bee1832083685596e3b0281}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1BNLayer}{B\+N\+Layer})\hypertarget{namespacecaffe_a83c75cef3bc910bd3a944b4c93a3a931}{}\label{namespacecaffe_a83c75cef3bc910bd3a944b4c93a3a931}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (BN)\hypertarget{namespacecaffe_a354e6aed46c1198e4bbfeccb7f45dd88}{}\label{namespacecaffe_a354e6aed46c1198e4bbfeccb7f45dd88}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1BNLLLayer}{B\+N\+L\+L\+Layer})\hypertarget{namespacecaffe_a301bc2174de79871a19fb90bb561791b}{}\label{namespacecaffe_a301bc2174de79871a19fb90bb561791b}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (B\+N\+LL)\hypertarget{namespacecaffe_a29bf932e1351a44251e4007f4117b19f}{}\label{namespacecaffe_a29bf932e1351a44251e4007f4117b19f}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1ConcatLayer}{Concat\+Layer})\hypertarget{namespacecaffe_ae8385127f2ec655c3d3a56dc238d72c6}{}\label{namespacecaffe_ae8385127f2ec655c3d3a56dc238d72c6}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Concat)\hypertarget{namespacecaffe_ac4f36be9b1ba4f7f748d6b85115d0280}{}\label{namespacecaffe_ac4f36be9b1ba4f7f748d6b85115d0280}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1ContrastiveLossLayer}{Contrastive\+Loss\+Layer})\hypertarget{namespacecaffe_a78c9a46f39e49ea79313fbf2b4856752}{}\label{namespacecaffe_a78c9a46f39e49ea79313fbf2b4856752}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Contrastive\+Loss)\hypertarget{namespacecaffe_aa1ef53751e9eed93b3e97eaadefc616a}{}\label{namespacecaffe_aa1ef53751e9eed93b3e97eaadefc616a}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1ConvolutionLayer}{Convolution\+Layer})\hypertarget{namespacecaffe_a0d0970b7b84f0b52deea86972f5cce4d}{}\label{namespacecaffe_a0d0970b7b84f0b52deea86972f5cce4d}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1CropLayer}{Crop\+Layer})\hypertarget{namespacecaffe_af07ba0f8992d62ebfb61eef08de76695}{}\label{namespacecaffe_af07ba0f8992d62ebfb61eef08de76695}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Crop)\hypertarget{namespacecaffe_a51447e6d67f52e04127bc949ef0c7483}{}\label{namespacecaffe_a51447e6d67f52e04127bc949ef0c7483}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1DataLayer}{Data\+Layer})\hypertarget{namespacecaffe_a0e7276cce32956a506510b7879de1d0f}{}\label{namespacecaffe_a0e7276cce32956a506510b7879de1d0f}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Data)\hypertarget{namespacecaffe_ad6d6568710382caf308a00b1916b691e}{}\label{namespacecaffe_ad6d6568710382caf308a00b1916b691e}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1DeconvolutionLayer}{Deconvolution\+Layer})\hypertarget{namespacecaffe_abc4aaeb5ef6aa24257d345a039c0abf8}{}\label{namespacecaffe_abc4aaeb5ef6aa24257d345a039c0abf8}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1DropoutLayer}{Dropout\+Layer})\hypertarget{namespacecaffe_a3ddfb0dd062592a2e7b625246518184c}{}\label{namespacecaffe_a3ddfb0dd062592a2e7b625246518184c}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Dropout)\hypertarget{namespacecaffe_a904ed75d631db879dd71041813239856}{}\label{namespacecaffe_a904ed75d631db879dd71041813239856}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1DummyDataLayer}{Dummy\+Data\+Layer})\hypertarget{namespacecaffe_a55a11c1cfe45aa0855c4da25b81518a4}{}\label{namespacecaffe_a55a11c1cfe45aa0855c4da25b81518a4}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Dummy\+Data)\hypertarget{namespacecaffe_a513e7ea04b118df0c23b2e4a295f009d}{}\label{namespacecaffe_a513e7ea04b118df0c23b2e4a295f009d}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1EltwiseLayer}{Eltwise\+Layer})\hypertarget{namespacecaffe_a12e39f1c3c66d20c87e732a85a1ce9ec}{}\label{namespacecaffe_a12e39f1c3c66d20c87e732a85a1ce9ec}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Eltwise)\hypertarget{namespacecaffe_a7675bc7c3c792f098fd5aef2b0ae0cb9}{}\label{namespacecaffe_a7675bc7c3c792f098fd5aef2b0ae0cb9}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1ELULayer}{E\+L\+U\+Layer})\hypertarget{namespacecaffe_a20ea40591642f5fac862c5d9d9bd21c0}{}\label{namespacecaffe_a20ea40591642f5fac862c5d9d9bd21c0}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (E\+LU)\hypertarget{namespacecaffe_a8b1de9e47ccd65cdf8da88cc9b12d9de}{}\label{namespacecaffe_a8b1de9e47ccd65cdf8da88cc9b12d9de}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1EmbedLayer}{Embed\+Layer})\hypertarget{namespacecaffe_a134db7f2d2ee76300729a74925fa20cb}{}\label{namespacecaffe_a134db7f2d2ee76300729a74925fa20cb}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Embed)\hypertarget{namespacecaffe_a8e4cb8c13df5e1fff14800717da6f05e}{}\label{namespacecaffe_a8e4cb8c13df5e1fff14800717da6f05e}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1EuclideanLossLayer}{Euclidean\+Loss\+Layer})\hypertarget{namespacecaffe_a3486a0b745654ba8a682ff8642fd9b9c}{}\label{namespacecaffe_a3486a0b745654ba8a682ff8642fd9b9c}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Euclidean\+Loss)\hypertarget{namespacecaffe_a36bc5f1ca7b9a883b435101ae8bf3a9b}{}\label{namespacecaffe_a36bc5f1ca7b9a883b435101ae8bf3a9b}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1ExpLayer}{Exp\+Layer})\hypertarget{namespacecaffe_a877f1aaec973df35f786dbe50214f89c}{}\label{namespacecaffe_a877f1aaec973df35f786dbe50214f89c}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Exp)\hypertarget{namespacecaffe_a987b5b084d464b7ad7fed7a8c637f657}{}\label{namespacecaffe_a987b5b084d464b7ad7fed7a8c637f657}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1FilterLayer}{Filter\+Layer})\hypertarget{namespacecaffe_a003cc48c7c58a260107edaaabda3f094}{}\label{namespacecaffe_a003cc48c7c58a260107edaaabda3f094}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Filter)\hypertarget{namespacecaffe_a2f2f80c5bb71306250c08a23903a9934}{}\label{namespacecaffe_a2f2f80c5bb71306250c08a23903a9934}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1FlattenLayer}{Flatten\+Layer})\hypertarget{namespacecaffe_a4cf041fd4eb88960848b5bbb1ddf3e5e}{}\label{namespacecaffe_a4cf041fd4eb88960848b5bbb1ddf3e5e}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Flatten)\hypertarget{namespacecaffe_a8bc8cbfd431cb25f492247c0860d4926}{}\label{namespacecaffe_a8bc8cbfd431cb25f492247c0860d4926}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1HDF5DataLayer}{H\+D\+F5\+Data\+Layer})\hypertarget{namespacecaffe_ad29048e04dcd17b90ac51b4666fbbfa7}{}\label{namespacecaffe_ad29048e04dcd17b90ac51b4666fbbfa7}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (H\+D\+F5\+Data)\hypertarget{namespacecaffe_ad4ff26942b18a569a48220b2bc54065c}{}\label{namespacecaffe_ad4ff26942b18a569a48220b2bc54065c}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1HDF5OutputLayer}{H\+D\+F5\+Output\+Layer})\hypertarget{namespacecaffe_a9c470a1804e112ffc6b67533c501a908}{}\label{namespacecaffe_a9c470a1804e112ffc6b67533c501a908}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (H\+D\+F5\+Output)\hypertarget{namespacecaffe_a8d4ffb6196f37d58e3340b85eae84d74}{}\label{namespacecaffe_a8d4ffb6196f37d58e3340b85eae84d74}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1HingeLossLayer}{Hinge\+Loss\+Layer})\hypertarget{namespacecaffe_a15d7589a16a1216dcf5d2f51759fdf5d}{}\label{namespacecaffe_a15d7589a16a1216dcf5d2f51759fdf5d}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Hinge\+Loss)\hypertarget{namespacecaffe_aee6cdc5b56cf1788fc17b04202dc1dbb}{}\label{namespacecaffe_aee6cdc5b56cf1788fc17b04202dc1dbb}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1Im2colLayer}{Im2col\+Layer})\hypertarget{namespacecaffe_a3333b145cd7e8fc3ea5bdc1dfce62ae9}{}\label{namespacecaffe_a3333b145cd7e8fc3ea5bdc1dfce62ae9}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Im2col)\hypertarget{namespacecaffe_acecabc819a0b63da422b455913343b59}{}\label{namespacecaffe_acecabc819a0b63da422b455913343b59}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1InfogainLossLayer}{Infogain\+Loss\+Layer})\hypertarget{namespacecaffe_a434258d6113160a68f66d00654ae7a63}{}\label{namespacecaffe_a434258d6113160a68f66d00654ae7a63}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Infogain\+Loss)\hypertarget{namespacecaffe_adb0a111d48e8894c02e1c281a3b38b33}{}\label{namespacecaffe_adb0a111d48e8894c02e1c281a3b38b33}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1InnerProductLayer}{Inner\+Product\+Layer})\hypertarget{namespacecaffe_aedabc6751279d7a5619ea66e4818bfcb}{}\label{namespacecaffe_aedabc6751279d7a5619ea66e4818bfcb}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Inner\+Product)\hypertarget{namespacecaffe_a1c899720e9a6b5210ef8eae27530243f}{}\label{namespacecaffe_a1c899720e9a6b5210ef8eae27530243f}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1InputLayer}{Input\+Layer})\hypertarget{namespacecaffe_ac9ba89bc413fa8daedd851b7a2cf5130}{}\label{namespacecaffe_ac9ba89bc413fa8daedd851b7a2cf5130}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Input)\hypertarget{namespacecaffe_abe2a47b4dfeaff782d02928635646224}{}\label{namespacecaffe_abe2a47b4dfeaff782d02928635646224}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1InterpLayer}{Interp\+Layer})\hypertarget{namespacecaffe_ad02db33afa87c8d1c906bffd3ec089e2}{}\label{namespacecaffe_ad02db33afa87c8d1c906bffd3ec089e2}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Interp)\hypertarget{namespacecaffe_a411f4653b66939729763eca796ec6718}{}\label{namespacecaffe_a411f4653b66939729763eca796ec6718}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1LogLayer}{Log\+Layer})\hypertarget{namespacecaffe_a0660db69c30c83d6ab786a31cb5d1601}{}\label{namespacecaffe_a0660db69c30c83d6ab786a31cb5d1601}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Log)\hypertarget{namespacecaffe_a72ac9cb82e9f678a29e4a367acaf7985}{}\label{namespacecaffe_a72ac9cb82e9f678a29e4a367acaf7985}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1LossLayer}{Loss\+Layer})\hypertarget{namespacecaffe_a4e622070ea84ee8b7bd8362074e257c4}{}\label{namespacecaffe_a4e622070ea84ee8b7bd8362074e257c4}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1LRNLayer}{L\+R\+N\+Layer})\hypertarget{namespacecaffe_a818b23abbae9ca690cd0a4bd07a8870e}{}\label{namespacecaffe_a818b23abbae9ca690cd0a4bd07a8870e}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1LSTMLayer}{L\+S\+T\+M\+Layer})\hypertarget{namespacecaffe_a520f70622b9ea8e1abab8d983062cc4e}{}\label{namespacecaffe_a520f70622b9ea8e1abab8d983062cc4e}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (L\+S\+TM)\hypertarget{namespacecaffe_a30dc42cdaffcb0943ab747752d70b1e8}{}\label{namespacecaffe_a30dc42cdaffcb0943ab747752d70b1e8}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\Dtype {\bfseries sigmoid} (Dtype x)\hypertarget{namespacecaffe_a09950f2e1819d3f30dec69bbb8e404a1}{}\label{namespacecaffe_a09950f2e1819d3f30dec69bbb8e404a1}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\Dtype {\bfseries tanh} (Dtype x)\hypertarget{namespacecaffe_a4b96feb770b70ba19a175541ff1b0a23}{}\label{namespacecaffe_a4b96feb770b70ba19a175541ff1b0a23}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1LSTMUnitLayer}{L\+S\+T\+M\+Unit\+Layer})\hypertarget{namespacecaffe_a1ed3633b84db47c930043db15dec8214}{}\label{namespacecaffe_a1ed3633b84db47c930043db15dec8214}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (L\+S\+T\+M\+Unit)\hypertarget{namespacecaffe_af51f510e13834066bf5c15b170ddff38}{}\label{namespacecaffe_af51f510e13834066bf5c15b170ddff38}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1MemoryDataLayer}{Memory\+Data\+Layer})\hypertarget{namespacecaffe_a760d67cbf4c0daf41b5ea8035455a295}{}\label{namespacecaffe_a760d67cbf4c0daf41b5ea8035455a295}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Memory\+Data)\hypertarget{namespacecaffe_a16457f4e83fc72cb5b1a9ae47b7108fd}{}\label{namespacecaffe_a16457f4e83fc72cb5b1a9ae47b7108fd}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1MultinomialLogisticLossLayer}{Multinomial\+Logistic\+Loss\+Layer})\hypertarget{namespacecaffe_a2b7ccb24cf58e7aa080107a7adb1635c}{}\label{namespacecaffe_a2b7ccb24cf58e7aa080107a7adb1635c}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Multinomial\+Logistic\+Loss)\hypertarget{namespacecaffe_a7dc7bc19bf7f4b0054da48c61cf8a4c6}{}\label{namespacecaffe_a7dc7bc19bf7f4b0054da48c61cf8a4c6}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1MVNLayer}{M\+V\+N\+Layer})\hypertarget{namespacecaffe_adad1b55d7188c055ff6c1323fb4ffb42}{}\label{namespacecaffe_adad1b55d7188c055ff6c1323fb4ffb42}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (M\+VN)\hypertarget{namespacecaffe_a56449a416aac5333585ba14749e472c5}{}\label{namespacecaffe_a56449a416aac5333585ba14749e472c5}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1NeuronLayer}{Neuron\+Layer})\hypertarget{namespacecaffe_a143812cdb97718180e8ef57f02b08d7c}{}\label{namespacecaffe_a143812cdb97718180e8ef57f02b08d7c}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1ParameterLayer}{Parameter\+Layer})\hypertarget{namespacecaffe_a34e5c7bfc2304cd912424c9177ababfe}{}\label{namespacecaffe_a34e5c7bfc2304cd912424c9177ababfe}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Parameter)\hypertarget{namespacecaffe_ad5359beb120f9e026c3f7821aed5ea83}{}\label{namespacecaffe_ad5359beb120f9e026c3f7821aed5ea83}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1PoolingLayer}{Pooling\+Layer})\hypertarget{namespacecaffe_af43ea480985566d99aa40bf8d862830a}{}\label{namespacecaffe_af43ea480985566d99aa40bf8d862830a}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1PowerLayer}{Power\+Layer})\hypertarget{namespacecaffe_afc43e6d359620a8c571275f7d75c6a4c}{}\label{namespacecaffe_afc43e6d359620a8c571275f7d75c6a4c}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Power)\hypertarget{namespacecaffe_a67bfabf3ad00dd339bc02f6ea87452f6}{}\label{namespacecaffe_a67bfabf3ad00dd339bc02f6ea87452f6}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1PReLULayer}{P\+Re\+L\+U\+Layer})\hypertarget{namespacecaffe_a63ffa4025f946ef192d90ec01b836059}{}\label{namespacecaffe_a63ffa4025f946ef192d90ec01b836059}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (P\+Re\+LU)\hypertarget{namespacecaffe_a9a94d42ca9a0b3dfca549a754d83a88c}{}\label{namespacecaffe_a9a94d42ca9a0b3dfca549a754d83a88c}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1RecurrentLayer}{Recurrent\+Layer})\hypertarget{namespacecaffe_a6c8534874bc0babb6014579785bf2837}{}\label{namespacecaffe_a6c8534874bc0babb6014579785bf2837}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1ReductionLayer}{Reduction\+Layer})\hypertarget{namespacecaffe_ace96caf0e6989108da1e9d6af605c63a}{}\label{namespacecaffe_ace96caf0e6989108da1e9d6af605c63a}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Reduction)\hypertarget{namespacecaffe_a0a3430a6482308be1a4cc07a00ce8f70}{}\label{namespacecaffe_a0a3430a6482308be1a4cc07a00ce8f70}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1ReLULayer}{Re\+L\+U\+Layer})\hypertarget{namespacecaffe_a889d40ff9d35d8cdcf75089259d4ada0}{}\label{namespacecaffe_a889d40ff9d35d8cdcf75089259d4ada0}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1ReshapeLayer}{Reshape\+Layer})\hypertarget{namespacecaffe_ace6ac124894e2dc48c15bf442cdd166d}{}\label{namespacecaffe_ace6ac124894e2dc48c15bf442cdd166d}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Reshape)\hypertarget{namespacecaffe_a5402dd2da014a3eb8afae0a14012950b}{}\label{namespacecaffe_a5402dd2da014a3eb8afae0a14012950b}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1RNNLayer}{R\+N\+N\+Layer})\hypertarget{namespacecaffe_a79b0941573be7340a67db0b8c5ee2e48}{}\label{namespacecaffe_a79b0941573be7340a67db0b8c5ee2e48}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (R\+NN)\hypertarget{namespacecaffe_aa08b6ae789f27a758aca327a1d7a215d}{}\label{namespacecaffe_aa08b6ae789f27a758aca327a1d7a215d}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1ScaleLayer}{Scale\+Layer})\hypertarget{namespacecaffe_aca1ef7ccfa9da3fb302e8f7f4fa60ea7}{}\label{namespacecaffe_aca1ef7ccfa9da3fb302e8f7f4fa60ea7}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Scale)\hypertarget{namespacecaffe_aca3027ca38632f80bfe18fef43d7e716}{}\label{namespacecaffe_aca3027ca38632f80bfe18fef43d7e716}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1SigmoidCrossEntropyLossLayer}{Sigmoid\+Cross\+Entropy\+Loss\+Layer})\hypertarget{namespacecaffe_a8cf0d0032a97f7af35c6ab76023160cd}{}\label{namespacecaffe_a8cf0d0032a97f7af35c6ab76023160cd}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Sigmoid\+Cross\+Entropy\+Loss)\hypertarget{namespacecaffe_af9f168cf5361bf0e4f0bd0a40eef8a53}{}\label{namespacecaffe_af9f168cf5361bf0e4f0bd0a40eef8a53}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1SigmoidLayer}{Sigmoid\+Layer})\hypertarget{namespacecaffe_ae153024d4b24c9c45f986ae3974cc6b7}{}\label{namespacecaffe_ae153024d4b24c9c45f986ae3974cc6b7}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1SilenceLayer}{Silence\+Layer})\hypertarget{namespacecaffe_a064921b478be54bac7eb408bbeb7e305}{}\label{namespacecaffe_a064921b478be54bac7eb408bbeb7e305}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Silence)\hypertarget{namespacecaffe_a278ad9cbbbf2356be969abff9f43da79}{}\label{namespacecaffe_a278ad9cbbbf2356be969abff9f43da79}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1SliceLayer}{Slice\+Layer})\hypertarget{namespacecaffe_a0e952eac5677470cac34ff64fd349c8d}{}\label{namespacecaffe_a0e952eac5677470cac34ff64fd349c8d}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Slice)\hypertarget{namespacecaffe_a314589f4c6263a0d173212f097285ef7}{}\label{namespacecaffe_a314589f4c6263a0d173212f097285ef7}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1SoftmaxLayer}{Softmax\+Layer})\hypertarget{namespacecaffe_a6fa6fe4a2398b265fe5ca12997afbb38}{}\label{namespacecaffe_a6fa6fe4a2398b265fe5ca12997afbb38}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1SoftmaxWithLossLayer}{Softmax\+With\+Loss\+Layer})\hypertarget{namespacecaffe_a012dfaa945f436a700b3f0dbf033c893}{}\label{namespacecaffe_a012dfaa945f436a700b3f0dbf033c893}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Softmax\+With\+Loss)\hypertarget{namespacecaffe_a79a031f7f658603ddd8ef283ef085079}{}\label{namespacecaffe_a79a031f7f658603ddd8ef283ef085079}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1SplitLayer}{Split\+Layer})\hypertarget{namespacecaffe_a760dd19eb7d418a3629ce7045fe56a6c}{}\label{namespacecaffe_a760dd19eb7d418a3629ce7045fe56a6c}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Split)\hypertarget{namespacecaffe_a497c5806d306e623ed14ab2175ced665}{}\label{namespacecaffe_a497c5806d306e623ed14ab2175ced665}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1SPPLayer}{S\+P\+P\+Layer})\hypertarget{namespacecaffe_a899ff19b079c1cb64676bdd08fe8854b}{}\label{namespacecaffe_a899ff19b079c1cb64676bdd08fe8854b}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (S\+PP)\hypertarget{namespacecaffe_ab10cdcd5667c76231b739559ac5569e7}{}\label{namespacecaffe_ab10cdcd5667c76231b739559ac5569e7}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1SwishLayer}{Swish\+Layer})\hypertarget{namespacecaffe_ab49368559d2968fec001ef97d0904a17}{}\label{namespacecaffe_ab49368559d2968fec001ef97d0904a17}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Swish)\hypertarget{namespacecaffe_a2d73ce0550fb332d0cd1975fa18fd563}{}\label{namespacecaffe_a2d73ce0550fb332d0cd1975fa18fd563}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1TanHLayer}{Tan\+H\+Layer})\hypertarget{namespacecaffe_a51e7e7c425ce80cbaec01110d4d7e914}{}\label{namespacecaffe_a51e7e7c425ce80cbaec01110d4d7e914}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1ThresholdLayer}{Threshold\+Layer})\hypertarget{namespacecaffe_a9487decd4c03d6172ca8bdbeccf44c24}{}\label{namespacecaffe_a9487decd4c03d6172ca8bdbeccf44c24}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Threshold)\hypertarget{namespacecaffe_ae425614c734e0dbeaaffcee36d24dadf}{}\label{namespacecaffe_ae425614c734e0dbeaaffcee36d24dadf}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1TileLayer}{Tile\+Layer})\hypertarget{namespacecaffe_a357afca83e3c67f2ccc7402bd4b97353}{}\label{namespacecaffe_a357afca83e3c67f2ccc7402bd4b97353}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+SS} (Tile)\hypertarget{namespacecaffe_a6236555220de28c43c8064b5ce1d0db4}{}\label{namespacecaffe_a6236555220de28c43c8064b5ce1d0db4}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1Net}{Net})\hypertarget{namespacecaffe_af8030f9a1ee4f018561a42359c365da9}{}\label{namespacecaffe_af8030f9a1ee4f018561a42359c365da9}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries Load\+Net\+Weights} (shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Net}{Net}$<$ Dtype $>$ $>$ net, const std\+::string \&model\+\_\+list)\hypertarget{namespacecaffe_a810a81d45774b0f5ff238396a9a5ca8c}{}\label{namespacecaffe_a810a81d45774b0f5ff238396a9a5ca8c}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1Solver}{Solver})\hypertarget{namespacecaffe_a76fd1ebc28ae6ed213991bcfbbc2d25c}{}\label{namespacecaffe_a76fd1ebc28ae6ed213991bcfbbc2d25c}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries adadelta\+\_\+update\+\_\+gpu} (int N, Dtype $\ast$g, Dtype $\ast$h, Dtype $\ast$h2, Dtype momentum, Dtype delta, Dtype local\+\_\+rate)\hypertarget{namespacecaffe_a6371e76ca471695989f83769105dbce0}{}\label{namespacecaffe_a6371e76ca471695989f83769105dbce0}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1AdaDeltaSolver}{Ada\+Delta\+Solver})\hypertarget{namespacecaffe_a113bdc980cbb9f2af47aacd96e65745b}{}\label{namespacecaffe_a113bdc980cbb9f2af47aacd96e65745b}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+S\+O\+L\+V\+E\+R\+\_\+\+C\+L\+A\+SS} (Ada\+Delta)\hypertarget{namespacecaffe_abb127972b9f22d3db0c8aa8ca91292f9}{}\label{namespacecaffe_abb127972b9f22d3db0c8aa8ca91292f9}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries adagrad\+\_\+update\+\_\+gpu} (int N, Dtype $\ast$g, Dtype $\ast$h, Dtype delta, Dtype local\+\_\+rate)\hypertarget{namespacecaffe_a5f5a95a53781fee3860a7b2649775c77}{}\label{namespacecaffe_a5f5a95a53781fee3860a7b2649775c77}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1AdaGradSolver}{Ada\+Grad\+Solver})\hypertarget{namespacecaffe_a831bef9b557689042deec03d8bfeaa4d}{}\label{namespacecaffe_a831bef9b557689042deec03d8bfeaa4d}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+S\+O\+L\+V\+E\+R\+\_\+\+C\+L\+A\+SS} (Ada\+Grad)\hypertarget{namespacecaffe_aa7e8efd116fe1ad53ac4687a17e58368}{}\label{namespacecaffe_aa7e8efd116fe1ad53ac4687a17e58368}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries adam\+\_\+update\+\_\+gpu} (int N, Dtype $\ast$g, Dtype $\ast$m, Dtype $\ast$v, Dtype beta1, Dtype beta2, Dtype eps\+\_\+hat, Dtype corrected\+\_\+local\+\_\+rate)\hypertarget{namespacecaffe_a483e041e0c80d67e254f52003bf2ef27}{}\label{namespacecaffe_a483e041e0c80d67e254f52003bf2ef27}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1AdamSolver}{Adam\+Solver})\hypertarget{namespacecaffe_af4ddedfd2728d0c2fdceb68ee4f394fa}{}\label{namespacecaffe_af4ddedfd2728d0c2fdceb68ee4f394fa}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+S\+O\+L\+V\+E\+R\+\_\+\+C\+L\+A\+SS} (Adam)\hypertarget{namespacecaffe_aaabbc77f8f1b832c4a1e10cb711f8650}{}\label{namespacecaffe_aaabbc77f8f1b832c4a1e10cb711f8650}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries nesterov\+\_\+update\+\_\+gpu} (int N, Dtype $\ast$g, Dtype $\ast$h, Dtype momentum, Dtype local\+\_\+rate)\hypertarget{namespacecaffe_a98a8eff88f111dba635bdc3f6e0498b1}{}\label{namespacecaffe_a98a8eff88f111dba635bdc3f6e0498b1}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1NesterovSolver}{Nesterov\+Solver})\hypertarget{namespacecaffe_a02cc71391faa1a585e54847dee621d3e}{}\label{namespacecaffe_a02cc71391faa1a585e54847dee621d3e}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+S\+O\+L\+V\+E\+R\+\_\+\+C\+L\+A\+SS} (Nesterov)\hypertarget{namespacecaffe_afd512384c2b9ee0431403c8fb678314a}{}\label{namespacecaffe_afd512384c2b9ee0431403c8fb678314a}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries rmsprop\+\_\+update\+\_\+gpu} (int N, Dtype $\ast$g, Dtype $\ast$h, Dtype rms\+\_\+decay, Dtype delta, Dtype local\+\_\+rate)\hypertarget{namespacecaffe_a39053f2a38c1044610a95c4d43588540}{}\label{namespacecaffe_a39053f2a38c1044610a95c4d43588540}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1RMSPropSolver}{R\+M\+S\+Prop\+Solver})\hypertarget{namespacecaffe_afbfed44d531472cf6f362c9b6b8b806e}{}\label{namespacecaffe_afbfed44d531472cf6f362c9b6b8b806e}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+S\+O\+L\+V\+E\+R\+\_\+\+C\+L\+A\+SS} (R\+M\+S\+Prop)\hypertarget{namespacecaffe_a06c041d02b37d5ba5345957b0654ae10}{}\label{namespacecaffe_a06c041d02b37d5ba5345957b0654ae10}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries sgd\+\_\+update\+\_\+gpu} (int N, Dtype $\ast$g, Dtype $\ast$h, Dtype momentum, Dtype local\+\_\+rate)\hypertarget{namespacecaffe_a7b52a25aea6e34816f4758e6d12f7feb}{}\label{namespacecaffe_a7b52a25aea6e34816f4758e6d12f7feb}
+
+\item 
+{\bfseries I\+N\+S\+T\+A\+N\+T\+I\+A\+T\+E\+\_\+\+C\+L\+A\+SS} (\hyperlink{classcaffe_1_1SGDSolver}{S\+G\+D\+Solver})\hypertarget{namespacecaffe_ab49a0e695d3ff3f6774083c4ed6fe9a3}{}\label{namespacecaffe_ab49a0e695d3ff3f6774083c4ed6fe9a3}
+
+\item 
+{\bfseries R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+S\+O\+L\+V\+E\+R\+\_\+\+C\+L\+A\+SS} (S\+GD)\hypertarget{namespacecaffe_a04e510057496d7ef8d16fc71e9ac7ac9}{}\label{namespacecaffe_a04e510057496d7ef8d16fc71e9ac7ac9}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries hdf5\+\_\+load\+\_\+nd\+\_\+dataset$<$ float $>$} (hid\+\_\+t file\+\_\+id, const char $\ast$dataset\+\_\+name\+\_\+, int min\+\_\+dim, int max\+\_\+dim, \hyperlink{classcaffe_1_1Blob}{Blob}$<$ float $>$ $\ast$blob, bool reshape)\hypertarget{namespacecaffe_a82f7e8e73b156548fa7b90e67024ca1d}{}\label{namespacecaffe_a82f7e8e73b156548fa7b90e67024ca1d}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries hdf5\+\_\+load\+\_\+nd\+\_\+dataset$<$ double $>$} (hid\+\_\+t file\+\_\+id, const char $\ast$dataset\+\_\+name\+\_\+, int min\+\_\+dim, int max\+\_\+dim, \hyperlink{classcaffe_1_1Blob}{Blob}$<$ double $>$ $\ast$blob, bool reshape)\hypertarget{namespacecaffe_a33e1d4fe0ec40d1186387c7872f4c99d}{}\label{namespacecaffe_a33e1d4fe0ec40d1186387c7872f4c99d}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries hdf5\+\_\+save\+\_\+nd\+\_\+dataset$<$ float $>$} (const hid\+\_\+t file\+\_\+id, const string \&dataset\+\_\+name, const \hyperlink{classcaffe_1_1Blob}{Blob}$<$ float $>$ \&blob, bool write\+\_\+diff)\hypertarget{namespacecaffe_aea2d44137826e942cabd48bf54abbc21}{}\label{namespacecaffe_aea2d44137826e942cabd48bf54abbc21}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries hdf5\+\_\+save\+\_\+nd\+\_\+dataset$<$ double $>$} (hid\+\_\+t file\+\_\+id, const string \&dataset\+\_\+name, const \hyperlink{classcaffe_1_1Blob}{Blob}$<$ double $>$ \&blob, bool write\+\_\+diff)\hypertarget{namespacecaffe_a91c74b78f13fb2d6fba4f45ead5480bf}{}\label{namespacecaffe_a91c74b78f13fb2d6fba4f45ead5480bf}
+
+\item 
+bool {\bfseries is\+\_\+a\+\_\+ge\+\_\+zero\+\_\+and\+\_\+a\+\_\+lt\+\_\+b} (int a, int b)\hypertarget{namespacecaffe_a8173057750ece7bb5b6f09feb7f9039e}{}\label{namespacecaffe_a8173057750ece7bb5b6f09feb7f9039e}
+
+\item 
+template void {\bfseries im2col\+\_\+cpu$<$ float $>$} (const float $\ast$data\+\_\+im, const int channels, const int height, const int width, const int kernel\+\_\+h, const int kernel\+\_\+w, const int pad\+\_\+h, const int pad\+\_\+w, const int stride\+\_\+h, const int stride\+\_\+w, const int dilation\+\_\+h, const int dilation\+\_\+w, float $\ast$data\+\_\+col)\hypertarget{namespacecaffe_a6d9bca8fe0b3ab7bc2b9ce8883ac08e9}{}\label{namespacecaffe_a6d9bca8fe0b3ab7bc2b9ce8883ac08e9}
+
+\item 
+template void {\bfseries im2col\+\_\+cpu$<$ double $>$} (const double $\ast$data\+\_\+im, const int channels, const int height, const int width, const int kernel\+\_\+h, const int kernel\+\_\+w, const int pad\+\_\+h, const int pad\+\_\+w, const int stride\+\_\+h, const int stride\+\_\+w, const int dilation\+\_\+h, const int dilation\+\_\+w, double $\ast$data\+\_\+col)\hypertarget{namespacecaffe_a10d059c0dca7be3fe4289cd8efcba484}{}\label{namespacecaffe_a10d059c0dca7be3fe4289cd8efcba484}
+
+\item 
+{\footnotesize template$<$typename Dtype $>$ }\\void {\bfseries im2col\+\_\+nd\+\_\+core\+\_\+cpu} (const Dtype $\ast$data\+\_\+input, const bool im2col, const int num\+\_\+spatial\+\_\+axes, const int $\ast$im\+\_\+shape, const int $\ast$col\+\_\+shape, const int $\ast$kernel\+\_\+shape, const int $\ast$pad, const int $\ast$stride, const int $\ast$dilation, Dtype $\ast$data\+\_\+output)\hypertarget{namespacecaffe_a85bd5b073b9dce6e47dcc087f1241a14}{}\label{namespacecaffe_a85bd5b073b9dce6e47dcc087f1241a14}
+
+\item 
+template void {\bfseries im2col\+\_\+nd\+\_\+cpu$<$ float $>$} (const float $\ast$data\+\_\+im, const int num\+\_\+spatial\+\_\+axes, const int $\ast$im\+\_\+shape, const int $\ast$col\+\_\+shape, const int $\ast$kernel\+\_\+shape, const int $\ast$pad, const int $\ast$stride, const int $\ast$dilation, float $\ast$data\+\_\+col)\hypertarget{namespacecaffe_ae0569b98c2e1686987b78f0d8fd7401b}{}\label{namespacecaffe_ae0569b98c2e1686987b78f0d8fd7401b}
+
+\item 
+template void {\bfseries im2col\+\_\+nd\+\_\+cpu$<$ double $>$} (const double $\ast$data\+\_\+im, const int num\+\_\+spatial\+\_\+axes, const int $\ast$im\+\_\+shape, const int $\ast$col\+\_\+shape, const int $\ast$kernel\+\_\+shape, const int $\ast$pad, const int $\ast$stride, const int $\ast$dilation, double $\ast$data\+\_\+col)\hypertarget{namespacecaffe_a9ea6bae3990440edd188a8821b436638}{}\label{namespacecaffe_a9ea6bae3990440edd188a8821b436638}
+
+\item 
+template void {\bfseries col2im\+\_\+cpu$<$ float $>$} (const float $\ast$data\+\_\+col, const int channels, const int height, const int width, const int kernel\+\_\+h, const int kernel\+\_\+w, const int pad\+\_\+h, const int pad\+\_\+w, const int stride\+\_\+h, const int stride\+\_\+w, const int dilation\+\_\+h, const int dilation\+\_\+w, float $\ast$data\+\_\+im)\hypertarget{namespacecaffe_aa156af000fb6e8d19ac363b8c369a7b5}{}\label{namespacecaffe_aa156af000fb6e8d19ac363b8c369a7b5}
+
+\item 
+template void {\bfseries col2im\+\_\+cpu$<$ double $>$} (const double $\ast$data\+\_\+col, const int channels, const int height, const int width, const int kernel\+\_\+h, const int kernel\+\_\+w, const int pad\+\_\+h, const int pad\+\_\+w, const int stride\+\_\+h, const int stride\+\_\+w, const int dilation\+\_\+h, const int dilation\+\_\+w, double $\ast$data\+\_\+im)\hypertarget{namespacecaffe_afa96e21891b2b26f6cb5d6245f593048}{}\label{namespacecaffe_afa96e21891b2b26f6cb5d6245f593048}
+
+\item 
+template void {\bfseries col2im\+\_\+nd\+\_\+cpu$<$ float $>$} (const float $\ast$data\+\_\+col, const int num\+\_\+spatial\+\_\+axes, const int $\ast$im\+\_\+shape, const int $\ast$col\+\_\+shape, const int $\ast$kernel\+\_\+shape, const int $\ast$pad, const int $\ast$stride, const int $\ast$dilation, float $\ast$data\+\_\+im)\hypertarget{namespacecaffe_a079fc62a03335d277312a98c6ade5b3d}{}\label{namespacecaffe_a079fc62a03335d277312a98c6ade5b3d}
+
+\item 
+template void {\bfseries col2im\+\_\+nd\+\_\+cpu$<$ double $>$} (const double $\ast$data\+\_\+col, const int num\+\_\+spatial\+\_\+axes, const int $\ast$im\+\_\+shape, const int $\ast$col\+\_\+shape, const int $\ast$kernel\+\_\+shape, const int $\ast$pad, const int $\ast$stride, const int $\ast$dilation, double $\ast$data\+\_\+im)\hypertarget{namespacecaffe_a6d768b294dffe57d67440555d8f19e89}{}\label{namespacecaffe_a6d768b294dffe57d67440555d8f19e89}
+
+\item 
+template void {\bfseries caffe\+\_\+cpu\+\_\+interp2$<$ float, false $>$} (const int, const float $\ast$, const int, const int, const int, const int, const int, const int, float $\ast$, const int, const int, const int, const int, const int, const int)\hypertarget{namespacecaffe_a8a9b4047e43555ac4b71630acade4d6d}{}\label{namespacecaffe_a8a9b4047e43555ac4b71630acade4d6d}
+
+\item 
+template void {\bfseries caffe\+\_\+cpu\+\_\+interp2$<$ float, true $>$} (const int, const float $\ast$, const int, const int, const int, const int, const int, const int, float $\ast$, const int, const int, const int, const int, const int, const int)\hypertarget{namespacecaffe_a8c298f77d763fc2d8effe98fe4277276}{}\label{namespacecaffe_a8c298f77d763fc2d8effe98fe4277276}
+
+\item 
+template void {\bfseries caffe\+\_\+cpu\+\_\+interp2$<$ double, false $>$} (const int, const double $\ast$, const int, const int, const int, const int, const int, const int, double $\ast$, const int, const int, const int, const int, const int, const int)\hypertarget{namespacecaffe_a33b27f34f5d3d4f847d77e64ef16c533}{}\label{namespacecaffe_a33b27f34f5d3d4f847d77e64ef16c533}
+
+\item 
+template void {\bfseries caffe\+\_\+cpu\+\_\+interp2$<$ double, true $>$} (const int, const double $\ast$, const int, const int, const int, const int, const int, const int, double $\ast$, const int, const int, const int, const int, const int, const int)\hypertarget{namespacecaffe_a806b49f696a1e9a67e348be31d158359}{}\label{namespacecaffe_a806b49f696a1e9a67e348be31d158359}
+
+\item 
+template void {\bfseries caffe\+\_\+cpu\+\_\+interp2\+\_\+backward$<$ float, false $>$} (const int, float $\ast$, const int, const int, const int, const int, const int, const int, const float $\ast$, const int, const int, const int, const int, const int, const int)\hypertarget{namespacecaffe_ab8c82496638e6b4c60865cc848bd44c4}{}\label{namespacecaffe_ab8c82496638e6b4c60865cc848bd44c4}
+
+\item 
+template void {\bfseries caffe\+\_\+cpu\+\_\+interp2\+\_\+backward$<$ double, false $>$} (const int, double $\ast$, const int, const int, const int, const int, const int, const int, const double $\ast$, const int, const int, const int, const int, const int, const int)\hypertarget{namespacecaffe_a3a93217884ae59d39a7a8efaa82ad91e}{}\label{namespacecaffe_a3a93217884ae59d39a7a8efaa82ad91e}
+
+\item 
+template void {\bfseries caffe\+\_\+cpu\+\_\+pyramid2$<$ float, false $>$} (const int, const float $\ast$, const int, const int, float $\ast$, const int)\hypertarget{namespacecaffe_aa4fa4ea6724708af69117471a0d47abe}{}\label{namespacecaffe_aa4fa4ea6724708af69117471a0d47abe}
+
+\item 
+template void {\bfseries caffe\+\_\+cpu\+\_\+pyramid2$<$ float, true $>$} (const int, const float $\ast$, const int, const int, float $\ast$, const int)\hypertarget{namespacecaffe_a13c07192ab925de5ac19897c4a232f98}{}\label{namespacecaffe_a13c07192ab925de5ac19897c4a232f98}
+
+\item 
+template void {\bfseries caffe\+\_\+cpu\+\_\+pyramid2$<$ double, false $>$} (const int, const double $\ast$, const int, const int, double $\ast$, const int)\hypertarget{namespacecaffe_aa21b1ae8836fa4ab040286d1a9d48cb1}{}\label{namespacecaffe_aa21b1ae8836fa4ab040286d1a9d48cb1}
+
+\item 
+template void {\bfseries caffe\+\_\+cpu\+\_\+pyramid2$<$ double, true $>$} (const int, const double $\ast$, const int, const int, double $\ast$, const int)\hypertarget{namespacecaffe_ad0904018c92927c70ddae1b4bbc46493}{}\label{namespacecaffe_ad0904018c92927c70ddae1b4bbc46493}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+cpu\+\_\+gemm$<$ float $>$} (const C\+B\+L\+A\+S\+\_\+\+T\+R\+A\+N\+S\+P\+O\+SE TransA, const C\+B\+L\+A\+S\+\_\+\+T\+R\+A\+N\+S\+P\+O\+SE TransB, const int M, const int N, const int K, const float alpha, const float $\ast$A, const float $\ast$B, const float beta, float $\ast$C)\hypertarget{namespacecaffe_af2b584d464ec95b349ba159204d58ba7}{}\label{namespacecaffe_af2b584d464ec95b349ba159204d58ba7}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+cpu\+\_\+gemm$<$ double $>$} (const C\+B\+L\+A\+S\+\_\+\+T\+R\+A\+N\+S\+P\+O\+SE TransA, const C\+B\+L\+A\+S\+\_\+\+T\+R\+A\+N\+S\+P\+O\+SE TransB, const int M, const int N, const int K, const double alpha, const double $\ast$A, const double $\ast$B, const double beta, double $\ast$C)\hypertarget{namespacecaffe_aa83e160e90266206ce3baf458a21d884}{}\label{namespacecaffe_aa83e160e90266206ce3baf458a21d884}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+cpu\+\_\+gemv$<$ float $>$} (const C\+B\+L\+A\+S\+\_\+\+T\+R\+A\+N\+S\+P\+O\+SE TransA, const int M, const int N, const float alpha, const float $\ast$A, const float $\ast$x, const float beta, float $\ast$y)\hypertarget{namespacecaffe_ab5a4363a871d7f6efa2d0fb201ca986a}{}\label{namespacecaffe_ab5a4363a871d7f6efa2d0fb201ca986a}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+cpu\+\_\+gemv$<$ double $>$} (const C\+B\+L\+A\+S\+\_\+\+T\+R\+A\+N\+S\+P\+O\+SE TransA, const int M, const int N, const double alpha, const double $\ast$A, const double $\ast$x, const double beta, double $\ast$y)\hypertarget{namespacecaffe_afd43f6e27055e68628f6eb42f8416407}{}\label{namespacecaffe_afd43f6e27055e68628f6eb42f8416407}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+axpy$<$ float $>$} (const int N, const float alpha, const float $\ast$X, float $\ast$Y)\hypertarget{namespacecaffe_aaa105c828f9c1423a07a6edbf9dd44cd}{}\label{namespacecaffe_aaa105c828f9c1423a07a6edbf9dd44cd}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+axpy$<$ double $>$} (const int N, const double alpha, const double $\ast$X, double $\ast$Y)\hypertarget{namespacecaffe_a1429069b15b332c453b637fda744bc81}{}\label{namespacecaffe_a1429069b15b332c453b637fda744bc81}
+
+\item 
+template void {\bfseries caffe\+\_\+set$<$ int $>$} (const int N, const int alpha, int $\ast$Y)\hypertarget{namespacecaffe_a4b6fe4799eef73c0c3e1647076a40e16}{}\label{namespacecaffe_a4b6fe4799eef73c0c3e1647076a40e16}
+
+\item 
+template void {\bfseries caffe\+\_\+set$<$ float $>$} (const int N, const float alpha, float $\ast$Y)\hypertarget{namespacecaffe_a674f08d34c3c699147783b92c237bb33}{}\label{namespacecaffe_a674f08d34c3c699147783b92c237bb33}
+
+\item 
+template void {\bfseries caffe\+\_\+set$<$ double $>$} (const int N, const double alpha, double $\ast$Y)\hypertarget{namespacecaffe_a5b38e7723533b807cf41eb6647f02032}{}\label{namespacecaffe_a5b38e7723533b807cf41eb6647f02032}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+add\+\_\+scalar} (const int N, const float alpha, float $\ast$Y)\hypertarget{namespacecaffe_a90978c3c773431b11c882e2a036bd2c2}{}\label{namespacecaffe_a90978c3c773431b11c882e2a036bd2c2}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+add\+\_\+scalar} (const int N, const double alpha, double $\ast$Y)\hypertarget{namespacecaffe_a8894a527bd87ff85fd7f480ed4876917}{}\label{namespacecaffe_a8894a527bd87ff85fd7f480ed4876917}
+
+\item 
+template void {\bfseries caffe\+\_\+copy$<$ int $>$} (const int N, const int $\ast$X, int $\ast$Y)\hypertarget{namespacecaffe_a9d3755b4fb843b832985af9d137dfbc0}{}\label{namespacecaffe_a9d3755b4fb843b832985af9d137dfbc0}
+
+\item 
+template void {\bfseries caffe\+\_\+copy$<$ unsigned int $>$} (const int N, const unsigned int $\ast$X, unsigned int $\ast$Y)\hypertarget{namespacecaffe_a5669a2559e1a131157b3f7df02b71c25}{}\label{namespacecaffe_a5669a2559e1a131157b3f7df02b71c25}
+
+\item 
+template void {\bfseries caffe\+\_\+copy$<$ float $>$} (const int N, const float $\ast$X, float $\ast$Y)\hypertarget{namespacecaffe_ae1ee74a0d097c75a767085dc6a1a44be}{}\label{namespacecaffe_ae1ee74a0d097c75a767085dc6a1a44be}
+
+\item 
+template void {\bfseries caffe\+\_\+copy$<$ double $>$} (const int N, const double $\ast$X, double $\ast$Y)\hypertarget{namespacecaffe_a4009834e605f6a5b7e4fb47e50dbf10c}{}\label{namespacecaffe_a4009834e605f6a5b7e4fb47e50dbf10c}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+scal$<$ float $>$} (const int N, const float alpha, float $\ast$X)\hypertarget{namespacecaffe_a53ccb0c1449e14351b86a919948d1a87}{}\label{namespacecaffe_a53ccb0c1449e14351b86a919948d1a87}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+scal$<$ double $>$} (const int N, const double alpha, double $\ast$X)\hypertarget{namespacecaffe_a11cf505d7d4980d3d8b2eb84f76bc969}{}\label{namespacecaffe_a11cf505d7d4980d3d8b2eb84f76bc969}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+cpu\+\_\+axpby$<$ float $>$} (const int N, const float alpha, const float $\ast$X, const float beta, float $\ast$Y)\hypertarget{namespacecaffe_a80cee6f8f71d4d64423b07251a369c98}{}\label{namespacecaffe_a80cee6f8f71d4d64423b07251a369c98}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+cpu\+\_\+axpby$<$ double $>$} (const int N, const double alpha, const double $\ast$X, const double beta, double $\ast$Y)\hypertarget{namespacecaffe_acdfc74a60bc50fffe61fd27484b6b795}{}\label{namespacecaffe_acdfc74a60bc50fffe61fd27484b6b795}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+add$<$ float $>$} (const int n, const float $\ast$a, const float $\ast$b, float $\ast$y)\hypertarget{namespacecaffe_a33de0e8c285c49d3388dd9b36cfae096}{}\label{namespacecaffe_a33de0e8c285c49d3388dd9b36cfae096}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+add$<$ double $>$} (const int n, const double $\ast$a, const double $\ast$b, double $\ast$y)\hypertarget{namespacecaffe_a7e191890a0b953fafbb5cabb94c185fd}{}\label{namespacecaffe_a7e191890a0b953fafbb5cabb94c185fd}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+sub$<$ float $>$} (const int n, const float $\ast$a, const float $\ast$b, float $\ast$y)\hypertarget{namespacecaffe_ad95d5c303539634141319733138a1a30}{}\label{namespacecaffe_ad95d5c303539634141319733138a1a30}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+sub$<$ double $>$} (const int n, const double $\ast$a, const double $\ast$b, double $\ast$y)\hypertarget{namespacecaffe_afbe160a31cb8ba24b9a458b29dd30b29}{}\label{namespacecaffe_afbe160a31cb8ba24b9a458b29dd30b29}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+mul$<$ float $>$} (const int n, const float $\ast$a, const float $\ast$b, float $\ast$y)\hypertarget{namespacecaffe_a6c2ce80409bbcc2f7628245d0d0961d8}{}\label{namespacecaffe_a6c2ce80409bbcc2f7628245d0d0961d8}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+mul$<$ double $>$} (const int n, const double $\ast$a, const double $\ast$b, double $\ast$y)\hypertarget{namespacecaffe_aa737440327ff64cf24422620fcb7b5f2}{}\label{namespacecaffe_aa737440327ff64cf24422620fcb7b5f2}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+div$<$ float $>$} (const int n, const float $\ast$a, const float $\ast$b, float $\ast$y)\hypertarget{namespacecaffe_a5da01a3589fb3ed828d3c3ea28dca727}{}\label{namespacecaffe_a5da01a3589fb3ed828d3c3ea28dca727}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+div$<$ double $>$} (const int n, const double $\ast$a, const double $\ast$b, double $\ast$y)\hypertarget{namespacecaffe_a6aff3d4f403573c6116ea52e0875667c}{}\label{namespacecaffe_a6aff3d4f403573c6116ea52e0875667c}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+powx$<$ float $>$} (const int n, const float $\ast$a, const float b, float $\ast$y)\hypertarget{namespacecaffe_ac63faf91a74ed26c21995906ffc05aa4}{}\label{namespacecaffe_ac63faf91a74ed26c21995906ffc05aa4}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+powx$<$ double $>$} (const int n, const double $\ast$a, const double b, double $\ast$y)\hypertarget{namespacecaffe_abc32d9c6721f0a864270552957c513af}{}\label{namespacecaffe_abc32d9c6721f0a864270552957c513af}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+sqr$<$ float $>$} (const int n, const float $\ast$a, float $\ast$y)\hypertarget{namespacecaffe_add3fbffad218dec24176292a0fb2436a}{}\label{namespacecaffe_add3fbffad218dec24176292a0fb2436a}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+sqr$<$ double $>$} (const int n, const double $\ast$a, double $\ast$y)\hypertarget{namespacecaffe_a5b56a825d8809e999548bbfe94b3bb5b}{}\label{namespacecaffe_a5b56a825d8809e999548bbfe94b3bb5b}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+sqrt$<$ float $>$} (const int n, const float $\ast$a, float $\ast$y)\hypertarget{namespacecaffe_a972c4f9b0e5adbde79244f7d233b7416}{}\label{namespacecaffe_a972c4f9b0e5adbde79244f7d233b7416}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+sqrt$<$ double $>$} (const int n, const double $\ast$a, double $\ast$y)\hypertarget{namespacecaffe_a83d092226d5f4af982a5ee4670a8f81d}{}\label{namespacecaffe_a83d092226d5f4af982a5ee4670a8f81d}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+exp$<$ float $>$} (const int n, const float $\ast$a, float $\ast$y)\hypertarget{namespacecaffe_a0553e22b5a2615ce54bb22bab6a4df15}{}\label{namespacecaffe_a0553e22b5a2615ce54bb22bab6a4df15}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+exp$<$ double $>$} (const int n, const double $\ast$a, double $\ast$y)\hypertarget{namespacecaffe_ab934b2004cda176643660f2029ff9fa2}{}\label{namespacecaffe_ab934b2004cda176643660f2029ff9fa2}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+log$<$ float $>$} (const int n, const float $\ast$a, float $\ast$y)\hypertarget{namespacecaffe_acb0328e4604ee2bb2829c1ab069a047b}{}\label{namespacecaffe_acb0328e4604ee2bb2829c1ab069a047b}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+log$<$ double $>$} (const int n, const double $\ast$a, double $\ast$y)\hypertarget{namespacecaffe_a21f7168d644e539376f94aabd9fea305}{}\label{namespacecaffe_a21f7168d644e539376f94aabd9fea305}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+abs$<$ float $>$} (const int n, const float $\ast$a, float $\ast$y)\hypertarget{namespacecaffe_ae723398dd9f752078438ba1e9e07f084}{}\label{namespacecaffe_ae723398dd9f752078438ba1e9e07f084}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+abs$<$ double $>$} (const int n, const double $\ast$a, double $\ast$y)\hypertarget{namespacecaffe_ad108436357496f5f3469efdfa435ced7}{}\label{namespacecaffe_ad108436357496f5f3469efdfa435ced7}
+
+\item 
+template float {\bfseries caffe\+\_\+nextafter} (const float b)\hypertarget{namespacecaffe_a15b19ccf3032875f3963dc45bdca5b58}{}\label{namespacecaffe_a15b19ccf3032875f3963dc45bdca5b58}
+
+\item 
+template double {\bfseries caffe\+\_\+nextafter} (const double b)\hypertarget{namespacecaffe_aa0ed3e47a272cc59fbf35d315a06cff5}{}\label{namespacecaffe_aa0ed3e47a272cc59fbf35d315a06cff5}
+
+\item 
+template void {\bfseries caffe\+\_\+rng\+\_\+uniform$<$ float $>$} (const int n, const float a, const float b, float $\ast$r)\hypertarget{namespacecaffe_a847ecc499532e6db9ad63f3c6bc12bfb}{}\label{namespacecaffe_a847ecc499532e6db9ad63f3c6bc12bfb}
+
+\item 
+template void {\bfseries caffe\+\_\+rng\+\_\+uniform$<$ double $>$} (const int n, const double a, const double b, double $\ast$r)\hypertarget{namespacecaffe_a8c4bdf8dedd6900827a2786a51fc51ff}{}\label{namespacecaffe_a8c4bdf8dedd6900827a2786a51fc51ff}
+
+\item 
+template void {\bfseries caffe\+\_\+rng\+\_\+gaussian$<$ float $>$} (const int n, const float mu, const float sigma, float $\ast$r)\hypertarget{namespacecaffe_a651fc6ba95e1d724fb83944da736b72f}{}\label{namespacecaffe_a651fc6ba95e1d724fb83944da736b72f}
+
+\item 
+template void {\bfseries caffe\+\_\+rng\+\_\+gaussian$<$ double $>$} (const int n, const double mu, const double sigma, double $\ast$r)\hypertarget{namespacecaffe_a1d49416846c39cc87283957ee159d7a9}{}\label{namespacecaffe_a1d49416846c39cc87283957ee159d7a9}
+
+\item 
+template void {\bfseries caffe\+\_\+rng\+\_\+bernoulli$<$ double $>$} (const int n, const double p, int $\ast$r)\hypertarget{namespacecaffe_aa4918edaa352d82ee01343ee08c96797}{}\label{namespacecaffe_aa4918edaa352d82ee01343ee08c96797}
+
+\item 
+template void {\bfseries caffe\+\_\+rng\+\_\+bernoulli$<$ float $>$} (const int n, const float p, int $\ast$r)\hypertarget{namespacecaffe_a4e8207b9eb53532b11e1b8759f9621fe}{}\label{namespacecaffe_a4e8207b9eb53532b11e1b8759f9621fe}
+
+\item 
+template void {\bfseries caffe\+\_\+rng\+\_\+bernoulli$<$ double $>$} (const int n, const double p, unsigned int $\ast$r)\hypertarget{namespacecaffe_a2dbe4c3f8b0cbfe71a275cd962507503}{}\label{namespacecaffe_a2dbe4c3f8b0cbfe71a275cd962507503}
+
+\item 
+template void {\bfseries caffe\+\_\+rng\+\_\+bernoulli$<$ float $>$} (const int n, const float p, unsigned int $\ast$r)\hypertarget{namespacecaffe_a0b727625e524d756c165bdae0ca00808}{}\label{namespacecaffe_a0b727625e524d756c165bdae0ca00808}
+
+\item 
+{\footnotesize template$<$$>$ }\\float {\bfseries caffe\+\_\+cpu\+\_\+strided\+\_\+dot$<$ float $>$} (const int n, const float $\ast$x, const int incx, const float $\ast$y, const int incy)\hypertarget{namespacecaffe_a48329b51c67eb34f1ea5753784b4296d}{}\label{namespacecaffe_a48329b51c67eb34f1ea5753784b4296d}
+
+\item 
+{\footnotesize template$<$$>$ }\\double {\bfseries caffe\+\_\+cpu\+\_\+strided\+\_\+dot$<$ double $>$} (const int n, const double $\ast$x, const int incx, const double $\ast$y, const int incy)\hypertarget{namespacecaffe_a3a2239bd3add4d48d3596ec7dcbe38a2}{}\label{namespacecaffe_a3a2239bd3add4d48d3596ec7dcbe38a2}
+
+\item 
+template float {\bfseries caffe\+\_\+cpu\+\_\+dot$<$ float $>$} (const int n, const float $\ast$x, const float $\ast$y)\hypertarget{namespacecaffe_a673482df79e853d1b3e9525004debee3}{}\label{namespacecaffe_a673482df79e853d1b3e9525004debee3}
+
+\item 
+template double {\bfseries caffe\+\_\+cpu\+\_\+dot$<$ double $>$} (const int n, const double $\ast$x, const double $\ast$y)\hypertarget{namespacecaffe_ab63a5f29150cb620eb258d8a553767d0}{}\label{namespacecaffe_ab63a5f29150cb620eb258d8a553767d0}
+
+\item 
+{\footnotesize template$<$$>$ }\\float {\bfseries caffe\+\_\+cpu\+\_\+asum$<$ float $>$} (const int n, const float $\ast$x)\hypertarget{namespacecaffe_a129b47115ae86ed907940d7fa8fb0576}{}\label{namespacecaffe_a129b47115ae86ed907940d7fa8fb0576}
+
+\item 
+{\footnotesize template$<$$>$ }\\double {\bfseries caffe\+\_\+cpu\+\_\+asum$<$ double $>$} (const int n, const double $\ast$x)\hypertarget{namespacecaffe_a1e9591a34f95ee26700fc5e60d35518c}{}\label{namespacecaffe_a1e9591a34f95ee26700fc5e60d35518c}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+cpu\+\_\+scale$<$ float $>$} (const int n, const float alpha, const float $\ast$x, float $\ast$y)\hypertarget{namespacecaffe_a8652e05695145f9dfd4304117106a8f6}{}\label{namespacecaffe_a8652e05695145f9dfd4304117106a8f6}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries caffe\+\_\+cpu\+\_\+scale$<$ double $>$} (const int n, const double alpha, const double $\ast$x, double $\ast$y)\hypertarget{namespacecaffe_a104637443c3bd34c155a32bd29bb9150}{}\label{namespacecaffe_a104637443c3bd34c155a32bd29bb9150}
+
+\item 
+void {\bfseries Upgrade\+Snapshot\+Prefix\+Property} (const string \&param\+\_\+file, Solver\+Parameter $\ast$param)\hypertarget{namespacecaffe_a5ecdd6b870a4002b429466b83d2bb3b9}{}\label{namespacecaffe_a5ecdd6b870a4002b429466b83d2bb3b9}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const float {\bfseries k\+L\+O\+G\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD} = 1e-\/20\hypertarget{namespacecaffe_addfe87008440b3c5636d308f5189de6f}{}\label{namespacecaffe_addfe87008440b3c5636d308f5189de6f}
+
+\item 
+const int {\bfseries C\+A\+F\+F\+E\+\_\+\+C\+U\+D\+A\+\_\+\+N\+U\+M\+\_\+\+T\+H\+R\+E\+A\+DS} = 512\hypertarget{namespacecaffe_a10ad8f44dec37737a660d1d5439b9cca}{}\label{namespacecaffe_a10ad8f44dec37737a660d1d5439b9cca}
+
+\item 
+const Dtype {\bfseries alpha}\hypertarget{namespacecaffe_a32e3412526c6fa01d9ec08fc6866fb12}{}\label{namespacecaffe_a32e3412526c6fa01d9ec08fc6866fb12}
+
+\item 
+const Dtype const Dtype $\ast$ {\bfseries x}\hypertarget{namespacecaffe_a5ae8b4251a5cba81abd61499341870be}{}\label{namespacecaffe_a5ae8b4251a5cba81abd61499341870be}
+
+\item 
+const Dtype const Dtype Dtype $\ast$ {\bfseries y}\hypertarget{namespacecaffe_ab922408da6e0ba33ee7a334646b6c3b6}{}\label{namespacecaffe_ab922408da6e0ba33ee7a334646b6c3b6}
+
+\item 
+const float {\bfseries k\+B\+N\+L\+L\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD} = 50.\hypertarget{namespacecaffe_a01b89e7dac7d83e43840af4a4415589d}{}\label{namespacecaffe_a01b89e7dac7d83e43840af4a4415589d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A layer factory that allows one to register layers. During runtime, registered layers can be called by passing a Layer\+Parameter protobuffer to the Create\+Layer function\+: 
+
+A solver factory that allows one to register solvers, similar to layer factory. During runtime, registered solvers could be called by passing a Solver\+Parameter protobuffer to the Create\+Solver function\+:
+
+Layer\+Registry$<$\+Dtype$>$\+::\+Create\+Layer(param);
+
+There are two ways to register a layer. Assuming that we have a layer like\+:
+
+template $<$typename dtype$>$=\char`\"{}\char`\"{}$>$ class My\+Awesome\+Layer \+: public Layer$<$\+Dtype$>$ \{ // your implementations \};
+
+and its type is its C++ class name, but without the \char`\"{}\+Layer\char`\"{} at the end (\char`\"{}\+My\+Awesome\+Layer\char`\"{} -\/$>$ \char`\"{}\+My\+Awesome\char`\"{}).
+
+If the layer is going to be created simply by its constructor, in your c++ file, add the following line\+:
+
+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+L\+A\+S\+S(\+My\+Awesome);
+
+Or, if the layer is going to be created by another creator function, in the format of\+:
+
+template $<$typename dtype$>$=\char`\"{}\char`\"{}$>$ Layer$<$\+Dtype$\ast$$>$ Get\+My\+Awesome\+Layer(const Layer\+Parameter\& param) \{ // your implementation \}
+
+(for example, when your layer has multiple backends, see Get\+Convolution\+Layer for a use case), then you can register the creator function instead, like
+
+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+L\+A\+Y\+E\+R\+\_\+\+C\+R\+E\+A\+T\+O\+R(\+My\+Awesome, Get\+My\+Awesome\+Layer)
+
+Note that each layer type should only be registered once.
+
+Solver\+Registry$<$\+Dtype$>$\+::\+Create\+Solver(param);
+
+There are two ways to register a solver. Assuming that we have a solver like\+:
+
+template $<$typename dtype$>$=\char`\"{}\char`\"{}$>$ class My\+Awesome\+Solver \+: public Solver$<$\+Dtype$>$ \{ // your implementations \};
+
+and its type is its C++ class name, but without the \char`\"{}\+Solver\char`\"{} at the end (\char`\"{}\+My\+Awesome\+Solver\char`\"{} -\/$>$ \char`\"{}\+My\+Awesome\char`\"{}).
+
+If the solver is going to be created simply by its constructor, in your C++ file, add the following line\+:
+
+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+S\+O\+L\+V\+E\+R\+\_\+\+C\+L\+A\+S\+S(\+My\+Awesome);
+
+Or, if the solver is going to be created by another creator function, in the format of\+:
+
+template $<$typename dtype$>$=\char`\"{}\char`\"{}$>$ Solver$<$\+Dtype$\ast$$>$ Get\+My\+Awesome\+Solver(const Solver\+Parameter\& param) \{ // your implementation \}
+
+then you can register the creator function instead, like
+
+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+S\+O\+L\+V\+E\+R\+\_\+\+C\+R\+E\+A\+T\+O\+R(\+My\+Awesome, Get\+My\+Awesome\+Solver)
+
+Note that each solver type should only be registered once. 
+
+\subsection{Function Documentation}
+\index{caffe@{caffe}!Get\+Filler@{Get\+Filler}}
+\index{Get\+Filler@{Get\+Filler}!caffe@{caffe}}
+\subsubsection[{\texorpdfstring{Get\+Filler(const Filler\+Parameter \&param)}{GetFiller(const FillerParameter &param)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ {\bf Filler}$<$Dtype$>$$\ast$ caffe\+::\+Get\+Filler (
+\begin{DoxyParamCaption}
+\item[{const Filler\+Parameter \&}]{param}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacecaffe_a819e1b2fe30b54d6df0fd88e646ec126}{}\label{namespacecaffe_a819e1b2fe30b54d6df0fd88e646ec126}
+
+
+Get a specific filler from the specification given in Filler\+Parameter. 
+
+Ideally this would be replaced by a factory pattern, but we will leave it this way for now. 

@@ -1,0 +1,114 @@
+\hypertarget{classcaffe_1_1SigmoidLayer}{}\section{caffe\+:\+:Sigmoid\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1SigmoidLayer}\index{caffe\+::\+Sigmoid\+Layer$<$ Dtype $>$@{caffe\+::\+Sigmoid\+Layer$<$ Dtype $>$}}
+
+
+Sigmoid function non-\/linearity $ y = (1 + \exp(-x))^{-1} $, a classic choice in neural networks.  
+
+
+
+
+{\ttfamily \#include $<$sigmoid\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Sigmoid\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcaffe_1_1SigmoidLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Sigmoid\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1SigmoidLayer_a590e2978bafd7722535e64c0326c59ce}{}\label{classcaffe_1_1SigmoidLayer_a590e2978bafd7722535e64c0326c59ce}
+
+\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1SigmoidLayer_a3d9b66404ad6d8b65bb0bba662cb1189}{type} () const \hypertarget{classcaffe_1_1SigmoidLayer_a3d9b66404ad6d8b65bb0bba662cb1189}{}\label{classcaffe_1_1SigmoidLayer_a3d9b66404ad6d8b65bb0bba662cb1189}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1SigmoidLayer_a36dc176a1f3769219adc7f2de8147f19}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\item 
+virtual void \hyperlink{classcaffe_1_1SigmoidLayer_abaabf3202ba640865500f751f2386c20}{Forward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1SigmoidLayer_abaabf3202ba640865500f751f2386c20}{}\label{classcaffe_1_1SigmoidLayer_abaabf3202ba640865500f751f2386c20}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the layer output. Fall back to \hyperlink{classcaffe_1_1SigmoidLayer_a36dc176a1f3769219adc7f2de8147f19}{Forward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1SigmoidLayer_afde12451a26311e04a108fb21f79f134}{Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)
+\begin{DoxyCompactList}\small\item\em Computes the error gradient w.\+r.\+t. the sigmoid inputs. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1SigmoidLayer_a52ed0e3039b4babf1d559e6c4a809d37}{Backward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1SigmoidLayer_a52ed0e3039b4babf1d559e6c4a809d37}{}\label{classcaffe_1_1SigmoidLayer_a52ed0e3039b4babf1d559e6c4a809d37}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. Fall back to \hyperlink{classcaffe_1_1SigmoidLayer_afde12451a26311e04a108fb21f79f134}{Backward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Sigmoid\+Layer$<$ Dtype $>$}
+
+Sigmoid function non-\/linearity $ y = (1 + \exp(-x))^{-1} $, a classic choice in neural networks. 
+
+Note that the gradient vanishes as the values move away from 0. The \hyperlink{classcaffe_1_1ReLULayer}{Re\+L\+U\+Layer} is often a better choice for this reason. 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Sigmoid\+Layer@{caffe\+::\+Sigmoid\+Layer}!Backward\+\_\+cpu@{Backward\+\_\+cpu}}
+\index{Backward\+\_\+cpu@{Backward\+\_\+cpu}!caffe\+::\+Sigmoid\+Layer@{caffe\+::\+Sigmoid\+Layer}}
+\subsubsection[{\texorpdfstring{Backward\+\_\+cpu(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom)}{Backward_cpu(const vector< Blob< Dtype > * > &top, const vector< bool > &propagate_down, const vector< Blob< Dtype > * > &bottom)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Sigmoid\+Layer}$<$ Dtype $>$\+::Backward\+\_\+cpu (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top, }
+\item[{const vector$<$ bool $>$ \&}]{propagate\+\_\+down, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1SigmoidLayer_afde12451a26311e04a108fb21f79f134}{}\label{classcaffe_1_1SigmoidLayer_afde12451a26311e04a108fb21f79f134}
+
+
+Computes the error gradient w.\+r.\+t. the sigmoid inputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1), providing the error gradient with respect to the outputs
+\begin{DoxyEnumerate}
+\item $ (N \times C \times H \times W) $ containing error gradients $ \frac{\partial E}{\partial y} $ with respect to computed outputs $ y $ 
+\end{DoxyEnumerate}\\
+\hline
+{\em propagate\+\_\+down} & see \hyperlink{classcaffe_1_1Layer_a53df1e081767e07bfb4c81657f4acd0a}{Layer\+::\+Backward}. \\
+\hline
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1)
+\begin{DoxyEnumerate}
+\item $ (N \times C \times H \times W) $ the inputs $ x $; Backward fills their diff with gradients $ \frac{\partial E}{\partial x} = \frac{\partial E}{\partial y} y (1 - y) $ if propagate\+\_\+down\mbox{[}0\mbox{]} 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classcaffe_1_1Layer_a64d15855f882af4b82e83fa993c4e7c6}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Sigmoid\+Layer@{caffe\+::\+Sigmoid\+Layer}!Forward\+\_\+cpu@{Forward\+\_\+cpu}}
+\index{Forward\+\_\+cpu@{Forward\+\_\+cpu}!caffe\+::\+Sigmoid\+Layer@{caffe\+::\+Sigmoid\+Layer}}
+\subsubsection[{\texorpdfstring{Forward\+\_\+cpu(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Forward_cpu(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Sigmoid\+Layer}$<$ Dtype $>$\+::Forward\+\_\+cpu (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1SigmoidLayer_a36dc176a1f3769219adc7f2de8147f19}{}\label{classcaffe_1_1SigmoidLayer_a36dc176a1f3769219adc7f2de8147f19}
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1)
+\begin{DoxyEnumerate}
+\item $ (N \times C \times H \times W) $ the inputs $ x $ 
+\end{DoxyEnumerate}\\
+\hline
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1)
+\begin{DoxyEnumerate}
+\item $ (N \times C \times H \times W) $ the computed outputs $ y = (1 + \exp(-x))^{-1} $ 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classcaffe_1_1Layer_add965883f75bbf90c7a06f960cda7a1a}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/sigmoid\+\_\+layer.\+hpp\item 
+src/caffe/layers/sigmoid\+\_\+layer.\+cpp\end{DoxyCompactItemize}

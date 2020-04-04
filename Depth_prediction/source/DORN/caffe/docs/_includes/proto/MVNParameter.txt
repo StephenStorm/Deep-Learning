@@ -1,0 +1,10 @@
+message MVNParameter {
+  // This parameter can be set to false to normalize mean only
+  optional bool normalize_variance = 1 [default = true];
+
+  // This parameter can be set to true to perform DNN-like MVN
+  optional bool across_channels = 2 [default = false];
+
+  // Epsilon for not dividing by zero while normalizing variance
+  optional float eps = 3 [default = 1e-9];
+}

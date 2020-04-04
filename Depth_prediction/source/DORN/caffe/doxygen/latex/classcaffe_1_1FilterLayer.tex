@@ -1,0 +1,201 @@
+\hypertarget{classcaffe_1_1FilterLayer}{}\section{caffe\+:\+:Filter\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1FilterLayer}\index{caffe\+::\+Filter\+Layer$<$ Dtype $>$@{caffe\+::\+Filter\+Layer$<$ Dtype $>$}}
+
+
+Takes two+ Blobs, interprets last \hyperlink{classcaffe_1_1Blob}{Blob} as a selector and filter remaining Blobs accordingly with selector data (0 means that the corresponding item has to be filtered, non-\/zero means that corresponding item needs to stay).  
+
+
+
+
+{\ttfamily \#include $<$filter\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Filter\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcaffe_1_1FilterLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Filter\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1FilterLayer_a7384a8e15c84b16b46b775a11b95cc4f}{}\label{classcaffe_1_1FilterLayer_a7384a8e15c84b16b46b775a11b95cc4f}
+
+\item 
+virtual void \hyperlink{classcaffe_1_1FilterLayer_acbbb4dd26fd8a5ab01bce9aa34ad12ae}{Layer\+Set\+Up} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1FilterLayer_a38ca56415d59b1d89c8fd4b4b25da2de}{Reshape} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1FilterLayer_aaca9f27ee4bc34889817256ed643d433}{type} () const \hypertarget{classcaffe_1_1FilterLayer_aaca9f27ee4bc34889817256ed643d433}{}\label{classcaffe_1_1FilterLayer_aaca9f27ee4bc34889817256ed643d433}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1FilterLayer_a13119969cca3f6d1b4b3fea77619d595}{Min\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the minimum number of bottom blobs required by the layer, or -\/1 if no minimum number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1FilterLayer_abae0953d9773e25b7cfc5bdea4f6230a}{Min\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the minimum number of top blobs required by the layer, or -\/1 if no minimum number is required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1FilterLayer_a57b597be559867696898b34ff5fe6338}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\item 
+virtual void \hyperlink{classcaffe_1_1FilterLayer_ae9037245327193ba8d42f274b9fcfda8}{Forward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1FilterLayer_ae9037245327193ba8d42f274b9fcfda8}{}\label{classcaffe_1_1FilterLayer_ae9037245327193ba8d42f274b9fcfda8}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the layer output. Fall back to \hyperlink{classcaffe_1_1FilterLayer_a57b597be559867696898b34ff5fe6338}{Forward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1FilterLayer_abaf7065db8ab50d5ef6a4acff85a0aeb}{Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)
+\begin{DoxyCompactList}\small\item\em Computes the error gradient w.\+r.\+t. the forwarded inputs. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1FilterLayer_a00f33332f047badddb94f04b7d892def}{Backward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1FilterLayer_a00f33332f047badddb94f04b7d892def}{}\label{classcaffe_1_1FilterLayer_a00f33332f047badddb94f04b7d892def}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. Fall back to \hyperlink{classcaffe_1_1FilterLayer_abaf7065db8ab50d5ef6a4acff85a0aeb}{Backward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries first\+\_\+reshape\+\_\+}\hypertarget{classcaffe_1_1FilterLayer_a0bfd8003e455c2f3a67172247058604b}{}\label{classcaffe_1_1FilterLayer_a0bfd8003e455c2f3a67172247058604b}
+
+\item 
+vector$<$ int $>$ {\bfseries indices\+\_\+to\+\_\+forward\+\_\+}\hypertarget{classcaffe_1_1FilterLayer_a3a53a99be807ac5e50de8fe7e6825c59}{}\label{classcaffe_1_1FilterLayer_a3a53a99be807ac5e50de8fe7e6825c59}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Filter\+Layer$<$ Dtype $>$}
+
+Takes two+ Blobs, interprets last \hyperlink{classcaffe_1_1Blob}{Blob} as a selector and filter remaining Blobs accordingly with selector data (0 means that the corresponding item has to be filtered, non-\/zero means that corresponding item needs to stay). 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Filter\+Layer@{caffe\+::\+Filter\+Layer}!Backward\+\_\+cpu@{Backward\+\_\+cpu}}
+\index{Backward\+\_\+cpu@{Backward\+\_\+cpu}!caffe\+::\+Filter\+Layer@{caffe\+::\+Filter\+Layer}}
+\subsubsection[{\texorpdfstring{Backward\+\_\+cpu(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom)}{Backward_cpu(const vector< Blob< Dtype > * > &top, const vector< bool > &propagate_down, const vector< Blob< Dtype > * > &bottom)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Filter\+Layer}$<$ Dtype $>$\+::Backward\+\_\+cpu (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top, }
+\item[{const vector$<$ bool $>$ \&}]{propagate\+\_\+down, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1FilterLayer_abaf7065db8ab50d5ef6a4acff85a0aeb}{}\label{classcaffe_1_1FilterLayer_abaf7065db8ab50d5ef6a4acff85a0aeb}
+
+
+Computes the error gradient w.\+r.\+t. the forwarded inputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1+), providing the error gradient with respect to the outputs \\
+\hline
+{\em propagate\+\_\+down} & see \hyperlink{classcaffe_1_1Layer_a53df1e081767e07bfb4c81657f4acd0a}{Layer\+::\+Backward}. \\
+\hline
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 2+), into which the top error gradient is copied \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classcaffe_1_1Layer_a64d15855f882af4b82e83fa993c4e7c6}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Filter\+Layer@{caffe\+::\+Filter\+Layer}!Forward\+\_\+cpu@{Forward\+\_\+cpu}}
+\index{Forward\+\_\+cpu@{Forward\+\_\+cpu}!caffe\+::\+Filter\+Layer@{caffe\+::\+Filter\+Layer}}
+\subsubsection[{\texorpdfstring{Forward\+\_\+cpu(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Forward_cpu(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Filter\+Layer}$<$ Dtype $>$\+::Forward\+\_\+cpu (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1FilterLayer_a57b597be559867696898b34ff5fe6338}{}\label{classcaffe_1_1FilterLayer_a57b597be559867696898b34ff5fe6338}
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 2+)
+\begin{DoxyEnumerate}
+\item $ (N \times C \times H \times W) $ the inputs to be filtered $ x_1 $
+\item ...
+\item $ (N \times C \times H \times W) $ the inputs to be filtered $ x_K $
+\item $ (N \times 1 \times 1 \times 1) $ the selector blob 
+\end{DoxyEnumerate}\\
+\hline
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1+)
+\begin{DoxyEnumerate}
+\item $ (S \times C \times H \times W) $ () the filtered output $ x_1 $ where S is the number of items that haven\textquotesingle{}t been filtered $ (S \times C \times H \times W) $ the filtered output $ x_K $ where S is the number of items that haven\textquotesingle{}t been filtered 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classcaffe_1_1Layer_add965883f75bbf90c7a06f960cda7a1a}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Filter\+Layer@{caffe\+::\+Filter\+Layer}!Layer\+Set\+Up@{Layer\+Set\+Up}}
+\index{Layer\+Set\+Up@{Layer\+Set\+Up}!caffe\+::\+Filter\+Layer@{caffe\+::\+Filter\+Layer}}
+\subsubsection[{\texorpdfstring{Layer\+Set\+Up(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{LayerSetUp(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Filter\+Layer}$<$ Dtype $>$\+::Layer\+Set\+Up (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1FilterLayer_acbbb4dd26fd8a5ab01bce9aa34ad12ae}{}\label{classcaffe_1_1FilterLayer_acbbb4dd26fd8a5ab01bce9aa34ad12ae}
+
+
+Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the preshaped input blobs, whose data fields store the input data for this layer \\
+\hline
+{\em top} & the allocated but unshaped output blobs\\
+\hline
+\end{DoxyParams}
+This method should do one-\/time layer specific setup. This includes reading and processing relevent parameters from the {\ttfamily layer\+\_\+param\+\_\+}. Setting up the shapes of top blobs and internal buffers should be done in {\ttfamily Reshape}, which will be called before the forward pass to adjust the top blob sizes. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a38dc2488bf319b8de5a7ac84e0045393}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Filter\+Layer@{caffe\+::\+Filter\+Layer}!Min\+Bottom\+Blobs@{Min\+Bottom\+Blobs}}
+\index{Min\+Bottom\+Blobs@{Min\+Bottom\+Blobs}!caffe\+::\+Filter\+Layer@{caffe\+::\+Filter\+Layer}}
+\subsubsection[{\texorpdfstring{Min\+Bottom\+Blobs() const }{MinBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Filter\+Layer}$<$ Dtype $>$\+::Min\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1FilterLayer_a13119969cca3f6d1b4b3fea77619d595}{}\label{classcaffe_1_1FilterLayer_a13119969cca3f6d1b4b3fea77619d595}
+
+
+Returns the minimum number of bottom blobs required by the layer, or -\/1 if no minimum number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some minimum number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_ade3eee97cc743c4e68fff7eba6484916}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Filter\+Layer@{caffe\+::\+Filter\+Layer}!Min\+Top\+Blobs@{Min\+Top\+Blobs}}
+\index{Min\+Top\+Blobs@{Min\+Top\+Blobs}!caffe\+::\+Filter\+Layer@{caffe\+::\+Filter\+Layer}}
+\subsubsection[{\texorpdfstring{Min\+Top\+Blobs() const }{MinTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Filter\+Layer}$<$ Dtype $>$\+::Min\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1FilterLayer_abae0953d9773e25b7cfc5bdea4f6230a}{}\label{classcaffe_1_1FilterLayer_abae0953d9773e25b7cfc5bdea4f6230a}
+
+
+Returns the minimum number of top blobs required by the layer, or -\/1 if no minimum number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some minimum number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a8bb143d58a740345fa2dc3d4204d553b}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Filter\+Layer@{caffe\+::\+Filter\+Layer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!caffe\+::\+Filter\+Layer@{caffe\+::\+Filter\+Layer}}
+\subsubsection[{\texorpdfstring{Reshape(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Reshape(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Filter\+Layer}$<$ Dtype $>$\+::Reshape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1FilterLayer_a38ca56415d59b1d89c8fd4b4b25da2de}{}\label{classcaffe_1_1FilterLayer_a38ca56415d59b1d89c8fd4b4b25da2de}
+
+
+Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the input blobs, with the requested input shapes \\
+\hline
+{\em top} & the top blobs, which should be reshaped as needed\\
+\hline
+\end{DoxyParams}
+This method should reshape top blobs as needed according to the shapes of the bottom (input) blobs, as well as reshaping any internal buffers and making any other necessary adjustments so that the layer can accommodate the bottom blobs. 
+
+Implements \hyperlink{classcaffe_1_1Layer_ad9d391b972c769c0ebee34ca6d1c973e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/filter\+\_\+layer.\+hpp\item 
+src/caffe/layers/filter\+\_\+layer.\+cpp\end{DoxyCompactItemize}

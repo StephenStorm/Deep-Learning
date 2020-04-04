@@ -1,0 +1,173 @@
+\hypertarget{classcaffe_1_1InterpLayer}{}\section{caffe\+:\+:Interp\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1InterpLayer}\index{caffe\+::\+Interp\+Layer$<$ Dtype $>$@{caffe\+::\+Interp\+Layer$<$ Dtype $>$}}
+
+
+Changes the spatial resolution by bi-\/linear interpolation. The target size is specified in terms of pixels. The start and end pixels of the input are mapped to the start and end pixels of the output.  
+
+
+
+
+{\ttfamily \#include $<$interp\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Interp\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcaffe_1_1InterpLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Interp\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1InterpLayer_a23b9c18e3e251c4f3e471303e11f3250}{}\label{classcaffe_1_1InterpLayer_a23b9c18e3e251c4f3e471303e11f3250}
+
+\item 
+virtual void \hyperlink{classcaffe_1_1InterpLayer_ac8f4627f1a04fa8d3e85eaac5f1fa291}{Layer\+Set\+Up} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1InterpLayer_a738a790541cf3f1827afa9f71b835caa}{Reshape} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1InterpLayer_af23cf9dac90fb66c89bed793d49874f3}{type} () const \hypertarget{classcaffe_1_1InterpLayer_af23cf9dac90fb66c89bed793d49874f3}{}\label{classcaffe_1_1InterpLayer_af23cf9dac90fb66c89bed793d49874f3}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1InterpLayer_a186c0c177d96da2dce60308d78959c2b}{Exact\+Num\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1InterpLayer_a14e1a12b196cd87eef112d7a87d5e75e}{Exact\+Num\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1InterpLayer_a34b4e9bebcdcf233747184833dd6ac0e}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1InterpLayer_a34b4e9bebcdcf233747184833dd6ac0e}{}\label{classcaffe_1_1InterpLayer_a34b4e9bebcdcf233747184833dd6ac0e}
+
+\begin{DoxyCompactList}\small\item\em Using the C\+PU device, compute the layer output. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1InterpLayer_a980e586af1f74c44967f547d5b43c17c}{Forward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1InterpLayer_a980e586af1f74c44967f547d5b43c17c}{}\label{classcaffe_1_1InterpLayer_a980e586af1f74c44967f547d5b43c17c}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the layer output. Fall back to \hyperlink{classcaffe_1_1InterpLayer_a34b4e9bebcdcf233747184833dd6ac0e}{Forward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1InterpLayer_a968eb0a3ad8875fb584a8ff01c66de35}{Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1InterpLayer_a968eb0a3ad8875fb584a8ff01c66de35}{}\label{classcaffe_1_1InterpLayer_a968eb0a3ad8875fb584a8ff01c66de35}
+
+\begin{DoxyCompactList}\small\item\em Using the C\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1InterpLayer_a0414efd5b6358e5f57a4584146475157}{Backward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1InterpLayer_a0414efd5b6358e5f57a4584146475157}{}\label{classcaffe_1_1InterpLayer_a0414efd5b6358e5f57a4584146475157}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. Fall back to \hyperlink{classcaffe_1_1InterpLayer_a968eb0a3ad8875fb584a8ff01c66de35}{Backward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries num\+\_\+}\hypertarget{classcaffe_1_1InterpLayer_a5f72bd111cf142dbcaf87a86f54f202b}{}\label{classcaffe_1_1InterpLayer_a5f72bd111cf142dbcaf87a86f54f202b}
+
+\item 
+int {\bfseries channels\+\_\+}\hypertarget{classcaffe_1_1InterpLayer_a9e19fb656adcbee9dd2b068750f14e0f}{}\label{classcaffe_1_1InterpLayer_a9e19fb656adcbee9dd2b068750f14e0f}
+
+\item 
+int {\bfseries height\+\_\+in\+\_\+}\hypertarget{classcaffe_1_1InterpLayer_a83a605d3049ea90e65fc4c7624234f0a}{}\label{classcaffe_1_1InterpLayer_a83a605d3049ea90e65fc4c7624234f0a}
+
+\item 
+int {\bfseries width\+\_\+in\+\_\+}\hypertarget{classcaffe_1_1InterpLayer_a4367548d13a21b39bc205f7a8531b1ad}{}\label{classcaffe_1_1InterpLayer_a4367548d13a21b39bc205f7a8531b1ad}
+
+\item 
+int {\bfseries height\+\_\+out\+\_\+}\hypertarget{classcaffe_1_1InterpLayer_a4625f8e427b9acdeaa4e3792cbbf9648}{}\label{classcaffe_1_1InterpLayer_a4625f8e427b9acdeaa4e3792cbbf9648}
+
+\item 
+int {\bfseries width\+\_\+out\+\_\+}\hypertarget{classcaffe_1_1InterpLayer_a02c2c7a789cb27a6bf9b078056b3c22f}{}\label{classcaffe_1_1InterpLayer_a02c2c7a789cb27a6bf9b078056b3c22f}
+
+\item 
+int {\bfseries pad\+\_\+beg\+\_\+}\hypertarget{classcaffe_1_1InterpLayer_a8371c85539d8d1cbcb01f6613fe1dceb}{}\label{classcaffe_1_1InterpLayer_a8371c85539d8d1cbcb01f6613fe1dceb}
+
+\item 
+int {\bfseries pad\+\_\+end\+\_\+}\hypertarget{classcaffe_1_1InterpLayer_aecf59429a6f50088b585b5517a4879e4}{}\label{classcaffe_1_1InterpLayer_aecf59429a6f50088b585b5517a4879e4}
+
+\item 
+int {\bfseries height\+\_\+in\+\_\+eff\+\_\+}\hypertarget{classcaffe_1_1InterpLayer_a5461810dc198e24db499498b0770f69a}{}\label{classcaffe_1_1InterpLayer_a5461810dc198e24db499498b0770f69a}
+
+\item 
+int {\bfseries width\+\_\+in\+\_\+eff\+\_\+}\hypertarget{classcaffe_1_1InterpLayer_a4b167fa7b9cdd6375f10849cd63a6859}{}\label{classcaffe_1_1InterpLayer_a4b167fa7b9cdd6375f10849cd63a6859}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Interp\+Layer$<$ Dtype $>$}
+
+Changes the spatial resolution by bi-\/linear interpolation. The target size is specified in terms of pixels. The start and end pixels of the input are mapped to the start and end pixels of the output. 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Interp\+Layer@{caffe\+::\+Interp\+Layer}!Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}}
+\index{Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}!caffe\+::\+Interp\+Layer@{caffe\+::\+Interp\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Bottom\+Blobs() const }{ExactNumBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Interp\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1InterpLayer_a186c0c177d96da2dce60308d78959c2b}{}\label{classcaffe_1_1InterpLayer_a186c0c177d96da2dce60308d78959c2b}
+
+
+Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a45c7a7943a8a6735ac433c9be11e0240}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Interp\+Layer@{caffe\+::\+Interp\+Layer}!Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}}
+\index{Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}!caffe\+::\+Interp\+Layer@{caffe\+::\+Interp\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Top\+Blobs() const }{ExactNumTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Interp\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1InterpLayer_a14e1a12b196cd87eef112d7a87d5e75e}{}\label{classcaffe_1_1InterpLayer_a14e1a12b196cd87eef112d7a87d5e75e}
+
+
+Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_aa3c99ed707e8db683a3043412e151af8}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Interp\+Layer@{caffe\+::\+Interp\+Layer}!Layer\+Set\+Up@{Layer\+Set\+Up}}
+\index{Layer\+Set\+Up@{Layer\+Set\+Up}!caffe\+::\+Interp\+Layer@{caffe\+::\+Interp\+Layer}}
+\subsubsection[{\texorpdfstring{Layer\+Set\+Up(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{LayerSetUp(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Interp\+Layer}$<$ Dtype $>$\+::Layer\+Set\+Up (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1InterpLayer_ac8f4627f1a04fa8d3e85eaac5f1fa291}{}\label{classcaffe_1_1InterpLayer_ac8f4627f1a04fa8d3e85eaac5f1fa291}
+
+
+Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the preshaped input blobs, whose data fields store the input data for this layer \\
+\hline
+{\em top} & the allocated but unshaped output blobs\\
+\hline
+\end{DoxyParams}
+This method should do one-\/time layer specific setup. This includes reading and processing relevent parameters from the {\ttfamily layer\+\_\+param\+\_\+}. Setting up the shapes of top blobs and internal buffers should be done in {\ttfamily Reshape}, which will be called before the forward pass to adjust the top blob sizes. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a38dc2488bf319b8de5a7ac84e0045393}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Interp\+Layer@{caffe\+::\+Interp\+Layer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!caffe\+::\+Interp\+Layer@{caffe\+::\+Interp\+Layer}}
+\subsubsection[{\texorpdfstring{Reshape(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Reshape(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Interp\+Layer}$<$ Dtype $>$\+::Reshape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1InterpLayer_a738a790541cf3f1827afa9f71b835caa}{}\label{classcaffe_1_1InterpLayer_a738a790541cf3f1827afa9f71b835caa}
+
+
+Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the input blobs, with the requested input shapes \\
+\hline
+{\em top} & the top blobs, which should be reshaped as needed\\
+\hline
+\end{DoxyParams}
+This method should reshape top blobs as needed according to the shapes of the bottom (input) blobs, as well as reshaping any internal buffers and making any other necessary adjustments so that the layer can accommodate the bottom blobs. 
+
+Implements \hyperlink{classcaffe_1_1Layer_ad9d391b972c769c0ebee34ca6d1c973e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/interp\+\_\+layer.\+hpp\item 
+src/caffe/layers/interp\+\_\+layer.\+cpp\end{DoxyCompactItemize}

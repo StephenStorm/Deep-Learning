@@ -1,0 +1,181 @@
+\hypertarget{classcaffe_1_1DataTransformer}{}\section{caffe\+:\+:Data\+Transformer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1DataTransformer}\index{caffe\+::\+Data\+Transformer$<$ Dtype $>$@{caffe\+::\+Data\+Transformer$<$ Dtype $>$}}
+
+
+Applies common transformations to the input data, such as scaling, mirroring, substracting the image mean...  
+
+
+
+
+{\ttfamily \#include $<$data\+\_\+transformer.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Data\+Transformer} (const Transformation\+Parameter \&param, Phase phase)\hypertarget{classcaffe_1_1DataTransformer_ae598f617042b2d68f4bab0dd3bd542f0}{}\label{classcaffe_1_1DataTransformer_ae598f617042b2d68f4bab0dd3bd542f0}
+
+\item 
+void \hyperlink{classcaffe_1_1DataTransformer_a6d807c7dc250e66b62d97d9847278e68}{Init\+Rand} ()\hypertarget{classcaffe_1_1DataTransformer_a6d807c7dc250e66b62d97d9847278e68}{}\label{classcaffe_1_1DataTransformer_a6d807c7dc250e66b62d97d9847278e68}
+
+\begin{DoxyCompactList}\small\item\em Initialize the Random number generations if needed by the transformation. \end{DoxyCompactList}\item 
+void \hyperlink{classcaffe_1_1DataTransformer_a1626db49587d506a91e7b70373ace816}{Transform} (const Datum \&datum, \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$transformed\+\_\+blob)
+\begin{DoxyCompactList}\small\item\em Applies the transformation defined in the data layer\textquotesingle{}s transform\+\_\+param block to the data. \end{DoxyCompactList}\item 
+void \hyperlink{classcaffe_1_1DataTransformer_a082cad626c5f51c9f8d93bb88cca1bd0}{Transform} (const vector$<$ Datum $>$ \&datum\+\_\+vector, \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$transformed\+\_\+blob)
+\begin{DoxyCompactList}\small\item\em Applies the transformation defined in the data layer\textquotesingle{}s transform\+\_\+param block to a vector of Datum. \end{DoxyCompactList}\item 
+void \hyperlink{classcaffe_1_1DataTransformer_a168abf1bf9466420da6968178c6edb4d}{Transform} (\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$input\+\_\+blob, \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$transformed\+\_\+blob)
+\begin{DoxyCompactList}\small\item\em Applies the same transformation defined in the data layer\textquotesingle{}s transform\+\_\+param block to all the num images in a input\+\_\+blob. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classcaffe_1_1DataTransformer_a1e43b0fb80cded5bb854e1a06004bebf}{Infer\+Blob\+Shape} (const Datum \&datum)
+\begin{DoxyCompactList}\small\item\em Infers the shape of transformed\+\_\+blob will have when the transformation is applied to the data. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classcaffe_1_1DataTransformer_ac829dd6448dcce67acb1e22a2554db4b}{Infer\+Blob\+Shape} (const vector$<$ Datum $>$ \&datum\+\_\+vector)
+\begin{DoxyCompactList}\small\item\em Infers the shape of transformed\+\_\+blob will have when the transformation is applied to the data. It uses the first element to infer the shape of the blob. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \hyperlink{classcaffe_1_1DataTransformer_ac3e52731074a73b05ff0527d2febc8f2}{Rand} (int n)
+\begin{DoxyCompactList}\small\item\em Infers the shape of transformed\+\_\+blob will have when the transformation is applied to the data. It uses the first element to infer the shape of the blob. \end{DoxyCompactList}\item 
+void {\bfseries Transform} (const Datum \&datum, Dtype $\ast$transformed\+\_\+data)\hypertarget{classcaffe_1_1DataTransformer_a96c70b694d85f763934274e2fd92e6eb}{}\label{classcaffe_1_1DataTransformer_a96c70b694d85f763934274e2fd92e6eb}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transformation\+Parameter {\bfseries param\+\_\+}\hypertarget{classcaffe_1_1DataTransformer_a7d0dd7f13701a450c37c989a39ac50e0}{}\label{classcaffe_1_1DataTransformer_a7d0dd7f13701a450c37c989a39ac50e0}
+
+\item 
+shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Caffe_1_1RNG}{Caffe\+::\+R\+NG} $>$ {\bfseries rng\+\_\+}\hypertarget{classcaffe_1_1DataTransformer_a28e1ac0553c09e21036f671b73a1e0dd}{}\label{classcaffe_1_1DataTransformer_a28e1ac0553c09e21036f671b73a1e0dd}
+
+\item 
+Phase {\bfseries phase\+\_\+}\hypertarget{classcaffe_1_1DataTransformer_a30cf039d7452683f4f91e022fd8eec32}{}\label{classcaffe_1_1DataTransformer_a30cf039d7452683f4f91e022fd8eec32}
+
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries data\+\_\+mean\+\_\+}\hypertarget{classcaffe_1_1DataTransformer_a74d5da590321195fdaa7d2c9f6b372fd}{}\label{classcaffe_1_1DataTransformer_a74d5da590321195fdaa7d2c9f6b372fd}
+
+\item 
+vector$<$ Dtype $>$ {\bfseries mean\+\_\+values\+\_\+}\hypertarget{classcaffe_1_1DataTransformer_a04a2c85e464047c84b98aa677ad19d94}{}\label{classcaffe_1_1DataTransformer_a04a2c85e464047c84b98aa677ad19d94}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Data\+Transformer$<$ Dtype $>$}
+
+Applies common transformations to the input data, such as scaling, mirroring, substracting the image mean... 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Data\+Transformer@{caffe\+::\+Data\+Transformer}!Infer\+Blob\+Shape@{Infer\+Blob\+Shape}}
+\index{Infer\+Blob\+Shape@{Infer\+Blob\+Shape}!caffe\+::\+Data\+Transformer@{caffe\+::\+Data\+Transformer}}
+\subsubsection[{\texorpdfstring{Infer\+Blob\+Shape(const Datum \&datum)}{InferBlobShape(const Datum &datum)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ vector$<$ int $>$ {\bf caffe\+::\+Data\+Transformer}$<$ Dtype $>$\+::Infer\+Blob\+Shape (
+\begin{DoxyParamCaption}
+\item[{const Datum \&}]{datum}
+\end{DoxyParamCaption}
+)}\hypertarget{classcaffe_1_1DataTransformer_a1e43b0fb80cded5bb854e1a06004bebf}{}\label{classcaffe_1_1DataTransformer_a1e43b0fb80cded5bb854e1a06004bebf}
+
+
+Infers the shape of transformed\+\_\+blob will have when the transformation is applied to the data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datum} & Datum containing the data to be transformed. \\
+\hline
+\end{DoxyParams}
+\index{caffe\+::\+Data\+Transformer@{caffe\+::\+Data\+Transformer}!Infer\+Blob\+Shape@{Infer\+Blob\+Shape}}
+\index{Infer\+Blob\+Shape@{Infer\+Blob\+Shape}!caffe\+::\+Data\+Transformer@{caffe\+::\+Data\+Transformer}}
+\subsubsection[{\texorpdfstring{Infer\+Blob\+Shape(const vector$<$ Datum $>$ \&datum\+\_\+vector)}{InferBlobShape(const vector< Datum > &datum_vector)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ vector$<$ int $>$ {\bf caffe\+::\+Data\+Transformer}$<$ Dtype $>$\+::Infer\+Blob\+Shape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Datum $>$ \&}]{datum\+\_\+vector}
+\end{DoxyParamCaption}
+)}\hypertarget{classcaffe_1_1DataTransformer_ac829dd6448dcce67acb1e22a2554db4b}{}\label{classcaffe_1_1DataTransformer_ac829dd6448dcce67acb1e22a2554db4b}
+
+
+Infers the shape of transformed\+\_\+blob will have when the transformation is applied to the data. It uses the first element to infer the shape of the blob. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datum\+\_\+vector} & A vector of Datum containing the data to be transformed. \\
+\hline
+\end{DoxyParams}
+\index{caffe\+::\+Data\+Transformer@{caffe\+::\+Data\+Transformer}!Rand@{Rand}}
+\index{Rand@{Rand}!caffe\+::\+Data\+Transformer@{caffe\+::\+Data\+Transformer}}
+\subsubsection[{\texorpdfstring{Rand(int n)}{Rand(int n)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ int {\bf caffe\+::\+Data\+Transformer}$<$ Dtype $>$\+::Rand (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1DataTransformer_ac3e52731074a73b05ff0527d2febc8f2}{}\label{classcaffe_1_1DataTransformer_ac3e52731074a73b05ff0527d2febc8f2}
+
+
+Infers the shape of transformed\+\_\+blob will have when the transformation is applied to the data. It uses the first element to infer the shape of the blob. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat\+\_\+vector} & A vector of Mat containing the data to be transformed. Generates a random integer from Uniform(\{0, 1, ..., n-\/1\}).\\
+\hline
+{\em n} & The upperbound (exclusive) value of the random number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A uniformly random integer value from (\{0, 1, ..., n-\/1\}). 
+\end{DoxyReturn}
+\index{caffe\+::\+Data\+Transformer@{caffe\+::\+Data\+Transformer}!Transform@{Transform}}
+\index{Transform@{Transform}!caffe\+::\+Data\+Transformer@{caffe\+::\+Data\+Transformer}}
+\subsubsection[{\texorpdfstring{Transform(const Datum \&datum, Blob$<$ Dtype $>$ $\ast$transformed\+\_\+blob)}{Transform(const Datum &datum, Blob< Dtype > *transformed_blob)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Data\+Transformer}$<$ Dtype $>$\+::Transform (
+\begin{DoxyParamCaption}
+\item[{const Datum \&}]{datum, }
+\item[{{\bf Blob}$<$ Dtype $>$ $\ast$}]{transformed\+\_\+blob}
+\end{DoxyParamCaption}
+)}\hypertarget{classcaffe_1_1DataTransformer_a1626db49587d506a91e7b70373ace816}{}\label{classcaffe_1_1DataTransformer_a1626db49587d506a91e7b70373ace816}
+
+
+Applies the transformation defined in the data layer\textquotesingle{}s transform\+\_\+param block to the data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datum} & Datum containing the data to be transformed. \\
+\hline
+{\em transformed\+\_\+blob} & This is destination blob. It can be part of top blob\textquotesingle{}s data if set\+\_\+cpu\+\_\+data() is used. See data\+\_\+layer.\+cpp for an example. \\
+\hline
+\end{DoxyParams}
+\index{caffe\+::\+Data\+Transformer@{caffe\+::\+Data\+Transformer}!Transform@{Transform}}
+\index{Transform@{Transform}!caffe\+::\+Data\+Transformer@{caffe\+::\+Data\+Transformer}}
+\subsubsection[{\texorpdfstring{Transform(const vector$<$ Datum $>$ \&datum\+\_\+vector, Blob$<$ Dtype $>$ $\ast$transformed\+\_\+blob)}{Transform(const vector< Datum > &datum_vector, Blob< Dtype > *transformed_blob)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Data\+Transformer}$<$ Dtype $>$\+::Transform (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Datum $>$ \&}]{datum\+\_\+vector, }
+\item[{{\bf Blob}$<$ Dtype $>$ $\ast$}]{transformed\+\_\+blob}
+\end{DoxyParamCaption}
+)}\hypertarget{classcaffe_1_1DataTransformer_a082cad626c5f51c9f8d93bb88cca1bd0}{}\label{classcaffe_1_1DataTransformer_a082cad626c5f51c9f8d93bb88cca1bd0}
+
+
+Applies the transformation defined in the data layer\textquotesingle{}s transform\+\_\+param block to a vector of Datum. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datum\+\_\+vector} & A vector of Datum containing the data to be transformed. \\
+\hline
+{\em transformed\+\_\+blob} & This is destination blob. It can be part of top blob\textquotesingle{}s data if set\+\_\+cpu\+\_\+data() is used. See memory\+\_\+layer.\+cpp for an example. \\
+\hline
+\end{DoxyParams}
+\index{caffe\+::\+Data\+Transformer@{caffe\+::\+Data\+Transformer}!Transform@{Transform}}
+\index{Transform@{Transform}!caffe\+::\+Data\+Transformer@{caffe\+::\+Data\+Transformer}}
+\subsubsection[{\texorpdfstring{Transform(\+Blob$<$ Dtype $>$ $\ast$input\+\_\+blob, Blob$<$ Dtype $>$ $\ast$transformed\+\_\+blob)}{Transform(Blob< Dtype > *input_blob, Blob< Dtype > *transformed_blob)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Data\+Transformer}$<$ Dtype $>$\+::Transform (
+\begin{DoxyParamCaption}
+\item[{{\bf Blob}$<$ Dtype $>$ $\ast$}]{input\+\_\+blob, }
+\item[{{\bf Blob}$<$ Dtype $>$ $\ast$}]{transformed\+\_\+blob}
+\end{DoxyParamCaption}
+)}\hypertarget{classcaffe_1_1DataTransformer_a168abf1bf9466420da6968178c6edb4d}{}\label{classcaffe_1_1DataTransformer_a168abf1bf9466420da6968178c6edb4d}
+
+
+Applies the same transformation defined in the data layer\textquotesingle{}s transform\+\_\+param block to all the num images in a input\+\_\+blob. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+blob} & A \hyperlink{classcaffe_1_1Blob}{Blob} containing the data to be transformed. It applies the same transformation to all the num images in the blob. \\
+\hline
+{\em transformed\+\_\+blob} & This is destination blob, it will contain as many images as the input blob. It can be part of top blob\textquotesingle{}s data. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/data\+\_\+transformer.\+hpp\item 
+src/caffe/data\+\_\+transformer.\+cpp\end{DoxyCompactItemize}

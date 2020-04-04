@@ -1,0 +1,81 @@
+\hypertarget{classcaffe_1_1BasePrefetchingDataLayer}{}\section{caffe\+:\+:Base\+Prefetching\+Data\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1BasePrefetchingDataLayer}\index{caffe\+::\+Base\+Prefetching\+Data\+Layer$<$ Dtype $>$@{caffe\+::\+Base\+Prefetching\+Data\+Layer$<$ Dtype $>$}}
+Inheritance diagram for caffe\+:\+:Base\+Prefetching\+Data\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.828283cm]{classcaffe_1_1BasePrefetchingDataLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Base\+Prefetching\+Data\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1BasePrefetchingDataLayer_a527e2b51c73759ea5f7e28ced6a371ef}{}\label{classcaffe_1_1BasePrefetchingDataLayer_a527e2b51c73759ea5f7e28ced6a371ef}
+
+\item 
+void \hyperlink{classcaffe_1_1BasePrefetchingDataLayer_af433228727bf4f3f3aaa85434efc93c5}{Layer\+Set\+Up} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1BasePrefetchingDataLayer_a478965447079f7408d88c58f4a0dc49c}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1BasePrefetchingDataLayer_a478965447079f7408d88c58f4a0dc49c}{}\label{classcaffe_1_1BasePrefetchingDataLayer_a478965447079f7408d88c58f4a0dc49c}
+
+\begin{DoxyCompactList}\small\item\em Using the C\+PU device, compute the layer output. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1BasePrefetchingDataLayer_a950e9d525c7c07ef43567067805e7b70}{Forward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1BasePrefetchingDataLayer_a950e9d525c7c07ef43567067805e7b70}{}\label{classcaffe_1_1BasePrefetchingDataLayer_a950e9d525c7c07ef43567067805e7b70}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the layer output. Fall back to \hyperlink{classcaffe_1_1BasePrefetchingDataLayer_a478965447079f7408d88c58f4a0dc49c}{Forward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Internal\+Thread\+Entry} ()\hypertarget{classcaffe_1_1BasePrefetchingDataLayer_aa2740717d51bd0b01646ace302991838}{}\label{classcaffe_1_1BasePrefetchingDataLayer_aa2740717d51bd0b01646ace302991838}
+
+\item 
+virtual void {\bfseries load\+\_\+batch} (\hyperlink{classcaffe_1_1Batch}{Batch}$<$ Dtype $>$ $\ast$batch)=0\hypertarget{classcaffe_1_1BasePrefetchingDataLayer_adab5b2e3013120a767d2be6ba609f045}{}\label{classcaffe_1_1BasePrefetchingDataLayer_adab5b2e3013120a767d2be6ba609f045}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Batch}{Batch}$<$ Dtype $>$ $>$ $>$ {\bfseries prefetch\+\_\+}\hypertarget{classcaffe_1_1BasePrefetchingDataLayer_ae1beb4fe2338b694324e375624015a2c}{}\label{classcaffe_1_1BasePrefetchingDataLayer_ae1beb4fe2338b694324e375624015a2c}
+
+\item 
+\hyperlink{classcaffe_1_1BlockingQueue}{Blocking\+Queue}$<$ \hyperlink{classcaffe_1_1Batch}{Batch}$<$ Dtype $>$ $\ast$ $>$ {\bfseries prefetch\+\_\+free\+\_\+}\hypertarget{classcaffe_1_1BasePrefetchingDataLayer_a8ca3d78f628c0290ee7254a918f7e5db}{}\label{classcaffe_1_1BasePrefetchingDataLayer_a8ca3d78f628c0290ee7254a918f7e5db}
+
+\item 
+\hyperlink{classcaffe_1_1BlockingQueue}{Blocking\+Queue}$<$ \hyperlink{classcaffe_1_1Batch}{Batch}$<$ Dtype $>$ $\ast$ $>$ {\bfseries prefetch\+\_\+full\+\_\+}\hypertarget{classcaffe_1_1BasePrefetchingDataLayer_a93b1730c7e6b96c80488ad281bada2d4}{}\label{classcaffe_1_1BasePrefetchingDataLayer_a93b1730c7e6b96c80488ad281bada2d4}
+
+\item 
+\hyperlink{classcaffe_1_1Batch}{Batch}$<$ Dtype $>$ $\ast$ {\bfseries prefetch\+\_\+current\+\_\+}\hypertarget{classcaffe_1_1BasePrefetchingDataLayer_a4b95c4ad255203d052657695bc681a5c}{}\label{classcaffe_1_1BasePrefetchingDataLayer_a4b95c4ad255203d052657695bc681a5c}
+
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries transformed\+\_\+data\+\_\+}\hypertarget{classcaffe_1_1BasePrefetchingDataLayer_afbff8f9e7c0e0f4007d2cc742b4ad874}{}\label{classcaffe_1_1BasePrefetchingDataLayer_afbff8f9e7c0e0f4007d2cc742b4ad874}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Base\+Prefetching\+Data\+Layer@{caffe\+::\+Base\+Prefetching\+Data\+Layer}!Layer\+Set\+Up@{Layer\+Set\+Up}}
+\index{Layer\+Set\+Up@{Layer\+Set\+Up}!caffe\+::\+Base\+Prefetching\+Data\+Layer@{caffe\+::\+Base\+Prefetching\+Data\+Layer}}
+\subsubsection[{\texorpdfstring{Layer\+Set\+Up(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{LayerSetUp(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Base\+Prefetching\+Data\+Layer}$<$ Dtype $>$\+::Layer\+Set\+Up (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1BasePrefetchingDataLayer_af433228727bf4f3f3aaa85434efc93c5}{}\label{classcaffe_1_1BasePrefetchingDataLayer_af433228727bf4f3f3aaa85434efc93c5}
+
+
+Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the preshaped input blobs, whose data fields store the input data for this layer \\
+\hline
+{\em top} & the allocated but unshaped output blobs\\
+\hline
+\end{DoxyParams}
+This method should do one-\/time layer specific setup. This includes reading and processing relevent parameters from the {\ttfamily layer\+\_\+param\+\_\+}. Setting up the shapes of top blobs and internal buffers should be done in {\ttfamily Reshape}, which will be called before the forward pass to adjust the top blob sizes. 
+
+Reimplemented from \hyperlink{classcaffe_1_1BaseDataLayer_a15f0c368230549ece6b91764704c9a73}{caffe\+::\+Base\+Data\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/base\+\_\+data\+\_\+layer.\+hpp\item 
+src/caffe/layers/base\+\_\+data\+\_\+layer.\+cpp\end{DoxyCompactItemize}

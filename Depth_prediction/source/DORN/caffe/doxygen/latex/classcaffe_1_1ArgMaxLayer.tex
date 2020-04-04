@@ -1,0 +1,196 @@
+\hypertarget{classcaffe_1_1ArgMaxLayer}{}\section{caffe\+:\+:Arg\+Max\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1ArgMaxLayer}\index{caffe\+::\+Arg\+Max\+Layer$<$ Dtype $>$@{caffe\+::\+Arg\+Max\+Layer$<$ Dtype $>$}}
+
+
+Compute the index of the $ K $ max values for each datum across all dimensions $ (C \times H \times W) $.  
+
+
+
+
+{\ttfamily \#include $<$argmax\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Arg\+Max\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcaffe_1_1ArgMaxLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcaffe_1_1ArgMaxLayer_a77429601f3d7f27b48720a1b703491be}{Arg\+Max\+Layer} (const Layer\+Parameter \&param)
+\item 
+virtual void \hyperlink{classcaffe_1_1ArgMaxLayer_a479814976e31716e670d63c126e5036f}{Layer\+Set\+Up} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1ArgMaxLayer_ac379771528cba5db5ebafe318c412f05}{Reshape} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1ArgMaxLayer_af54ed9ab47e4e82c53d86768d3cbb691}{type} () const \hypertarget{classcaffe_1_1ArgMaxLayer_af54ed9ab47e4e82c53d86768d3cbb691}{}\label{classcaffe_1_1ArgMaxLayer_af54ed9ab47e4e82c53d86768d3cbb691}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1ArgMaxLayer_ab9acebe420760d367c6e5808842411d0}{Exact\+Num\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1ArgMaxLayer_acb86bae0a6dd2f01688ed4575830b874}{Exact\+Num\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1ArgMaxLayer_a6446de6fbb3f4310229b188b08fe2698}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\item 
+virtual void \hyperlink{classcaffe_1_1ArgMaxLayer_a31cab0f0ea73c0df25c347c0923ea9a0}{Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1ArgMaxLayer_a31cab0f0ea73c0df25c347c0923ea9a0}{}\label{classcaffe_1_1ArgMaxLayer_a31cab0f0ea73c0df25c347c0923ea9a0}
+
+\begin{DoxyCompactList}\small\item\em Not implemented (non-\/differentiable function) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries out\+\_\+max\+\_\+val\+\_\+}\hypertarget{classcaffe_1_1ArgMaxLayer_a80166873c75bdbb9a8aaa43e63543684}{}\label{classcaffe_1_1ArgMaxLayer_a80166873c75bdbb9a8aaa43e63543684}
+
+\item 
+size\+\_\+t {\bfseries top\+\_\+k\+\_\+}\hypertarget{classcaffe_1_1ArgMaxLayer_a936d87cd98fe0c508f5d7feb17c5f989}{}\label{classcaffe_1_1ArgMaxLayer_a936d87cd98fe0c508f5d7feb17c5f989}
+
+\item 
+bool {\bfseries has\+\_\+axis\+\_\+}\hypertarget{classcaffe_1_1ArgMaxLayer_aad30a415d4d23ce890f9ddf0c7efcb4b}{}\label{classcaffe_1_1ArgMaxLayer_aad30a415d4d23ce890f9ddf0c7efcb4b}
+
+\item 
+int {\bfseries axis\+\_\+}\hypertarget{classcaffe_1_1ArgMaxLayer_af0c7ee3334644eef4b7d7d47cb5890a7}{}\label{classcaffe_1_1ArgMaxLayer_af0c7ee3334644eef4b7d7d47cb5890a7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Arg\+Max\+Layer$<$ Dtype $>$}
+
+Compute the index of the $ K $ max values for each datum across all dimensions $ (C \times H \times W) $. 
+
+Intended for use after a classification layer to produce a prediction. If parameter out\+\_\+max\+\_\+val is set to true, output is a vector of pairs (max\+\_\+ind, max\+\_\+val) for each image. The axis parameter specifies an axis along which to maximise.
+
+N\+O\+TE\+: does not implement Backwards operation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{caffe\+::\+Arg\+Max\+Layer@{caffe\+::\+Arg\+Max\+Layer}!Arg\+Max\+Layer@{Arg\+Max\+Layer}}
+\index{Arg\+Max\+Layer@{Arg\+Max\+Layer}!caffe\+::\+Arg\+Max\+Layer@{caffe\+::\+Arg\+Max\+Layer}}
+\subsubsection[{\texorpdfstring{Arg\+Max\+Layer(const Layer\+Parameter \&param)}{ArgMaxLayer(const LayerParameter &param)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ {\bf caffe\+::\+Arg\+Max\+Layer}$<$ Dtype $>$\+::{\bf Arg\+Max\+Layer} (
+\begin{DoxyParamCaption}
+\item[{const Layer\+Parameter \&}]{param}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\hypertarget{classcaffe_1_1ArgMaxLayer_a77429601f3d7f27b48720a1b703491be}{}\label{classcaffe_1_1ArgMaxLayer_a77429601f3d7f27b48720a1b703491be}
+
+\begin{DoxyParams}{Parameters}
+{\em param} & provides Arg\+Max\+Parameter argmax\+\_\+param, with \hyperlink{classcaffe_1_1ArgMaxLayer}{Arg\+Max\+Layer} options\+:
+\begin{DoxyItemize}
+\item top\+\_\+k ({\bfseries optional} uint, default 1). the number $ K $ of maximal items to output.
+\item out\+\_\+max\+\_\+val ({\bfseries optional} bool, default false). if set, output a vector of pairs (max\+\_\+ind, max\+\_\+val) unless axis is set then output max\+\_\+val along the specified axis.
+\item axis ({\bfseries optional} int). if set, maximise along the specified axis else maximise the flattened trailing dimensions for each index of the first / num dimension. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Arg\+Max\+Layer@{caffe\+::\+Arg\+Max\+Layer}!Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}}
+\index{Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}!caffe\+::\+Arg\+Max\+Layer@{caffe\+::\+Arg\+Max\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Bottom\+Blobs() const }{ExactNumBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Arg\+Max\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1ArgMaxLayer_ab9acebe420760d367c6e5808842411d0}{}\label{classcaffe_1_1ArgMaxLayer_ab9acebe420760d367c6e5808842411d0}
+
+
+Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a45c7a7943a8a6735ac433c9be11e0240}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Arg\+Max\+Layer@{caffe\+::\+Arg\+Max\+Layer}!Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}}
+\index{Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}!caffe\+::\+Arg\+Max\+Layer@{caffe\+::\+Arg\+Max\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Top\+Blobs() const }{ExactNumTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Arg\+Max\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1ArgMaxLayer_acb86bae0a6dd2f01688ed4575830b874}{}\label{classcaffe_1_1ArgMaxLayer_acb86bae0a6dd2f01688ed4575830b874}
+
+
+Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_aa3c99ed707e8db683a3043412e151af8}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Arg\+Max\+Layer@{caffe\+::\+Arg\+Max\+Layer}!Forward\+\_\+cpu@{Forward\+\_\+cpu}}
+\index{Forward\+\_\+cpu@{Forward\+\_\+cpu}!caffe\+::\+Arg\+Max\+Layer@{caffe\+::\+Arg\+Max\+Layer}}
+\subsubsection[{\texorpdfstring{Forward\+\_\+cpu(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Forward_cpu(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Arg\+Max\+Layer}$<$ Dtype $>$\+::Forward\+\_\+cpu (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1ArgMaxLayer_a6446de6fbb3f4310229b188b08fe2698}{}\label{classcaffe_1_1ArgMaxLayer_a6446de6fbb3f4310229b188b08fe2698}
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1)
+\begin{DoxyEnumerate}
+\item $ (N \times C \times H \times W) $ the inputs $ x $ 
+\end{DoxyEnumerate}\\
+\hline
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1)
+\begin{DoxyEnumerate}
+\item $ (N \times 1 \times K) $ or, if out\+\_\+max\+\_\+val $ (N \times 2 \times K) $ unless axis set than e.\+g. $ (N \times K \times H \times W) $ if axis == 1 the computed outputs $ y_n = \arg\max\limits_i x_{ni} $ (for $ K = 1 $). 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classcaffe_1_1Layer_add965883f75bbf90c7a06f960cda7a1a}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Arg\+Max\+Layer@{caffe\+::\+Arg\+Max\+Layer}!Layer\+Set\+Up@{Layer\+Set\+Up}}
+\index{Layer\+Set\+Up@{Layer\+Set\+Up}!caffe\+::\+Arg\+Max\+Layer@{caffe\+::\+Arg\+Max\+Layer}}
+\subsubsection[{\texorpdfstring{Layer\+Set\+Up(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{LayerSetUp(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Arg\+Max\+Layer}$<$ Dtype $>$\+::Layer\+Set\+Up (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1ArgMaxLayer_a479814976e31716e670d63c126e5036f}{}\label{classcaffe_1_1ArgMaxLayer_a479814976e31716e670d63c126e5036f}
+
+
+Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the preshaped input blobs, whose data fields store the input data for this layer \\
+\hline
+{\em top} & the allocated but unshaped output blobs\\
+\hline
+\end{DoxyParams}
+This method should do one-\/time layer specific setup. This includes reading and processing relevent parameters from the {\ttfamily layer\+\_\+param\+\_\+}. Setting up the shapes of top blobs and internal buffers should be done in {\ttfamily Reshape}, which will be called before the forward pass to adjust the top blob sizes. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a38dc2488bf319b8de5a7ac84e0045393}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Arg\+Max\+Layer@{caffe\+::\+Arg\+Max\+Layer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!caffe\+::\+Arg\+Max\+Layer@{caffe\+::\+Arg\+Max\+Layer}}
+\subsubsection[{\texorpdfstring{Reshape(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Reshape(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Arg\+Max\+Layer}$<$ Dtype $>$\+::Reshape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1ArgMaxLayer_ac379771528cba5db5ebafe318c412f05}{}\label{classcaffe_1_1ArgMaxLayer_ac379771528cba5db5ebafe318c412f05}
+
+
+Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the input blobs, with the requested input shapes \\
+\hline
+{\em top} & the top blobs, which should be reshaped as needed\\
+\hline
+\end{DoxyParams}
+This method should reshape top blobs as needed according to the shapes of the bottom (input) blobs, as well as reshaping any internal buffers and making any other necessary adjustments so that the layer can accommodate the bottom blobs. 
+
+Implements \hyperlink{classcaffe_1_1Layer_ad9d391b972c769c0ebee34ca6d1c973e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/argmax\+\_\+layer.\+hpp\item 
+src/caffe/layers/argmax\+\_\+layer.\+cpp\end{DoxyCompactItemize}

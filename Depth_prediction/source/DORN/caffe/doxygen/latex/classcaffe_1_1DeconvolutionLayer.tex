@@ -1,0 +1,62 @@
+\hypertarget{classcaffe_1_1DeconvolutionLayer}{}\section{caffe\+:\+:Deconvolution\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1DeconvolutionLayer}\index{caffe\+::\+Deconvolution\+Layer$<$ Dtype $>$@{caffe\+::\+Deconvolution\+Layer$<$ Dtype $>$}}
+
+
+Convolve the input with a bank of learned filters, and (optionally) add biases, treating filters and convolution parameters in the opposite sense as \hyperlink{classcaffe_1_1ConvolutionLayer}{Convolution\+Layer}.  
+
+
+
+
+{\ttfamily \#include $<$deconv\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Deconvolution\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcaffe_1_1DeconvolutionLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Deconvolution\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1DeconvolutionLayer_a48f1d8c75f9fb83d4af78a84cff187e8}{}\label{classcaffe_1_1DeconvolutionLayer_a48f1d8c75f9fb83d4af78a84cff187e8}
+
+\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1DeconvolutionLayer_a7498a14d8b7afa0bc85abe1dbd719135}{type} () const \hypertarget{classcaffe_1_1DeconvolutionLayer_a7498a14d8b7afa0bc85abe1dbd719135}{}\label{classcaffe_1_1DeconvolutionLayer_a7498a14d8b7afa0bc85abe1dbd719135}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1DeconvolutionLayer_a3716cda5f7d7e81f7d19cf4313d2bfc5}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1DeconvolutionLayer_a3716cda5f7d7e81f7d19cf4313d2bfc5}{}\label{classcaffe_1_1DeconvolutionLayer_a3716cda5f7d7e81f7d19cf4313d2bfc5}
+
+\begin{DoxyCompactList}\small\item\em Using the C\+PU device, compute the layer output. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1DeconvolutionLayer_a49c3360133291f7e6593db36ec392d07}{Forward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1DeconvolutionLayer_a49c3360133291f7e6593db36ec392d07}{}\label{classcaffe_1_1DeconvolutionLayer_a49c3360133291f7e6593db36ec392d07}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the layer output. Fall back to \hyperlink{classcaffe_1_1DeconvolutionLayer_a3716cda5f7d7e81f7d19cf4313d2bfc5}{Forward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1DeconvolutionLayer_a081ed64d7b91d42f9f441f849db2a58d}{Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1DeconvolutionLayer_a081ed64d7b91d42f9f441f849db2a58d}{}\label{classcaffe_1_1DeconvolutionLayer_a081ed64d7b91d42f9f441f849db2a58d}
+
+\begin{DoxyCompactList}\small\item\em Using the C\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1DeconvolutionLayer_a2b4a2203001e8b5a5839955879551048}{Backward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1DeconvolutionLayer_a2b4a2203001e8b5a5839955879551048}{}\label{classcaffe_1_1DeconvolutionLayer_a2b4a2203001e8b5a5839955879551048}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. Fall back to \hyperlink{classcaffe_1_1DeconvolutionLayer_a081ed64d7b91d42f9f441f849db2a58d}{Backward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\item 
+virtual bool {\bfseries reverse\+\_\+dimensions} ()\hypertarget{classcaffe_1_1DeconvolutionLayer_aa71cf7a9ff4cebe12721783070f49588}{}\label{classcaffe_1_1DeconvolutionLayer_aa71cf7a9ff4cebe12721783070f49588}
+
+\item 
+virtual void {\bfseries compute\+\_\+output\+\_\+shape} ()\hypertarget{classcaffe_1_1DeconvolutionLayer_a81da6f09a0b00db0f0e1a4e5fe2cb4ee}{}\label{classcaffe_1_1DeconvolutionLayer_a81da6f09a0b00db0f0e1a4e5fe2cb4ee}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Deconvolution\+Layer$<$ Dtype $>$}
+
+Convolve the input with a bank of learned filters, and (optionally) add biases, treating filters and convolution parameters in the opposite sense as \hyperlink{classcaffe_1_1ConvolutionLayer}{Convolution\+Layer}. 
+
+\hyperlink{classcaffe_1_1ConvolutionLayer}{Convolution\+Layer} computes each output value by dotting an input window with a filter; \hyperlink{classcaffe_1_1DeconvolutionLayer}{Deconvolution\+Layer} multiplies each input value by a filter elementwise, and sums over the resulting output windows. In other words, \hyperlink{classcaffe_1_1DeconvolutionLayer}{Deconvolution\+Layer} is \hyperlink{classcaffe_1_1ConvolutionLayer}{Convolution\+Layer} with the forward and backward passes reversed. \hyperlink{classcaffe_1_1DeconvolutionLayer}{Deconvolution\+Layer} reuses Convolution\+Parameter for its parameters, but they take the opposite sense as in \hyperlink{classcaffe_1_1ConvolutionLayer}{Convolution\+Layer} (so padding is removed from the output rather than added to the input, and stride results in upsampling rather than downsampling). 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/deconv\+\_\+layer.\+hpp\item 
+src/caffe/layers/deconv\+\_\+layer.\+cpp\end{DoxyCompactItemize}

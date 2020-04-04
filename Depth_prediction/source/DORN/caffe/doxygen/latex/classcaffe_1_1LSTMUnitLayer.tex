@@ -1,0 +1,202 @@
+\hypertarget{classcaffe_1_1LSTMUnitLayer}{}\section{caffe\+:\+:L\+S\+T\+M\+Unit\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1LSTMUnitLayer}\index{caffe\+::\+L\+S\+T\+M\+Unit\+Layer$<$ Dtype $>$@{caffe\+::\+L\+S\+T\+M\+Unit\+Layer$<$ Dtype $>$}}
+
+
+A helper for \hyperlink{classcaffe_1_1LSTMLayer}{L\+S\+T\+M\+Layer}\+: computes a single timestep of the non-\/linearity of the L\+S\+TM, producing the updated cell and hidden states.  
+
+
+
+
+{\ttfamily \#include $<$lstm\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:L\+S\+T\+M\+Unit\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcaffe_1_1LSTMUnitLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries L\+S\+T\+M\+Unit\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1LSTMUnitLayer_aa8eb86f949a93c724c6ed89a601aa4e0}{}\label{classcaffe_1_1LSTMUnitLayer_aa8eb86f949a93c724c6ed89a601aa4e0}
+
+\item 
+virtual void \hyperlink{classcaffe_1_1LSTMUnitLayer_ac968816014ba1a2851df2dd8792da21a}{Reshape} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1LSTMUnitLayer_a6408d25bcd3046db18c1a7b199955886}{type} () const \hypertarget{classcaffe_1_1LSTMUnitLayer_a6408d25bcd3046db18c1a7b199955886}{}\label{classcaffe_1_1LSTMUnitLayer_a6408d25bcd3046db18c1a7b199955886}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1LSTMUnitLayer_a865a9e9d8b1d24cd46cabcec81169b01}{Exact\+Num\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1LSTMUnitLayer_a6e547d63245347dac2aa412281d93970}{Exact\+Num\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classcaffe_1_1LSTMUnitLayer_a28bbfffaf2a438f151566c7e53bbc1d7}{Allow\+Force\+Backward} (const int bottom\+\_\+index) const 
+\begin{DoxyCompactList}\small\item\em Return whether to allow force\+\_\+backward for a given bottom blob index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1LSTMUnitLayer_a298ab31f0efac45ee4d0e90448e1b6aa}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\item 
+virtual void \hyperlink{classcaffe_1_1LSTMUnitLayer_adc6533e64de0eec9943ef473f91fb666}{Forward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1LSTMUnitLayer_adc6533e64de0eec9943ef473f91fb666}{}\label{classcaffe_1_1LSTMUnitLayer_adc6533e64de0eec9943ef473f91fb666}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the layer output. Fall back to \hyperlink{classcaffe_1_1LSTMUnitLayer_a298ab31f0efac45ee4d0e90448e1b6aa}{Forward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1LSTMUnitLayer_ab93442722c012f0270e15b3b3ea30cf5}{Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)
+\begin{DoxyCompactList}\small\item\em Computes the error gradient w.\+r.\+t. the L\+S\+T\+M\+Unit inputs. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1LSTMUnitLayer_a65a777f73b1b4e3d007a7e2309b3f36e}{Backward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1LSTMUnitLayer_a65a777f73b1b4e3d007a7e2309b3f36e}{}\label{classcaffe_1_1LSTMUnitLayer_a65a777f73b1b4e3d007a7e2309b3f36e}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. Fall back to \hyperlink{classcaffe_1_1LSTMUnitLayer_ab93442722c012f0270e15b3b3ea30cf5}{Backward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classcaffe_1_1LSTMUnitLayer_a7ffcad2a4e6ca83f03cc88dffa32b7ca}{hidden\+\_\+dim\+\_\+}\hypertarget{classcaffe_1_1LSTMUnitLayer_a7ffcad2a4e6ca83f03cc88dffa32b7ca}{}\label{classcaffe_1_1LSTMUnitLayer_a7ffcad2a4e6ca83f03cc88dffa32b7ca}
+
+\begin{DoxyCompactList}\small\item\em The hidden and output dimension. \end{DoxyCompactList}\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries X\+\_\+acts\+\_\+}\hypertarget{classcaffe_1_1LSTMUnitLayer_a136b722511c1dd446b8ec2298439d805}{}\label{classcaffe_1_1LSTMUnitLayer_a136b722511c1dd446b8ec2298439d805}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+L\+S\+T\+M\+Unit\+Layer$<$ Dtype $>$}
+
+A helper for \hyperlink{classcaffe_1_1LSTMLayer}{L\+S\+T\+M\+Layer}\+: computes a single timestep of the non-\/linearity of the L\+S\+TM, producing the updated cell and hidden states. 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+L\+S\+T\+M\+Unit\+Layer@{caffe\+::\+L\+S\+T\+M\+Unit\+Layer}!Allow\+Force\+Backward@{Allow\+Force\+Backward}}
+\index{Allow\+Force\+Backward@{Allow\+Force\+Backward}!caffe\+::\+L\+S\+T\+M\+Unit\+Layer@{caffe\+::\+L\+S\+T\+M\+Unit\+Layer}}
+\subsubsection[{\texorpdfstring{Allow\+Force\+Backward(const int bottom\+\_\+index) const }{AllowForceBackward(const int bottom_index) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual bool {\bf caffe\+::\+L\+S\+T\+M\+Unit\+Layer}$<$ Dtype $>$\+::Allow\+Force\+Backward (
+\begin{DoxyParamCaption}
+\item[{const int}]{bottom\+\_\+index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1LSTMUnitLayer_a28bbfffaf2a438f151566c7e53bbc1d7}{}\label{classcaffe_1_1LSTMUnitLayer_a28bbfffaf2a438f151566c7e53bbc1d7}
+
+
+Return whether to allow force\+\_\+backward for a given bottom blob index. 
+
+If Allow\+Force\+Backward(i) == false, we will ignore the force\+\_\+backward setting and backpropagate to blob i only if it needs gradient information (as is done when force\+\_\+backward == false). 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a4a2e4ca94eaa1cbc054b512c6657743e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+L\+S\+T\+M\+Unit\+Layer@{caffe\+::\+L\+S\+T\+M\+Unit\+Layer}!Backward\+\_\+cpu@{Backward\+\_\+cpu}}
+\index{Backward\+\_\+cpu@{Backward\+\_\+cpu}!caffe\+::\+L\+S\+T\+M\+Unit\+Layer@{caffe\+::\+L\+S\+T\+M\+Unit\+Layer}}
+\subsubsection[{\texorpdfstring{Backward\+\_\+cpu(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom)}{Backward_cpu(const vector< Blob< Dtype > * > &top, const vector< bool > &propagate_down, const vector< Blob< Dtype > * > &bottom)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+L\+S\+T\+M\+Unit\+Layer}$<$ Dtype $>$\+::Backward\+\_\+cpu (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top, }
+\item[{const vector$<$ bool $>$ \&}]{propagate\+\_\+down, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1LSTMUnitLayer_ab93442722c012f0270e15b3b3ea30cf5}{}\label{classcaffe_1_1LSTMUnitLayer_ab93442722c012f0270e15b3b3ea30cf5}
+
+
+Computes the error gradient w.\+r.\+t. the L\+S\+T\+M\+Unit inputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 2), providing the error gradient with respect to the outputs
+\begin{DoxyEnumerate}
+\item $ (1 \times N \times D) $\+: containing error gradients $ \frac{\partial E}{\partial c_t} $ with respect to the updated cell state $ c_t $
+\item $ (1 \times N \times D) $\+: containing error gradients $ \frac{\partial E}{\partial h_t} $ with respect to the updated cell state $ h_t $ 
+\end{DoxyEnumerate}\\
+\hline
+{\em propagate\+\_\+down} & see \hyperlink{classcaffe_1_1Layer_a53df1e081767e07bfb4c81657f4acd0a}{Layer\+::\+Backward}. \\
+\hline
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 3), into which the error gradients with respect to the L\+S\+T\+M\+Unit inputs $ c_{t-1} $ and the gate inputs are computed. Computatation of the error gradients w.\+r.\+t. the sequence indicators is not implemented.
+\begin{DoxyEnumerate}
+\item $ (1 \times N \times D) $ the error gradient w.\+r.\+t. the previous timestep cell state $ c_{t-1} $
+\item $ (1 \times N \times 4D) $ the error gradient w.\+r.\+t. the \char`\"{}gate inputs\char`\"{} $ [ \frac{\partial E}{\partial i_t} \frac{\partial E}{\partial f_t} \frac{\partial E}{\partial o_t} \frac{\partial E}{\partial g_t} ] $
+\item $ (1 \times 1 \times N) $ the gradient w.\+r.\+t. the sequence continuation indicators $ \delta_t $ is currently not computed. 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classcaffe_1_1Layer_a64d15855f882af4b82e83fa993c4e7c6}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+L\+S\+T\+M\+Unit\+Layer@{caffe\+::\+L\+S\+T\+M\+Unit\+Layer}!Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}}
+\index{Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}!caffe\+::\+L\+S\+T\+M\+Unit\+Layer@{caffe\+::\+L\+S\+T\+M\+Unit\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Bottom\+Blobs() const }{ExactNumBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+L\+S\+T\+M\+Unit\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1LSTMUnitLayer_a865a9e9d8b1d24cd46cabcec81169b01}{}\label{classcaffe_1_1LSTMUnitLayer_a865a9e9d8b1d24cd46cabcec81169b01}
+
+
+Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a45c7a7943a8a6735ac433c9be11e0240}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+L\+S\+T\+M\+Unit\+Layer@{caffe\+::\+L\+S\+T\+M\+Unit\+Layer}!Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}}
+\index{Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}!caffe\+::\+L\+S\+T\+M\+Unit\+Layer@{caffe\+::\+L\+S\+T\+M\+Unit\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Top\+Blobs() const }{ExactNumTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+L\+S\+T\+M\+Unit\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1LSTMUnitLayer_a6e547d63245347dac2aa412281d93970}{}\label{classcaffe_1_1LSTMUnitLayer_a6e547d63245347dac2aa412281d93970}
+
+
+Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_aa3c99ed707e8db683a3043412e151af8}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+L\+S\+T\+M\+Unit\+Layer@{caffe\+::\+L\+S\+T\+M\+Unit\+Layer}!Forward\+\_\+cpu@{Forward\+\_\+cpu}}
+\index{Forward\+\_\+cpu@{Forward\+\_\+cpu}!caffe\+::\+L\+S\+T\+M\+Unit\+Layer@{caffe\+::\+L\+S\+T\+M\+Unit\+Layer}}
+\subsubsection[{\texorpdfstring{Forward\+\_\+cpu(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Forward_cpu(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+L\+S\+T\+M\+Unit\+Layer}$<$ Dtype $>$\+::Forward\+\_\+cpu (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1LSTMUnitLayer_a298ab31f0efac45ee4d0e90448e1b6aa}{}\label{classcaffe_1_1LSTMUnitLayer_a298ab31f0efac45ee4d0e90448e1b6aa}
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 3)
+\begin{DoxyEnumerate}
+\item $ (1 \times N \times D) $ the previous timestep cell state $ c_{t-1} $
+\item $ (1 \times N \times 4D) $ the \char`\"{}gate inputs\char`\"{} $ [i_t', f_t', o_t', g_t'] $
+\item $ (1 \times N) $ the sequence continuation indicators $ \delta_t $ 
+\end{DoxyEnumerate}\\
+\hline
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 2)
+\begin{DoxyEnumerate}
+\item $ (1 \times N \times D) $ the updated cell state $ c_t $, computed as\+: i\+\_\+t \+:= \mbox{[}i\+\_\+t\textquotesingle{}\mbox{]} f\+\_\+t \+:= \mbox{[}f\+\_\+t\textquotesingle{}\mbox{]} o\+\_\+t \+:= \mbox{[}o\+\_\+t\textquotesingle{}\mbox{]} g\+\_\+t \+:= \mbox{[}g\+\_\+t\textquotesingle{}\mbox{]} c\+\_\+t \+:= cont\+\_\+t $\ast$ (f\+\_\+t .$\ast$ c\+\_\+\{t-\/1\}) + (i\+\_\+t .$\ast$ g\+\_\+t)
+\item $ (1 \times N \times D) $ the updated hidden state $ h_t $, computed as\+: h\+\_\+t \+:= o\+\_\+t .$\ast$ \mbox{[}c\+\_\+t\mbox{]} 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classcaffe_1_1Layer_add965883f75bbf90c7a06f960cda7a1a}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+L\+S\+T\+M\+Unit\+Layer@{caffe\+::\+L\+S\+T\+M\+Unit\+Layer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!caffe\+::\+L\+S\+T\+M\+Unit\+Layer@{caffe\+::\+L\+S\+T\+M\+Unit\+Layer}}
+\subsubsection[{\texorpdfstring{Reshape(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Reshape(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+L\+S\+T\+M\+Unit\+Layer}$<$ Dtype $>$\+::Reshape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1LSTMUnitLayer_ac968816014ba1a2851df2dd8792da21a}{}\label{classcaffe_1_1LSTMUnitLayer_ac968816014ba1a2851df2dd8792da21a}
+
+
+Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the input blobs, with the requested input shapes \\
+\hline
+{\em top} & the top blobs, which should be reshaped as needed\\
+\hline
+\end{DoxyParams}
+This method should reshape top blobs as needed according to the shapes of the bottom (input) blobs, as well as reshaping any internal buffers and making any other necessary adjustments so that the layer can accommodate the bottom blobs. 
+
+Implements \hyperlink{classcaffe_1_1Layer_ad9d391b972c769c0ebee34ca6d1c973e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/lstm\+\_\+layer.\+hpp\item 
+src/caffe/layers/lstm\+\_\+unit\+\_\+layer.\+cpp\end{DoxyCompactItemize}

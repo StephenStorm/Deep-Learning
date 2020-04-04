@@ -1,0 +1,161 @@
+\hypertarget{classcaffe_1_1FlattenLayer}{}\section{caffe\+:\+:Flatten\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1FlattenLayer}\index{caffe\+::\+Flatten\+Layer$<$ Dtype $>$@{caffe\+::\+Flatten\+Layer$<$ Dtype $>$}}
+
+
+Reshapes the input \hyperlink{classcaffe_1_1Blob}{Blob} into flat vectors.  
+
+
+
+
+{\ttfamily \#include $<$flatten\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Flatten\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcaffe_1_1FlattenLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Flatten\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1FlattenLayer_a7ab62567c2fb5424979dc16af273b688}{}\label{classcaffe_1_1FlattenLayer_a7ab62567c2fb5424979dc16af273b688}
+
+\item 
+virtual void \hyperlink{classcaffe_1_1FlattenLayer_a1320de156fb152009c13892e30cc87ef}{Reshape} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1FlattenLayer_a64027633603db57635c844e2c2421d95}{type} () const \hypertarget{classcaffe_1_1FlattenLayer_a64027633603db57635c844e2c2421d95}{}\label{classcaffe_1_1FlattenLayer_a64027633603db57635c844e2c2421d95}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1FlattenLayer_ad7abb8ccc06c7943e79d77bf5a7e2521}{Exact\+Num\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1FlattenLayer_ab54601497218724036abfcec46a718de}{Exact\+Num\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1FlattenLayer_a0ecfcc1e1d32ea5ed57ea32f6985d902}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\item 
+virtual void \hyperlink{classcaffe_1_1FlattenLayer_ad207771acf8b2ab912f6daf0c4a6dfe8}{Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)
+\begin{DoxyCompactList}\small\item\em Computes the error gradient w.\+r.\+t. the concatenate inputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Flatten\+Layer$<$ Dtype $>$}
+
+Reshapes the input \hyperlink{classcaffe_1_1Blob}{Blob} into flat vectors. 
+
+Note\+: because this layer does not change the input values -- merely the dimensions -- it can simply copy the input. The copy happens \char`\"{}virtually\char`\"{} (thus taking effectively 0 real time) by setting, in Forward, the data pointer of the top \hyperlink{classcaffe_1_1Blob}{Blob} to that of the bottom \hyperlink{classcaffe_1_1Blob}{Blob} (see \hyperlink{classcaffe_1_1Blob_a8fce5a816a2b9629686db69108610d93}{Blob\+::\+Share\+Data}), and in Backward, the diff pointer of the bottom \hyperlink{classcaffe_1_1Blob}{Blob} to that of the top \hyperlink{classcaffe_1_1Blob}{Blob} (see \hyperlink{classcaffe_1_1Blob_a004781965b09f94c409cec9a6fc7c35c}{Blob\+::\+Share\+Diff}). 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Flatten\+Layer@{caffe\+::\+Flatten\+Layer}!Backward\+\_\+cpu@{Backward\+\_\+cpu}}
+\index{Backward\+\_\+cpu@{Backward\+\_\+cpu}!caffe\+::\+Flatten\+Layer@{caffe\+::\+Flatten\+Layer}}
+\subsubsection[{\texorpdfstring{Backward\+\_\+cpu(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom)}{Backward_cpu(const vector< Blob< Dtype > * > &top, const vector< bool > &propagate_down, const vector< Blob< Dtype > * > &bottom)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Flatten\+Layer}$<$ Dtype $>$\+::Backward\+\_\+cpu (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top, }
+\item[{const vector$<$ bool $>$ \&}]{propagate\+\_\+down, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1FlattenLayer_ad207771acf8b2ab912f6daf0c4a6dfe8}{}\label{classcaffe_1_1FlattenLayer_ad207771acf8b2ab912f6daf0c4a6dfe8}
+
+
+Computes the error gradient w.\+r.\+t. the concatenate inputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1), providing the error gradient with respect to the outputs \\
+\hline
+{\em propagate\+\_\+down} & see \hyperlink{classcaffe_1_1Layer_a53df1e081767e07bfb4c81657f4acd0a}{Layer\+::\+Backward}. \\
+\hline
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length K), into which the top error gradient is (virtually) copied \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classcaffe_1_1Layer_a64d15855f882af4b82e83fa993c4e7c6}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Flatten\+Layer@{caffe\+::\+Flatten\+Layer}!Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}}
+\index{Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}!caffe\+::\+Flatten\+Layer@{caffe\+::\+Flatten\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Bottom\+Blobs() const }{ExactNumBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Flatten\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1FlattenLayer_ad7abb8ccc06c7943e79d77bf5a7e2521}{}\label{classcaffe_1_1FlattenLayer_ad7abb8ccc06c7943e79d77bf5a7e2521}
+
+
+Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a45c7a7943a8a6735ac433c9be11e0240}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Flatten\+Layer@{caffe\+::\+Flatten\+Layer}!Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}}
+\index{Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}!caffe\+::\+Flatten\+Layer@{caffe\+::\+Flatten\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Top\+Blobs() const }{ExactNumTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Flatten\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1FlattenLayer_ab54601497218724036abfcec46a718de}{}\label{classcaffe_1_1FlattenLayer_ab54601497218724036abfcec46a718de}
+
+
+Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_aa3c99ed707e8db683a3043412e151af8}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Flatten\+Layer@{caffe\+::\+Flatten\+Layer}!Forward\+\_\+cpu@{Forward\+\_\+cpu}}
+\index{Forward\+\_\+cpu@{Forward\+\_\+cpu}!caffe\+::\+Flatten\+Layer@{caffe\+::\+Flatten\+Layer}}
+\subsubsection[{\texorpdfstring{Forward\+\_\+cpu(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Forward_cpu(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Flatten\+Layer}$<$ Dtype $>$\+::Forward\+\_\+cpu (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1FlattenLayer_a0ecfcc1e1d32ea5ed57ea32f6985d902}{}\label{classcaffe_1_1FlattenLayer_a0ecfcc1e1d32ea5ed57ea32f6985d902}
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 2+)
+\begin{DoxyEnumerate}
+\item $ (N \times C \times H \times W) $ the inputs 
+\end{DoxyEnumerate}\\
+\hline
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1)
+\begin{DoxyEnumerate}
+\item $ (N \times CHW \times 1 \times 1) $ the outputs -- i.\+e., the (virtually) copied, flattened inputs 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classcaffe_1_1Layer_add965883f75bbf90c7a06f960cda7a1a}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Flatten\+Layer@{caffe\+::\+Flatten\+Layer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!caffe\+::\+Flatten\+Layer@{caffe\+::\+Flatten\+Layer}}
+\subsubsection[{\texorpdfstring{Reshape(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Reshape(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Flatten\+Layer}$<$ Dtype $>$\+::Reshape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1FlattenLayer_a1320de156fb152009c13892e30cc87ef}{}\label{classcaffe_1_1FlattenLayer_a1320de156fb152009c13892e30cc87ef}
+
+
+Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the input blobs, with the requested input shapes \\
+\hline
+{\em top} & the top blobs, which should be reshaped as needed\\
+\hline
+\end{DoxyParams}
+This method should reshape top blobs as needed according to the shapes of the bottom (input) blobs, as well as reshaping any internal buffers and making any other necessary adjustments so that the layer can accommodate the bottom blobs. 
+
+Implements \hyperlink{classcaffe_1_1Layer_ad9d391b972c769c0ebee34ca6d1c973e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/flatten\+\_\+layer.\+hpp\item 
+src/caffe/layers/flatten\+\_\+layer.\+cpp\end{DoxyCompactItemize}

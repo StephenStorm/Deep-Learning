@@ -1,0 +1,241 @@
+\hypertarget{classcaffe_1_1LRNLayer}{}\section{caffe\+:\+:L\+R\+N\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1LRNLayer}\index{caffe\+::\+L\+R\+N\+Layer$<$ Dtype $>$@{caffe\+::\+L\+R\+N\+Layer$<$ Dtype $>$}}
+
+
+Normalize the input in a local region across or within feature maps.  
+
+
+
+
+{\ttfamily \#include $<$lrn\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:L\+R\+N\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcaffe_1_1LRNLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries L\+R\+N\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1LRNLayer_a235b5f1b8fead8d1ddb9c29d627058fe}{}\label{classcaffe_1_1LRNLayer_a235b5f1b8fead8d1ddb9c29d627058fe}
+
+\item 
+virtual void \hyperlink{classcaffe_1_1LRNLayer_a7ab94b55392ad0500115d4a4d64b0a7c}{Layer\+Set\+Up} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1LRNLayer_ae7ca62b2339f0691dadde24fd8acb481}{Reshape} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1LRNLayer_a28dbd28c7542ae178973f0cb7b73cf8a}{type} () const \hypertarget{classcaffe_1_1LRNLayer_a28dbd28c7542ae178973f0cb7b73cf8a}{}\label{classcaffe_1_1LRNLayer_a28dbd28c7542ae178973f0cb7b73cf8a}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1LRNLayer_aabbbcdeb646c188ac2137b003aa1c682}{Exact\+Num\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1LRNLayer_aab9056708727154a01866d17756c07cc}{Exact\+Num\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1LRNLayer_ad3ae42eb16a0f55745211a44c806e316}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1LRNLayer_ad3ae42eb16a0f55745211a44c806e316}{}\label{classcaffe_1_1LRNLayer_ad3ae42eb16a0f55745211a44c806e316}
+
+\begin{DoxyCompactList}\small\item\em Using the C\+PU device, compute the layer output. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1LRNLayer_a7d8e7e7e1daf4ae1205e0bfe9fb9ac51}{Forward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1LRNLayer_a7d8e7e7e1daf4ae1205e0bfe9fb9ac51}{}\label{classcaffe_1_1LRNLayer_a7d8e7e7e1daf4ae1205e0bfe9fb9ac51}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the layer output. Fall back to \hyperlink{classcaffe_1_1LRNLayer_ad3ae42eb16a0f55745211a44c806e316}{Forward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1LRNLayer_a71ff30a634527e2bf89c067d3c325979}{Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1LRNLayer_a71ff30a634527e2bf89c067d3c325979}{}\label{classcaffe_1_1LRNLayer_a71ff30a634527e2bf89c067d3c325979}
+
+\begin{DoxyCompactList}\small\item\em Using the C\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1LRNLayer_a1ba7e8a8af945fba73da4a0c307fc4a0}{Backward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1LRNLayer_a1ba7e8a8af945fba73da4a0c307fc4a0}{}\label{classcaffe_1_1LRNLayer_a1ba7e8a8af945fba73da4a0c307fc4a0}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. Fall back to \hyperlink{classcaffe_1_1LRNLayer_a71ff30a634527e2bf89c067d3c325979}{Backward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\item 
+virtual void {\bfseries Cross\+Channel\+Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1LRNLayer_a9245d2e182710f0bc7bb637eda6deb65}{}\label{classcaffe_1_1LRNLayer_a9245d2e182710f0bc7bb637eda6deb65}
+
+\item 
+virtual void {\bfseries Cross\+Channel\+Forward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1LRNLayer_adb64964f9adf8f7fd2f51e079de94e71}{}\label{classcaffe_1_1LRNLayer_adb64964f9adf8f7fd2f51e079de94e71}
+
+\item 
+virtual void {\bfseries Within\+Channel\+Forward} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1LRNLayer_a1ee0b177676121e682bdfa02f9156efe}{}\label{classcaffe_1_1LRNLayer_a1ee0b177676121e682bdfa02f9156efe}
+
+\item 
+virtual void {\bfseries Cross\+Channel\+Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1LRNLayer_acf4dbe14f7287924309aefa95cfc3273}{}\label{classcaffe_1_1LRNLayer_acf4dbe14f7287924309aefa95cfc3273}
+
+\item 
+virtual void {\bfseries Cross\+Channel\+Backward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1LRNLayer_af20fe643394acab7d522b5486e7d18af}{}\label{classcaffe_1_1LRNLayer_af20fe643394acab7d522b5486e7d18af}
+
+\item 
+virtual void {\bfseries Within\+Channel\+Backward} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1LRNLayer_af2e2a6f5d01e8add2d297b5437f33d49}{}\label{classcaffe_1_1LRNLayer_af2e2a6f5d01e8add2d297b5437f33d49}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries size\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a4d74c3370e28abe013bf0fcc815fcc17}{}\label{classcaffe_1_1LRNLayer_a4d74c3370e28abe013bf0fcc815fcc17}
+
+\item 
+int {\bfseries pre\+\_\+pad\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a5d4a63f1279542a4fbe2780ba061f800}{}\label{classcaffe_1_1LRNLayer_a5d4a63f1279542a4fbe2780ba061f800}
+
+\item 
+Dtype {\bfseries alpha\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_ae5a9eaf89e4082afe166f0fa7ee3b4ed}{}\label{classcaffe_1_1LRNLayer_ae5a9eaf89e4082afe166f0fa7ee3b4ed}
+
+\item 
+Dtype {\bfseries beta\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_aa0765abb189bb6be067494ea5cc925f2}{}\label{classcaffe_1_1LRNLayer_aa0765abb189bb6be067494ea5cc925f2}
+
+\item 
+Dtype {\bfseries k\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a2fd6dd95ba02ae082bf5668305f19844}{}\label{classcaffe_1_1LRNLayer_a2fd6dd95ba02ae082bf5668305f19844}
+
+\item 
+int {\bfseries num\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_ac68d88464a09f9deaf929908ffbaf345}{}\label{classcaffe_1_1LRNLayer_ac68d88464a09f9deaf929908ffbaf345}
+
+\item 
+int {\bfseries channels\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_acd1bc62c5c9074c1df80f12d716f9a7a}{}\label{classcaffe_1_1LRNLayer_acd1bc62c5c9074c1df80f12d716f9a7a}
+
+\item 
+int {\bfseries height\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a9fa09286b061a99713b4268259fdaad7}{}\label{classcaffe_1_1LRNLayer_a9fa09286b061a99713b4268259fdaad7}
+
+\item 
+int {\bfseries width\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a5b12d5c779f16e9b1caf4c3a6d581e09}{}\label{classcaffe_1_1LRNLayer_a5b12d5c779f16e9b1caf4c3a6d581e09}
+
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries scale\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a61a44943c15c502c557df755d8ef4c6c}{}\label{classcaffe_1_1LRNLayer_a61a44943c15c502c557df755d8ef4c6c}
+
+\item 
+shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1SplitLayer}{Split\+Layer}$<$ Dtype $>$ $>$ {\bfseries split\+\_\+layer\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a7126b6cbb83ddafb80c9d9dc6d44f88f}{}\label{classcaffe_1_1LRNLayer_a7126b6cbb83ddafb80c9d9dc6d44f88f}
+
+\item 
+vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ {\bfseries split\+\_\+top\+\_\+vec\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a9b199156b8113800365c64c22e0e177a}{}\label{classcaffe_1_1LRNLayer_a9b199156b8113800365c64c22e0e177a}
+
+\item 
+shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1PowerLayer}{Power\+Layer}$<$ Dtype $>$ $>$ {\bfseries square\+\_\+layer\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a440a40fc6ec9131fd8425dabe8a48fa9}{}\label{classcaffe_1_1LRNLayer_a440a40fc6ec9131fd8425dabe8a48fa9}
+
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries square\+\_\+input\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a750c4b6871af300f8de03b5eda197056}{}\label{classcaffe_1_1LRNLayer_a750c4b6871af300f8de03b5eda197056}
+
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries square\+\_\+output\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a50c1f72f225f69d344857fc55dc52ef9}{}\label{classcaffe_1_1LRNLayer_a50c1f72f225f69d344857fc55dc52ef9}
+
+\item 
+vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ {\bfseries square\+\_\+bottom\+\_\+vec\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a0361883b2eada25a56b5a90f5ff99cac}{}\label{classcaffe_1_1LRNLayer_a0361883b2eada25a56b5a90f5ff99cac}
+
+\item 
+vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ {\bfseries square\+\_\+top\+\_\+vec\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_accfb1597e6045b09dcdb421ba7e92070}{}\label{classcaffe_1_1LRNLayer_accfb1597e6045b09dcdb421ba7e92070}
+
+\item 
+shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1PoolingLayer}{Pooling\+Layer}$<$ Dtype $>$ $>$ {\bfseries pool\+\_\+layer\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a3d883b2d7022bd66e1ac2227400a1caa}{}\label{classcaffe_1_1LRNLayer_a3d883b2d7022bd66e1ac2227400a1caa}
+
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries pool\+\_\+output\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a7dfcd31ed9694bdd48c9e80bdfe1e7a4}{}\label{classcaffe_1_1LRNLayer_a7dfcd31ed9694bdd48c9e80bdfe1e7a4}
+
+\item 
+vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ {\bfseries pool\+\_\+top\+\_\+vec\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_af1d75143e7d103749575c3ee167e1c8d}{}\label{classcaffe_1_1LRNLayer_af1d75143e7d103749575c3ee167e1c8d}
+
+\item 
+shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1PowerLayer}{Power\+Layer}$<$ Dtype $>$ $>$ {\bfseries power\+\_\+layer\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a7d9446e995a4e4d1c27961159c1e7950}{}\label{classcaffe_1_1LRNLayer_a7d9446e995a4e4d1c27961159c1e7950}
+
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries power\+\_\+output\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_adb51a5bb10b26a27835b2b19ecfe72b2}{}\label{classcaffe_1_1LRNLayer_adb51a5bb10b26a27835b2b19ecfe72b2}
+
+\item 
+vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ {\bfseries power\+\_\+top\+\_\+vec\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_ac83227b50de568833235e7b2bdfbb8a8}{}\label{classcaffe_1_1LRNLayer_ac83227b50de568833235e7b2bdfbb8a8}
+
+\item 
+shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1EltwiseLayer}{Eltwise\+Layer}$<$ Dtype $>$ $>$ {\bfseries product\+\_\+layer\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_a83ee2091c7f93f72cec177d98124b16f}{}\label{classcaffe_1_1LRNLayer_a83ee2091c7f93f72cec177d98124b16f}
+
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries product\+\_\+input\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_aff284ba9f23d00aefa62759ee50b7253}{}\label{classcaffe_1_1LRNLayer_aff284ba9f23d00aefa62759ee50b7253}
+
+\item 
+vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ {\bfseries product\+\_\+bottom\+\_\+vec\+\_\+}\hypertarget{classcaffe_1_1LRNLayer_ab1bf581b7cf42b36bdbad8333989a177}{}\label{classcaffe_1_1LRNLayer_ab1bf581b7cf42b36bdbad8333989a177}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+L\+R\+N\+Layer$<$ Dtype $>$}
+
+Normalize the input in a local region across or within feature maps. 
+
+T\+O\+D\+O(dox)\+: thorough documentation for Forward, Backward, and proto params. 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+L\+R\+N\+Layer@{caffe\+::\+L\+R\+N\+Layer}!Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}}
+\index{Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}!caffe\+::\+L\+R\+N\+Layer@{caffe\+::\+L\+R\+N\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Bottom\+Blobs() const }{ExactNumBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+L\+R\+N\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1LRNLayer_aabbbcdeb646c188ac2137b003aa1c682}{}\label{classcaffe_1_1LRNLayer_aabbbcdeb646c188ac2137b003aa1c682}
+
+
+Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a45c7a7943a8a6735ac433c9be11e0240}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+L\+R\+N\+Layer@{caffe\+::\+L\+R\+N\+Layer}!Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}}
+\index{Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}!caffe\+::\+L\+R\+N\+Layer@{caffe\+::\+L\+R\+N\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Top\+Blobs() const }{ExactNumTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+L\+R\+N\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1LRNLayer_aab9056708727154a01866d17756c07cc}{}\label{classcaffe_1_1LRNLayer_aab9056708727154a01866d17756c07cc}
+
+
+Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_aa3c99ed707e8db683a3043412e151af8}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+L\+R\+N\+Layer@{caffe\+::\+L\+R\+N\+Layer}!Layer\+Set\+Up@{Layer\+Set\+Up}}
+\index{Layer\+Set\+Up@{Layer\+Set\+Up}!caffe\+::\+L\+R\+N\+Layer@{caffe\+::\+L\+R\+N\+Layer}}
+\subsubsection[{\texorpdfstring{Layer\+Set\+Up(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{LayerSetUp(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+L\+R\+N\+Layer}$<$ Dtype $>$\+::Layer\+Set\+Up (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1LRNLayer_a7ab94b55392ad0500115d4a4d64b0a7c}{}\label{classcaffe_1_1LRNLayer_a7ab94b55392ad0500115d4a4d64b0a7c}
+
+
+Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the preshaped input blobs, whose data fields store the input data for this layer \\
+\hline
+{\em top} & the allocated but unshaped output blobs\\
+\hline
+\end{DoxyParams}
+This method should do one-\/time layer specific setup. This includes reading and processing relevent parameters from the {\ttfamily layer\+\_\+param\+\_\+}. Setting up the shapes of top blobs and internal buffers should be done in {\ttfamily Reshape}, which will be called before the forward pass to adjust the top blob sizes. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a38dc2488bf319b8de5a7ac84e0045393}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+L\+R\+N\+Layer@{caffe\+::\+L\+R\+N\+Layer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!caffe\+::\+L\+R\+N\+Layer@{caffe\+::\+L\+R\+N\+Layer}}
+\subsubsection[{\texorpdfstring{Reshape(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Reshape(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+L\+R\+N\+Layer}$<$ Dtype $>$\+::Reshape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1LRNLayer_ae7ca62b2339f0691dadde24fd8acb481}{}\label{classcaffe_1_1LRNLayer_ae7ca62b2339f0691dadde24fd8acb481}
+
+
+Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the input blobs, with the requested input shapes \\
+\hline
+{\em top} & the top blobs, which should be reshaped as needed\\
+\hline
+\end{DoxyParams}
+This method should reshape top blobs as needed according to the shapes of the bottom (input) blobs, as well as reshaping any internal buffers and making any other necessary adjustments so that the layer can accommodate the bottom blobs. 
+
+Implements \hyperlink{classcaffe_1_1Layer_ad9d391b972c769c0ebee34ca6d1c973e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/lrn\+\_\+layer.\+hpp\item 
+src/caffe/layers/lrn\+\_\+layer.\+cpp\end{DoxyCompactItemize}

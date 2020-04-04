@@ -1,0 +1,3 @@
+message HDF5OutputParameter {
+  optional string file_name = 1;
+}

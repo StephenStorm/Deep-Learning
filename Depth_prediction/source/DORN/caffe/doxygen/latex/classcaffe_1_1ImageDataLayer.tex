@@ -1,0 +1,100 @@
+\hypertarget{classcaffe_1_1ImageDataLayer}{}\section{caffe\+:\+:Image\+Data\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1ImageDataLayer}\index{caffe\+::\+Image\+Data\+Layer$<$ Dtype $>$@{caffe\+::\+Image\+Data\+Layer$<$ Dtype $>$}}
+
+
+Provides data to the \hyperlink{classcaffe_1_1Net}{Net} from image files.  
+
+
+
+
+{\ttfamily \#include $<$image\+\_\+data\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Image\+Data\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classcaffe_1_1ImageDataLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Image\+Data\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1ImageDataLayer_a2319914181470f8ecd80ffb63d0daec9}{}\label{classcaffe_1_1ImageDataLayer_a2319914181470f8ecd80ffb63d0daec9}
+
+\item 
+virtual void {\bfseries Data\+Layer\+Set\+Up} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1ImageDataLayer_a954e5e3c15c5081569957ded2289cce7}{}\label{classcaffe_1_1ImageDataLayer_a954e5e3c15c5081569957ded2289cce7}
+
+\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1ImageDataLayer_a5de0c6d7b276d1c540ef7288741a7530}{type} () const \hypertarget{classcaffe_1_1ImageDataLayer_a5de0c6d7b276d1c540ef7288741a7530}{}\label{classcaffe_1_1ImageDataLayer_a5de0c6d7b276d1c540ef7288741a7530}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1ImageDataLayer_a95155f868560cf481138deb7a999ee08}{Exact\+Num\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1ImageDataLayer_a288e0fe3bca4334100e077bc0ad20c60}{Exact\+Num\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Shuffle\+Images} ()\hypertarget{classcaffe_1_1ImageDataLayer_a1726e1385072928d37d960c52f0d20b4}{}\label{classcaffe_1_1ImageDataLayer_a1726e1385072928d37d960c52f0d20b4}
+
+\item 
+virtual void {\bfseries load\+\_\+batch} (\hyperlink{classcaffe_1_1Batch}{Batch}$<$ Dtype $>$ $\ast$batch)\hypertarget{classcaffe_1_1ImageDataLayer_ae75501864cc0d1e18d8d05b1f601fc89}{}\label{classcaffe_1_1ImageDataLayer_ae75501864cc0d1e18d8d05b1f601fc89}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Caffe_1_1RNG}{Caffe\+::\+R\+NG} $>$ {\bfseries prefetch\+\_\+rng\+\_\+}\hypertarget{classcaffe_1_1ImageDataLayer_a57a7df530e562fa080923aab6c331ab9}{}\label{classcaffe_1_1ImageDataLayer_a57a7df530e562fa080923aab6c331ab9}
+
+\item 
+vector$<$ std\+::pair$<$ std\+::string, int $>$ $>$ {\bfseries lines\+\_\+}\hypertarget{classcaffe_1_1ImageDataLayer_a72002dc4459f0d7d739779d734a7c684}{}\label{classcaffe_1_1ImageDataLayer_a72002dc4459f0d7d739779d734a7c684}
+
+\item 
+int {\bfseries lines\+\_\+id\+\_\+}\hypertarget{classcaffe_1_1ImageDataLayer_a943f32fdd8d0d37883500b6d83d4243f}{}\label{classcaffe_1_1ImageDataLayer_a943f32fdd8d0d37883500b6d83d4243f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Image\+Data\+Layer$<$ Dtype $>$}
+
+Provides data to the \hyperlink{classcaffe_1_1Net}{Net} from image files. 
+
+T\+O\+D\+O(dox)\+: thorough documentation for Forward and proto params. 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Image\+Data\+Layer@{caffe\+::\+Image\+Data\+Layer}!Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}}
+\index{Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}!caffe\+::\+Image\+Data\+Layer@{caffe\+::\+Image\+Data\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Bottom\+Blobs() const }{ExactNumBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Image\+Data\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1ImageDataLayer_a95155f868560cf481138deb7a999ee08}{}\label{classcaffe_1_1ImageDataLayer_a95155f868560cf481138deb7a999ee08}
+
+
+Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a45c7a7943a8a6735ac433c9be11e0240}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Image\+Data\+Layer@{caffe\+::\+Image\+Data\+Layer}!Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}}
+\index{Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}!caffe\+::\+Image\+Data\+Layer@{caffe\+::\+Image\+Data\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Top\+Blobs() const }{ExactNumTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Image\+Data\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1ImageDataLayer_a288e0fe3bca4334100e077bc0ad20c60}{}\label{classcaffe_1_1ImageDataLayer_a288e0fe3bca4334100e077bc0ad20c60}
+
+
+Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_aa3c99ed707e8db683a3043412e151af8}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/image\+\_\+data\+\_\+layer.\+hpp\end{DoxyCompactItemize}

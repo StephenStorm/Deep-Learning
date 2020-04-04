@@ -1,0 +1,5 @@
+message NetState {
+  optional Phase phase = 1 [default = TEST];
+  optional int32 level = 2 [default = 0];
+  repeated string stage = 3;
+}

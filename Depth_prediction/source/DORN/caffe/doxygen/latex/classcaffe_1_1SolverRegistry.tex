@@ -1,0 +1,31 @@
+\hypertarget{classcaffe_1_1SolverRegistry}{}\section{caffe\+:\+:Solver\+Registry$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1SolverRegistry}\index{caffe\+::\+Solver\+Registry$<$ Dtype $>$@{caffe\+::\+Solver\+Registry$<$ Dtype $>$}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classcaffe_1_1Solver}{Solver}$<$ Dtype $>$ $\ast$($\ast$ {\bfseries Creator}) (const Solver\+Parameter \&)\hypertarget{classcaffe_1_1SolverRegistry_a27f13add21a1278d9a41b97b1c03ce1b}{}\label{classcaffe_1_1SolverRegistry_a27f13add21a1278d9a41b97b1c03ce1b}
+
+\item 
+typedef std\+::map$<$ string, Creator $>$ {\bfseries Creator\+Registry}\hypertarget{classcaffe_1_1SolverRegistry_acbb92bec38689921e8c76feb85114733}{}\label{classcaffe_1_1SolverRegistry_acbb92bec38689921e8c76feb85114733}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Creator\+Registry \& {\bfseries Registry} ()\hypertarget{classcaffe_1_1SolverRegistry_a0dedbd11887e772fcf71a619e054e756}{}\label{classcaffe_1_1SolverRegistry_a0dedbd11887e772fcf71a619e054e756}
+
+\item 
+static void {\bfseries Add\+Creator} (const string \&type, Creator creator)\hypertarget{classcaffe_1_1SolverRegistry_a0426cb96095767aa03edd8adb8d97d03}{}\label{classcaffe_1_1SolverRegistry_a0426cb96095767aa03edd8adb8d97d03}
+
+\item 
+static \hyperlink{classcaffe_1_1Solver}{Solver}$<$ Dtype $>$ $\ast$ {\bfseries Create\+Solver} (const Solver\+Parameter \&param)\hypertarget{classcaffe_1_1SolverRegistry_aa44d7f6b9efbd266c939665040e84621}{}\label{classcaffe_1_1SolverRegistry_aa44d7f6b9efbd266c939665040e84621}
+
+\item 
+static vector$<$ string $>$ {\bfseries Solver\+Type\+List} ()\hypertarget{classcaffe_1_1SolverRegistry_acfb421d7893f5322a42c04b3dd4b559e}{}\label{classcaffe_1_1SolverRegistry_acfb421d7893f5322a42c04b3dd4b559e}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/solver\+\_\+factory.\+hpp\end{DoxyCompactItemize}

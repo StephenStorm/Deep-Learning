@@ -1,0 +1,67 @@
+\hypertarget{classcaffe_1_1LSTMLayer}{}\section{caffe\+:\+:L\+S\+T\+M\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1LSTMLayer}\index{caffe\+::\+L\+S\+T\+M\+Layer$<$ Dtype $>$@{caffe\+::\+L\+S\+T\+M\+Layer$<$ Dtype $>$}}
+
+
+Processes sequential inputs using a \char`\"{}\+Long Short-\/\+Term Memory\char`\"{} (L\+S\+TM) \mbox{[}1\mbox{]} style recurrent neural network (R\+NN). Implemented by unrolling the L\+S\+TM computation through time.  
+
+
+
+
+{\ttfamily \#include $<$lstm\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:L\+S\+T\+M\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcaffe_1_1LSTMLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries L\+S\+T\+M\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1LSTMLayer_abcf1a46aef1f25b7a78d13dc7e34f13b}{}\label{classcaffe_1_1LSTMLayer_abcf1a46aef1f25b7a78d13dc7e34f13b}
+
+\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1LSTMLayer_ab427faecd6e35031780a6146df62b1c5}{type} () const \hypertarget{classcaffe_1_1LSTMLayer_ab427faecd6e35031780a6146df62b1c5}{}\label{classcaffe_1_1LSTMLayer_ab427faecd6e35031780a6146df62b1c5}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1LSTMLayer_aee83b6364883ffcb8f2c15a18a3031ac}{Fill\+Unrolled\+Net} (Net\+Parameter $\ast$net\+\_\+param) const \hypertarget{classcaffe_1_1LSTMLayer_aee83b6364883ffcb8f2c15a18a3031ac}{}\label{classcaffe_1_1LSTMLayer_aee83b6364883ffcb8f2c15a18a3031ac}
+
+\begin{DoxyCompactList}\small\item\em Fills net\+\_\+param with the recurrent network architecture. Subclasses should define this -- see \hyperlink{classcaffe_1_1RNNLayer}{R\+N\+N\+Layer} and \hyperlink{classcaffe_1_1LSTMLayer}{L\+S\+T\+M\+Layer} for examples. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1LSTMLayer_aef811568772d8ff260be2dd99bb5e5bf}{Recurrent\+Input\+Blob\+Names} (vector$<$ string $>$ $\ast$names) const \hypertarget{classcaffe_1_1LSTMLayer_aef811568772d8ff260be2dd99bb5e5bf}{}\label{classcaffe_1_1LSTMLayer_aef811568772d8ff260be2dd99bb5e5bf}
+
+\begin{DoxyCompactList}\small\item\em Fills names with the names of the 0th timestep recurrent input \hyperlink{classcaffe_1_1Blob}{Blob}\&s. Subclasses should define this -- see \hyperlink{classcaffe_1_1RNNLayer}{R\+N\+N\+Layer} and \hyperlink{classcaffe_1_1LSTMLayer}{L\+S\+T\+M\+Layer} for examples. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1LSTMLayer_a0691f390e4d79ac22ec6528a70c42394}{Recurrent\+Output\+Blob\+Names} (vector$<$ string $>$ $\ast$names) const \hypertarget{classcaffe_1_1LSTMLayer_a0691f390e4d79ac22ec6528a70c42394}{}\label{classcaffe_1_1LSTMLayer_a0691f390e4d79ac22ec6528a70c42394}
+
+\begin{DoxyCompactList}\small\item\em Fills names with the names of the Tth timestep recurrent output \hyperlink{classcaffe_1_1Blob}{Blob}\&s. Subclasses should define this -- see \hyperlink{classcaffe_1_1RNNLayer}{R\+N\+N\+Layer} and \hyperlink{classcaffe_1_1LSTMLayer}{L\+S\+T\+M\+Layer} for examples. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1LSTMLayer_a7fd77e6e7cc45ba32ab62d1d24f3b381}{Recurrent\+Input\+Shapes} (vector$<$ Blob\+Shape $>$ $\ast$shapes) const \hypertarget{classcaffe_1_1LSTMLayer_a7fd77e6e7cc45ba32ab62d1d24f3b381}{}\label{classcaffe_1_1LSTMLayer_a7fd77e6e7cc45ba32ab62d1d24f3b381}
+
+\begin{DoxyCompactList}\small\item\em Fills shapes with the shapes of the recurrent input \hyperlink{classcaffe_1_1Blob}{Blob}\&s. Subclasses should define this -- see \hyperlink{classcaffe_1_1RNNLayer}{R\+N\+N\+Layer} and \hyperlink{classcaffe_1_1LSTMLayer}{L\+S\+T\+M\+Layer} for examples. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1LSTMLayer_ae8facc2555769d90b0ecd17ff453ee2a}{Output\+Blob\+Names} (vector$<$ string $>$ $\ast$names) const \hypertarget{classcaffe_1_1LSTMLayer_ae8facc2555769d90b0ecd17ff453ee2a}{}\label{classcaffe_1_1LSTMLayer_ae8facc2555769d90b0ecd17ff453ee2a}
+
+\begin{DoxyCompactList}\small\item\em Fills names with the names of the output blobs, concatenated across all timesteps. Should return a name for each top \hyperlink{classcaffe_1_1Blob}{Blob}. Subclasses should define this -- see \hyperlink{classcaffe_1_1RNNLayer}{R\+N\+N\+Layer} and \hyperlink{classcaffe_1_1LSTMLayer}{L\+S\+T\+M\+Layer} for examples. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+L\+S\+T\+M\+Layer$<$ Dtype $>$}
+
+Processes sequential inputs using a \char`\"{}\+Long Short-\/\+Term Memory\char`\"{} (L\+S\+TM) \mbox{[}1\mbox{]} style recurrent neural network (R\+NN). Implemented by unrolling the L\+S\+TM computation through time. 
+
+The specific architecture used in this implementation is as described in \char`\"{}\+Learning to Execute\char`\"{} \mbox{[}2\mbox{]}, reproduced below\+: i\+\_\+t \+:= \mbox{[} W\+\_\+\{hi\} $\ast$ h\+\_\+\{t-\/1\} + W\+\_\+\{xi\} $\ast$ x\+\_\+t + b\+\_\+i \mbox{]} f\+\_\+t \+:= \mbox{[} W\+\_\+\{hf\} $\ast$ h\+\_\+\{t-\/1\} + W\+\_\+\{xf\} $\ast$ x\+\_\+t + b\+\_\+f \mbox{]} o\+\_\+t \+:= \mbox{[} W\+\_\+\{ho\} $\ast$ h\+\_\+\{t-\/1\} + W\+\_\+\{xo\} $\ast$ x\+\_\+t + b\+\_\+o \mbox{]} g\+\_\+t \+:= \mbox{[} W\+\_\+\{hg\} $\ast$ h\+\_\+\{t-\/1\} + W\+\_\+\{xg\} $\ast$ x\+\_\+t + b\+\_\+g \mbox{]} c\+\_\+t \+:= (f\+\_\+t .$\ast$ c\+\_\+\{t-\/1\}) + (i\+\_\+t .$\ast$ g\+\_\+t) h\+\_\+t \+:= o\+\_\+t .$\ast$ \mbox{[}c\+\_\+t\mbox{]} In the implementation, the i, f, o, and g computations are performed as a single inner product.
+
+Notably, this implementation lacks the \char`\"{}diagonal\char`\"{} gates, as used in the L\+S\+TM architectures described by Alex Graves \mbox{[}3\mbox{]} and others.
+
+\mbox{[}1\mbox{]} Hochreiter, Sepp, and Schmidhuber, Jürgen. \char`\"{}\+Long short-\/term memory.\char`\"{} Neural Computation 9, no. 8 (1997)\+: 1735-\/1780.
+
+\mbox{[}2\mbox{]} Zaremba, Wojciech, and Sutskever, Ilya. \char`\"{}\+Learning to execute.\char`\"{} ar\+Xiv preprint ar\+Xiv\+:1410.\+4615 (2014).
+
+\mbox{[}3\mbox{]} Graves, Alex. \char`\"{}\+Generating sequences with recurrent neural networks.\char`\"{} ar\+Xiv preprint ar\+Xiv\+:1308.\+0850 (2013). 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/lstm\+\_\+layer.\+hpp\item 
+src/caffe/layers/lstm\+\_\+layer.\+cpp\end{DoxyCompactItemize}

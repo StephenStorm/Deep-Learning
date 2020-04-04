@@ -1,0 +1,22 @@
+// Message that stores parameters used to apply transformation
+// to the data layer's data
+message TransformationParameter {
+  // For data pre-processing, we can do simple scaling and subtracting the
+  // data mean, if provided. Note that the mean subtraction is always carried
+  // out before scaling.
+  optional float scale = 1 [default = 1];
+  // Specify if we want to randomly mirror data.
+  optional bool mirror = 2 [default = false];
+  // Specify if we would like to randomly crop an image.
+  optional uint32 crop_size = 3 [default = 0];
+  // mean_file and mean_value cannot be specified at the same time
+  optional string mean_file = 4;
+  // if specified can be repeated once (would subtract it from all the channels)
+  // or can be repeated the same number of times as channels
+  // (would subtract them from the corresponding channel)
+  repeated float mean_value = 5;
+  // Force the decoded image to have 3 color channels.
+  optional bool force_color = 6 [default = false];
+  // Force the decoded image to have 1 color channels.
+  optional bool force_gray = 7 [default = false];
+}

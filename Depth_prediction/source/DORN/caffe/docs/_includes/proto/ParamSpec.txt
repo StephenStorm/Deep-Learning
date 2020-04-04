@@ -1,0 +1,24 @@
+// Specifies training parameters (multipliers on global learning constants,
+// and the name and other settings used for weight sharing).
+message ParamSpec {
+  // The names of the parameter blobs -- useful for sharing parameters among
+  // layers, but never required otherwise.  To share a parameter between two
+  // layers, give it a (non-empty) name.
+  optional string name = 1;
+
+  // Whether to require shared weights to have the same shape, or just the same
+  // count -- defaults to STRICT if unspecified.
+  optional DimCheckMode share_mode = 2;
+  enum DimCheckMode {
+    // STRICT (default) requires that num, channels, height, width each match.
+    STRICT = 0;
+    // PERMISSIVE requires only the count (num*channels*height*width) to match.
+    PERMISSIVE = 1;
+  }
+
+  // The multiplier on the global learning rate for this parameter.
+  optional float lr_mult = 3 [default = 1.0];
+
+  // The multiplier on the global weight decay for this parameter.
+  optional float decay_mult = 4 [default = 1.0];
+}

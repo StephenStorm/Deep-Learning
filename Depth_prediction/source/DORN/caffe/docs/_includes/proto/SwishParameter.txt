@@ -1,0 +1,8 @@
+// Message that stores parameters used by SwishLayer
+message SwishParameter {
+  // Beta parameter for the Swish activation function
+  // Described in:
+  // Prajit Ramachandran, Barret Zoph, Quoc V. Le. (2017). Searching for
+  // Activation Functions. https://arxiv.org/abs/1710.05941v2
+  optional float beta = 1 [default = 1];
+}

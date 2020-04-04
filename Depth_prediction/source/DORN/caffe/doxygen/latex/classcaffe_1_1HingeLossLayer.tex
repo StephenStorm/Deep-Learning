@@ -1,0 +1,130 @@
+\hypertarget{classcaffe_1_1HingeLossLayer}{}\section{caffe\+:\+:Hinge\+Loss\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1HingeLossLayer}\index{caffe\+::\+Hinge\+Loss\+Layer$<$ Dtype $>$@{caffe\+::\+Hinge\+Loss\+Layer$<$ Dtype $>$}}
+
+
+Computes the hinge loss for a one-\/of-\/many classification task.  
+
+
+
+
+{\ttfamily \#include $<$hinge\+\_\+loss\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Hinge\+Loss\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcaffe_1_1HingeLossLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Hinge\+Loss\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1HingeLossLayer_a358a5bd2625bb7fed61052dd8e1cb588}{}\label{classcaffe_1_1HingeLossLayer_a358a5bd2625bb7fed61052dd8e1cb588}
+
+\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1HingeLossLayer_ae804bb931e8cf835ac77a0529f89463f}{type} () const \hypertarget{classcaffe_1_1HingeLossLayer_ae804bb931e8cf835ac77a0529f89463f}{}\label{classcaffe_1_1HingeLossLayer_ae804bb931e8cf835ac77a0529f89463f}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1HingeLossLayer_a24a8c6e0dca1b35794a14e5f923d226f}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Computes the hinge loss for a one-\/of-\/many classification task. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1HingeLossLayer_a24e8552d75a557b6082c197fd726412e}{Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)
+\begin{DoxyCompactList}\small\item\em Computes the hinge loss error gradient w.\+r.\+t. the predictions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Hinge\+Loss\+Layer$<$ Dtype $>$}
+
+Computes the hinge loss for a one-\/of-\/many classification task. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 2)
+\begin{DoxyEnumerate}
+\item $ (N \times C \times H \times W) $ the predictions $ t $, a \hyperlink{classcaffe_1_1Blob}{Blob} with values in $ [-\infty, +\infty] $ indicating the predicted score for each of the $ K = CHW $ classes. In an S\+VM, $ t $ is the result of taking the inner product $ X^T W $ of the D-\/dimensional features $ X \in \mathcal{R}^{D \times N} $ and the learned hyperplane parameters $ W \in \mathcal{R}^{D \times K} $, so a \hyperlink{classcaffe_1_1Net}{Net} with just an \hyperlink{classcaffe_1_1InnerProductLayer}{Inner\+Product\+Layer} (with num\+\_\+output = D) providing predictions to a \hyperlink{classcaffe_1_1HingeLossLayer}{Hinge\+Loss\+Layer} and no other learnable parameters or losses is equivalent to an S\+VM.
+\item $ (N \times 1 \times 1 \times 1) $ the labels $ l $, an integer-\/valued \hyperlink{classcaffe_1_1Blob}{Blob} with values $ l_n \in [0, 1, 2, ..., K - 1] $ indicating the correct class label among the $ K $ classes 
+\end{DoxyEnumerate}\\
+\hline
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1)
+\begin{DoxyEnumerate}
+\item $ (1 \times 1 \times 1 \times 1) $ the computed hinge loss\+: $ E = \frac{1}{N} \sum\limits_{n=1}^N \sum\limits_{k=1}^K [\max(0, 1 - \delta\{l_n = k\} t_{nk})] ^ p $, for the $ L^p $ norm (defaults to $ p = 1 $, the L1 norm; L2 norm, as in L2-\/\+S\+VM, is also available), and $ \delta\{\mathrm{condition}\} = \left\{ \begin{array}{lr} 1 & \mbox{if condition} \\ -1 & \mbox{otherwise} \end{array} \right. $
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+In an S\+VM, $ t \in \mathcal{R}^{N \times K} $ is the result of taking the inner product $ X^T W $ of the features $ X \in \mathcal{R}^{D \times N} $ and the learned hyperplane parameters $ W \in \mathcal{R}^{D \times K} $. So, a \hyperlink{classcaffe_1_1Net}{Net} with just an \hyperlink{classcaffe_1_1InnerProductLayer}{Inner\+Product\+Layer} (with num\+\_\+output = $k$) providing predictions to a \hyperlink{classcaffe_1_1HingeLossLayer}{Hinge\+Loss\+Layer} is equivalent to an S\+VM (assuming it has no other learned outside the \hyperlink{classcaffe_1_1InnerProductLayer}{Inner\+Product\+Layer} and no other losses outside the \hyperlink{classcaffe_1_1HingeLossLayer}{Hinge\+Loss\+Layer}). 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Hinge\+Loss\+Layer@{caffe\+::\+Hinge\+Loss\+Layer}!Backward\+\_\+cpu@{Backward\+\_\+cpu}}
+\index{Backward\+\_\+cpu@{Backward\+\_\+cpu}!caffe\+::\+Hinge\+Loss\+Layer@{caffe\+::\+Hinge\+Loss\+Layer}}
+\subsubsection[{\texorpdfstring{Backward\+\_\+cpu(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom)}{Backward_cpu(const vector< Blob< Dtype > * > &top, const vector< bool > &propagate_down, const vector< Blob< Dtype > * > &bottom)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Hinge\+Loss\+Layer}$<$ Dtype $>$\+::Backward\+\_\+cpu (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top, }
+\item[{const vector$<$ bool $>$ \&}]{propagate\+\_\+down, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1HingeLossLayer_a24e8552d75a557b6082c197fd726412e}{}\label{classcaffe_1_1HingeLossLayer_a24e8552d75a557b6082c197fd726412e}
+
+
+Computes the hinge loss error gradient w.\+r.\+t. the predictions. 
+
+Gradients cannot be computed with respect to the label inputs (bottom\mbox{[}1\mbox{]}), so this method ignores bottom\mbox{[}1\mbox{]} and requires !propagate\+\_\+down\mbox{[}1\mbox{]}, crashing if propagate\+\_\+down\mbox{[}1\mbox{]} is set.
+
+
+\begin{DoxyParams}{Parameters}
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1), providing the error gradient with respect to the outputs
+\begin{DoxyEnumerate}
+\item $ (1 \times 1 \times 1 \times 1) $ This \hyperlink{classcaffe_1_1Blob}{Blob}\textquotesingle{}s diff will simply contain the loss\+\_\+weight$\ast$ $ \lambda $, as $ \lambda $ is the coefficient of this layer\textquotesingle{}s output $\ell_i$ in the overall \hyperlink{classcaffe_1_1Net}{Net} loss $ E = \lambda_i \ell_i + \mbox{other loss terms}$; hence $ \frac{\partial E}{\partial \ell_i} = \lambda_i $. ($\ast$\+Assuming that this top \hyperlink{classcaffe_1_1Blob}{Blob} is not used as a bottom (input) by any other layer of the \hyperlink{classcaffe_1_1Net}{Net}.) 
+\end{DoxyEnumerate}\\
+\hline
+{\em propagate\+\_\+down} & see \hyperlink{classcaffe_1_1Layer_a53df1e081767e07bfb4c81657f4acd0a}{Layer\+::\+Backward}. propagate\+\_\+down\mbox{[}1\mbox{]} must be false as we can\textquotesingle{}t compute gradients with respect to the labels. \\
+\hline
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 2)
+\begin{DoxyEnumerate}
+\item $ (N \times C \times H \times W) $ the predictions $t$; Backward computes diff $ \frac{\partial E}{\partial t} $
+\item $ (N \times 1 \times 1 \times 1) $ the labels -- ignored as we can\textquotesingle{}t compute their error gradients 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classcaffe_1_1Layer_a64d15855f882af4b82e83fa993c4e7c6}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Hinge\+Loss\+Layer@{caffe\+::\+Hinge\+Loss\+Layer}!Forward\+\_\+cpu@{Forward\+\_\+cpu}}
+\index{Forward\+\_\+cpu@{Forward\+\_\+cpu}!caffe\+::\+Hinge\+Loss\+Layer@{caffe\+::\+Hinge\+Loss\+Layer}}
+\subsubsection[{\texorpdfstring{Forward\+\_\+cpu(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Forward_cpu(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Hinge\+Loss\+Layer}$<$ Dtype $>$\+::Forward\+\_\+cpu (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1HingeLossLayer_a24a8c6e0dca1b35794a14e5f923d226f}{}\label{classcaffe_1_1HingeLossLayer_a24a8c6e0dca1b35794a14e5f923d226f}
+
+
+Computes the hinge loss for a one-\/of-\/many classification task. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 2)
+\begin{DoxyEnumerate}
+\item $ (N \times C \times H \times W) $ the predictions $ t $, a \hyperlink{classcaffe_1_1Blob}{Blob} with values in $ [-\infty, +\infty] $ indicating the predicted score for each of the $ K = CHW $ classes. In an S\+VM, $ t $ is the result of taking the inner product $ X^T W $ of the D-\/dimensional features $ X \in \mathcal{R}^{D \times N} $ and the learned hyperplane parameters $ W \in \mathcal{R}^{D \times K} $, so a \hyperlink{classcaffe_1_1Net}{Net} with just an \hyperlink{classcaffe_1_1InnerProductLayer}{Inner\+Product\+Layer} (with num\+\_\+output = D) providing predictions to a \hyperlink{classcaffe_1_1HingeLossLayer}{Hinge\+Loss\+Layer} and no other learnable parameters or losses is equivalent to an S\+VM.
+\item $ (N \times 1 \times 1 \times 1) $ the labels $ l $, an integer-\/valued \hyperlink{classcaffe_1_1Blob}{Blob} with values $ l_n \in [0, 1, 2, ..., K - 1] $ indicating the correct class label among the $ K $ classes 
+\end{DoxyEnumerate}\\
+\hline
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1)
+\begin{DoxyEnumerate}
+\item $ (1 \times 1 \times 1 \times 1) $ the computed hinge loss\+: $ E = \frac{1}{N} \sum\limits_{n=1}^N \sum\limits_{k=1}^K [\max(0, 1 - \delta\{l_n = k\} t_{nk})] ^ p $, for the $ L^p $ norm (defaults to $ p = 1 $, the L1 norm; L2 norm, as in L2-\/\+S\+VM, is also available), and $ \delta\{\mathrm{condition}\} = \left\{ \begin{array}{lr} 1 & \mbox{if condition} \\ -1 & \mbox{otherwise} \end{array} \right. $
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+In an S\+VM, $ t \in \mathcal{R}^{N \times K} $ is the result of taking the inner product $ X^T W $ of the features $ X \in \mathcal{R}^{D \times N} $ and the learned hyperplane parameters $ W \in \mathcal{R}^{D \times K} $. So, a \hyperlink{classcaffe_1_1Net}{Net} with just an \hyperlink{classcaffe_1_1InnerProductLayer}{Inner\+Product\+Layer} (with num\+\_\+output = $k$) providing predictions to a \hyperlink{classcaffe_1_1HingeLossLayer}{Hinge\+Loss\+Layer} is equivalent to an S\+VM (assuming it has no other learned outside the \hyperlink{classcaffe_1_1InnerProductLayer}{Inner\+Product\+Layer} and no other losses outside the \hyperlink{classcaffe_1_1HingeLossLayer}{Hinge\+Loss\+Layer}). 
+
+Implements \hyperlink{classcaffe_1_1Layer_add965883f75bbf90c7a06f960cda7a1a}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/hinge\+\_\+loss\+\_\+layer.\+hpp\item 
+src/caffe/layers/hinge\+\_\+loss\+\_\+layer.\+cpp\end{DoxyCompactItemize}

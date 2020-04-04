@@ -1,0 +1,247 @@
+\hypertarget{classcaffe_1_1BaseConvolutionLayer}{}\section{caffe\+:\+:Base\+Convolution\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1BaseConvolutionLayer}\index{caffe\+::\+Base\+Convolution\+Layer$<$ Dtype $>$@{caffe\+::\+Base\+Convolution\+Layer$<$ Dtype $>$}}
+
+
+Abstract base class that factors out the B\+L\+AS code common to \hyperlink{classcaffe_1_1ConvolutionLayer}{Convolution\+Layer} and \hyperlink{classcaffe_1_1DeconvolutionLayer}{Deconvolution\+Layer}.  
+
+
+
+
+{\ttfamily \#include $<$base\+\_\+conv\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Base\+Convolution\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcaffe_1_1BaseConvolutionLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Base\+Convolution\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1BaseConvolutionLayer_a42f9ea86a8ede098bda11f582a31ffc1}{}\label{classcaffe_1_1BaseConvolutionLayer_a42f9ea86a8ede098bda11f582a31ffc1}
+
+\item 
+virtual void \hyperlink{classcaffe_1_1BaseConvolutionLayer_a35c6389878e77ab0a4a479e5441563cc}{Layer\+Set\+Up} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1BaseConvolutionLayer_ac330e2fb166bca496edd277b0495f6eb}{Reshape} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1BaseConvolutionLayer_a14a2760d3eafcfce766222f80e126fbe}{Min\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the minimum number of bottom blobs required by the layer, or -\/1 if no minimum number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1BaseConvolutionLayer_accd0683191124da91a3667acc57e5ecd}{Min\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the minimum number of top blobs required by the layer, or -\/1 if no minimum number is required. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classcaffe_1_1BaseConvolutionLayer_add4567680b9466cbae5804da6a76e2ee}{Equal\+Num\+Bottom\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns true if the layer requires an equal number of bottom and top blobs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries forward\+\_\+cpu\+\_\+gemm} (const Dtype $\ast$input, const Dtype $\ast$weights, Dtype $\ast$output, bool skip\+\_\+im2col=false)\hypertarget{classcaffe_1_1BaseConvolutionLayer_a2870d22074426089e31afd864b989743}{}\label{classcaffe_1_1BaseConvolutionLayer_a2870d22074426089e31afd864b989743}
+
+\item 
+void {\bfseries forward\+\_\+cpu\+\_\+bias} (Dtype $\ast$output, const Dtype $\ast$bias)\hypertarget{classcaffe_1_1BaseConvolutionLayer_a00ede6bbe48c3a6dedd21308a48f979f}{}\label{classcaffe_1_1BaseConvolutionLayer_a00ede6bbe48c3a6dedd21308a48f979f}
+
+\item 
+void {\bfseries backward\+\_\+cpu\+\_\+gemm} (const Dtype $\ast$input, const Dtype $\ast$weights, Dtype $\ast$output)\hypertarget{classcaffe_1_1BaseConvolutionLayer_a3006035856c7f49371fe2b93ed38c935}{}\label{classcaffe_1_1BaseConvolutionLayer_a3006035856c7f49371fe2b93ed38c935}
+
+\item 
+void {\bfseries weight\+\_\+cpu\+\_\+gemm} (const Dtype $\ast$input, const Dtype $\ast$output, Dtype $\ast$weights)\hypertarget{classcaffe_1_1BaseConvolutionLayer_aa0ce44e831ad98176dc8c06f2069df2e}{}\label{classcaffe_1_1BaseConvolutionLayer_aa0ce44e831ad98176dc8c06f2069df2e}
+
+\item 
+void {\bfseries backward\+\_\+cpu\+\_\+bias} (Dtype $\ast$bias, const Dtype $\ast$input)\hypertarget{classcaffe_1_1BaseConvolutionLayer_a840ea8c0a485047a9760b7194b68db0c}{}\label{classcaffe_1_1BaseConvolutionLayer_a840ea8c0a485047a9760b7194b68db0c}
+
+\item 
+void {\bfseries forward\+\_\+gpu\+\_\+gemm} (const Dtype $\ast$col\+\_\+input, const Dtype $\ast$weights, Dtype $\ast$output, bool skip\+\_\+im2col=false)\hypertarget{classcaffe_1_1BaseConvolutionLayer_ace6f5e890e06e4812cf10e841f279346}{}\label{classcaffe_1_1BaseConvolutionLayer_ace6f5e890e06e4812cf10e841f279346}
+
+\item 
+void {\bfseries forward\+\_\+gpu\+\_\+bias} (Dtype $\ast$output, const Dtype $\ast$bias)\hypertarget{classcaffe_1_1BaseConvolutionLayer_a2a1f9d98d332411a481d82c10d76b474}{}\label{classcaffe_1_1BaseConvolutionLayer_a2a1f9d98d332411a481d82c10d76b474}
+
+\item 
+void {\bfseries backward\+\_\+gpu\+\_\+gemm} (const Dtype $\ast$input, const Dtype $\ast$weights, Dtype $\ast$col\+\_\+output)\hypertarget{classcaffe_1_1BaseConvolutionLayer_aece62d609b5fb36990ef6d5c48472efe}{}\label{classcaffe_1_1BaseConvolutionLayer_aece62d609b5fb36990ef6d5c48472efe}
+
+\item 
+void {\bfseries weight\+\_\+gpu\+\_\+gemm} (const Dtype $\ast$col\+\_\+input, const Dtype $\ast$output, Dtype $\ast$weights)\hypertarget{classcaffe_1_1BaseConvolutionLayer_a2c2e76ae5046570087f6af56180787b5}{}\label{classcaffe_1_1BaseConvolutionLayer_a2c2e76ae5046570087f6af56180787b5}
+
+\item 
+void {\bfseries backward\+\_\+gpu\+\_\+bias} (Dtype $\ast$bias, const Dtype $\ast$input)\hypertarget{classcaffe_1_1BaseConvolutionLayer_abbaf526a70e5106b79d8da94e8d4aa06}{}\label{classcaffe_1_1BaseConvolutionLayer_abbaf526a70e5106b79d8da94e8d4aa06}
+
+\item 
+int \hyperlink{classcaffe_1_1BaseConvolutionLayer_a6324d4ab918a7b09399aa85a8a03737d}{input\+\_\+shape} (int i)\hypertarget{classcaffe_1_1BaseConvolutionLayer_a6324d4ab918a7b09399aa85a8a03737d}{}\label{classcaffe_1_1BaseConvolutionLayer_a6324d4ab918a7b09399aa85a8a03737d}
+
+\begin{DoxyCompactList}\small\item\em The spatial dimensions of the input. \end{DoxyCompactList}\item 
+virtual bool {\bfseries reverse\+\_\+dimensions} ()=0\hypertarget{classcaffe_1_1BaseConvolutionLayer_affa7a2b5b583afc210f0c5dfe48842c8}{}\label{classcaffe_1_1BaseConvolutionLayer_affa7a2b5b583afc210f0c5dfe48842c8}
+
+\item 
+virtual void {\bfseries compute\+\_\+output\+\_\+shape} ()=0\hypertarget{classcaffe_1_1BaseConvolutionLayer_a552f16d43bf2470274102fe4fcde8759}{}\label{classcaffe_1_1BaseConvolutionLayer_a552f16d43bf2470274102fe4fcde8759}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ int $>$ \hyperlink{classcaffe_1_1BaseConvolutionLayer_a0a2f112eec8a7cbd13888185d4fb36b0}{kernel\+\_\+shape\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_a0a2f112eec8a7cbd13888185d4fb36b0}{}\label{classcaffe_1_1BaseConvolutionLayer_a0a2f112eec8a7cbd13888185d4fb36b0}
+
+\begin{DoxyCompactList}\small\item\em The spatial dimensions of a filter kernel. \end{DoxyCompactList}\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ int $>$ \hyperlink{classcaffe_1_1BaseConvolutionLayer_af638d3d8e67c33443cb11cb000368e73}{stride\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_af638d3d8e67c33443cb11cb000368e73}{}\label{classcaffe_1_1BaseConvolutionLayer_af638d3d8e67c33443cb11cb000368e73}
+
+\begin{DoxyCompactList}\small\item\em The spatial dimensions of the stride. \end{DoxyCompactList}\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ int $>$ \hyperlink{classcaffe_1_1BaseConvolutionLayer_a897ead2823e9031863e2151e71229e35}{pad\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_a897ead2823e9031863e2151e71229e35}{}\label{classcaffe_1_1BaseConvolutionLayer_a897ead2823e9031863e2151e71229e35}
+
+\begin{DoxyCompactList}\small\item\em The spatial dimensions of the padding. \end{DoxyCompactList}\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ int $>$ \hyperlink{classcaffe_1_1BaseConvolutionLayer_a91f929109b5c05ba6086d4c2a741ad4a}{dilation\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_a91f929109b5c05ba6086d4c2a741ad4a}{}\label{classcaffe_1_1BaseConvolutionLayer_a91f929109b5c05ba6086d4c2a741ad4a}
+
+\begin{DoxyCompactList}\small\item\em The spatial dimensions of the dilation. \end{DoxyCompactList}\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ int $>$ \hyperlink{classcaffe_1_1BaseConvolutionLayer_a63756d6ef00f6491939e539094c21397}{conv\+\_\+input\+\_\+shape\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_a63756d6ef00f6491939e539094c21397}{}\label{classcaffe_1_1BaseConvolutionLayer_a63756d6ef00f6491939e539094c21397}
+
+\begin{DoxyCompactList}\small\item\em The spatial dimensions of the convolution input. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classcaffe_1_1BaseConvolutionLayer_a9dd3f4ea6e17fe155efe537c120a3de4}{col\+\_\+buffer\+\_\+shape\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_a9dd3f4ea6e17fe155efe537c120a3de4}{}\label{classcaffe_1_1BaseConvolutionLayer_a9dd3f4ea6e17fe155efe537c120a3de4}
+
+\begin{DoxyCompactList}\small\item\em The spatial dimensions of the col\+\_\+buffer. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classcaffe_1_1BaseConvolutionLayer_af0892b61454ba086c4c74b78d910bf31}{output\+\_\+shape\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_af0892b61454ba086c4c74b78d910bf31}{}\label{classcaffe_1_1BaseConvolutionLayer_af0892b61454ba086c4c74b78d910bf31}
+
+\begin{DoxyCompactList}\small\item\em The spatial dimensions of the output. \end{DoxyCompactList}\item 
+const vector$<$ int $>$ $\ast$ {\bfseries bottom\+\_\+shape\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_a8a91469895adc7114eecee92bb4f81a1}{}\label{classcaffe_1_1BaseConvolutionLayer_a8a91469895adc7114eecee92bb4f81a1}
+
+\item 
+int {\bfseries num\+\_\+spatial\+\_\+axes\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_a8eac7ce95d86d01f026b649787a1920b}{}\label{classcaffe_1_1BaseConvolutionLayer_a8eac7ce95d86d01f026b649787a1920b}
+
+\item 
+int {\bfseries bottom\+\_\+dim\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_af5a73bde5834135df30eb2649bd510cb}{}\label{classcaffe_1_1BaseConvolutionLayer_af5a73bde5834135df30eb2649bd510cb}
+
+\item 
+int {\bfseries top\+\_\+dim\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_a2221107608862f0a81a97f87363967ec}{}\label{classcaffe_1_1BaseConvolutionLayer_a2221107608862f0a81a97f87363967ec}
+
+\item 
+int {\bfseries channel\+\_\+axis\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_a3f1ce7e7343b3c10a58913fc3728e6d2}{}\label{classcaffe_1_1BaseConvolutionLayer_a3f1ce7e7343b3c10a58913fc3728e6d2}
+
+\item 
+int {\bfseries num\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_a04e2625c95d319ff11bfb98ded1fe9e9}{}\label{classcaffe_1_1BaseConvolutionLayer_a04e2625c95d319ff11bfb98ded1fe9e9}
+
+\item 
+int {\bfseries channels\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_ab9f8d85682bd1bcded1bf4b87061f515}{}\label{classcaffe_1_1BaseConvolutionLayer_ab9f8d85682bd1bcded1bf4b87061f515}
+
+\item 
+int {\bfseries group\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_ae05b3ec701c6b0277ba5689b88d8fc24}{}\label{classcaffe_1_1BaseConvolutionLayer_ae05b3ec701c6b0277ba5689b88d8fc24}
+
+\item 
+int {\bfseries out\+\_\+spatial\+\_\+dim\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_a215df1c90a686e075c8851cb7561d289}{}\label{classcaffe_1_1BaseConvolutionLayer_a215df1c90a686e075c8851cb7561d289}
+
+\item 
+int {\bfseries weight\+\_\+offset\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_af7b74e11196840561a451813a5aa4321}{}\label{classcaffe_1_1BaseConvolutionLayer_af7b74e11196840561a451813a5aa4321}
+
+\item 
+int {\bfseries num\+\_\+output\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_ac22f72160f6b4ee54d1139095d09d853}{}\label{classcaffe_1_1BaseConvolutionLayer_ac22f72160f6b4ee54d1139095d09d853}
+
+\item 
+bool {\bfseries bias\+\_\+term\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_af984e3e89a7b9d6d930ed93d29e06cb4}{}\label{classcaffe_1_1BaseConvolutionLayer_af984e3e89a7b9d6d930ed93d29e06cb4}
+
+\item 
+bool {\bfseries is\+\_\+1x1\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_a4c0e8ca309c48e535713e9532c0475ff}{}\label{classcaffe_1_1BaseConvolutionLayer_a4c0e8ca309c48e535713e9532c0475ff}
+
+\item 
+bool {\bfseries force\+\_\+nd\+\_\+im2col\+\_\+}\hypertarget{classcaffe_1_1BaseConvolutionLayer_a4b572cb3c810f3beffaab4fb680c7823}{}\label{classcaffe_1_1BaseConvolutionLayer_a4b572cb3c810f3beffaab4fb680c7823}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Base\+Convolution\+Layer$<$ Dtype $>$}
+
+Abstract base class that factors out the B\+L\+AS code common to \hyperlink{classcaffe_1_1ConvolutionLayer}{Convolution\+Layer} and \hyperlink{classcaffe_1_1DeconvolutionLayer}{Deconvolution\+Layer}. 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Base\+Convolution\+Layer@{caffe\+::\+Base\+Convolution\+Layer}!Equal\+Num\+Bottom\+Top\+Blobs@{Equal\+Num\+Bottom\+Top\+Blobs}}
+\index{Equal\+Num\+Bottom\+Top\+Blobs@{Equal\+Num\+Bottom\+Top\+Blobs}!caffe\+::\+Base\+Convolution\+Layer@{caffe\+::\+Base\+Convolution\+Layer}}
+\subsubsection[{\texorpdfstring{Equal\+Num\+Bottom\+Top\+Blobs() const }{EqualNumBottomTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual bool {\bf caffe\+::\+Base\+Convolution\+Layer}$<$ Dtype $>$\+::Equal\+Num\+Bottom\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1BaseConvolutionLayer_add4567680b9466cbae5804da6a76e2ee}{}\label{classcaffe_1_1BaseConvolutionLayer_add4567680b9466cbae5804da6a76e2ee}
+
+
+Returns true if the layer requires an equal number of bottom and top blobs. 
+
+This method should be overridden to return true if your layer expects an equal number of bottom and top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_ad412187a0483c310bd59fd5f957faf0d}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Base\+Convolution\+Layer@{caffe\+::\+Base\+Convolution\+Layer}!Layer\+Set\+Up@{Layer\+Set\+Up}}
+\index{Layer\+Set\+Up@{Layer\+Set\+Up}!caffe\+::\+Base\+Convolution\+Layer@{caffe\+::\+Base\+Convolution\+Layer}}
+\subsubsection[{\texorpdfstring{Layer\+Set\+Up(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{LayerSetUp(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Base\+Convolution\+Layer}$<$ Dtype $>$\+::Layer\+Set\+Up (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1BaseConvolutionLayer_a35c6389878e77ab0a4a479e5441563cc}{}\label{classcaffe_1_1BaseConvolutionLayer_a35c6389878e77ab0a4a479e5441563cc}
+
+
+Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the preshaped input blobs, whose data fields store the input data for this layer \\
+\hline
+{\em top} & the allocated but unshaped output blobs\\
+\hline
+\end{DoxyParams}
+This method should do one-\/time layer specific setup. This includes reading and processing relevent parameters from the {\ttfamily layer\+\_\+param\+\_\+}. Setting up the shapes of top blobs and internal buffers should be done in {\ttfamily Reshape}, which will be called before the forward pass to adjust the top blob sizes. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a38dc2488bf319b8de5a7ac84e0045393}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Base\+Convolution\+Layer@{caffe\+::\+Base\+Convolution\+Layer}!Min\+Bottom\+Blobs@{Min\+Bottom\+Blobs}}
+\index{Min\+Bottom\+Blobs@{Min\+Bottom\+Blobs}!caffe\+::\+Base\+Convolution\+Layer@{caffe\+::\+Base\+Convolution\+Layer}}
+\subsubsection[{\texorpdfstring{Min\+Bottom\+Blobs() const }{MinBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Base\+Convolution\+Layer}$<$ Dtype $>$\+::Min\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1BaseConvolutionLayer_a14a2760d3eafcfce766222f80e126fbe}{}\label{classcaffe_1_1BaseConvolutionLayer_a14a2760d3eafcfce766222f80e126fbe}
+
+
+Returns the minimum number of bottom blobs required by the layer, or -\/1 if no minimum number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some minimum number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_ade3eee97cc743c4e68fff7eba6484916}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Base\+Convolution\+Layer@{caffe\+::\+Base\+Convolution\+Layer}!Min\+Top\+Blobs@{Min\+Top\+Blobs}}
+\index{Min\+Top\+Blobs@{Min\+Top\+Blobs}!caffe\+::\+Base\+Convolution\+Layer@{caffe\+::\+Base\+Convolution\+Layer}}
+\subsubsection[{\texorpdfstring{Min\+Top\+Blobs() const }{MinTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Base\+Convolution\+Layer}$<$ Dtype $>$\+::Min\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1BaseConvolutionLayer_accd0683191124da91a3667acc57e5ecd}{}\label{classcaffe_1_1BaseConvolutionLayer_accd0683191124da91a3667acc57e5ecd}
+
+
+Returns the minimum number of top blobs required by the layer, or -\/1 if no minimum number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some minimum number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a8bb143d58a740345fa2dc3d4204d553b}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Base\+Convolution\+Layer@{caffe\+::\+Base\+Convolution\+Layer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!caffe\+::\+Base\+Convolution\+Layer@{caffe\+::\+Base\+Convolution\+Layer}}
+\subsubsection[{\texorpdfstring{Reshape(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Reshape(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Base\+Convolution\+Layer}$<$ Dtype $>$\+::Reshape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1BaseConvolutionLayer_ac330e2fb166bca496edd277b0495f6eb}{}\label{classcaffe_1_1BaseConvolutionLayer_ac330e2fb166bca496edd277b0495f6eb}
+
+
+Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the input blobs, with the requested input shapes \\
+\hline
+{\em top} & the top blobs, which should be reshaped as needed\\
+\hline
+\end{DoxyParams}
+This method should reshape top blobs as needed according to the shapes of the bottom (input) blobs, as well as reshaping any internal buffers and making any other necessary adjustments so that the layer can accommodate the bottom blobs. 
+
+Implements \hyperlink{classcaffe_1_1Layer_ad9d391b972c769c0ebee34ca6d1c973e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/base\+\_\+conv\+\_\+layer.\+hpp\item 
+src/caffe/layers/base\+\_\+conv\+\_\+layer.\+cpp\end{DoxyCompactItemize}

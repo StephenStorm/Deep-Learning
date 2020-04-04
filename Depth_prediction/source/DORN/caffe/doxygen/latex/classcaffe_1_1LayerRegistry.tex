@@ -1,0 +1,31 @@
+\hypertarget{classcaffe_1_1LayerRegistry}{}\section{caffe\+:\+:Layer\+Registry$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1LayerRegistry}\index{caffe\+::\+Layer\+Registry$<$ Dtype $>$@{caffe\+::\+Layer\+Registry$<$ Dtype $>$}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Layer}{Layer}$<$ Dtype $>$ $>$($\ast$ {\bfseries Creator}) (const Layer\+Parameter \&)\hypertarget{classcaffe_1_1LayerRegistry_a7b228e5912a515ef6dcf3f90653a62a2}{}\label{classcaffe_1_1LayerRegistry_a7b228e5912a515ef6dcf3f90653a62a2}
+
+\item 
+typedef std\+::map$<$ string, Creator $>$ {\bfseries Creator\+Registry}\hypertarget{classcaffe_1_1LayerRegistry_aa3da63563bd0b8c5ed49a5b5bdf8b0ff}{}\label{classcaffe_1_1LayerRegistry_aa3da63563bd0b8c5ed49a5b5bdf8b0ff}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Creator\+Registry \& {\bfseries Registry} ()\hypertarget{classcaffe_1_1LayerRegistry_a4b9821dbacaf0d158981fa293d5acf15}{}\label{classcaffe_1_1LayerRegistry_a4b9821dbacaf0d158981fa293d5acf15}
+
+\item 
+static void {\bfseries Add\+Creator} (const string \&type, Creator creator)\hypertarget{classcaffe_1_1LayerRegistry_aba9246a3bd332dd9a3c5620b0ddf1e3f}{}\label{classcaffe_1_1LayerRegistry_aba9246a3bd332dd9a3c5620b0ddf1e3f}
+
+\item 
+static shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Layer}{Layer}$<$ Dtype $>$ $>$ {\bfseries Create\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1LayerRegistry_a17510acda367b34ddd8a65a1e14e3986}{}\label{classcaffe_1_1LayerRegistry_a17510acda367b34ddd8a65a1e14e3986}
+
+\item 
+static vector$<$ string $>$ {\bfseries Layer\+Type\+List} ()\hypertarget{classcaffe_1_1LayerRegistry_a76db56c94b384495ef568a8933c935d9}{}\label{classcaffe_1_1LayerRegistry_a76db56c94b384495ef568a8933c935d9}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layer\+\_\+factory.\+hpp\end{DoxyCompactItemize}

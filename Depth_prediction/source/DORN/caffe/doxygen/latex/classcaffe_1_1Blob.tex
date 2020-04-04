@@ -1,0 +1,375 @@
+\hypertarget{classcaffe_1_1Blob}{}\section{caffe\+:\+:Blob$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1Blob}\index{caffe\+::\+Blob$<$ Dtype $>$@{caffe\+::\+Blob$<$ Dtype $>$}}
+
+
+A wrapper around \hyperlink{classcaffe_1_1SyncedMemory}{Synced\+Memory} holders serving as the basic computational unit through which \hyperlink{classcaffe_1_1Layer}{Layer}s, \hyperlink{classcaffe_1_1Net}{Net}s, and \hyperlink{classcaffe_1_1Solver}{Solver}s interact.  
+
+
+
+
+{\ttfamily \#include $<$blob.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcaffe_1_1Blob_a379df830aad9b3cae253e1ddb0863844}{Blob} (const int \hyperlink{classcaffe_1_1Blob_a56c2b25db397d9e82bbd7c43597ae427}{num}, const int \hyperlink{classcaffe_1_1Blob_a744a987091c4496a2236898ee39558ec}{channels}, const int \hyperlink{classcaffe_1_1Blob_a422a10a605c30ac02a5377e7cf4c8c6c}{height}, const int \hyperlink{classcaffe_1_1Blob_a781b5410b7894455a85cd283cf8ee02a}{width})\hypertarget{classcaffe_1_1Blob_a379df830aad9b3cae253e1ddb0863844}{}\label{classcaffe_1_1Blob_a379df830aad9b3cae253e1ddb0863844}
+
+\begin{DoxyCompactList}\small\item\em Deprecated; use {\ttfamily Blob(const vector$<$int$>$\& shape)}. \end{DoxyCompactList}\item 
+{\bfseries Blob} (const vector$<$ int $>$ \&shape)\hypertarget{classcaffe_1_1Blob_a2268ef004df012760d300465a28f0f68}{}\label{classcaffe_1_1Blob_a2268ef004df012760d300465a28f0f68}
+
+\item 
+void \hyperlink{classcaffe_1_1Blob_ad0e0a9a4f49478e89161c6afe4e341a0}{Reshape} (const int \hyperlink{classcaffe_1_1Blob_a56c2b25db397d9e82bbd7c43597ae427}{num}, const int \hyperlink{classcaffe_1_1Blob_a744a987091c4496a2236898ee39558ec}{channels}, const int \hyperlink{classcaffe_1_1Blob_a422a10a605c30ac02a5377e7cf4c8c6c}{height}, const int \hyperlink{classcaffe_1_1Blob_a781b5410b7894455a85cd283cf8ee02a}{width})\hypertarget{classcaffe_1_1Blob_ad0e0a9a4f49478e89161c6afe4e341a0}{}\label{classcaffe_1_1Blob_ad0e0a9a4f49478e89161c6afe4e341a0}
+
+\begin{DoxyCompactList}\small\item\em Deprecated; use {\ttfamily \hyperlink{classcaffe_1_1Blob_ac9ce456aa623ff3f4d24225a0db14404}{Reshape(const vector$<$int$>$\& shape)}}. \end{DoxyCompactList}\item 
+void \hyperlink{classcaffe_1_1Blob_ac9ce456aa623ff3f4d24225a0db14404}{Reshape} (const vector$<$ int $>$ \&shape)
+\begin{DoxyCompactList}\small\item\em Change the dimensions of the blob, allocating new memory if necessary. \end{DoxyCompactList}\item 
+void {\bfseries Reshape} (const Blob\+Shape \&shape)\hypertarget{classcaffe_1_1Blob_a787ff5e31db6b53b70fb117002ec0385}{}\label{classcaffe_1_1Blob_a787ff5e31db6b53b70fb117002ec0385}
+
+\item 
+void {\bfseries Reshape\+Like} (const \hyperlink{classcaffe_1_1Blob}{Blob} \&other)\hypertarget{classcaffe_1_1Blob_aa8dee739aaa4253f73c44904784ce417}{}\label{classcaffe_1_1Blob_aa8dee739aaa4253f73c44904784ce417}
+
+\item 
+string {\bfseries shape\+\_\+string} () const \hypertarget{classcaffe_1_1Blob_a300cd4f89222d01ec5d9826625a0227e}{}\label{classcaffe_1_1Blob_a300cd4f89222d01ec5d9826625a0227e}
+
+\item 
+const vector$<$ int $>$ \& {\bfseries shape} () const \hypertarget{classcaffe_1_1Blob_aec8d4b4a44cc0783e9c8333c38226f8f}{}\label{classcaffe_1_1Blob_aec8d4b4a44cc0783e9c8333c38226f8f}
+
+\item 
+int \hyperlink{classcaffe_1_1Blob_a3aab16f3e07ddc78e29a101d022a34cd}{shape} (int index) const 
+\begin{DoxyCompactList}\small\item\em Returns the dimension of the index-\/th axis (or the negative index-\/th axis from the end, if index is negative). \end{DoxyCompactList}\item 
+int {\bfseries num\+\_\+axes} () const \hypertarget{classcaffe_1_1Blob_ab0774eb9e8cd070c7af741b56602f74b}{}\label{classcaffe_1_1Blob_ab0774eb9e8cd070c7af741b56602f74b}
+
+\item 
+int {\bfseries count} () const \hypertarget{classcaffe_1_1Blob_abf97753a599dd546c16d55ba926d4e81}{}\label{classcaffe_1_1Blob_abf97753a599dd546c16d55ba926d4e81}
+
+\item 
+int \hyperlink{classcaffe_1_1Blob_adcc7936d19ff798cfa8f24901a63d1fa}{count} (int start\+\_\+axis, int end\+\_\+axis) const 
+\begin{DoxyCompactList}\small\item\em Compute the volume of a slice; i.\+e., the product of dimensions among a range of axes. \end{DoxyCompactList}\item 
+int \hyperlink{classcaffe_1_1Blob_aca6ae30ecc52bd38699fd82fdbe147f7}{count} (int start\+\_\+axis) const 
+\begin{DoxyCompactList}\small\item\em Compute the volume of a slice spanning from a particular first axis to the final axis. \end{DoxyCompactList}\item 
+int \hyperlink{classcaffe_1_1Blob_a6ce87a58a08438c46a4858929a77ee77}{Canonical\+Axis\+Index} (int axis\+\_\+index) const 
+\begin{DoxyCompactList}\small\item\em Returns the \textquotesingle{}canonical\textquotesingle{} version of a (usually) user-\/specified axis, allowing for negative indexing (e.\+g., -\/1 for the last axis). \end{DoxyCompactList}\item 
+int \hyperlink{classcaffe_1_1Blob_a56c2b25db397d9e82bbd7c43597ae427}{num} () const \hypertarget{classcaffe_1_1Blob_a56c2b25db397d9e82bbd7c43597ae427}{}\label{classcaffe_1_1Blob_a56c2b25db397d9e82bbd7c43597ae427}
+
+\begin{DoxyCompactList}\small\item\em Deprecated legacy shape accessor num\+: use shape(0) instead. \end{DoxyCompactList}\item 
+int \hyperlink{classcaffe_1_1Blob_a744a987091c4496a2236898ee39558ec}{channels} () const \hypertarget{classcaffe_1_1Blob_a744a987091c4496a2236898ee39558ec}{}\label{classcaffe_1_1Blob_a744a987091c4496a2236898ee39558ec}
+
+\begin{DoxyCompactList}\small\item\em Deprecated legacy shape accessor channels\+: use shape(1) instead. \end{DoxyCompactList}\item 
+int \hyperlink{classcaffe_1_1Blob_a422a10a605c30ac02a5377e7cf4c8c6c}{height} () const \hypertarget{classcaffe_1_1Blob_a422a10a605c30ac02a5377e7cf4c8c6c}{}\label{classcaffe_1_1Blob_a422a10a605c30ac02a5377e7cf4c8c6c}
+
+\begin{DoxyCompactList}\small\item\em Deprecated legacy shape accessor height\+: use shape(2) instead. \end{DoxyCompactList}\item 
+int \hyperlink{classcaffe_1_1Blob_a781b5410b7894455a85cd283cf8ee02a}{width} () const \hypertarget{classcaffe_1_1Blob_a781b5410b7894455a85cd283cf8ee02a}{}\label{classcaffe_1_1Blob_a781b5410b7894455a85cd283cf8ee02a}
+
+\begin{DoxyCompactList}\small\item\em Deprecated legacy shape accessor width\+: use shape(3) instead. \end{DoxyCompactList}\item 
+int {\bfseries Legacy\+Shape} (int index) const \hypertarget{classcaffe_1_1Blob_a6221f2df6da6167db15c2b18aac2e5ee}{}\label{classcaffe_1_1Blob_a6221f2df6da6167db15c2b18aac2e5ee}
+
+\item 
+int {\bfseries offset} (const int n, const int c=0, const int h=0, const int w=0) const \hypertarget{classcaffe_1_1Blob_a87022dfa6cc45b3a2727ccce9ccf4b2c}{}\label{classcaffe_1_1Blob_a87022dfa6cc45b3a2727ccce9ccf4b2c}
+
+\item 
+int {\bfseries offset} (const vector$<$ int $>$ \&indices) const \hypertarget{classcaffe_1_1Blob_a8463d5d004dc97580151c1a4283f00f6}{}\label{classcaffe_1_1Blob_a8463d5d004dc97580151c1a4283f00f6}
+
+\item 
+void \hyperlink{classcaffe_1_1Blob_a64ad51f99e88233f43a21a85ebe10284}{Copy\+From} (const \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ \&source, bool copy\+\_\+diff=false, bool reshape=false)
+\begin{DoxyCompactList}\small\item\em Copy from a source \hyperlink{classcaffe_1_1Blob}{Blob}. \end{DoxyCompactList}\item 
+Dtype {\bfseries data\+\_\+at} (const int n, const int c, const int h, const int w) const \hypertarget{classcaffe_1_1Blob_a3f12332d9d8a0a5adc12c8c75bbbd335}{}\label{classcaffe_1_1Blob_a3f12332d9d8a0a5adc12c8c75bbbd335}
+
+\item 
+Dtype {\bfseries diff\+\_\+at} (const int n, const int c, const int h, const int w) const \hypertarget{classcaffe_1_1Blob_a349ee9442e5ba9736b6ccf12359e776e}{}\label{classcaffe_1_1Blob_a349ee9442e5ba9736b6ccf12359e776e}
+
+\item 
+Dtype {\bfseries data\+\_\+at} (const vector$<$ int $>$ \&index) const \hypertarget{classcaffe_1_1Blob_a85a566849633e35492a3dc41d9551731}{}\label{classcaffe_1_1Blob_a85a566849633e35492a3dc41d9551731}
+
+\item 
+Dtype {\bfseries diff\+\_\+at} (const vector$<$ int $>$ \&index) const \hypertarget{classcaffe_1_1Blob_ab783abf65ca66df623a8a373de65209b}{}\label{classcaffe_1_1Blob_ab783abf65ca66df623a8a373de65209b}
+
+\item 
+const shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1SyncedMemory}{Synced\+Memory} $>$ \& {\bfseries data} () const \hypertarget{classcaffe_1_1Blob_a09d1435056f21ba9df52cee4d6371087}{}\label{classcaffe_1_1Blob_a09d1435056f21ba9df52cee4d6371087}
+
+\item 
+const shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1SyncedMemory}{Synced\+Memory} $>$ \& {\bfseries diff} () const \hypertarget{classcaffe_1_1Blob_ab7a8c2034a34695fe5f777ff3271e80d}{}\label{classcaffe_1_1Blob_ab7a8c2034a34695fe5f777ff3271e80d}
+
+\item 
+const Dtype $\ast$ {\bfseries cpu\+\_\+data} () const \hypertarget{classcaffe_1_1Blob_a490e0b609d0d62dbfc317cbe76aa8fa2}{}\label{classcaffe_1_1Blob_a490e0b609d0d62dbfc317cbe76aa8fa2}
+
+\item 
+void {\bfseries set\+\_\+cpu\+\_\+data} (Dtype $\ast$data)\hypertarget{classcaffe_1_1Blob_a5d7d38b157e43ff6a8b8bf94b6815daf}{}\label{classcaffe_1_1Blob_a5d7d38b157e43ff6a8b8bf94b6815daf}
+
+\item 
+const int $\ast$ {\bfseries gpu\+\_\+shape} () const \hypertarget{classcaffe_1_1Blob_a16e82cd29e919b116cc8e08af451ab11}{}\label{classcaffe_1_1Blob_a16e82cd29e919b116cc8e08af451ab11}
+
+\item 
+const Dtype $\ast$ {\bfseries gpu\+\_\+data} () const \hypertarget{classcaffe_1_1Blob_afd60f6fa2044997149075817991bfc19}{}\label{classcaffe_1_1Blob_afd60f6fa2044997149075817991bfc19}
+
+\item 
+void {\bfseries set\+\_\+gpu\+\_\+data} (Dtype $\ast$data)\hypertarget{classcaffe_1_1Blob_ad350de479e172e963f02e8332c800bb7}{}\label{classcaffe_1_1Blob_ad350de479e172e963f02e8332c800bb7}
+
+\item 
+const Dtype $\ast$ {\bfseries cpu\+\_\+diff} () const \hypertarget{classcaffe_1_1Blob_a59dc87d97e8a0db8302b142eacb64e10}{}\label{classcaffe_1_1Blob_a59dc87d97e8a0db8302b142eacb64e10}
+
+\item 
+const Dtype $\ast$ {\bfseries gpu\+\_\+diff} () const \hypertarget{classcaffe_1_1Blob_aafcc1d137ff67dea2d65824ce67bb21d}{}\label{classcaffe_1_1Blob_aafcc1d137ff67dea2d65824ce67bb21d}
+
+\item 
+Dtype $\ast$ {\bfseries mutable\+\_\+cpu\+\_\+data} ()\hypertarget{classcaffe_1_1Blob_ac170c040c34e2e78e7fc0d2ee12cf0ef}{}\label{classcaffe_1_1Blob_ac170c040c34e2e78e7fc0d2ee12cf0ef}
+
+\item 
+Dtype $\ast$ {\bfseries mutable\+\_\+gpu\+\_\+data} ()\hypertarget{classcaffe_1_1Blob_abac6bde0521e019df173213af6808e3b}{}\label{classcaffe_1_1Blob_abac6bde0521e019df173213af6808e3b}
+
+\item 
+Dtype $\ast$ {\bfseries mutable\+\_\+cpu\+\_\+diff} ()\hypertarget{classcaffe_1_1Blob_a4eb870499aa659a5eee7af622cd92eca}{}\label{classcaffe_1_1Blob_a4eb870499aa659a5eee7af622cd92eca}
+
+\item 
+Dtype $\ast$ {\bfseries mutable\+\_\+gpu\+\_\+diff} ()\hypertarget{classcaffe_1_1Blob_a8d230bed098a5ee31559df0b8e2db252}{}\label{classcaffe_1_1Blob_a8d230bed098a5ee31559df0b8e2db252}
+
+\item 
+void {\bfseries Update} ()\hypertarget{classcaffe_1_1Blob_afe035d7b60c56e4aed2a18296e8ffdc5}{}\label{classcaffe_1_1Blob_afe035d7b60c56e4aed2a18296e8ffdc5}
+
+\item 
+void {\bfseries From\+Proto} (const Blob\+Proto \&proto, bool reshape=true)\hypertarget{classcaffe_1_1Blob_a0a95f882414ba0a11d674b134478476d}{}\label{classcaffe_1_1Blob_a0a95f882414ba0a11d674b134478476d}
+
+\item 
+void {\bfseries To\+Proto} (Blob\+Proto $\ast$proto, bool write\+\_\+diff=false) const \hypertarget{classcaffe_1_1Blob_ad297f6b6cad67200c3b5201034653271}{}\label{classcaffe_1_1Blob_ad297f6b6cad67200c3b5201034653271}
+
+\item 
+Dtype \hyperlink{classcaffe_1_1Blob_a7ee118b64a34cdb1acb8533d9b68aa64}{asum\+\_\+data} () const \hypertarget{classcaffe_1_1Blob_a7ee118b64a34cdb1acb8533d9b68aa64}{}\label{classcaffe_1_1Blob_a7ee118b64a34cdb1acb8533d9b68aa64}
+
+\begin{DoxyCompactList}\small\item\em Compute the sum of absolute values (L1 norm) of the data. \end{DoxyCompactList}\item 
+Dtype \hyperlink{classcaffe_1_1Blob_a7305f3f0b0035d41c95462c0b2dc58c2}{asum\+\_\+diff} () const \hypertarget{classcaffe_1_1Blob_a7305f3f0b0035d41c95462c0b2dc58c2}{}\label{classcaffe_1_1Blob_a7305f3f0b0035d41c95462c0b2dc58c2}
+
+\begin{DoxyCompactList}\small\item\em Compute the sum of absolute values (L1 norm) of the diff. \end{DoxyCompactList}\item 
+Dtype \hyperlink{classcaffe_1_1Blob_a51e8e67d0445f9d8fe3d0bea71fd90b3}{sumsq\+\_\+data} () const \hypertarget{classcaffe_1_1Blob_a51e8e67d0445f9d8fe3d0bea71fd90b3}{}\label{classcaffe_1_1Blob_a51e8e67d0445f9d8fe3d0bea71fd90b3}
+
+\begin{DoxyCompactList}\small\item\em Compute the sum of squares (L2 norm squared) of the data. \end{DoxyCompactList}\item 
+Dtype \hyperlink{classcaffe_1_1Blob_a599d89dc42801233355b9cfd416e67b7}{sumsq\+\_\+diff} () const \hypertarget{classcaffe_1_1Blob_a599d89dc42801233355b9cfd416e67b7}{}\label{classcaffe_1_1Blob_a599d89dc42801233355b9cfd416e67b7}
+
+\begin{DoxyCompactList}\small\item\em Compute the sum of squares (L2 norm squared) of the diff. \end{DoxyCompactList}\item 
+void \hyperlink{classcaffe_1_1Blob_a535dd556e777f2e13b8c7438f40749a0}{scale\+\_\+data} (Dtype scale\+\_\+factor)\hypertarget{classcaffe_1_1Blob_a535dd556e777f2e13b8c7438f40749a0}{}\label{classcaffe_1_1Blob_a535dd556e777f2e13b8c7438f40749a0}
+
+\begin{DoxyCompactList}\small\item\em Scale the blob data by a constant factor. \end{DoxyCompactList}\item 
+void \hyperlink{classcaffe_1_1Blob_a6d2d83920d961fff033434347f64a3b0}{scale\+\_\+diff} (Dtype scale\+\_\+factor)\hypertarget{classcaffe_1_1Blob_a6d2d83920d961fff033434347f64a3b0}{}\label{classcaffe_1_1Blob_a6d2d83920d961fff033434347f64a3b0}
+
+\begin{DoxyCompactList}\small\item\em Scale the blob diff by a constant factor. \end{DoxyCompactList}\item 
+void \hyperlink{classcaffe_1_1Blob_a8fce5a816a2b9629686db69108610d93}{Share\+Data} (const \hyperlink{classcaffe_1_1Blob}{Blob} \&other)
+\begin{DoxyCompactList}\small\item\em Set the data\+\_\+ shared\+\_\+ptr to point to the \hyperlink{classcaffe_1_1SyncedMemory}{Synced\+Memory} holding the data\+\_\+ of \hyperlink{classcaffe_1_1Blob}{Blob} other -- useful in \hyperlink{classcaffe_1_1Layer}{Layer}s which simply perform a copy in their Forward pass. \end{DoxyCompactList}\item 
+void \hyperlink{classcaffe_1_1Blob_a004781965b09f94c409cec9a6fc7c35c}{Share\+Diff} (const \hyperlink{classcaffe_1_1Blob}{Blob} \&other)
+\begin{DoxyCompactList}\small\item\em Set the diff\+\_\+ shared\+\_\+ptr to point to the \hyperlink{classcaffe_1_1SyncedMemory}{Synced\+Memory} holding the diff\+\_\+ of \hyperlink{classcaffe_1_1Blob}{Blob} other -- useful in \hyperlink{classcaffe_1_1Layer}{Layer}s which simply perform a copy in their Forward pass. \end{DoxyCompactList}\item 
+bool {\bfseries Shape\+Equals} (const Blob\+Proto \&other)\hypertarget{classcaffe_1_1Blob_aaf5af1d79ac66f15dd5ebe504b36efcd}{}\label{classcaffe_1_1Blob_aaf5af1d79ac66f15dd5ebe504b36efcd}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries Update} ()\hypertarget{classcaffe_1_1Blob_a128b3c929b6282d8741543044b81894b}{}\label{classcaffe_1_1Blob_a128b3c929b6282d8741543044b81894b}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries Update} ()\hypertarget{classcaffe_1_1Blob_a7da970e54e58626753ddd73955164481}{}\label{classcaffe_1_1Blob_a7da970e54e58626753ddd73955164481}
+
+\item 
+{\footnotesize template$<$$>$ }\\unsigned int {\bfseries asum\+\_\+data} () const\hypertarget{classcaffe_1_1Blob_aaca009ba67cbcd12c18cf3a766db934f}{}\label{classcaffe_1_1Blob_aaca009ba67cbcd12c18cf3a766db934f}
+
+\item 
+{\footnotesize template$<$$>$ }\\int {\bfseries asum\+\_\+data} () const\hypertarget{classcaffe_1_1Blob_a7104c5eb03f4307dd65bb098ad4c1a66}{}\label{classcaffe_1_1Blob_a7104c5eb03f4307dd65bb098ad4c1a66}
+
+\item 
+{\footnotesize template$<$$>$ }\\unsigned int {\bfseries asum\+\_\+diff} () const\hypertarget{classcaffe_1_1Blob_aba736c86a9d3bdc798bcc6551725f9a9}{}\label{classcaffe_1_1Blob_aba736c86a9d3bdc798bcc6551725f9a9}
+
+\item 
+{\footnotesize template$<$$>$ }\\int {\bfseries asum\+\_\+diff} () const\hypertarget{classcaffe_1_1Blob_a1725a104ce88a7eb466f1d1fb3f9cf95}{}\label{classcaffe_1_1Blob_a1725a104ce88a7eb466f1d1fb3f9cf95}
+
+\item 
+{\footnotesize template$<$$>$ }\\unsigned int {\bfseries sumsq\+\_\+data} () const\hypertarget{classcaffe_1_1Blob_acac953b71e67c041755151f78a20405f}{}\label{classcaffe_1_1Blob_acac953b71e67c041755151f78a20405f}
+
+\item 
+{\footnotesize template$<$$>$ }\\int {\bfseries sumsq\+\_\+data} () const\hypertarget{classcaffe_1_1Blob_a91285b7a182d4927520b7d1ede18ed20}{}\label{classcaffe_1_1Blob_a91285b7a182d4927520b7d1ede18ed20}
+
+\item 
+{\footnotesize template$<$$>$ }\\unsigned int {\bfseries sumsq\+\_\+diff} () const\hypertarget{classcaffe_1_1Blob_a71f00f3e867e4ebccd30fb261f5109a2}{}\label{classcaffe_1_1Blob_a71f00f3e867e4ebccd30fb261f5109a2}
+
+\item 
+{\footnotesize template$<$$>$ }\\int {\bfseries sumsq\+\_\+diff} () const\hypertarget{classcaffe_1_1Blob_a4edc021fb188ee25d0113a167858c5ec}{}\label{classcaffe_1_1Blob_a4edc021fb188ee25d0113a167858c5ec}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries scale\+\_\+data} (unsigned int scale\+\_\+factor)\hypertarget{classcaffe_1_1Blob_af90e5b5950b5002ae75243e988a5cfe2}{}\label{classcaffe_1_1Blob_af90e5b5950b5002ae75243e988a5cfe2}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries scale\+\_\+data} (int scale\+\_\+factor)\hypertarget{classcaffe_1_1Blob_a99de38dc8933f2f6d410eb9cd05aeaa0}{}\label{classcaffe_1_1Blob_a99de38dc8933f2f6d410eb9cd05aeaa0}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries scale\+\_\+diff} (unsigned int scale\+\_\+factor)\hypertarget{classcaffe_1_1Blob_aaf182851c1d42c79928e9fc2fd6a652e}{}\label{classcaffe_1_1Blob_aaf182851c1d42c79928e9fc2fd6a652e}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries scale\+\_\+diff} (int scale\+\_\+factor)\hypertarget{classcaffe_1_1Blob_a8eab6dc0ff159e72845774db6f032918}{}\label{classcaffe_1_1Blob_a8eab6dc0ff159e72845774db6f032918}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries To\+Proto} (Blob\+Proto $\ast$proto, bool write\+\_\+diff) const\hypertarget{classcaffe_1_1Blob_af20401e9b2ad7c89aa7c77711f653b7a}{}\label{classcaffe_1_1Blob_af20401e9b2ad7c89aa7c77711f653b7a}
+
+\item 
+{\footnotesize template$<$$>$ }\\void {\bfseries To\+Proto} (Blob\+Proto $\ast$proto, bool write\+\_\+diff) const\hypertarget{classcaffe_1_1Blob_ae21cbe8230094762001913bdaee472a7}{}\label{classcaffe_1_1Blob_ae21cbe8230094762001913bdaee472a7}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries D\+I\+S\+A\+B\+L\+E\+\_\+\+C\+O\+P\+Y\+\_\+\+A\+N\+D\+\_\+\+A\+S\+S\+I\+GN} (\hyperlink{classcaffe_1_1Blob}{Blob})\hypertarget{classcaffe_1_1Blob_a603f1a5472e5fae9ca8fec62f6d5c581}{}\label{classcaffe_1_1Blob_a603f1a5472e5fae9ca8fec62f6d5c581}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1SyncedMemory}{Synced\+Memory} $>$ {\bfseries data\+\_\+}\hypertarget{classcaffe_1_1Blob_a5240277a3cea1bc530deca40ca0d0e16}{}\label{classcaffe_1_1Blob_a5240277a3cea1bc530deca40ca0d0e16}
+
+\item 
+shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1SyncedMemory}{Synced\+Memory} $>$ {\bfseries diff\+\_\+}\hypertarget{classcaffe_1_1Blob_a9310f9007aa45e529cb6d69d32dbb80c}{}\label{classcaffe_1_1Blob_a9310f9007aa45e529cb6d69d32dbb80c}
+
+\item 
+shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1SyncedMemory}{Synced\+Memory} $>$ {\bfseries shape\+\_\+data\+\_\+}\hypertarget{classcaffe_1_1Blob_af67df400170ae040ccc680e580b3b578}{}\label{classcaffe_1_1Blob_af67df400170ae040ccc680e580b3b578}
+
+\item 
+vector$<$ int $>$ {\bfseries shape\+\_\+}\hypertarget{classcaffe_1_1Blob_a5de50aa2b0e48b52d26ae8fe1c7dca82}{}\label{classcaffe_1_1Blob_a5de50aa2b0e48b52d26ae8fe1c7dca82}
+
+\item 
+int {\bfseries count\+\_\+}\hypertarget{classcaffe_1_1Blob_acf06ea13a3a14f77c178a525c35a3ea0}{}\label{classcaffe_1_1Blob_acf06ea13a3a14f77c178a525c35a3ea0}
+
+\item 
+int {\bfseries capacity\+\_\+}\hypertarget{classcaffe_1_1Blob_a33b722653651763f4cf07c3658a6de33}{}\label{classcaffe_1_1Blob_a33b722653651763f4cf07c3658a6de33}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Blob$<$ Dtype $>$}
+
+A wrapper around \hyperlink{classcaffe_1_1SyncedMemory}{Synced\+Memory} holders serving as the basic computational unit through which \hyperlink{classcaffe_1_1Layer}{Layer}s, \hyperlink{classcaffe_1_1Net}{Net}s, and \hyperlink{classcaffe_1_1Solver}{Solver}s interact. 
+
+T\+O\+D\+O(dox)\+: more thorough description. 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Blob@{caffe\+::\+Blob}!Canonical\+Axis\+Index@{Canonical\+Axis\+Index}}
+\index{Canonical\+Axis\+Index@{Canonical\+Axis\+Index}!caffe\+::\+Blob@{caffe\+::\+Blob}}
+\subsubsection[{\texorpdfstring{Canonical\+Axis\+Index(int axis\+\_\+index) const }{CanonicalAxisIndex(int axis_index) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype$>$ int {\bf caffe\+::\+Blob}$<$ Dtype $>$\+::Canonical\+Axis\+Index (
+\begin{DoxyParamCaption}
+\item[{int}]{axis\+\_\+index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classcaffe_1_1Blob_a6ce87a58a08438c46a4858929a77ee77}{}\label{classcaffe_1_1Blob_a6ce87a58a08438c46a4858929a77ee77}
+
+
+Returns the \textquotesingle{}canonical\textquotesingle{} version of a (usually) user-\/specified axis, allowing for negative indexing (e.\+g., -\/1 for the last axis). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis\+\_\+index} & the axis index. If 0 $<$= index $<$ num\+\_\+axes(), return index. If -\/num\+\_\+axes $<$= index $<$= -\/1, return (num\+\_\+axes() -\/ (-\/index)), e.\+g., the last axis index (num\+\_\+axes() -\/ 1) if index == -\/1, the second to last if index == -\/2, etc. Dies on out of range index. \\
+\hline
+\end{DoxyParams}
+\index{caffe\+::\+Blob@{caffe\+::\+Blob}!Copy\+From@{Copy\+From}}
+\index{Copy\+From@{Copy\+From}!caffe\+::\+Blob@{caffe\+::\+Blob}}
+\subsubsection[{\texorpdfstring{Copy\+From(const Blob$<$ Dtype $>$ \&source, bool copy\+\_\+diff=false, bool reshape=false)}{CopyFrom(const Blob< Dtype > &source, bool copy_diff=false, bool reshape=false)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype$>$ void {\bf caffe\+::\+Blob}$<$ Dtype $>$\+::Copy\+From (
+\begin{DoxyParamCaption}
+\item[{const {\bf Blob}$<$ Dtype $>$ \&}]{source, }
+\item[{bool}]{copy\+\_\+diff = {\ttfamily false}, }
+\item[{bool}]{reshape = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{classcaffe_1_1Blob_a64ad51f99e88233f43a21a85ebe10284}{}\label{classcaffe_1_1Blob_a64ad51f99e88233f43a21a85ebe10284}
+
+
+Copy from a source \hyperlink{classcaffe_1_1Blob}{Blob}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & the \hyperlink{classcaffe_1_1Blob}{Blob} to copy from \\
+\hline
+{\em copy\+\_\+diff} & if false, copy the data; if true, copy the diff \\
+\hline
+{\em reshape} & if false, require this \hyperlink{classcaffe_1_1Blob}{Blob} to be pre-\/shaped to the shape of other (and die otherwise); if true, Reshape this \hyperlink{classcaffe_1_1Blob}{Blob} to other\textquotesingle{}s shape if necessary \\
+\hline
+\end{DoxyParams}
+\index{caffe\+::\+Blob@{caffe\+::\+Blob}!count@{count}}
+\index{count@{count}!caffe\+::\+Blob@{caffe\+::\+Blob}}
+\subsubsection[{\texorpdfstring{count(int start\+\_\+axis, int end\+\_\+axis) const }{count(int start_axis, int end_axis) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype$>$ int {\bf caffe\+::\+Blob}$<$ Dtype $>$\+::count (
+\begin{DoxyParamCaption}
+\item[{int}]{start\+\_\+axis, }
+\item[{int}]{end\+\_\+axis}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classcaffe_1_1Blob_adcc7936d19ff798cfa8f24901a63d1fa}{}\label{classcaffe_1_1Blob_adcc7936d19ff798cfa8f24901a63d1fa}
+
+
+Compute the volume of a slice; i.\+e., the product of dimensions among a range of axes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+axis} & The first axis to include in the slice.\\
+\hline
+{\em end\+\_\+axis} & The first axis to exclude from the slice. \\
+\hline
+\end{DoxyParams}
+\index{caffe\+::\+Blob@{caffe\+::\+Blob}!count@{count}}
+\index{count@{count}!caffe\+::\+Blob@{caffe\+::\+Blob}}
+\subsubsection[{\texorpdfstring{count(int start\+\_\+axis) const }{count(int start_axis) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype$>$ int {\bf caffe\+::\+Blob}$<$ Dtype $>$\+::count (
+\begin{DoxyParamCaption}
+\item[{int}]{start\+\_\+axis}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classcaffe_1_1Blob_aca6ae30ecc52bd38699fd82fdbe147f7}{}\label{classcaffe_1_1Blob_aca6ae30ecc52bd38699fd82fdbe147f7}
+
+
+Compute the volume of a slice spanning from a particular first axis to the final axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+axis} & The first axis to include in the slice. \\
+\hline
+\end{DoxyParams}
+\index{caffe\+::\+Blob@{caffe\+::\+Blob}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!caffe\+::\+Blob@{caffe\+::\+Blob}}
+\subsubsection[{\texorpdfstring{Reshape(const vector$<$ int $>$ \&shape)}{Reshape(const vector< int > &shape)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Blob}$<$ Dtype $>$\+::Reshape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ int $>$ \&}]{shape}
+\end{DoxyParamCaption}
+)}\hypertarget{classcaffe_1_1Blob_ac9ce456aa623ff3f4d24225a0db14404}{}\label{classcaffe_1_1Blob_ac9ce456aa623ff3f4d24225a0db14404}
+
+
+Change the dimensions of the blob, allocating new memory if necessary. 
+
+This function can be called both to create an initial allocation of memory, and to adjust the dimensions of a top blob during \hyperlink{classcaffe_1_1Layer_ad9d391b972c769c0ebee34ca6d1c973e}{Layer\+::\+Reshape} or \hyperlink{classcaffe_1_1Layer_aa5fc9ddb31b58958653372bdaaccde94}{Layer\+::\+Forward}. When changing the size of blob, memory will only be reallocated if sufficient memory does not already exist, and excess memory will never be freed.
+
+Note that reshaping an input blob and immediately calling \hyperlink{classcaffe_1_1Net_a7a1a6d17347106dd1284b1b6d28cb4e9}{Net\+::\+Backward} is an error; either \hyperlink{classcaffe_1_1Net_a6f6cf9d40637f7576828d856bb1b1826}{Net\+::\+Forward} or \hyperlink{classcaffe_1_1Net_a8417af82aa83be45d39aab735bdead1d}{Net\+::\+Reshape} need to be called to propagate the new input shape to higher layers. \index{caffe\+::\+Blob@{caffe\+::\+Blob}!shape@{shape}}
+\index{shape@{shape}!caffe\+::\+Blob@{caffe\+::\+Blob}}
+\subsubsection[{\texorpdfstring{shape(int index) const }{shape(int index) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype$>$ int {\bf caffe\+::\+Blob}$<$ Dtype $>$\+::shape (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classcaffe_1_1Blob_a3aab16f3e07ddc78e29a101d022a34cd}{}\label{classcaffe_1_1Blob_a3aab16f3e07ddc78e29a101d022a34cd}
+
+
+Returns the dimension of the index-\/th axis (or the negative index-\/th axis from the end, if index is negative). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the axis index, which may be negative as it will be \char`\"{}canonicalized\char`\"{} using Canonical\+Axis\+Index. Dies on out of range index. \\
+\hline
+\end{DoxyParams}
+\index{caffe\+::\+Blob@{caffe\+::\+Blob}!Share\+Data@{Share\+Data}}
+\index{Share\+Data@{Share\+Data}!caffe\+::\+Blob@{caffe\+::\+Blob}}
+\subsubsection[{\texorpdfstring{Share\+Data(const Blob \&other)}{ShareData(const Blob &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Blob}$<$ Dtype $>$\+::Share\+Data (
+\begin{DoxyParamCaption}
+\item[{const {\bf Blob}$<$ Dtype $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{classcaffe_1_1Blob_a8fce5a816a2b9629686db69108610d93}{}\label{classcaffe_1_1Blob_a8fce5a816a2b9629686db69108610d93}
+
+
+Set the data\+\_\+ shared\+\_\+ptr to point to the \hyperlink{classcaffe_1_1SyncedMemory}{Synced\+Memory} holding the data\+\_\+ of \hyperlink{classcaffe_1_1Blob}{Blob} other -- useful in \hyperlink{classcaffe_1_1Layer}{Layer}s which simply perform a copy in their Forward pass. 
+
+This deallocates the \hyperlink{classcaffe_1_1SyncedMemory}{Synced\+Memory} holding this \hyperlink{classcaffe_1_1Blob}{Blob}\textquotesingle{}s data\+\_\+, as shared\+\_\+ptr calls its destructor when reset with the \char`\"{}=\char`\"{} operator. \index{caffe\+::\+Blob@{caffe\+::\+Blob}!Share\+Diff@{Share\+Diff}}
+\index{Share\+Diff@{Share\+Diff}!caffe\+::\+Blob@{caffe\+::\+Blob}}
+\subsubsection[{\texorpdfstring{Share\+Diff(const Blob \&other)}{ShareDiff(const Blob &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Blob}$<$ Dtype $>$\+::Share\+Diff (
+\begin{DoxyParamCaption}
+\item[{const {\bf Blob}$<$ Dtype $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{classcaffe_1_1Blob_a004781965b09f94c409cec9a6fc7c35c}{}\label{classcaffe_1_1Blob_a004781965b09f94c409cec9a6fc7c35c}
+
+
+Set the diff\+\_\+ shared\+\_\+ptr to point to the \hyperlink{classcaffe_1_1SyncedMemory}{Synced\+Memory} holding the diff\+\_\+ of \hyperlink{classcaffe_1_1Blob}{Blob} other -- useful in \hyperlink{classcaffe_1_1Layer}{Layer}s which simply perform a copy in their Forward pass. 
+
+This deallocates the \hyperlink{classcaffe_1_1SyncedMemory}{Synced\+Memory} holding this \hyperlink{classcaffe_1_1Blob}{Blob}\textquotesingle{}s diff\+\_\+, as shared\+\_\+ptr calls its destructor when reset with the \char`\"{}=\char`\"{} operator. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/blob.\+hpp\item 
+src/caffe/blob.\+cpp\end{DoxyCompactItemize}

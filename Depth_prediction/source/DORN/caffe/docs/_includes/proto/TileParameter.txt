@@ -1,0 +1,8 @@
+// Message that stores parameters used by TileLayer
+message TileParameter {
+  // The index of the axis to tile.
+  optional int32 axis = 1 [default = 1];
+
+  // The number of copies (tiles) of the blob to output.
+  optional int32 tiles = 2;
+}

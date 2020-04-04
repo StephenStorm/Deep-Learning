@@ -1,0 +1,223 @@
+\hypertarget{classcaffe_1_1AccuracyLayer}{}\section{caffe\+:\+:Accuracy\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1AccuracyLayer}\index{caffe\+::\+Accuracy\+Layer$<$ Dtype $>$@{caffe\+::\+Accuracy\+Layer$<$ Dtype $>$}}
+
+
+Computes the classification accuracy for a one-\/of-\/many classification task.  
+
+
+
+
+{\ttfamily \#include $<$accuracy\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Accuracy\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcaffe_1_1AccuracyLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcaffe_1_1AccuracyLayer_a362ab61d1961c1b408f84a956f6e598d}{Accuracy\+Layer} (const Layer\+Parameter \&param)
+\item 
+virtual void \hyperlink{classcaffe_1_1AccuracyLayer_aa4e6baa79f0c23308c39be3fe5085971}{Layer\+Set\+Up} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1AccuracyLayer_a28df0e6104cffdc50325a7b4d648dfa5}{Reshape} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1AccuracyLayer_a57f6e7e7e9567cb17d9e6ae38d372091}{type} () const \hypertarget{classcaffe_1_1AccuracyLayer_a57f6e7e7e9567cb17d9e6ae38d372091}{}\label{classcaffe_1_1AccuracyLayer_a57f6e7e7e9567cb17d9e6ae38d372091}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1AccuracyLayer_afcde815835ab4cdf76fbbef610491a91}{Exact\+Num\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1AccuracyLayer_aab0fa80d793130102ed7283ec3e41ad6}{Min\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the minimum number of top blobs required by the layer, or -\/1 if no minimum number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1AccuracyLayer_abf0eae8c25f73a302c35a9ce7b6d5544}{Max\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the maximum number of top blobs required by the layer, or -\/1 if no maximum number is required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1AccuracyLayer_a8f7719cdffb48b7e48c29a89131f85b6}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\item 
+virtual void \hyperlink{classcaffe_1_1AccuracyLayer_a0c27449b74f79bcd9dfb5dd877c8cfdf}{Forward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1AccuracyLayer_a0c27449b74f79bcd9dfb5dd877c8cfdf}{}\label{classcaffe_1_1AccuracyLayer_a0c27449b74f79bcd9dfb5dd877c8cfdf}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the layer output. Fall back to \hyperlink{classcaffe_1_1AccuracyLayer_a8f7719cdffb48b7e48c29a89131f85b6}{Forward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1AccuracyLayer_a1bf798e77b5dc7cd4e65e9e07ea71dac}{Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1AccuracyLayer_a1bf798e77b5dc7cd4e65e9e07ea71dac}{}\label{classcaffe_1_1AccuracyLayer_a1bf798e77b5dc7cd4e65e9e07ea71dac}
+
+\begin{DoxyCompactList}\small\item\em Not implemented -- \hyperlink{classcaffe_1_1AccuracyLayer}{Accuracy\+Layer} cannot be used as a loss. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1AccuracyLayer_a19e1b977ebd70b5330ed91188a1fc37d}{Backward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1AccuracyLayer_a19e1b977ebd70b5330ed91188a1fc37d}{}\label{classcaffe_1_1AccuracyLayer_a19e1b977ebd70b5330ed91188a1fc37d}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. Fall back to \hyperlink{classcaffe_1_1AccuracyLayer_a1bf798e77b5dc7cd4e65e9e07ea71dac}{Backward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries label\+\_\+axis\+\_\+}\hypertarget{classcaffe_1_1AccuracyLayer_aafbbed754511b427a65d9f95707e9455}{}\label{classcaffe_1_1AccuracyLayer_aafbbed754511b427a65d9f95707e9455}
+
+\item 
+int {\bfseries outer\+\_\+num\+\_\+}\hypertarget{classcaffe_1_1AccuracyLayer_a374b3c8ce90238ec1769abf1b3b3f748}{}\label{classcaffe_1_1AccuracyLayer_a374b3c8ce90238ec1769abf1b3b3f748}
+
+\item 
+int {\bfseries inner\+\_\+num\+\_\+}\hypertarget{classcaffe_1_1AccuracyLayer_aede524eb7411cc81e3d5e62a34e96a4d}{}\label{classcaffe_1_1AccuracyLayer_aede524eb7411cc81e3d5e62a34e96a4d}
+
+\item 
+int {\bfseries top\+\_\+k\+\_\+}\hypertarget{classcaffe_1_1AccuracyLayer_a1048e10c5a499ace931cbafb9cd790d9}{}\label{classcaffe_1_1AccuracyLayer_a1048e10c5a499ace931cbafb9cd790d9}
+
+\item 
+bool \hyperlink{classcaffe_1_1AccuracyLayer_a4acdfaf6db79fbe1983b8439391ad15e}{has\+\_\+ignore\+\_\+label\+\_\+}\hypertarget{classcaffe_1_1AccuracyLayer_a4acdfaf6db79fbe1983b8439391ad15e}{}\label{classcaffe_1_1AccuracyLayer_a4acdfaf6db79fbe1983b8439391ad15e}
+
+\begin{DoxyCompactList}\small\item\em Whether to ignore instances with a certain label. \end{DoxyCompactList}\item 
+int \hyperlink{classcaffe_1_1AccuracyLayer_a2b8c2d647f43ffd6aa14e81f1c5b2bde}{ignore\+\_\+label\+\_\+}\hypertarget{classcaffe_1_1AccuracyLayer_a2b8c2d647f43ffd6aa14e81f1c5b2bde}{}\label{classcaffe_1_1AccuracyLayer_a2b8c2d647f43ffd6aa14e81f1c5b2bde}
+
+\begin{DoxyCompactList}\small\item\em The label indicating that an instance should be ignored. \end{DoxyCompactList}\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ \hyperlink{classcaffe_1_1AccuracyLayer_a9acf4fa826e787fe64a55bcd2c62e66c}{nums\+\_\+buffer\+\_\+}\hypertarget{classcaffe_1_1AccuracyLayer_a9acf4fa826e787fe64a55bcd2c62e66c}{}\label{classcaffe_1_1AccuracyLayer_a9acf4fa826e787fe64a55bcd2c62e66c}
+
+\begin{DoxyCompactList}\small\item\em Keeps counts of the number of samples per class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Accuracy\+Layer$<$ Dtype $>$}
+
+Computes the classification accuracy for a one-\/of-\/many classification task. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{caffe\+::\+Accuracy\+Layer@{caffe\+::\+Accuracy\+Layer}!Accuracy\+Layer@{Accuracy\+Layer}}
+\index{Accuracy\+Layer@{Accuracy\+Layer}!caffe\+::\+Accuracy\+Layer@{caffe\+::\+Accuracy\+Layer}}
+\subsubsection[{\texorpdfstring{Accuracy\+Layer(const Layer\+Parameter \&param)}{AccuracyLayer(const LayerParameter &param)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ {\bf caffe\+::\+Accuracy\+Layer}$<$ Dtype $>$\+::{\bf Accuracy\+Layer} (
+\begin{DoxyParamCaption}
+\item[{const Layer\+Parameter \&}]{param}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\hypertarget{classcaffe_1_1AccuracyLayer_a362ab61d1961c1b408f84a956f6e598d}{}\label{classcaffe_1_1AccuracyLayer_a362ab61d1961c1b408f84a956f6e598d}
+
+\begin{DoxyParams}{Parameters}
+{\em param} & provides Accuracy\+Parameter accuracy\+\_\+param, with \hyperlink{classcaffe_1_1AccuracyLayer}{Accuracy\+Layer} options\+:
+\begin{DoxyItemize}
+\item top\+\_\+k ({\bfseries optional}, default 1). Sets the maximum rank $ k $ at which a prediction is considered correct. For example, if $ k = 5 $, a prediction is counted correct if the correct label is among the top 5 predicted labels. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Accuracy\+Layer@{caffe\+::\+Accuracy\+Layer}!Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}}
+\index{Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}!caffe\+::\+Accuracy\+Layer@{caffe\+::\+Accuracy\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Bottom\+Blobs() const }{ExactNumBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Accuracy\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1AccuracyLayer_afcde815835ab4cdf76fbbef610491a91}{}\label{classcaffe_1_1AccuracyLayer_afcde815835ab4cdf76fbbef610491a91}
+
+
+Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a45c7a7943a8a6735ac433c9be11e0240}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Accuracy\+Layer@{caffe\+::\+Accuracy\+Layer}!Forward\+\_\+cpu@{Forward\+\_\+cpu}}
+\index{Forward\+\_\+cpu@{Forward\+\_\+cpu}!caffe\+::\+Accuracy\+Layer@{caffe\+::\+Accuracy\+Layer}}
+\subsubsection[{\texorpdfstring{Forward\+\_\+cpu(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Forward_cpu(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Accuracy\+Layer}$<$ Dtype $>$\+::Forward\+\_\+cpu (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1AccuracyLayer_a8f7719cdffb48b7e48c29a89131f85b6}{}\label{classcaffe_1_1AccuracyLayer_a8f7719cdffb48b7e48c29a89131f85b6}
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & input \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 2)
+\begin{DoxyEnumerate}
+\item $ (N \times C \times H \times W) $ the predictions $ x $, a \hyperlink{classcaffe_1_1Blob}{Blob} with values in $ [-\infty, +\infty] $ indicating the predicted score for each of the $ K = CHW $ classes. Each $ x_n $ is mapped to a predicted label $ \hat{l}_n $ given by its maximal index\+: $ \hat{l}_n = \arg\max\limits_k x_{nk} $
+\item $ (N \times 1 \times 1 \times 1) $ the labels $ l $, an integer-\/valued \hyperlink{classcaffe_1_1Blob}{Blob} with values $ l_n \in [0, 1, 2, ..., K - 1] $ indicating the correct class label among the $ K $ classes 
+\end{DoxyEnumerate}\\
+\hline
+{\em top} & output \hyperlink{classcaffe_1_1Blob}{Blob} vector (length 1)
+\begin{DoxyEnumerate}
+\item $ (1 \times 1 \times 1 \times 1) $ the computed accuracy\+: $ \frac{1}{N} \sum\limits_{n=1}^N \delta\{ \hat{l}_n = l_n \} $, where $ \delta\{\mathrm{condition}\} = \left\{ \begin{array}{lr} 1 & \mbox{if condition} \\ 0 & \mbox{otherwise} \end{array} \right. $ 
+\end{DoxyEnumerate}\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classcaffe_1_1Layer_add965883f75bbf90c7a06f960cda7a1a}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Accuracy\+Layer@{caffe\+::\+Accuracy\+Layer}!Layer\+Set\+Up@{Layer\+Set\+Up}}
+\index{Layer\+Set\+Up@{Layer\+Set\+Up}!caffe\+::\+Accuracy\+Layer@{caffe\+::\+Accuracy\+Layer}}
+\subsubsection[{\texorpdfstring{Layer\+Set\+Up(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{LayerSetUp(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Accuracy\+Layer}$<$ Dtype $>$\+::Layer\+Set\+Up (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1AccuracyLayer_aa4e6baa79f0c23308c39be3fe5085971}{}\label{classcaffe_1_1AccuracyLayer_aa4e6baa79f0c23308c39be3fe5085971}
+
+
+Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the preshaped input blobs, whose data fields store the input data for this layer \\
+\hline
+{\em top} & the allocated but unshaped output blobs\\
+\hline
+\end{DoxyParams}
+This method should do one-\/time layer specific setup. This includes reading and processing relevent parameters from the {\ttfamily layer\+\_\+param\+\_\+}. Setting up the shapes of top blobs and internal buffers should be done in {\ttfamily Reshape}, which will be called before the forward pass to adjust the top blob sizes. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a38dc2488bf319b8de5a7ac84e0045393}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Accuracy\+Layer@{caffe\+::\+Accuracy\+Layer}!Max\+Top\+Blobs@{Max\+Top\+Blobs}}
+\index{Max\+Top\+Blobs@{Max\+Top\+Blobs}!caffe\+::\+Accuracy\+Layer@{caffe\+::\+Accuracy\+Layer}}
+\subsubsection[{\texorpdfstring{Max\+Top\+Blobs() const }{MaxTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Accuracy\+Layer}$<$ Dtype $>$\+::Max\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1AccuracyLayer_abf0eae8c25f73a302c35a9ce7b6d5544}{}\label{classcaffe_1_1AccuracyLayer_abf0eae8c25f73a302c35a9ce7b6d5544}
+
+
+Returns the maximum number of top blobs required by the layer, or -\/1 if no maximum number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some maximum number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_adeff774663c6ec94424901d2746e2f03}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Accuracy\+Layer@{caffe\+::\+Accuracy\+Layer}!Min\+Top\+Blobs@{Min\+Top\+Blobs}}
+\index{Min\+Top\+Blobs@{Min\+Top\+Blobs}!caffe\+::\+Accuracy\+Layer@{caffe\+::\+Accuracy\+Layer}}
+\subsubsection[{\texorpdfstring{Min\+Top\+Blobs() const }{MinTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Accuracy\+Layer}$<$ Dtype $>$\+::Min\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1AccuracyLayer_aab0fa80d793130102ed7283ec3e41ad6}{}\label{classcaffe_1_1AccuracyLayer_aab0fa80d793130102ed7283ec3e41ad6}
+
+
+Returns the minimum number of top blobs required by the layer, or -\/1 if no minimum number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some minimum number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a8bb143d58a740345fa2dc3d4204d553b}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Accuracy\+Layer@{caffe\+::\+Accuracy\+Layer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!caffe\+::\+Accuracy\+Layer@{caffe\+::\+Accuracy\+Layer}}
+\subsubsection[{\texorpdfstring{Reshape(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Reshape(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Accuracy\+Layer}$<$ Dtype $>$\+::Reshape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1AccuracyLayer_a28df0e6104cffdc50325a7b4d648dfa5}{}\label{classcaffe_1_1AccuracyLayer_a28df0e6104cffdc50325a7b4d648dfa5}
+
+
+Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the input blobs, with the requested input shapes \\
+\hline
+{\em top} & the top blobs, which should be reshaped as needed\\
+\hline
+\end{DoxyParams}
+This method should reshape top blobs as needed according to the shapes of the bottom (input) blobs, as well as reshaping any internal buffers and making any other necessary adjustments so that the layer can accommodate the bottom blobs. 
+
+Implements \hyperlink{classcaffe_1_1Layer_ad9d391b972c769c0ebee34ca6d1c973e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/accuracy\+\_\+layer.\+hpp\item 
+src/caffe/layers/accuracy\+\_\+layer.\+cpp\end{DoxyCompactItemize}

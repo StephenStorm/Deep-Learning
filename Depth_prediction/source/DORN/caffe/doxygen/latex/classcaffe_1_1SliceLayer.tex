@@ -1,0 +1,160 @@
+\hypertarget{classcaffe_1_1SliceLayer}{}\section{caffe\+:\+:Slice\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1SliceLayer}\index{caffe\+::\+Slice\+Layer$<$ Dtype $>$@{caffe\+::\+Slice\+Layer$<$ Dtype $>$}}
+
+
+Takes a \hyperlink{classcaffe_1_1Blob}{Blob} and slices it along either the num or channel dimension, outputting multiple sliced \hyperlink{classcaffe_1_1Blob}{Blob} results.  
+
+
+
+
+{\ttfamily \#include $<$slice\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Slice\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcaffe_1_1SliceLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Slice\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1SliceLayer_a2d4001e14fba5c1e64595f1d1a05c957}{}\label{classcaffe_1_1SliceLayer_a2d4001e14fba5c1e64595f1d1a05c957}
+
+\item 
+virtual void \hyperlink{classcaffe_1_1SliceLayer_a8794f345b232cca84b1269d1635d1e7c}{Layer\+Set\+Up} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1SliceLayer_a6d833c7af60bf9c90cf0de5a039df8e3}{Reshape} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1SliceLayer_ad442012d935a8e49f75157959b235f2f}{type} () const \hypertarget{classcaffe_1_1SliceLayer_ad442012d935a8e49f75157959b235f2f}{}\label{classcaffe_1_1SliceLayer_ad442012d935a8e49f75157959b235f2f}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1SliceLayer_a7f140bb3775c60a2d3d60298802d2b85}{Exact\+Num\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1SliceLayer_a7e2a0c1b2e766e4f156a0c277f1c4810}{Min\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the minimum number of top blobs required by the layer, or -\/1 if no minimum number is required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1SliceLayer_a026984e568235496944bf6ada3deb3b7}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1SliceLayer_a026984e568235496944bf6ada3deb3b7}{}\label{classcaffe_1_1SliceLayer_a026984e568235496944bf6ada3deb3b7}
+
+\begin{DoxyCompactList}\small\item\em Using the C\+PU device, compute the layer output. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1SliceLayer_a99e3e369f0fe44d772e7f7c6fa01690d}{Forward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1SliceLayer_a99e3e369f0fe44d772e7f7c6fa01690d}{}\label{classcaffe_1_1SliceLayer_a99e3e369f0fe44d772e7f7c6fa01690d}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the layer output. Fall back to \hyperlink{classcaffe_1_1SliceLayer_a026984e568235496944bf6ada3deb3b7}{Forward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1SliceLayer_a47020470cc88b5a55c7d137ac2beca45}{Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1SliceLayer_a47020470cc88b5a55c7d137ac2beca45}{}\label{classcaffe_1_1SliceLayer_a47020470cc88b5a55c7d137ac2beca45}
+
+\begin{DoxyCompactList}\small\item\em Using the C\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1SliceLayer_abeb49eed74100b3b5826cc1e0ae65f58}{Backward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1SliceLayer_abeb49eed74100b3b5826cc1e0ae65f58}{}\label{classcaffe_1_1SliceLayer_abeb49eed74100b3b5826cc1e0ae65f58}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. Fall back to \hyperlink{classcaffe_1_1SliceLayer_a47020470cc88b5a55c7d137ac2beca45}{Backward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries count\+\_\+}\hypertarget{classcaffe_1_1SliceLayer_ad5f5a2a02b1f5b97b4ec8e1a2588b094}{}\label{classcaffe_1_1SliceLayer_ad5f5a2a02b1f5b97b4ec8e1a2588b094}
+
+\item 
+int {\bfseries num\+\_\+slices\+\_\+}\hypertarget{classcaffe_1_1SliceLayer_adddb440fcfcad67619a3cfb914298e73}{}\label{classcaffe_1_1SliceLayer_adddb440fcfcad67619a3cfb914298e73}
+
+\item 
+int {\bfseries slice\+\_\+size\+\_\+}\hypertarget{classcaffe_1_1SliceLayer_a8d12bb77a960c76b9f521c3df70fb206}{}\label{classcaffe_1_1SliceLayer_a8d12bb77a960c76b9f521c3df70fb206}
+
+\item 
+int {\bfseries slice\+\_\+axis\+\_\+}\hypertarget{classcaffe_1_1SliceLayer_a214fca5452dfa0bc63d3e51c0b9118ea}{}\label{classcaffe_1_1SliceLayer_a214fca5452dfa0bc63d3e51c0b9118ea}
+
+\item 
+vector$<$ int $>$ {\bfseries slice\+\_\+point\+\_\+}\hypertarget{classcaffe_1_1SliceLayer_a9c87893378e2c87f3382fae63f18f300}{}\label{classcaffe_1_1SliceLayer_a9c87893378e2c87f3382fae63f18f300}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Slice\+Layer$<$ Dtype $>$}
+
+Takes a \hyperlink{classcaffe_1_1Blob}{Blob} and slices it along either the num or channel dimension, outputting multiple sliced \hyperlink{classcaffe_1_1Blob}{Blob} results. 
+
+T\+O\+D\+O(dox)\+: thorough documentation for Forward, Backward, and proto params. 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Slice\+Layer@{caffe\+::\+Slice\+Layer}!Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}}
+\index{Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}!caffe\+::\+Slice\+Layer@{caffe\+::\+Slice\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Bottom\+Blobs() const }{ExactNumBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Slice\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1SliceLayer_a7f140bb3775c60a2d3d60298802d2b85}{}\label{classcaffe_1_1SliceLayer_a7f140bb3775c60a2d3d60298802d2b85}
+
+
+Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a45c7a7943a8a6735ac433c9be11e0240}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Slice\+Layer@{caffe\+::\+Slice\+Layer}!Layer\+Set\+Up@{Layer\+Set\+Up}}
+\index{Layer\+Set\+Up@{Layer\+Set\+Up}!caffe\+::\+Slice\+Layer@{caffe\+::\+Slice\+Layer}}
+\subsubsection[{\texorpdfstring{Layer\+Set\+Up(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{LayerSetUp(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Slice\+Layer}$<$ Dtype $>$\+::Layer\+Set\+Up (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1SliceLayer_a8794f345b232cca84b1269d1635d1e7c}{}\label{classcaffe_1_1SliceLayer_a8794f345b232cca84b1269d1635d1e7c}
+
+
+Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the preshaped input blobs, whose data fields store the input data for this layer \\
+\hline
+{\em top} & the allocated but unshaped output blobs\\
+\hline
+\end{DoxyParams}
+This method should do one-\/time layer specific setup. This includes reading and processing relevent parameters from the {\ttfamily layer\+\_\+param\+\_\+}. Setting up the shapes of top blobs and internal buffers should be done in {\ttfamily Reshape}, which will be called before the forward pass to adjust the top blob sizes. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a38dc2488bf319b8de5a7ac84e0045393}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Slice\+Layer@{caffe\+::\+Slice\+Layer}!Min\+Top\+Blobs@{Min\+Top\+Blobs}}
+\index{Min\+Top\+Blobs@{Min\+Top\+Blobs}!caffe\+::\+Slice\+Layer@{caffe\+::\+Slice\+Layer}}
+\subsubsection[{\texorpdfstring{Min\+Top\+Blobs() const }{MinTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Slice\+Layer}$<$ Dtype $>$\+::Min\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1SliceLayer_a7e2a0c1b2e766e4f156a0c277f1c4810}{}\label{classcaffe_1_1SliceLayer_a7e2a0c1b2e766e4f156a0c277f1c4810}
+
+
+Returns the minimum number of top blobs required by the layer, or -\/1 if no minimum number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some minimum number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a8bb143d58a740345fa2dc3d4204d553b}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Slice\+Layer@{caffe\+::\+Slice\+Layer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!caffe\+::\+Slice\+Layer@{caffe\+::\+Slice\+Layer}}
+\subsubsection[{\texorpdfstring{Reshape(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Reshape(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Slice\+Layer}$<$ Dtype $>$\+::Reshape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1SliceLayer_a6d833c7af60bf9c90cf0de5a039df8e3}{}\label{classcaffe_1_1SliceLayer_a6d833c7af60bf9c90cf0de5a039df8e3}
+
+
+Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the input blobs, with the requested input shapes \\
+\hline
+{\em top} & the top blobs, which should be reshaped as needed\\
+\hline
+\end{DoxyParams}
+This method should reshape top blobs as needed according to the shapes of the bottom (input) blobs, as well as reshaping any internal buffers and making any other necessary adjustments so that the layer can accommodate the bottom blobs. 
+
+Implements \hyperlink{classcaffe_1_1Layer_ad9d391b972c769c0ebee34ca6d1c973e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/slice\+\_\+layer.\+hpp\item 
+src/caffe/layers/slice\+\_\+layer.\+cpp\end{DoxyCompactItemize}

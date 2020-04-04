@@ -1,0 +1,135 @@
+\hypertarget{classcaffe_1_1MVNLayer}{}\section{caffe\+:\+:M\+V\+N\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1MVNLayer}\index{caffe\+::\+M\+V\+N\+Layer$<$ Dtype $>$@{caffe\+::\+M\+V\+N\+Layer$<$ Dtype $>$}}
+
+
+Normalizes the input to have 0-\/mean and/or unit (1) variance.  
+
+
+
+
+{\ttfamily \#include $<$mvn\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:M\+V\+N\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcaffe_1_1MVNLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries M\+V\+N\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1MVNLayer_aebec689ed713a68664980b03454e3506}{}\label{classcaffe_1_1MVNLayer_aebec689ed713a68664980b03454e3506}
+
+\item 
+virtual void \hyperlink{classcaffe_1_1MVNLayer_a732c936800d1b5c6594b81f917166ac3}{Reshape} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1MVNLayer_a57b4150b70a0feddc54614fc31c06b48}{type} () const \hypertarget{classcaffe_1_1MVNLayer_a57b4150b70a0feddc54614fc31c06b48}{}\label{classcaffe_1_1MVNLayer_a57b4150b70a0feddc54614fc31c06b48}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1MVNLayer_a5766f86a41a05a585dfceeb944b6ca2c}{Exact\+Num\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1MVNLayer_a0c5e5f3645dcc3b9dc5886cee9e6f302}{Exact\+Num\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1MVNLayer_a32ccd6a52ff81d25ed3d308614183e29}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1MVNLayer_a32ccd6a52ff81d25ed3d308614183e29}{}\label{classcaffe_1_1MVNLayer_a32ccd6a52ff81d25ed3d308614183e29}
+
+\begin{DoxyCompactList}\small\item\em Using the C\+PU device, compute the layer output. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1MVNLayer_ad3ca992f61728f9ad7acd2a3ff964b81}{Forward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1MVNLayer_ad3ca992f61728f9ad7acd2a3ff964b81}{}\label{classcaffe_1_1MVNLayer_ad3ca992f61728f9ad7acd2a3ff964b81}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the layer output. Fall back to \hyperlink{classcaffe_1_1MVNLayer_a32ccd6a52ff81d25ed3d308614183e29}{Forward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1MVNLayer_a0f66f9d749ad14d41b68eaf507dc1161}{Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1MVNLayer_a0f66f9d749ad14d41b68eaf507dc1161}{}\label{classcaffe_1_1MVNLayer_a0f66f9d749ad14d41b68eaf507dc1161}
+
+\begin{DoxyCompactList}\small\item\em Using the C\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1MVNLayer_aaa03192d51187e1035e2a08118aa379c}{Backward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1MVNLayer_aaa03192d51187e1035e2a08118aa379c}{}\label{classcaffe_1_1MVNLayer_aaa03192d51187e1035e2a08118aa379c}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. Fall back to \hyperlink{classcaffe_1_1MVNLayer_a0f66f9d749ad14d41b68eaf507dc1161}{Backward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries mean\+\_\+}\hypertarget{classcaffe_1_1MVNLayer_a341d117310ac1b03bbde07e359e241ac}{}\label{classcaffe_1_1MVNLayer_a341d117310ac1b03bbde07e359e241ac}
+
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries variance\+\_\+}\hypertarget{classcaffe_1_1MVNLayer_a930f6ce43aed62aaa45c9326e4858c5c}{}\label{classcaffe_1_1MVNLayer_a930f6ce43aed62aaa45c9326e4858c5c}
+
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ {\bfseries temp\+\_\+}\hypertarget{classcaffe_1_1MVNLayer_a5ec934aff15cf2e52b0fba60a1fb387c}{}\label{classcaffe_1_1MVNLayer_a5ec934aff15cf2e52b0fba60a1fb387c}
+
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ \hyperlink{classcaffe_1_1MVNLayer_ade50bbee48a55e637e8c3e3f44f9618a}{sum\+\_\+multiplier\+\_\+}\hypertarget{classcaffe_1_1MVNLayer_ade50bbee48a55e637e8c3e3f44f9618a}{}\label{classcaffe_1_1MVNLayer_ade50bbee48a55e637e8c3e3f44f9618a}
+
+\begin{DoxyCompactList}\small\item\em sum\+\_\+multiplier is used to carry out sum using B\+L\+AS \end{DoxyCompactList}\item 
+Dtype {\bfseries eps\+\_\+}\hypertarget{classcaffe_1_1MVNLayer_a76c620f1b61ffcc8bca0e733bc5bb29c}{}\label{classcaffe_1_1MVNLayer_a76c620f1b61ffcc8bca0e733bc5bb29c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+M\+V\+N\+Layer$<$ Dtype $>$}
+
+Normalizes the input to have 0-\/mean and/or unit (1) variance. 
+
+T\+O\+D\+O(dox)\+: thorough documentation for Forward, Backward, and proto params. 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+M\+V\+N\+Layer@{caffe\+::\+M\+V\+N\+Layer}!Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}}
+\index{Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}!caffe\+::\+M\+V\+N\+Layer@{caffe\+::\+M\+V\+N\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Bottom\+Blobs() const }{ExactNumBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+M\+V\+N\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1MVNLayer_a5766f86a41a05a585dfceeb944b6ca2c}{}\label{classcaffe_1_1MVNLayer_a5766f86a41a05a585dfceeb944b6ca2c}
+
+
+Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a45c7a7943a8a6735ac433c9be11e0240}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+M\+V\+N\+Layer@{caffe\+::\+M\+V\+N\+Layer}!Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}}
+\index{Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}!caffe\+::\+M\+V\+N\+Layer@{caffe\+::\+M\+V\+N\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Top\+Blobs() const }{ExactNumTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+M\+V\+N\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1MVNLayer_a0c5e5f3645dcc3b9dc5886cee9e6f302}{}\label{classcaffe_1_1MVNLayer_a0c5e5f3645dcc3b9dc5886cee9e6f302}
+
+
+Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_aa3c99ed707e8db683a3043412e151af8}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+M\+V\+N\+Layer@{caffe\+::\+M\+V\+N\+Layer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!caffe\+::\+M\+V\+N\+Layer@{caffe\+::\+M\+V\+N\+Layer}}
+\subsubsection[{\texorpdfstring{Reshape(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Reshape(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+M\+V\+N\+Layer}$<$ Dtype $>$\+::Reshape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1MVNLayer_a732c936800d1b5c6594b81f917166ac3}{}\label{classcaffe_1_1MVNLayer_a732c936800d1b5c6594b81f917166ac3}
+
+
+Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the input blobs, with the requested input shapes \\
+\hline
+{\em top} & the top blobs, which should be reshaped as needed\\
+\hline
+\end{DoxyParams}
+This method should reshape top blobs as needed according to the shapes of the bottom (input) blobs, as well as reshaping any internal buffers and making any other necessary adjustments so that the layer can accommodate the bottom blobs. 
+
+Implements \hyperlink{classcaffe_1_1Layer_ad9d391b972c769c0ebee34ca6d1c973e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/mvn\+\_\+layer.\+hpp\item 
+src/caffe/layers/mvn\+\_\+layer.\+cpp\end{DoxyCompactItemize}

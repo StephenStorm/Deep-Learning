@@ -1,0 +1,5 @@
+// The BlobProtoVector is simply a way to pass multiple blobproto instances
+// around.
+message BlobProtoVector {
+  repeated BlobProto blobs = 1;
+}

@@ -1,0 +1,77 @@
+\hypertarget{classcaffe_1_1Timer}{}\section{caffe\+:\+:Timer Class Reference}
+\label{classcaffe_1_1Timer}\index{caffe\+::\+Timer@{caffe\+::\+Timer}}
+Inheritance diagram for caffe\+:\+:Timer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcaffe_1_1Timer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Start} ()\hypertarget{classcaffe_1_1Timer_ae387bcee3008150e8d9a8b95a5ca279c}{}\label{classcaffe_1_1Timer_ae387bcee3008150e8d9a8b95a5ca279c}
+
+\item 
+virtual void {\bfseries Stop} ()\hypertarget{classcaffe_1_1Timer_ae99595b83e6ef8f1cfa4a933c359011b}{}\label{classcaffe_1_1Timer_ae99595b83e6ef8f1cfa4a933c359011b}
+
+\item 
+virtual float {\bfseries Milli\+Seconds} ()\hypertarget{classcaffe_1_1Timer_a236a04bd3da087fbd0d028977cce7a15}{}\label{classcaffe_1_1Timer_a236a04bd3da087fbd0d028977cce7a15}
+
+\item 
+virtual float {\bfseries Micro\+Seconds} ()\hypertarget{classcaffe_1_1Timer_a0cb08263942d10466d6a87b7a6e5b30b}{}\label{classcaffe_1_1Timer_a0cb08263942d10466d6a87b7a6e5b30b}
+
+\item 
+virtual float {\bfseries Seconds} ()\hypertarget{classcaffe_1_1Timer_a5a5c499062bb98600cc061575c58510a}{}\label{classcaffe_1_1Timer_a5a5c499062bb98600cc061575c58510a}
+
+\item 
+bool {\bfseries initted} ()\hypertarget{classcaffe_1_1Timer_a8f44fdd43378c9ef58471c6aae17c814}{}\label{classcaffe_1_1Timer_a8f44fdd43378c9ef58471c6aae17c814}
+
+\item 
+bool {\bfseries running} ()\hypertarget{classcaffe_1_1Timer_ae1a416ef3dfd11aefc73da5760bc98d7}{}\label{classcaffe_1_1Timer_ae1a416ef3dfd11aefc73da5760bc98d7}
+
+\item 
+bool {\bfseries has\+\_\+run\+\_\+at\+\_\+least\+\_\+once} ()\hypertarget{classcaffe_1_1Timer_ae06252439c4e1731a4c36b5a9810787c}{}\label{classcaffe_1_1Timer_ae06252439c4e1731a4c36b5a9810787c}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Init} ()\hypertarget{classcaffe_1_1Timer_a9e5e1052cb6ea672940a300dc630c6c9}{}\label{classcaffe_1_1Timer_a9e5e1052cb6ea672940a300dc630c6c9}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries initted\+\_\+}\hypertarget{classcaffe_1_1Timer_a2b39366d547f7a5638f53df589624def}{}\label{classcaffe_1_1Timer_a2b39366d547f7a5638f53df589624def}
+
+\item 
+bool {\bfseries running\+\_\+}\hypertarget{classcaffe_1_1Timer_a44483462010588661ce927c3b3ef6c3d}{}\label{classcaffe_1_1Timer_a44483462010588661ce927c3b3ef6c3d}
+
+\item 
+bool {\bfseries has\+\_\+run\+\_\+at\+\_\+least\+\_\+once\+\_\+}\hypertarget{classcaffe_1_1Timer_a5a8439af494a4874ce47b6334bdb7da6}{}\label{classcaffe_1_1Timer_a5a8439af494a4874ce47b6334bdb7da6}
+
+\item 
+cuda\+Event\+\_\+t {\bfseries start\+\_\+gpu\+\_\+}\hypertarget{classcaffe_1_1Timer_aaeef1178d30cea3cebf7a4a0eac02e6f}{}\label{classcaffe_1_1Timer_aaeef1178d30cea3cebf7a4a0eac02e6f}
+
+\item 
+cuda\+Event\+\_\+t {\bfseries stop\+\_\+gpu\+\_\+}\hypertarget{classcaffe_1_1Timer_a7802204485bd7825f8bd7fad90bbdfd7}{}\label{classcaffe_1_1Timer_a7802204485bd7825f8bd7fad90bbdfd7}
+
+\item 
+boost\+::posix\+\_\+time\+::ptime {\bfseries start\+\_\+cpu\+\_\+}\hypertarget{classcaffe_1_1Timer_a3cbebb809a42eda35357bdc7363b9afc}{}\label{classcaffe_1_1Timer_a3cbebb809a42eda35357bdc7363b9afc}
+
+\item 
+boost\+::posix\+\_\+time\+::ptime {\bfseries stop\+\_\+cpu\+\_\+}\hypertarget{classcaffe_1_1Timer_acca9361263d52a7e28d291933220e2f5}{}\label{classcaffe_1_1Timer_acca9361263d52a7e28d291933220e2f5}
+
+\item 
+float {\bfseries elapsed\+\_\+milliseconds\+\_\+}\hypertarget{classcaffe_1_1Timer_a7aa3bf3a38cde89a068e48fee8b1c623}{}\label{classcaffe_1_1Timer_a7aa3bf3a38cde89a068e48fee8b1c623}
+
+\item 
+float {\bfseries elapsed\+\_\+microseconds\+\_\+}\hypertarget{classcaffe_1_1Timer_a3b16e3ffae9ce82acfb50b44377d611f}{}\label{classcaffe_1_1Timer_a3b16e3ffae9ce82acfb50b44377d611f}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/util/benchmark.\+hpp\item 
+src/caffe/util/benchmark.\+cpp\end{DoxyCompactItemize}

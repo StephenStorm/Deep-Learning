@@ -1,0 +1,98 @@
+\hypertarget{classcaffe_1_1SGDSolver}{}\section{caffe\+:\+:S\+G\+D\+Solver$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1SGDSolver}\index{caffe\+::\+S\+G\+D\+Solver$<$ Dtype $>$@{caffe\+::\+S\+G\+D\+Solver$<$ Dtype $>$}}
+
+
+Optimizes the parameters of a \hyperlink{classcaffe_1_1Net}{Net} using stochastic gradient descent (S\+GD) with momentum.  
+
+
+
+
+{\ttfamily \#include $<$sgd\+\_\+solvers.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:S\+G\+D\+Solver$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.655172cm]{classcaffe_1_1SGDSolver}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries S\+G\+D\+Solver} (const Solver\+Parameter \&param)\hypertarget{classcaffe_1_1SGDSolver_a144735c352c1eff4e3bb3f8f03c81d4b}{}\label{classcaffe_1_1SGDSolver_a144735c352c1eff4e3bb3f8f03c81d4b}
+
+\item 
+{\bfseries S\+G\+D\+Solver} (const string \&param\+\_\+file)\hypertarget{classcaffe_1_1SGDSolver_ac1b30549a2cddbbb1312b7fa10aca1c6}{}\label{classcaffe_1_1SGDSolver_ac1b30549a2cddbbb1312b7fa10aca1c6}
+
+\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1SGDSolver_a6beb033f8b7325da0be58bb1fdde3ee6}{type} () const \hypertarget{classcaffe_1_1SGDSolver_a6beb033f8b7325da0be58bb1fdde3ee6}{}\label{classcaffe_1_1SGDSolver_a6beb033f8b7325da0be58bb1fdde3ee6}
+
+\begin{DoxyCompactList}\small\item\em Returns the solver type. \end{DoxyCompactList}\item 
+const vector$<$ shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $>$ $>$ \& {\bfseries history} ()\hypertarget{classcaffe_1_1SGDSolver_a1797885e164748e3eea2d93154661feb}{}\label{classcaffe_1_1SGDSolver_a1797885e164748e3eea2d93154661feb}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Pre\+Solve} ()\hypertarget{classcaffe_1_1SGDSolver_a6488286ff665df1907d64a92d4acf835}{}\label{classcaffe_1_1SGDSolver_a6488286ff665df1907d64a92d4acf835}
+
+\item 
+Dtype {\bfseries Get\+Learning\+Rate} ()\hypertarget{classcaffe_1_1SGDSolver_a985436c42815498163a3d74fdb64ee70}{}\label{classcaffe_1_1SGDSolver_a985436c42815498163a3d74fdb64ee70}
+
+\item 
+virtual void {\bfseries Apply\+Update} ()\hypertarget{classcaffe_1_1SGDSolver_a6a461fcea902238150520695c0b9afc5}{}\label{classcaffe_1_1SGDSolver_a6a461fcea902238150520695c0b9afc5}
+
+\item 
+virtual void {\bfseries Normalize} (int param\+\_\+id)\hypertarget{classcaffe_1_1SGDSolver_af6a4841b33eb75c327b57bbd9618d362}{}\label{classcaffe_1_1SGDSolver_af6a4841b33eb75c327b57bbd9618d362}
+
+\item 
+virtual void {\bfseries Regularize} (int param\+\_\+id)\hypertarget{classcaffe_1_1SGDSolver_a58c7580080ad737c214dd666c9314999}{}\label{classcaffe_1_1SGDSolver_a58c7580080ad737c214dd666c9314999}
+
+\item 
+virtual void {\bfseries Compute\+Update\+Value} (int param\+\_\+id, Dtype rate)\hypertarget{classcaffe_1_1SGDSolver_abed831880d7e91cccffba2283cb131a4}{}\label{classcaffe_1_1SGDSolver_abed831880d7e91cccffba2283cb131a4}
+
+\item 
+virtual void {\bfseries Clip\+Gradients} ()\hypertarget{classcaffe_1_1SGDSolver_af6843c11d78770721752379fd8c1f6d8}{}\label{classcaffe_1_1SGDSolver_af6843c11d78770721752379fd8c1f6d8}
+
+\item 
+virtual void {\bfseries Snapshot\+Solver\+State} (const string \&model\+\_\+filename)\hypertarget{classcaffe_1_1SGDSolver_a99abb8ec20584dda556e9700df425ed9}{}\label{classcaffe_1_1SGDSolver_a99abb8ec20584dda556e9700df425ed9}
+
+\item 
+virtual void {\bfseries Snapshot\+Solver\+State\+To\+Binary\+Proto} (const string \&model\+\_\+filename)\hypertarget{classcaffe_1_1SGDSolver_a86d3bc01f9262416cc3cac669993ea46}{}\label{classcaffe_1_1SGDSolver_a86d3bc01f9262416cc3cac669993ea46}
+
+\item 
+virtual void {\bfseries Snapshot\+Solver\+State\+To\+H\+D\+F5} (const string \&model\+\_\+filename)\hypertarget{classcaffe_1_1SGDSolver_ad503803863708ade3162fd5d9225b9f5}{}\label{classcaffe_1_1SGDSolver_ad503803863708ade3162fd5d9225b9f5}
+
+\item 
+virtual void {\bfseries Restore\+Solver\+State\+From\+H\+D\+F5} (const string \&state\+\_\+file)\hypertarget{classcaffe_1_1SGDSolver_a5b959d966140b52c492a5096aa72ee84}{}\label{classcaffe_1_1SGDSolver_a5b959d966140b52c492a5096aa72ee84}
+
+\item 
+virtual void {\bfseries Restore\+Solver\+State\+From\+Binary\+Proto} (const string \&state\+\_\+file)\hypertarget{classcaffe_1_1SGDSolver_aa6ecd70cde5d5e9cf24e0d275200fbac}{}\label{classcaffe_1_1SGDSolver_aa6ecd70cde5d5e9cf24e0d275200fbac}
+
+\item 
+{\bfseries D\+I\+S\+A\+B\+L\+E\+\_\+\+C\+O\+P\+Y\+\_\+\+A\+N\+D\+\_\+\+A\+S\+S\+I\+GN} (\hyperlink{classcaffe_1_1SGDSolver}{S\+G\+D\+Solver})\hypertarget{classcaffe_1_1SGDSolver_a4b37f2267ebd84e62ee486470b2b0c2b}{}\label{classcaffe_1_1SGDSolver_a4b37f2267ebd84e62ee486470b2b0c2b}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $>$ $>$ {\bfseries history\+\_\+}\hypertarget{classcaffe_1_1SGDSolver_a66a7a1d7d3543e861057861be3e079a4}{}\label{classcaffe_1_1SGDSolver_a66a7a1d7d3543e861057861be3e079a4}
+
+\item 
+vector$<$ shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $>$ $>$ {\bfseries update\+\_\+}\hypertarget{classcaffe_1_1SGDSolver_a734d9a9af3302f62e76c30bb05d11f60}{}\label{classcaffe_1_1SGDSolver_a734d9a9af3302f62e76c30bb05d11f60}
+
+\item 
+vector$<$ shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $>$ $>$ {\bfseries temp\+\_\+}\hypertarget{classcaffe_1_1SGDSolver_aa6784e0dec503d8d46d6bd449d748df9}{}\label{classcaffe_1_1SGDSolver_aa6784e0dec503d8d46d6bd449d748df9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+S\+G\+D\+Solver$<$ Dtype $>$}
+
+Optimizes the parameters of a \hyperlink{classcaffe_1_1Net}{Net} using stochastic gradient descent (S\+GD) with momentum. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/sgd\+\_\+solvers.\+hpp\item 
+src/caffe/solvers/sgd\+\_\+solver.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,110 @@
+\hypertarget{classcaffe_1_1NeuronLayer}{}\section{caffe\+:\+:Neuron\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1NeuronLayer}\index{caffe\+::\+Neuron\+Layer$<$ Dtype $>$@{caffe\+::\+Neuron\+Layer$<$ Dtype $>$}}
+
+
+An interface for layers that take one blob as input ( $ x $) and produce one equally-\/sized blob as output ( $ y $), where each element of the output depends only on the corresponding input element.  
+
+
+
+
+{\ttfamily \#include $<$neuron\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Neuron\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classcaffe_1_1NeuronLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Neuron\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1NeuronLayer_a43348846697146ea9f01a773855b0915}{}\label{classcaffe_1_1NeuronLayer_a43348846697146ea9f01a773855b0915}
+
+\item 
+virtual void \hyperlink{classcaffe_1_1NeuronLayer_a810f5f75b95ba7fdcb9d3e0e33e98a7e}{Reshape} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1NeuronLayer_a83678ec7f661054d36d83fa062b639b2}{Exact\+Num\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1NeuronLayer_a25dfa84e8b46705aa7a822e734b4f04f}{Exact\+Num\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Neuron\+Layer$<$ Dtype $>$}
+
+An interface for layers that take one blob as input ( $ x $) and produce one equally-\/sized blob as output ( $ y $), where each element of the output depends only on the corresponding input element. 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Neuron\+Layer@{caffe\+::\+Neuron\+Layer}!Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}}
+\index{Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}!caffe\+::\+Neuron\+Layer@{caffe\+::\+Neuron\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Bottom\+Blobs() const }{ExactNumBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Neuron\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1NeuronLayer_a83678ec7f661054d36d83fa062b639b2}{}\label{classcaffe_1_1NeuronLayer_a83678ec7f661054d36d83fa062b639b2}
+
+
+Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a45c7a7943a8a6735ac433c9be11e0240}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+Reimplemented in \hyperlink{classcaffe_1_1AbsValLayer_a0e797616508e76aa9c2ce19a1b08dff0}{caffe\+::\+Abs\+Val\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Neuron\+Layer@{caffe\+::\+Neuron\+Layer}!Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}}
+\index{Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}!caffe\+::\+Neuron\+Layer@{caffe\+::\+Neuron\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Top\+Blobs() const }{ExactNumTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Neuron\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1NeuronLayer_a25dfa84e8b46705aa7a822e734b4f04f}{}\label{classcaffe_1_1NeuronLayer_a25dfa84e8b46705aa7a822e734b4f04f}
+
+
+Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_aa3c99ed707e8db683a3043412e151af8}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+Reimplemented in \hyperlink{classcaffe_1_1AbsValLayer_abddadbf826dc2ffaf22738804a484208}{caffe\+::\+Abs\+Val\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Neuron\+Layer@{caffe\+::\+Neuron\+Layer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!caffe\+::\+Neuron\+Layer@{caffe\+::\+Neuron\+Layer}}
+\subsubsection[{\texorpdfstring{Reshape(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Reshape(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Neuron\+Layer}$<$ Dtype $>$\+::Reshape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1NeuronLayer_a810f5f75b95ba7fdcb9d3e0e33e98a7e}{}\label{classcaffe_1_1NeuronLayer_a810f5f75b95ba7fdcb9d3e0e33e98a7e}
+
+
+Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the input blobs, with the requested input shapes \\
+\hline
+{\em top} & the top blobs, which should be reshaped as needed\\
+\hline
+\end{DoxyParams}
+This method should reshape top blobs as needed according to the shapes of the bottom (input) blobs, as well as reshaping any internal buffers and making any other necessary adjustments so that the layer can accommodate the bottom blobs. 
+
+Implements \hyperlink{classcaffe_1_1Layer_ad9d391b972c769c0ebee34ca6d1c973e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+Reimplemented in \hyperlink{classcaffe_1_1PReLULayer_a49e457fde8b31a97978718345d0ff53a}{caffe\+::\+P\+Re\+L\+U\+Layer$<$ Dtype $>$}, \hyperlink{classcaffe_1_1DropoutLayer_a3d5bce578b44ba2a89c1d4f7205ed842}{caffe\+::\+Dropout\+Layer$<$ Dtype $>$}, and \hyperlink{classcaffe_1_1SwishLayer_a06173b1a0bdc7df0a21535a1fc0cf2a9}{caffe\+::\+Swish\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/neuron\+\_\+layer.\+hpp\item 
+src/caffe/layers/neuron\+\_\+layer.\+cpp\end{DoxyCompactItemize}

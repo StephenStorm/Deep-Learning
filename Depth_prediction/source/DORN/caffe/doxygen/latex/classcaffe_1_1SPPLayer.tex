@@ -1,0 +1,203 @@
+\hypertarget{classcaffe_1_1SPPLayer}{}\section{caffe\+:\+:S\+P\+P\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1SPPLayer}\index{caffe\+::\+S\+P\+P\+Layer$<$ Dtype $>$@{caffe\+::\+S\+P\+P\+Layer$<$ Dtype $>$}}
+
+
+Does spatial pyramid pooling on the input image by taking the max, average, etc. within regions so that the result vector of different sized images are of the same size.  
+
+
+
+
+{\ttfamily \#include $<$spp\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:S\+P\+P\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcaffe_1_1SPPLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries S\+P\+P\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1SPPLayer_a2f2bfccabcb9c04d28435ae6cb535dcf}{}\label{classcaffe_1_1SPPLayer_a2f2bfccabcb9c04d28435ae6cb535dcf}
+
+\item 
+virtual void \hyperlink{classcaffe_1_1SPPLayer_acf2c8649f50afd4a31b32cefb06de09a}{Layer\+Set\+Up} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1SPPLayer_a9f54a92de230cde55b0dd4e996b9975e}{Reshape} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1SPPLayer_a71054cf06805c96615332b70fdb45a8b}{type} () const \hypertarget{classcaffe_1_1SPPLayer_a71054cf06805c96615332b70fdb45a8b}{}\label{classcaffe_1_1SPPLayer_a71054cf06805c96615332b70fdb45a8b}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1SPPLayer_ab6912cfa8daa151407d024d5113e10b0}{Exact\+Num\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1SPPLayer_a698395fdd26563b18ea0fac07d4e8026}{Exact\+Num\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1SPPLayer_a47c6a647030121c813845c657744547c}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1SPPLayer_a47c6a647030121c813845c657744547c}{}\label{classcaffe_1_1SPPLayer_a47c6a647030121c813845c657744547c}
+
+\begin{DoxyCompactList}\small\item\em Using the C\+PU device, compute the layer output. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1SPPLayer_abf8677b68b68fb7c3c85f347d2bacc5d}{Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1SPPLayer_abf8677b68b68fb7c3c85f347d2bacc5d}{}\label{classcaffe_1_1SPPLayer_abf8677b68b68fb7c3c85f347d2bacc5d}
+
+\begin{DoxyCompactList}\small\item\em Using the C\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. \end{DoxyCompactList}\item 
+virtual Layer\+Parameter {\bfseries Get\+Pooling\+Param} (const int pyramid\+\_\+level, const int bottom\+\_\+h, const int bottom\+\_\+w, const S\+P\+P\+Parameter spp\+\_\+param)\hypertarget{classcaffe_1_1SPPLayer_ad3610c7dae250bac8f31c71dc3d6bb2d}{}\label{classcaffe_1_1SPPLayer_ad3610c7dae250bac8f31c71dc3d6bb2d}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries pyramid\+\_\+height\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_a02f09a9c6f76b534c2549b2653f12ea4}{}\label{classcaffe_1_1SPPLayer_a02f09a9c6f76b534c2549b2653f12ea4}
+
+\item 
+int {\bfseries bottom\+\_\+h\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_a2dd2f852583a50b6dd565da6a02984db}{}\label{classcaffe_1_1SPPLayer_a2dd2f852583a50b6dd565da6a02984db}
+
+\item 
+int {\bfseries bottom\+\_\+w\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_acd3f4fa3470aa178363af2837024160c}{}\label{classcaffe_1_1SPPLayer_acd3f4fa3470aa178363af2837024160c}
+
+\item 
+int {\bfseries num\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_aacc71394afd11000f0322d98f3f38dc7}{}\label{classcaffe_1_1SPPLayer_aacc71394afd11000f0322d98f3f38dc7}
+
+\item 
+int {\bfseries channels\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_a4e150b124eca32f610799c4477baa177}{}\label{classcaffe_1_1SPPLayer_a4e150b124eca32f610799c4477baa177}
+
+\item 
+int {\bfseries kernel\+\_\+h\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_aaab3ef4723355e69da21dbaa445bdc60}{}\label{classcaffe_1_1SPPLayer_aaab3ef4723355e69da21dbaa445bdc60}
+
+\item 
+int {\bfseries kernel\+\_\+w\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_add6ba18ea09e0c92d6d3245167ecb642}{}\label{classcaffe_1_1SPPLayer_add6ba18ea09e0c92d6d3245167ecb642}
+
+\item 
+int {\bfseries pad\+\_\+h\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_a6d3a1e704be776225d23ef41a95bccbb}{}\label{classcaffe_1_1SPPLayer_a6d3a1e704be776225d23ef41a95bccbb}
+
+\item 
+int {\bfseries pad\+\_\+w\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_a79342c3df79e727145b1171712dd3b09}{}\label{classcaffe_1_1SPPLayer_a79342c3df79e727145b1171712dd3b09}
+
+\item 
+bool {\bfseries reshaped\+\_\+first\+\_\+time\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_af3b3b92cd7c0b31a86ef77d5b5af8689}{}\label{classcaffe_1_1SPPLayer_af3b3b92cd7c0b31a86ef77d5b5af8689}
+
+\item 
+shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1SplitLayer}{Split\+Layer}$<$ Dtype $>$ $>$ \hyperlink{classcaffe_1_1SPPLayer_a9312cb2eb190ce25d9269d9319cf5e4b}{split\+\_\+layer\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_a9312cb2eb190ce25d9269d9319cf5e4b}{}\label{classcaffe_1_1SPPLayer_a9312cb2eb190ce25d9269d9319cf5e4b}
+
+\begin{DoxyCompactList}\small\item\em the internal Split layer that feeds the pooling layers \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \hyperlink{classcaffe_1_1SPPLayer_aa4c2a009d84367e72b98b3b8542e3a0f}{split\+\_\+top\+\_\+vec\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_aa4c2a009d84367e72b98b3b8542e3a0f}{}\label{classcaffe_1_1SPPLayer_aa4c2a009d84367e72b98b3b8542e3a0f}
+
+\begin{DoxyCompactList}\small\item\em top vector holder used in call to the underlying \hyperlink{classcaffe_1_1Layer_aa5fc9ddb31b58958653372bdaaccde94}{Split\+Layer\+::\+Forward} \end{DoxyCompactList}\item 
+vector$<$ vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ $\ast$ $>$ \hyperlink{classcaffe_1_1SPPLayer_a2c9e8e5e918431ccc43e8578419357c9}{pooling\+\_\+bottom\+\_\+vecs\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_a2c9e8e5e918431ccc43e8578419357c9}{}\label{classcaffe_1_1SPPLayer_a2c9e8e5e918431ccc43e8578419357c9}
+
+\begin{DoxyCompactList}\small\item\em bottom vector holder used in call to the underlying \hyperlink{classcaffe_1_1Layer_aa5fc9ddb31b58958653372bdaaccde94}{Pooling\+Layer\+::\+Forward} \end{DoxyCompactList}\item 
+vector$<$ shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1PoolingLayer}{Pooling\+Layer}$<$ Dtype $>$ $>$ $>$ \hyperlink{classcaffe_1_1SPPLayer_a4cde4ff418007bcbdd34f91c6abbea1f}{pooling\+\_\+layers\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_a4cde4ff418007bcbdd34f91c6abbea1f}{}\label{classcaffe_1_1SPPLayer_a4cde4ff418007bcbdd34f91c6abbea1f}
+
+\begin{DoxyCompactList}\small\item\em the internal Pooling layers of different kernel sizes \end{DoxyCompactList}\item 
+vector$<$ vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ $\ast$ $>$ \hyperlink{classcaffe_1_1SPPLayer_a4bddcb27cbc0e9e2d153d134d5f9d760}{pooling\+\_\+top\+\_\+vecs\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_a4bddcb27cbc0e9e2d153d134d5f9d760}{}\label{classcaffe_1_1SPPLayer_a4bddcb27cbc0e9e2d153d134d5f9d760}
+
+\begin{DoxyCompactList}\small\item\em top vector holders used in call to the underlying \hyperlink{classcaffe_1_1Layer_aa5fc9ddb31b58958653372bdaaccde94}{Pooling\+Layer\+::\+Forward} \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \hyperlink{classcaffe_1_1SPPLayer_aed09b8f30c285651c726ac7ca186f93f}{pooling\+\_\+outputs\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_aed09b8f30c285651c726ac7ca186f93f}{}\label{classcaffe_1_1SPPLayer_aed09b8f30c285651c726ac7ca186f93f}
+
+\begin{DoxyCompactList}\small\item\em pooling\+\_\+outputs stores the outputs of the Pooling\+Layers \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classcaffe_1_1FlattenLayer}{Flatten\+Layer}$<$ Dtype $>$ $\ast$ $>$ \hyperlink{classcaffe_1_1SPPLayer_a765c32194d96177869e2b9028b1ff0d4}{flatten\+\_\+layers\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_a765c32194d96177869e2b9028b1ff0d4}{}\label{classcaffe_1_1SPPLayer_a765c32194d96177869e2b9028b1ff0d4}
+
+\begin{DoxyCompactList}\small\item\em the internal Flatten layers that the Pooling layers feed into \end{DoxyCompactList}\item 
+vector$<$ vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ $\ast$ $>$ \hyperlink{classcaffe_1_1SPPLayer_a7460ba8ed098335de91cd8cab363d365}{flatten\+\_\+top\+\_\+vecs\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_a7460ba8ed098335de91cd8cab363d365}{}\label{classcaffe_1_1SPPLayer_a7460ba8ed098335de91cd8cab363d365}
+
+\begin{DoxyCompactList}\small\item\em top vector holders used in call to the underlying \hyperlink{classcaffe_1_1Layer_aa5fc9ddb31b58958653372bdaaccde94}{Flatten\+Layer\+::\+Forward} \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \hyperlink{classcaffe_1_1SPPLayer_afd42f96c91f26fe32427865a16796503}{flatten\+\_\+outputs\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_afd42f96c91f26fe32427865a16796503}{}\label{classcaffe_1_1SPPLayer_afd42f96c91f26fe32427865a16796503}
+
+\begin{DoxyCompactList}\small\item\em flatten\+\_\+outputs stores the outputs of the Flatten\+Layers \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \hyperlink{classcaffe_1_1SPPLayer_a2874ca5b0c4d8f7d970c5a30768d2bc0}{concat\+\_\+bottom\+\_\+vec\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_a2874ca5b0c4d8f7d970c5a30768d2bc0}{}\label{classcaffe_1_1SPPLayer_a2874ca5b0c4d8f7d970c5a30768d2bc0}
+
+\begin{DoxyCompactList}\small\item\em bottom vector holder used in call to the underlying \hyperlink{classcaffe_1_1Layer_aa5fc9ddb31b58958653372bdaaccde94}{Concat\+Layer\+::\+Forward} \end{DoxyCompactList}\item 
+shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1ConcatLayer}{Concat\+Layer}$<$ Dtype $>$ $>$ \hyperlink{classcaffe_1_1SPPLayer_a02a9d50a48983fa0c6e42cafa85c1eb8}{concat\+\_\+layer\+\_\+}\hypertarget{classcaffe_1_1SPPLayer_a02a9d50a48983fa0c6e42cafa85c1eb8}{}\label{classcaffe_1_1SPPLayer_a02a9d50a48983fa0c6e42cafa85c1eb8}
+
+\begin{DoxyCompactList}\small\item\em the internal Concat layers that the Flatten layers feed into \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+S\+P\+P\+Layer$<$ Dtype $>$}
+
+Does spatial pyramid pooling on the input image by taking the max, average, etc. within regions so that the result vector of different sized images are of the same size. 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+S\+P\+P\+Layer@{caffe\+::\+S\+P\+P\+Layer}!Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}}
+\index{Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}!caffe\+::\+S\+P\+P\+Layer@{caffe\+::\+S\+P\+P\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Bottom\+Blobs() const }{ExactNumBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+S\+P\+P\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1SPPLayer_ab6912cfa8daa151407d024d5113e10b0}{}\label{classcaffe_1_1SPPLayer_ab6912cfa8daa151407d024d5113e10b0}
+
+
+Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a45c7a7943a8a6735ac433c9be11e0240}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+S\+P\+P\+Layer@{caffe\+::\+S\+P\+P\+Layer}!Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}}
+\index{Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}!caffe\+::\+S\+P\+P\+Layer@{caffe\+::\+S\+P\+P\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Top\+Blobs() const }{ExactNumTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+S\+P\+P\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1SPPLayer_a698395fdd26563b18ea0fac07d4e8026}{}\label{classcaffe_1_1SPPLayer_a698395fdd26563b18ea0fac07d4e8026}
+
+
+Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_aa3c99ed707e8db683a3043412e151af8}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+S\+P\+P\+Layer@{caffe\+::\+S\+P\+P\+Layer}!Layer\+Set\+Up@{Layer\+Set\+Up}}
+\index{Layer\+Set\+Up@{Layer\+Set\+Up}!caffe\+::\+S\+P\+P\+Layer@{caffe\+::\+S\+P\+P\+Layer}}
+\subsubsection[{\texorpdfstring{Layer\+Set\+Up(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{LayerSetUp(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+S\+P\+P\+Layer}$<$ Dtype $>$\+::Layer\+Set\+Up (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1SPPLayer_acf2c8649f50afd4a31b32cefb06de09a}{}\label{classcaffe_1_1SPPLayer_acf2c8649f50afd4a31b32cefb06de09a}
+
+
+Does layer-\/specific setup\+: your layer should implement this function as well as Reshape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the preshaped input blobs, whose data fields store the input data for this layer \\
+\hline
+{\em top} & the allocated but unshaped output blobs\\
+\hline
+\end{DoxyParams}
+This method should do one-\/time layer specific setup. This includes reading and processing relevent parameters from the {\ttfamily layer\+\_\+param\+\_\+}. Setting up the shapes of top blobs and internal buffers should be done in {\ttfamily Reshape}, which will be called before the forward pass to adjust the top blob sizes. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a38dc2488bf319b8de5a7ac84e0045393}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+S\+P\+P\+Layer@{caffe\+::\+S\+P\+P\+Layer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!caffe\+::\+S\+P\+P\+Layer@{caffe\+::\+S\+P\+P\+Layer}}
+\subsubsection[{\texorpdfstring{Reshape(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Reshape(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+S\+P\+P\+Layer}$<$ Dtype $>$\+::Reshape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1SPPLayer_a9f54a92de230cde55b0dd4e996b9975e}{}\label{classcaffe_1_1SPPLayer_a9f54a92de230cde55b0dd4e996b9975e}
+
+
+Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the input blobs, with the requested input shapes \\
+\hline
+{\em top} & the top blobs, which should be reshaped as needed\\
+\hline
+\end{DoxyParams}
+This method should reshape top blobs as needed according to the shapes of the bottom (input) blobs, as well as reshaping any internal buffers and making any other necessary adjustments so that the layer can accommodate the bottom blobs. 
+
+Implements \hyperlink{classcaffe_1_1Layer_ad9d391b972c769c0ebee34ca6d1c973e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/spp\+\_\+layer.\+hpp\item 
+src/caffe/layers/spp\+\_\+layer.\+cpp\end{DoxyCompactItemize}

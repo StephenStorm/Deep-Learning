@@ -1,0 +1,104 @@
+\hypertarget{classcaffe_1_1DataLayer}{}\section{caffe\+:\+:Data\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1DataLayer}\index{caffe\+::\+Data\+Layer$<$ Dtype $>$@{caffe\+::\+Data\+Layer$<$ Dtype $>$}}
+Inheritance diagram for caffe\+:\+:Data\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classcaffe_1_1DataLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Data\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1DataLayer_a55d92ba6737e695551eca610868f1fae}{}\label{classcaffe_1_1DataLayer_a55d92ba6737e695551eca610868f1fae}
+
+\item 
+virtual void {\bfseries Data\+Layer\+Set\+Up} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1DataLayer_a7c9ee1ab0a5be8030f03a5700ce42de4}{}\label{classcaffe_1_1DataLayer_a7c9ee1ab0a5be8030f03a5700ce42de4}
+
+\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1DataLayer_a8a7454b2fc8bde3220c21b8918c9ac2a}{type} () const \hypertarget{classcaffe_1_1DataLayer_a8a7454b2fc8bde3220c21b8918c9ac2a}{}\label{classcaffe_1_1DataLayer_a8a7454b2fc8bde3220c21b8918c9ac2a}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1DataLayer_a41c3c270f2f1239808fbd4293e89949d}{Exact\+Num\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1DataLayer_a65a81d2aff2703bf94b630ba2657b319}{Min\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the minimum number of top blobs required by the layer, or -\/1 if no minimum number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1DataLayer_a67d8d7543045833765d73c850a81941f}{Max\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the maximum number of top blobs required by the layer, or -\/1 if no maximum number is required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Next} ()\hypertarget{classcaffe_1_1DataLayer_a16238c3e219f4215faa4da08f670551f}{}\label{classcaffe_1_1DataLayer_a16238c3e219f4215faa4da08f670551f}
+
+\item 
+bool {\bfseries Skip} ()\hypertarget{classcaffe_1_1DataLayer_a230e84eafe73df8e7da3c41b2e3430e1}{}\label{classcaffe_1_1DataLayer_a230e84eafe73df8e7da3c41b2e3430e1}
+
+\item 
+virtual void {\bfseries load\+\_\+batch} (\hyperlink{classcaffe_1_1Batch}{Batch}$<$ Dtype $>$ $\ast$batch)\hypertarget{classcaffe_1_1DataLayer_a5f14e385399a658476642d225a2827f9}{}\label{classcaffe_1_1DataLayer_a5f14e385399a658476642d225a2827f9}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1db_1_1DB}{db\+::\+DB} $>$ {\bfseries db\+\_\+}\hypertarget{classcaffe_1_1DataLayer_af6384a1dcc37d32c7f556080da3c006d}{}\label{classcaffe_1_1DataLayer_af6384a1dcc37d32c7f556080da3c006d}
+
+\item 
+shared\+\_\+ptr$<$ \hyperlink{classcaffe_1_1db_1_1Cursor}{db\+::\+Cursor} $>$ {\bfseries cursor\+\_\+}\hypertarget{classcaffe_1_1DataLayer_ad26510baf81f48d92569ea95a8643af0}{}\label{classcaffe_1_1DataLayer_ad26510baf81f48d92569ea95a8643af0}
+
+\item 
+uint64\+\_\+t {\bfseries offset\+\_\+}\hypertarget{classcaffe_1_1DataLayer_a1af404785922d764270d7d5a195d90df}{}\label{classcaffe_1_1DataLayer_a1af404785922d764270d7d5a195d90df}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Data\+Layer@{caffe\+::\+Data\+Layer}!Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}}
+\index{Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}!caffe\+::\+Data\+Layer@{caffe\+::\+Data\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Bottom\+Blobs() const }{ExactNumBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Data\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1DataLayer_a41c3c270f2f1239808fbd4293e89949d}{}\label{classcaffe_1_1DataLayer_a41c3c270f2f1239808fbd4293e89949d}
+
+
+Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a45c7a7943a8a6735ac433c9be11e0240}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Data\+Layer@{caffe\+::\+Data\+Layer}!Max\+Top\+Blobs@{Max\+Top\+Blobs}}
+\index{Max\+Top\+Blobs@{Max\+Top\+Blobs}!caffe\+::\+Data\+Layer@{caffe\+::\+Data\+Layer}}
+\subsubsection[{\texorpdfstring{Max\+Top\+Blobs() const }{MaxTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Data\+Layer}$<$ Dtype $>$\+::Max\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1DataLayer_a67d8d7543045833765d73c850a81941f}{}\label{classcaffe_1_1DataLayer_a67d8d7543045833765d73c850a81941f}
+
+
+Returns the maximum number of top blobs required by the layer, or -\/1 if no maximum number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some maximum number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_adeff774663c6ec94424901d2746e2f03}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Data\+Layer@{caffe\+::\+Data\+Layer}!Min\+Top\+Blobs@{Min\+Top\+Blobs}}
+\index{Min\+Top\+Blobs@{Min\+Top\+Blobs}!caffe\+::\+Data\+Layer@{caffe\+::\+Data\+Layer}}
+\subsubsection[{\texorpdfstring{Min\+Top\+Blobs() const }{MinTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Data\+Layer}$<$ Dtype $>$\+::Min\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1DataLayer_a65a81d2aff2703bf94b630ba2657b319}{}\label{classcaffe_1_1DataLayer_a65a81d2aff2703bf94b630ba2657b319}
+
+
+Returns the minimum number of top blobs required by the layer, or -\/1 if no minimum number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some minimum number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a8bb143d58a740345fa2dc3d4204d553b}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/data\+\_\+layer.\+hpp\item 
+src/caffe/layers/data\+\_\+layer.\+cpp\end{DoxyCompactItemize}

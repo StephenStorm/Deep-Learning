@@ -1,0 +1,44 @@
+\hypertarget{classcaffe_1_1XavierFiller}{}\section{caffe\+:\+:Xavier\+Filler$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1XavierFiller}\index{caffe\+::\+Xavier\+Filler$<$ Dtype $>$@{caffe\+::\+Xavier\+Filler$<$ Dtype $>$}}
+
+
+Fills a \hyperlink{classcaffe_1_1Blob}{Blob} with values $ x \sim U(-a, +a) $ where $ a $ is set inversely proportional to number of incoming nodes, outgoing nodes, or their average.  
+
+
+
+
+{\ttfamily \#include $<$filler.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Xavier\+Filler$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcaffe_1_1XavierFiller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Xavier\+Filler} (const Filler\+Parameter \&param)\hypertarget{classcaffe_1_1XavierFiller_a4145fb1bb9e5c543a07da69ae3b2eec6}{}\label{classcaffe_1_1XavierFiller_a4145fb1bb9e5c543a07da69ae3b2eec6}
+
+\item 
+virtual void {\bfseries Fill} (\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$blob)\hypertarget{classcaffe_1_1XavierFiller_af61c37b2a24ebc70c9e7d2d3d703d2c8}{}\label{classcaffe_1_1XavierFiller_af61c37b2a24ebc70c9e7d2d3d703d2c8}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Xavier\+Filler$<$ Dtype $>$}
+
+Fills a \hyperlink{classcaffe_1_1Blob}{Blob} with values $ x \sim U(-a, +a) $ where $ a $ is set inversely proportional to number of incoming nodes, outgoing nodes, or their average. 
+
+A \hyperlink{classcaffe_1_1Filler}{Filler} based on the paper \mbox{[}Bengio and Glorot 2010\mbox{]}\+: Understanding the difficulty of training deep feedforward neuralnetworks.
+
+It fills the incoming matrix by randomly sampling uniform data from \mbox{[}-\/scale, scale\mbox{]} where scale = sqrt(3 / n) where n is the fan\+\_\+in, fan\+\_\+out, or their average, depending on the variance\+\_\+norm option. You should make sure the input blob has shape (num, a, b, c) where a $\ast$ b $\ast$ c = fan\+\_\+in and num $\ast$ b $\ast$ c = fan\+\_\+out. Note that this is currently not the case for inner product layers.
+
+T\+O\+D\+O(dox)\+: make notation in above comment consistent with rest \& use La\+TeX. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/filler.\+hpp\end{DoxyCompactItemize}

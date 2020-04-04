@@ -1,0 +1,4 @@
+// Message that stores parameters used by ThresholdLayer
+message ThresholdParameter {
+  optional float threshold = 1 [default = 0]; // Strictly positive values
+}

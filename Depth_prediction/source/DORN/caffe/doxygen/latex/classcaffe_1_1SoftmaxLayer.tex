@@ -1,0 +1,135 @@
+\hypertarget{classcaffe_1_1SoftmaxLayer}{}\section{caffe\+:\+:Softmax\+Layer$<$ Dtype $>$ Class Template Reference}
+\label{classcaffe_1_1SoftmaxLayer}\index{caffe\+::\+Softmax\+Layer$<$ Dtype $>$@{caffe\+::\+Softmax\+Layer$<$ Dtype $>$}}
+
+
+Computes the softmax function.  
+
+
+
+
+{\ttfamily \#include $<$softmax\+\_\+layer.\+hpp$>$}
+
+Inheritance diagram for caffe\+:\+:Softmax\+Layer$<$ Dtype $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcaffe_1_1SoftmaxLayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Softmax\+Layer} (const Layer\+Parameter \&param)\hypertarget{classcaffe_1_1SoftmaxLayer_a6a3b60c74c2c48e8d5f65595ec1b4268}{}\label{classcaffe_1_1SoftmaxLayer_a6a3b60c74c2c48e8d5f65595ec1b4268}
+
+\item 
+virtual void \hyperlink{classcaffe_1_1SoftmaxLayer_a729dbe97d52b7d7126d57f4cd52a541d}{Reshape} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)
+\begin{DoxyCompactList}\small\item\em Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classcaffe_1_1SoftmaxLayer_a2cdff08f7968596a9b034f0459e0f3a2}{type} () const \hypertarget{classcaffe_1_1SoftmaxLayer_a2cdff08f7968596a9b034f0459e0f3a2}{}\label{classcaffe_1_1SoftmaxLayer_a2cdff08f7968596a9b034f0459e0f3a2}
+
+\begin{DoxyCompactList}\small\item\em Returns the layer type. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1SoftmaxLayer_a6b8863006cf34812d01354b671406816}{Exact\+Num\+Bottom\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classcaffe_1_1SoftmaxLayer_ae5c54555352700247a8fe47b73d06ce7}{Exact\+Num\+Top\+Blobs} () const 
+\begin{DoxyCompactList}\small\item\em Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcaffe_1_1SoftmaxLayer_afc7ed2452671d4193659c2d2ab7d4f53}{Forward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1SoftmaxLayer_afc7ed2452671d4193659c2d2ab7d4f53}{}\label{classcaffe_1_1SoftmaxLayer_afc7ed2452671d4193659c2d2ab7d4f53}
+
+\begin{DoxyCompactList}\small\item\em Using the C\+PU device, compute the layer output. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1SoftmaxLayer_a220787510d53c47c92dcc41c5bfe1cbe}{Forward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top)\hypertarget{classcaffe_1_1SoftmaxLayer_a220787510d53c47c92dcc41c5bfe1cbe}{}\label{classcaffe_1_1SoftmaxLayer_a220787510d53c47c92dcc41c5bfe1cbe}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the layer output. Fall back to \hyperlink{classcaffe_1_1SoftmaxLayer_afc7ed2452671d4193659c2d2ab7d4f53}{Forward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1SoftmaxLayer_af6eb03743a1530477dc680856a54e444}{Backward\+\_\+cpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1SoftmaxLayer_af6eb03743a1530477dc680856a54e444}{}\label{classcaffe_1_1SoftmaxLayer_af6eb03743a1530477dc680856a54e444}
+
+\begin{DoxyCompactList}\small\item\em Using the C\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classcaffe_1_1SoftmaxLayer_a273ab561be31d92a481546f1bcfc3daa}{Backward\+\_\+gpu} (const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&top, const vector$<$ bool $>$ \&propagate\+\_\+down, const vector$<$ \hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ $\ast$ $>$ \&bottom)\hypertarget{classcaffe_1_1SoftmaxLayer_a273ab561be31d92a481546f1bcfc3daa}{}\label{classcaffe_1_1SoftmaxLayer_a273ab561be31d92a481546f1bcfc3daa}
+
+\begin{DoxyCompactList}\small\item\em Using the G\+PU device, compute the gradients for any parameters and for the bottom blobs if propagate\+\_\+down is true. Fall back to \hyperlink{classcaffe_1_1SoftmaxLayer_af6eb03743a1530477dc680856a54e444}{Backward\+\_\+cpu()} if unavailable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries outer\+\_\+num\+\_\+}\hypertarget{classcaffe_1_1SoftmaxLayer_abb41226ecdb5e1c5a89336c680186637}{}\label{classcaffe_1_1SoftmaxLayer_abb41226ecdb5e1c5a89336c680186637}
+
+\item 
+int {\bfseries inner\+\_\+num\+\_\+}\hypertarget{classcaffe_1_1SoftmaxLayer_a05182b1721808e2706e54ad6d6462d0c}{}\label{classcaffe_1_1SoftmaxLayer_a05182b1721808e2706e54ad6d6462d0c}
+
+\item 
+int {\bfseries softmax\+\_\+axis\+\_\+}\hypertarget{classcaffe_1_1SoftmaxLayer_a48792959064b3d211e0ef48f1a429bc6}{}\label{classcaffe_1_1SoftmaxLayer_a48792959064b3d211e0ef48f1a429bc6}
+
+\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ \hyperlink{classcaffe_1_1SoftmaxLayer_a3bfc4000b464ab32c73060a2d5c4e426}{sum\+\_\+multiplier\+\_\+}\hypertarget{classcaffe_1_1SoftmaxLayer_a3bfc4000b464ab32c73060a2d5c4e426}{}\label{classcaffe_1_1SoftmaxLayer_a3bfc4000b464ab32c73060a2d5c4e426}
+
+\begin{DoxyCompactList}\small\item\em sum\+\_\+multiplier is used to carry out sum using B\+L\+AS \end{DoxyCompactList}\item 
+\hyperlink{classcaffe_1_1Blob}{Blob}$<$ Dtype $>$ \hyperlink{classcaffe_1_1SoftmaxLayer_a22a5348d7a31c512ac9d5dcfc066d4b1}{scale\+\_\+}\hypertarget{classcaffe_1_1SoftmaxLayer_a22a5348d7a31c512ac9d5dcfc066d4b1}{}\label{classcaffe_1_1SoftmaxLayer_a22a5348d7a31c512ac9d5dcfc066d4b1}
+
+\begin{DoxyCompactList}\small\item\em scale is an intermediate \hyperlink{classcaffe_1_1Blob}{Blob} to hold temporary results. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Dtype$>$\\*
+class caffe\+::\+Softmax\+Layer$<$ Dtype $>$}
+
+Computes the softmax function. 
+
+T\+O\+D\+O(dox)\+: thorough documentation for Forward, Backward, and proto params. 
+
+\subsection{Member Function Documentation}
+\index{caffe\+::\+Softmax\+Layer@{caffe\+::\+Softmax\+Layer}!Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}}
+\index{Exact\+Num\+Bottom\+Blobs@{Exact\+Num\+Bottom\+Blobs}!caffe\+::\+Softmax\+Layer@{caffe\+::\+Softmax\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Bottom\+Blobs() const }{ExactNumBottomBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Softmax\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Bottom\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1SoftmaxLayer_a6b8863006cf34812d01354b671406816}{}\label{classcaffe_1_1SoftmaxLayer_a6b8863006cf34812d01354b671406816}
+
+
+Returns the exact number of bottom blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of bottom blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_a45c7a7943a8a6735ac433c9be11e0240}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Softmax\+Layer@{caffe\+::\+Softmax\+Layer}!Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}}
+\index{Exact\+Num\+Top\+Blobs@{Exact\+Num\+Top\+Blobs}!caffe\+::\+Softmax\+Layer@{caffe\+::\+Softmax\+Layer}}
+\subsubsection[{\texorpdfstring{Exact\+Num\+Top\+Blobs() const }{ExactNumTopBlobs() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ virtual int {\bf caffe\+::\+Softmax\+Layer}$<$ Dtype $>$\+::Exact\+Num\+Top\+Blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classcaffe_1_1SoftmaxLayer_ae5c54555352700247a8fe47b73d06ce7}{}\label{classcaffe_1_1SoftmaxLayer_ae5c54555352700247a8fe47b73d06ce7}
+
+
+Returns the exact number of top blobs required by the layer, or -\/1 if no exact number is required. 
+
+This method should be overridden to return a non-\/negative value if your layer expects some exact number of top blobs. 
+
+Reimplemented from \hyperlink{classcaffe_1_1Layer_aa3c99ed707e8db683a3043412e151af8}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+\index{caffe\+::\+Softmax\+Layer@{caffe\+::\+Softmax\+Layer}!Reshape@{Reshape}}
+\index{Reshape@{Reshape}!caffe\+::\+Softmax\+Layer@{caffe\+::\+Softmax\+Layer}}
+\subsubsection[{\texorpdfstring{Reshape(const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&bottom, const vector$<$ Blob$<$ Dtype $>$ $\ast$ $>$ \&top)}{Reshape(const vector< Blob< Dtype > * > &bottom, const vector< Blob< Dtype > * > &top)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Dtype $>$ void {\bf caffe\+::\+Softmax\+Layer}$<$ Dtype $>$\+::Reshape (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{bottom, }
+\item[{const vector$<$ {\bf Blob}$<$ Dtype $>$ $\ast$ $>$ \&}]{top}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classcaffe_1_1SoftmaxLayer_a729dbe97d52b7d7126d57f4cd52a541d}{}\label{classcaffe_1_1SoftmaxLayer_a729dbe97d52b7d7126d57f4cd52a541d}
+
+
+Adjust the shapes of top blobs and internal buffers to accommodate the shapes of the bottom blobs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & the input blobs, with the requested input shapes \\
+\hline
+{\em top} & the top blobs, which should be reshaped as needed\\
+\hline
+\end{DoxyParams}
+This method should reshape top blobs as needed according to the shapes of the bottom (input) blobs, as well as reshaping any internal buffers and making any other necessary adjustments so that the layer can accommodate the bottom blobs. 
+
+Implements \hyperlink{classcaffe_1_1Layer_ad9d391b972c769c0ebee34ca6d1c973e}{caffe\+::\+Layer$<$ Dtype $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/caffe/layers/softmax\+\_\+layer.\+hpp\item 
+src/caffe/layers/softmax\+\_\+layer.\+cpp\end{DoxyCompactItemize}
