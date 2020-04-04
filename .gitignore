@@ -1,0 +1,4 @@
+Depth_prediction/source/DORN/models/KITTI/cvpr_kitti.caffemodel
+Depth_prediction/source/DORN/models/NYUV2/cvpr_nyuv2.caffemodel
+Depth_prediction/source/DORN/data/KITTI_DORN.zip
+Depth_prediction/source/DORN/data/NYUV2_DORN.zip
